@@ -33,3 +33,9 @@
 
 # visual studio
 *.vs
+*.pdb
+*.recipe
+*.ilk
+*.tlog
+*.log
+*.idb
