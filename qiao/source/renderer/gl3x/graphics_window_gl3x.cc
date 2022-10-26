@@ -7,16 +7,7 @@
 
 using namespace qiao;
 
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
-void GraphicsWindowGL3x::framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	// make sure the viewport matches the new window dimensions; note that width and 
-	// height will be significantly larger than specified on retina displays.
-	glViewport(0, 0, width, height);
-}
-
-GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title) {
+GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title, bool isFullScreen) {
 	if (width < 0) {
 		throw std::invalid_argument("argument width can't be less than zero!");
 	}
@@ -24,8 +15,9 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title)
 		throw std::invalid_argument("argument height can't be less than zero!");
 	}
 
+	//resize = nullptr;
+
 	// glfw: initialize and configure
-	// ------------------------------
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -36,9 +28,9 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title)
 #endif
 
 	// glfw window creation
-	// --------------------
-	window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-	if (window == NULL) {
+	GLFWmonitor* pMonitor = isFullScreen ? glfwGetPrimaryMonitor() : nullptr;
+	window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+	if (window == nullptr) {
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
 	}
@@ -46,32 +38,32 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title)
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	// glad: load all OpenGL function pointers
-	// ---------------------------------------
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		throw std::runtime_error("Failed to initialize GLAD");
 	}
-
-	//run();
 };
 
 GraphicsWindowGL3x::~GraphicsWindowGL3x() {
-
+	
 }
 
 void GraphicsWindowGL3x::renderLoop() {
-	while (!glfwWindowShouldClose(window))
-	{
+	while (!glfwWindowShouldClose(window)) {
 		// input
-		// -----
 		GraphicsWindowGL3x::processInput(window);
 
+		if (preRender != nullptr) {
+			preRender();
+		}
 		// render
-		// ------
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		if (render != nullptr) {
+			render();
+		}
+		if (postRender != nullptr) {
+			postRender();
+		}
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-		// -------------------------------------------------------------------------------
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
@@ -81,16 +73,20 @@ void GraphicsWindowGL3x::renderLoop() {
 
 void GraphicsWindowGL3x::run() {
 	std::cout << "run......" << std::endl;
-
 	renderLoop();
 };
 
+void GraphicsWindowGL3x::framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	// make sure the viewport matches the new window dimensions; note that width and 
+	// height will be significantly larger than specified on retina displays.
+	glViewport(0, 0, width, height);
 
+	/*if (resize != NULL) {
+		resize();
+	}*/
+}
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
-void GraphicsWindowGL3x::processInput(GLFWwindow* window)
-{
+void GraphicsWindowGL3x::processInput(GLFWwindow* window) {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 }

@@ -7,6 +7,6 @@
 namespace qiao {
 	class Device {
 	public:
-		static GraphicsWindow* createWindow(int width, int height, std::string title);
+		static GraphicsWindow* createWindow(int width, int height, std::string title, bool isFullScreen = false);
 	};
 }

@@ -139,16 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source\renderer\context.h" />
     <ClInclude Include="source\renderer\device.h" />
+    <ClInclude Include="source\renderer\gl3x\context_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\graphics_window_gl3x.h" />
     <ClInclude Include="source\renderer\graphics_window.h" />
+    <ClInclude Include="source\renderer\render_state\cull_face.h" />
+    <ClInclude Include="source\renderer\render_state\depth_test.h" />
+    <ClInclude Include="source\renderer\render_state\primitive_restart.h" />
+    <ClInclude Include="source\renderer\render_state\render_state.h" />
+    <ClInclude Include="source\renderer\render_state\scissor_test.h" />
+    <ClInclude Include="source\renderer\render_state\stencil_test.h" />
     <ClInclude Include="third_party\glad\include\glad.h" />
     <ClInclude Include="third_party\glad\include\khrplatform.h" />
     <ClInclude Include="third_party\glfw\include\glfw3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc" />
+    <ClCompile Include="source\renderer\gl3x\context_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
+    <ClCompile Include="source\renderer\render_state\cull_face.cc" />
+    <ClCompile Include="source\renderer\render_state\depth_test.cc" />
+    <ClCompile Include="source\renderer\render_state\primitive_restart.cc" />
+    <ClCompile Include="source\renderer\render_state\render_state.cc" />
+    <ClCompile Include="source\renderer\render_state\scissor_test.cc" />
+    <ClCompile Include="source\renderer\render_state\stencil_test.cc" />
     <ClCompile Include="source\test\main.cpp" />
     <ClCompile Include="third_party\glad\source\glad.c" />
   </ItemGroup>

@@ -3,8 +3,8 @@
 
 using namespace qiao;
 
-GraphicsWindow* Device::createWindow(int width, int height, std::string title) {
-	GraphicsWindowGL3x window(width, height, title);
+GraphicsWindow* Device::createWindow(int width, int height, std::string title, bool isFullScreen) {
+	GraphicsWindowGL3x window(width, height, title, isFullScreen);
 	return &window;
 };
 
