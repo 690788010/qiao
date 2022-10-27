@@ -1,15 +1,17 @@
 #pragma once
 
+#include "../../../third_party/glad/include/glad.h"
+
 namespace qiao {
 	enum CullFaceMode {
-		FRONT,
-		BACK,
-		FRONT_AND_BACK
+		FRONT = GL_FRONT,
+		BACK = GL_BACK,
+		FRONT_AND_BACK = GL_FRONT_AND_BACK
 	};
 
 	enum FrontFaceMode {
-		CW,
-		CCW
+		CW = GL_CW,
+		CCW = GL_CCW
 	};
 
 	class CullFace {

@@ -7,6 +7,7 @@ RenderState::RenderState() {
 	primitiveRestart = PrimitiveRestart();
 	cullFace = CullFace();
 	programPointSize = ProgramPointSize::Disabled;
+	scissorTest = ScissorTest();
 	polygonMode = PolygonMode::FILL;
 	depthTest = DepthTest();
 }
@@ -27,12 +28,20 @@ void RenderState::setCullFace(CullFace val) {
 	cullFace = val;
 };
 
-ProgramPointSize& RenderState::getProgramPointSize() {
+ProgramPointSize RenderState::getProgramPointSize() {
 	return programPointSize;
 };
 
 void RenderState::setProgramPointSize(ProgramPointSize val) {
 	programPointSize = val;
+};
+
+ScissorTest& RenderState::getScissorTest() {
+	return scissorTest;
+};
+
+void RenderState::setScissorTest(ScissorTest val) {
+	scissorTest = val;
 };
 
 PolygonMode& RenderState::getPolygonMode() {
@@ -57,4 +66,12 @@ DepthTest& RenderState::getDepthTest() {
 
 void RenderState::setDepthTest(DepthTest val) {
 	depthTest = val;
+};
+
+Blending& RenderState::getBlending() {
+	return blending;
+};
+
+void RenderState::setBlending(Blending val) {
+	blending = val;
 };

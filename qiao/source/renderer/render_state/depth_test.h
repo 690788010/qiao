@@ -1,15 +1,22 @@
 #pragma once
 
+#include "../../../third_party/glad/include/glad.h"
+
 namespace qiao {
 	enum DepthFunc {
-		NEVER,
-		LESS,
-		EQUAL,
-		LEQUAL,
-		GREATER,
-		NOTEQUAL,
-		GEQUAL,
-		ALWAYS
+		NEVER = GL_NEVER,
+		LESS = GL_LESS,
+		EQUAL = GL_EQUAL,
+		LEQUAL = GL_LEQUAL,
+		GREATER = GL_GREATER,
+		NOTEQUAL = GL_NOTEQUAL,
+		GEQUAL = GL_GEQUAL,
+		ALWAYS = GL_ALWAYS
+	};
+
+	enum DepthMask {
+		TRUE = GL_TRUE,
+		FALSE = GL_FALSE
 	};
 
 	class DepthTest {
@@ -22,8 +29,8 @@ namespace qiao {
 		DepthFunc getDepthFunc();
 		void setDepthFunc(DepthFunc val);
 
-		bool getDepthMask();
-		void setDepthMask(bool val);
+		DepthMask getDepthMask();
+		void setDepthMask(DepthMask val);
 
 		double getNear();
 		void setNear(double val);
@@ -34,7 +41,7 @@ namespace qiao {
 	private:
 		bool enabled;
 		DepthFunc depthFunc;
-		bool depthMask;
+		DepthMask depthMask;
 		double near;
 		double far;
 	};

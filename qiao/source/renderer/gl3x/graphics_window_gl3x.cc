@@ -29,28 +29,40 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title,
 
 	// glfw window creation
 	GLFWmonitor* pMonitor = isFullScreen ? glfwGetPrimaryMonitor() : nullptr;
-	window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
-	if (window == nullptr) {
+	_window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+	if (_window == nullptr) {
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
 	}
-	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	glfwMakeContextCurrent(_window);
+	glfwSetFramebufferSizeCallback(_window, framebuffer_size_callback);
 
 	// glad: load all OpenGL function pointers
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		throw std::runtime_error("Failed to initialize GLAD");
 	}
+
+	_context = new ContextGL3x();
+
 };
 
 GraphicsWindowGL3x::~GraphicsWindowGL3x() {
-	
+	if (_context != nullptr) {
+		std::cout << "clear context" << std::endl;
+		delete _context;
+		_context = nullptr;
+	}
+	if (_window != nullptr) {
+		std::cout << "clear window" << std::endl;
+		glfwTerminate();
+		_window = nullptr;
+	}
 }
 
 void GraphicsWindowGL3x::renderLoop() {
-	while (!glfwWindowShouldClose(window)) {
+	while (!glfwWindowShouldClose(_window)) {
 		// input
-		GraphicsWindowGL3x::processInput(window);
+		GraphicsWindowGL3x::processInput(_window);
 
 		if (preRender != nullptr) {
 			preRender();
@@ -64,16 +76,15 @@ void GraphicsWindowGL3x::renderLoop() {
 		}
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(_window);
 		glfwPollEvents();
 	}
-
-	glfwTerminate();
 };
 
 void GraphicsWindowGL3x::run() {
 	std::cout << "run......" << std::endl;
 	renderLoop();
+	std::cout << "end loop...." << std::endl;
 };
 
 void GraphicsWindowGL3x::framebuffer_size_callback(GLFWwindow* window, int width, int height) {

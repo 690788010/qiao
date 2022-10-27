@@ -2,19 +2,21 @@
 
 #include "primitive_restart.h"
 #include "cull_face.h"
+#include "scissor_test.h"
 #include "stencil_test.h"
 #include "depth_test.h"
+#include "blending.h"
 
 namespace qiao {
 	enum ProgramPointSize {
-		Enabled,
-		Disabled
+		Enabled = true,
+		Disabled = false
 	};
 
 	enum PolygonMode {
-		POINT,
-		LINE,
-		FILL
+		POINT = GL_POINT,
+		LINE = GL_LINE,
+		FILL = GL_FILL
 	};
 
 	class RenderState {
@@ -27,8 +29,11 @@ namespace qiao {
 		CullFace& getCullFace();
 		void setCullFace(CullFace val);
 
-		ProgramPointSize& getProgramPointSize();
+		ProgramPointSize getProgramPointSize();
 		void setProgramPointSize(ProgramPointSize val);
+
+		ScissorTest& getScissorTest();
+		void setScissorTest(ScissorTest val);
 
 		PolygonMode& getPolygonMode();
 		void setPolygonMode(PolygonMode val);
@@ -39,12 +44,17 @@ namespace qiao {
 		DepthTest& getDepthTest();
 		void setDepthTest(DepthTest val);
 
+		Blending& getBlending();
+		void setBlending(Blending val);
+
 	private:
 		PrimitiveRestart primitiveRestart;
 		CullFace cullFace;
 		ProgramPointSize programPointSize;
+		ScissorTest scissorTest;
 		PolygonMode polygonMode;
 		StencilTest stencilTest;
 		DepthTest depthTest;
+		Blending blending;
 	};
 }

@@ -6,7 +6,7 @@ using namespace qiao;
 DepthTest::DepthTest() {
 	enabled = true;
 	depthFunc = DepthFunc::LESS;
-	depthMask = true;
+	depthMask = DepthMask::TRUE;
 	near = 0.0;
 	far = 1.0;
 };
@@ -27,11 +27,11 @@ void DepthTest::setDepthFunc(DepthFunc val) {
 	depthFunc = val;
 };
 
-bool DepthTest::getDepthMask() {
+DepthMask DepthTest::getDepthMask() {
 	return depthMask;
 };
 
-void DepthTest::setDepthMask(bool val) {
+void DepthTest::setDepthMask(DepthMask val) {
 	depthMask = val;
 };
 

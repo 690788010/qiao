@@ -2,11 +2,11 @@
 
 #include <string>
 
-#include "../graphics_window.h"
-
 #include "../../../third_party/glad/include/glad.h"
 #include "../../../third_party/glfw/include/glfw3.h"
 
+#include "../graphics_window.h"
+#include "context_gl3x.h"
 
 namespace qiao {
 	class GraphicsWindowGL3x : public GraphicsWindow {
@@ -27,7 +27,8 @@ namespace qiao {
 		// —≠ª∑‰÷»æ
 		void renderLoop();
 
-		GLFWwindow* window;
+		GLFWwindow* _window;
+		ContextGL3x* _context;
 		int width;
 		int height;
 	};

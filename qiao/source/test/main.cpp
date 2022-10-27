@@ -10,6 +10,11 @@ int main() {
 	window->render = &render;
 	//std::cout << window->render << std::endl;
 	window->run();
+
+	if (window != nullptr) {
+		delete window;
+		window = nullptr;
+	}
 }
 
 void render() {

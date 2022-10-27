@@ -3,25 +3,7 @@
 
 using namespace qiao;
 
-Rectangle::Rectangle(int x, int y, int width, int height) : 
-	x{ x }, y{ y }, width{ width }, height{ height } {};
-
-int Rectangle::getX() {
-	return x;
-};
-
-int Rectangle::getY() {
-	return y;
-};
-
-int Rectangle::getWidth() {
-	return width;
-};
-int Rectangle::getHeight() {
-	return height;
-};
-
-ScissorTest::ScissorTest() : enabled{ false }, rectangle{ Rectangle(0, 0, 0, 0) } {};
+ScissorTest::ScissorTest() : enabled{ false }, x{ 0 }, y{ 0 }, width{ x }, height{ 0 } {};
 
 bool ScissorTest::getEnabled() {
 	return enabled;
@@ -30,10 +12,17 @@ void ScissorTest::setEnabled(bool val) {
 	enabled = val;
 };
 
-Rectangle& ScissorTest::getRectangle() {
-	return rectangle;
+int ScissorTest::getX() {
+	return x;
 };
 
-void ScissorTest::setRectangle(Rectangle val) {
-	rectangle = val;
+int ScissorTest::getY() {
+	return y;
+};
+
+int ScissorTest::getWidth() {
+	return width;
+};
+int ScissorTest::getHeight() {
+	return height;
 };
