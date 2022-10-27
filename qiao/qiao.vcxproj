@@ -144,6 +144,7 @@
     <ClInclude Include="source\renderer\gl3x\context_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\graphics_window_gl3x.h" />
     <ClInclude Include="source\renderer\graphics_window.h" />
+    <ClInclude Include="source\renderer\render_state\blending.h" />
     <ClInclude Include="source\renderer\render_state\cull_face.h" />
     <ClInclude Include="source\renderer\render_state\depth_test.h" />
     <ClInclude Include="source\renderer\render_state\primitive_restart.h" />
@@ -158,6 +159,7 @@
     <ClCompile Include="source\renderer\device.cc" />
     <ClCompile Include="source\renderer\gl3x\context_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
+    <ClCompile Include="source\renderer\render_state\blending.cc" />
     <ClCompile Include="source\renderer\render_state\cull_face.cc" />
     <ClCompile Include="source\renderer\render_state\depth_test.cc" />
     <ClCompile Include="source\renderer\render_state\primitive_restart.cc" />

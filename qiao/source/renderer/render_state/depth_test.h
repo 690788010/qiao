@@ -12,21 +12,6 @@ namespace qiao {
 		ALWAYS
 	};
 
-	class DepthRange {
-	public:
-		DepthRange(double near = 0.0, double far = 1.0);
-
-		double getNear();
-		void setNear(double val);
-
-		double getFar();
-		void setFar(double val);
-
-	private:
-		double near;
-		double far;
-	};
-
 	class DepthTest {
 	public:
 		DepthTest();
@@ -37,16 +22,20 @@ namespace qiao {
 		DepthFunc getDepthFunc();
 		void setDepthFunc(DepthFunc val);
 
-		DepthRange& getDepthRange();
-		void setDepthRange(DepthRange val);
-
 		bool getDepthMask();
 		void setDepthMask(bool val);
+
+		double getNear();
+		void setNear(double val);
+
+		double getFar();
+		void setFar(double val);
 
 	private:
 		bool enabled;
 		DepthFunc depthFunc;
-		DepthRange depthRange;
 		bool depthMask;
+		double near;
+		double far;
 	};
 }

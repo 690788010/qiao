@@ -57,6 +57,9 @@
     <ClInclude Include="source\renderer\render_state\depth_test.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\render_state\blending.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -90,6 +93,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\render_state\stencil_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\render_state\blending.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

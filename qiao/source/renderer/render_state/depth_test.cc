@@ -3,29 +3,12 @@
 
 using namespace qiao;
 
-DepthRange::DepthRange(double near, double far) {
-	this->near = near;
-	this->far = far;
-};
-
-double DepthRange::getNear() {
-	return near;
-};
-void DepthRange::setNear(double val) {
-	near = val;
-};
-
-double DepthRange::getFar() {
-	return far;
-};
-
-void DepthRange::setFar(double val) {
-	far = val;
-};
-
 DepthTest::DepthTest() {
 	enabled = true;
 	depthFunc = DepthFunc::LESS;
+	depthMask = true;
+	near = 0.0;
+	far = 1.0;
 };
 
 bool DepthTest::getEnabled() {
@@ -44,18 +27,24 @@ void DepthTest::setDepthFunc(DepthFunc val) {
 	depthFunc = val;
 };
 
-DepthRange& DepthTest::getDepthRange() {
-	return depthRange;
-};
-
-void DepthTest::setDepthRange(DepthRange val) {
-	depthRange = val;
-};
-
 bool DepthTest::getDepthMask() {
 	return depthMask;
 };
 
 void DepthTest::setDepthMask(bool val) {
 	depthMask = val;
+};
+
+double DepthTest::getNear() {
+	return near;
+};
+void DepthTest::setNear(double val) {
+	near = val;
+};
+
+double DepthTest::getFar() {
+	return far;
+};
+void DepthTest::setFar(double val) {
+	far = val;
 };
