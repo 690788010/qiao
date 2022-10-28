@@ -87,6 +87,10 @@ void GraphicsWindowGL3x::run() {
 	std::cout << "end loop...." << std::endl;
 };
 
+Context& GraphicsWindowGL3x::getContext() {
+	return *_context;
+};
+
 void GraphicsWindowGL3x::framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	// make sure the viewport matches the new window dimensions; note that width and 
 	// height will be significantly larger than specified on retina displays.

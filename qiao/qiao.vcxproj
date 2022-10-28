@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="source\renderer\context.h" />
     <ClInclude Include="source\renderer\device.h" />
+    <ClInclude Include="source\renderer\draw_state.h" />
     <ClInclude Include="source\renderer\gl3x\context_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\graphics_window_gl3x.h" />
     <ClInclude Include="source\renderer\graphics_window.h" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc" />
+    <ClCompile Include="source\renderer\draw_state.cc" />
     <ClCompile Include="source\renderer\gl3x\context_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
     <ClCompile Include="source\renderer\render_state\blending.cc" />

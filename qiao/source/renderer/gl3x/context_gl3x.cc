@@ -1,4 +1,6 @@
 
+#include <stdexcept>
+
 #include "context_gl3x.h"
 
 using namespace qiao;
@@ -16,6 +18,11 @@ ContextGL3x::~ContextGL3x() {
 		_renderState = nullptr;
 	}
 }
+
+//void ContextGL3x::draw(DrawState* drawState) {
+//	verifyDraw(drawState);
+//
+//};
 
 void ContextGL3x::syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
@@ -54,4 +61,30 @@ void ContextGL3x::enable(GLenum cap, bool enabled) {
 	} else {
 		glDisable(cap);
 	}
+};
+
+void ContextGL3x::verifyDraw(DrawState* drawState) {
+	if (drawState == nullptr) {
+		throw std::invalid_argument("argument drawState is null!");
+	}
+
+	if (drawState->getRenderState() == nullptr) {
+		throw  std::invalid_argument("drawState.renderState is null!");
+	}
+};
+
+void ContextGL3x::applyBeforeDraw(DrawState* drawState) {
+	applyRenderState(drawState->getRenderState());
+};
+
+void ContextGL3x::applyRenderState(RenderState* renderState) {
+	// applyPrimitiveRestart
+	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
+	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
+	if (primitiveRestart.getEnabled() != _primitiveRestart.getEnabled()) {
+		enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
+		_primitiveRestart.setEnabled(primitiveRestart.getEnabled());
+	}
+
+
 };

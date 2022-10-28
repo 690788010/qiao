@@ -17,6 +17,8 @@ namespace qiao {
 		// ∆Ù∂Ø‰÷»æ
 		void run();
 
+		Context& getContext();
+
 	private:
 		// glfw: whenever the window size changed (by OS or user resize) this callback function executes
 		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
