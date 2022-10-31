@@ -10,6 +10,6 @@ namespace qiao {
 		void (*render)();
 		void (*postRender)();
 		virtual void run() = 0;
-		virtual Context& getContext() = 0;
+		virtual Context* getContext() = 0;
 	};
 }

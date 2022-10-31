@@ -87,8 +87,8 @@ void GraphicsWindowGL3x::run() {
 	std::cout << "end loop...." << std::endl;
 };
 
-Context& GraphicsWindowGL3x::getContext() {
-	return *_context;
+ContextGL3x* GraphicsWindowGL3x::getContext() {
+	return _context;
 };
 
 void GraphicsWindowGL3x::framebuffer_size_callback(GLFWwindow* window, int width, int height) {

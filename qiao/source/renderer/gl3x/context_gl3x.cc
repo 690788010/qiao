@@ -19,10 +19,10 @@ ContextGL3x::~ContextGL3x() {
 	}
 }
 
-//void ContextGL3x::draw(DrawState* drawState) {
-//	verifyDraw(drawState);
-//
-//};
+void ContextGL3x::draw(DrawState* drawState) {
+	verifyDraw(drawState);
+
+};
 
 void ContextGL3x::syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();

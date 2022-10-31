@@ -17,7 +17,7 @@ namespace qiao {
 		// ∆Ù∂Ø‰÷»æ
 		void run();
 
-		Context& getContext();
+		virtual ContextGL3x* getContext();
 
 	private:
 		// glfw: whenever the window size changed (by OS or user resize) this callback function executes

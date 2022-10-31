@@ -4,6 +4,7 @@
 
 #include "../context.h"
 #include "../render_state/render_state.h"
+#include "../draw_state.h"
 
 namespace qiao {
 	class ContextGL3x : public Context {
@@ -11,7 +12,7 @@ namespace qiao {
 		ContextGL3x();
 		~ContextGL3x();
 
-		//void draw(DrawState* drawState);
+		void draw(DrawState* drawState);
 
 	private:
 		// Sync GL state with default render state.
