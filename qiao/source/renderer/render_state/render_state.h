@@ -32,11 +32,11 @@ namespace qiao {
 		ProgramPointSize getProgramPointSize();
 		void setProgramPointSize(ProgramPointSize val);
 
-		ScissorTest& getScissorTest();
-		void setScissorTest(ScissorTest val);
-
 		PolygonMode& getPolygonMode();
 		void setPolygonMode(PolygonMode val);
+
+		ScissorTest& getScissorTest();
+		void setScissorTest(ScissorTest val);
 
 		StencilTest& getStencilTest();
 		void setStencilTest(StencilTest val);
@@ -51,8 +51,8 @@ namespace qiao {
 		PrimitiveRestart primitiveRestart;
 		CullFace cullFace;
 		ProgramPointSize programPointSize;
-		ScissorTest scissorTest;
 		PolygonMode polygonMode;
+		ScissorTest scissorTest;
 		StencilTest stencilTest;
 		DepthTest depthTest;
 		Blending blending;

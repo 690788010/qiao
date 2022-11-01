@@ -16,13 +16,30 @@ int ScissorTest::getX() {
 	return x;
 };
 
+void ScissorTest::setX(int val) {
+	x = val;
+};
+
 int ScissorTest::getY() {
 	return y;
+};
+
+void ScissorTest::setY(int val) {
+	y = val;
 };
 
 int ScissorTest::getWidth() {
 	return width;
 };
+
+void ScissorTest::setWidth(int val) {
+	width = val;
+};
+
 int ScissorTest::getHeight() {
 	return height;
+};
+
+void ScissorTest::setHeight(int val) {
+	height = val;
 };
