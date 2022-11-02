@@ -72,6 +72,15 @@
     <ClInclude Include="source\core\color\color.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\shaders\shader_program.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\shaders\shader_program_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\shaders\shader_object_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -120,6 +129,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\clear_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\shaders\shader_program_gl3x.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\shaders\shader_object_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
