@@ -3,9 +3,15 @@
 
 #include "context_gl3x.h"
 
+
 using namespace qiao;
 
 ContextGL3x::ContextGL3x() {
+
+	_clearColor = Color::White();
+	_clearDepth = 1.0;
+	_clearStencil = 0;
+
 	_renderState = new RenderState();
 
 	// Sync GL state with default render state.
@@ -19,9 +25,72 @@ ContextGL3x::~ContextGL3x() {
 	}
 }
 
+void ContextGL3x::clear(ClearState* clearState) {
+	// apply ScissorTest
+	ScissorTest scissorTest = clearState->getScissorTest();
+	ScissorTest _scissorTest = _renderState->getScissorTest();
+	if (scissorTest.getWidth() < 0) {
+		throw std::invalid_argument("renderState.ScissorTest.Width must be greater than or equal to zero!");
+	}
+	if (scissorTest.getHeight() < 0) {
+		throw std::invalid_argument("renderState.ScissorTest.Height must be greater than or equal to zero!");
+	}
+	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
+		enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
+		_scissorTest.setEnabled(scissorTest.getEnabled());
+	}
+	if (scissorTest.getEnabled()) {
+		if (scissorTest.getX() != _scissorTest.getX() ||
+			scissorTest.getY() != _scissorTest.getY() ||
+			scissorTest.getWidth() != _scissorTest.getWidth() ||
+			scissorTest.getHeight() != _scissorTest.getHeight()) {
+			glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
+			_scissorTest.setX(scissorTest.getX());
+			_scissorTest.setY(scissorTest.getY());
+			_scissorTest.setWidth(scissorTest.getWidth());
+			_scissorTest.setHeight(scissorTest.getHeight());
+		}
+	}
+
+	// apply ColorMask
+	ColorMask colorMask = clearState->getColorMask();
+	ColorMask _colorMask = _renderState->getColorMask();
+	if (!colorMask.equals(_colorMask)) {
+		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
+		_renderState->setColorMask(colorMask);
+	}
+
+	// apply DepthMask
+	if (clearState->getDepthMask() != _renderState->getDepthTest().getDepthMask()) {
+		glDepthMask(clearState->getDepthMask());
+		_renderState->getDepthTest().setDepthMask(clearState->getDepthMask());
+	}
+
+	// apply clearColor
+	Color color = clearState->getColor();
+	if (!color.equals(_clearColor)) {
+		glClearColor(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+		_clearColor = color;
+	}
+
+	// apply clearDepth
+	if (clearState->getDepth() != _clearDepth) {
+		glClearDepth(clearState->getDepth());
+		_clearDepth = clearState->getDepth();
+	}
+
+	// apply clearStencil
+	if (clearState->getStencil() != _clearStencil) {
+		glClearStencil(clearState->getStencil());
+		_clearStencil = clearState->getStencil();
+	}
+
+	glClear(clearState->getClearMask());
+};
+
 void ContextGL3x::draw(DrawState* drawState) {
 	verifyDraw(drawState);
-
+	applyBeforeDraw(drawState);
 };
 
 void ContextGL3x::syncRenderState(RenderState* renderState) {
@@ -117,7 +186,7 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 
 	// apply ScissorTest
 	ScissorTest scissorTest = renderState->getScissorTest();
-	ScissorTest _scissorTest = renderState->getScissorTest();
+	ScissorTest _scissorTest = _renderState->getScissorTest();
 	if (scissorTest.getWidth() < 0) {
 		throw std::invalid_argument("renderState.ScissorTest.Width must be greater than or equal to zero!");
 	}
@@ -143,7 +212,7 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 
 	// apply StencilTest
 	StencilTest stencilTest = renderState->getStencilTest();
-	StencilTest _stencilTest = renderState->getStencilTest();
+	StencilTest _stencilTest = _renderState->getStencilTest();
 	if (stencilTest.getEnabled() != _stencilTest.getEnabled()) {
 		enable(GL_STENCIL_TEST, stencilTest.getEnabled());
 		_stencilTest.setEnabled(stencilTest.getEnabled());
@@ -151,7 +220,7 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 
 	// apply DepthTest
 	DepthTest depthTest = renderState->getDepthTest();
-	DepthTest _depthTest = renderState->getDepthTest();
+	DepthTest _depthTest = _renderState->getDepthTest();
 	if (depthTest.getEnabled() != _depthTest.getEnabled()) {
 		enable(GL_DEPTH_TEST, depthTest.getEnabled());
 		_depthTest.setEnabled(depthTest.getEnabled());
@@ -180,7 +249,7 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 
 	// apply Blending
 	Blending blending = renderState->getBlending();
-	Blending _blending = renderState->getBlending();
+	Blending _blending = _renderState->getBlending();
 	if (blending.getEnabled() != _blending.getEnabled()) {
 		enable(GL_BLEND, blending.getEnabled());
 		_blending.setEnabled(blending.getEnabled());
@@ -196,5 +265,13 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 			(blending.getAlphaEquation() != _blending.getAlphaEquation())) {
 			glBlendEquationSeparate(blending.getRgbEquation(), blending.getAlphaEquation());
 		}
+	}
+
+	// apply ColorMask
+	ColorMask colorMask = renderState->getColorMask();
+	ColorMask _colorMask = _renderState->getColorMask();
+	if (!colorMask.equals(_colorMask)) {
+		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
+		_renderState->setColorMask(colorMask);
 	}
 };

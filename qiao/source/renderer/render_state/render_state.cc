@@ -10,6 +10,7 @@ RenderState::RenderState() {
 	scissorTest = ScissorTest();
 	polygonMode = PolygonMode::FILL;
 	depthTest = DepthTest();
+	colorMask = ColorMask(true, true, true, true);
 }
 
 PrimitiveRestart& RenderState::getPrimitiveRestart() {
@@ -74,4 +75,11 @@ Blending& RenderState::getBlending() {
 
 void RenderState::setBlending(Blending val) {
 	blending = val;
+};
+
+ColorMask& RenderState::getColorMask() {
+	return colorMask;
+};
+void RenderState::setColorMask(ColorMask val) {
+	colorMask = val;
 };

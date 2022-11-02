@@ -63,6 +63,15 @@
     <ClInclude Include="source\renderer\draw_state.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\render_state\color_mask.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\clear_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\color\color.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -102,6 +111,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\draw_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\render_state\color_mask.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\color\color.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\clear_state.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

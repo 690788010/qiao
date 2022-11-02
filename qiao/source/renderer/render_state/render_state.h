@@ -6,6 +6,7 @@
 #include "stencil_test.h"
 #include "depth_test.h"
 #include "blending.h"
+#include "color_mask.h"
 
 namespace qiao {
 	enum ProgramPointSize {
@@ -47,6 +48,9 @@ namespace qiao {
 		Blending& getBlending();
 		void setBlending(Blending val);
 
+		ColorMask& getColorMask();
+		void setColorMask(ColorMask val);
+
 	private:
 		PrimitiveRestart primitiveRestart;
 		CullFace cullFace;
@@ -56,5 +60,6 @@ namespace qiao {
 		StencilTest stencilTest;
 		DepthTest depthTest;
 		Blending blending;
+		ColorMask colorMask;
 	};
 }

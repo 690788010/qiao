@@ -23,6 +23,7 @@ public:
 		// Wrapper wrapper;
 		_window->render = Wrapper::wrapper_func;
 
+		_clearState = new qiao::ClearState();
 		_drawState = new qiao::DrawState();
 	}
 
@@ -44,6 +45,7 @@ public:
 private:
 	void render() {
 		qiao::Context* context = _window->getContext();
+		context->clear(_clearState);
 		context->draw(_drawState);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -51,6 +53,7 @@ private:
 	}
 
 	qiao::GraphicsWindow* _window;
+	qiao::ClearState* _clearState;
 	qiao::DrawState* _drawState;
 };
 
