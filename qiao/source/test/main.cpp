@@ -24,6 +24,7 @@ public:
 		_window->render = Wrapper::wrapper_func;
 
 		_clearState = new qiao::ClearState();
+
 		_drawState = new qiao::DrawState();
 	}
 

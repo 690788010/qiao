@@ -31,9 +31,12 @@ namespace qiao {
 
 		void applyRenderState(RenderState* renderState);
 
+		void applyShaderProgram(DrawState* drawState);
+
 		Color _clearColor;
 		double _clearDepth;
 		int _clearStencil;
 		RenderState* _renderState;
+		ShaderProgram* _boundShaderProgram;
 	};
 }

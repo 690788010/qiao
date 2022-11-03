@@ -2,6 +2,7 @@
 #include <stdexcept>
 
 #include "context_gl3x.h"
+#include "shaders/shader_program_gl3x.h"
 
 
 using namespace qiao;
@@ -143,6 +144,8 @@ void ContextGL3x::verifyDraw(DrawState* drawState) {
 
 void ContextGL3x::applyBeforeDraw(DrawState* drawState) {
 	applyRenderState(drawState->getRenderState());
+	// ApplyVertexArray
+	applyShaderProgram(drawState);
 };
 
 void ContextGL3x::applyRenderState(RenderState* renderState) {
@@ -273,5 +276,13 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 	if (!colorMask.equals(_colorMask)) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
 		_renderState->setColorMask(colorMask);
+	}
+};
+
+void ContextGL3x::applyShaderProgram(DrawState* drawState) {
+	ShaderProgram* shaderProgram = drawState->getShaderProgram();
+	if (shaderProgram != _boundShaderProgram) {
+		shaderProgram->use();
+		_boundShaderProgram = shaderProgram;
 	}
 };
