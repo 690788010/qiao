@@ -171,6 +171,7 @@
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\shader_object_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\shader_program_gl3x.cc" />
+    <ClCompile Include="source\renderer\graphics_window.cc" />
     <ClCompile Include="source\renderer\render_state\blending.cc" />
     <ClCompile Include="source\renderer\render_state\color_mask.cc" />
     <ClCompile Include="source\renderer\render_state\cull_face.cc" />
@@ -179,6 +180,7 @@
     <ClCompile Include="source\renderer\render_state\render_state.cc" />
     <ClCompile Include="source\renderer\render_state\scissor_test.cc" />
     <ClCompile Include="source\renderer\render_state\stencil_test.cc" />
+    <ClCompile Include="source\renderer\shaders\shader_program.cc" />
     <ClCompile Include="source\test\main.cpp" />
     <ClCompile Include="third_party\glad\source\glad.c" />
   </ItemGroup>

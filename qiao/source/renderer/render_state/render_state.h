@@ -23,6 +23,7 @@ namespace qiao {
 	class RenderState {
 	public:
 		RenderState();
+		~RenderState();
 
 		PrimitiveRestart& getPrimitiveRestart();
 		void setPrimitiveRestart(PrimitiveRestart val);

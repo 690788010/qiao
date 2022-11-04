@@ -12,7 +12,7 @@ namespace qiao {
 	class GraphicsWindowGL3x : public GraphicsWindow {
 	public:
 		GraphicsWindowGL3x(int width, int height, std::string title, bool isFullScreen = false);
-		~GraphicsWindowGL3x();
+		virtual ~GraphicsWindowGL3x();
 
 		// ∆Ù∂Ø‰÷»æ
 		void run();

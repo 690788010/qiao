@@ -8,6 +8,7 @@ using namespace qiao;
 ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) : _vertexShader(ShaderType::VERTEX_SHADER, vs), 
 	_fragmentShader(ShaderType::FRAGMENT_SHADER, fs) {
 
+	std::cout << "ShaderProgramGL3x" << std::endl;
 	_program = glCreateProgram();
 
 	glAttachShader(_program, _vertexShader.handle());
@@ -24,10 +25,10 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) : _vertexSh
 };
 
 ShaderProgramGL3x::~ShaderProgramGL3x() {
+	std::cout << "~ShaderProgramGL3x" << std::endl;
 	if (_program != 0) {
 		glDeleteProgram(_program);
 		_program = 0;
-		std::cout << "~ShaderProgramGL3x" << std::endl;
 	}
 }
 

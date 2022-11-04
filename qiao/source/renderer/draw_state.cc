@@ -5,15 +5,18 @@
 using namespace qiao;
 
 DrawState::DrawState() {
+	std::cout << "DrawState()" << std::endl;
 	_renderState = new RenderState();
 }
 
 DrawState::DrawState(RenderState* renderState, ShaderProgram* shaderProgram) {
+	std::cout << "DrawState(RenderState* renderState, ShaderProgram* shaderProgram)" << std::endl;
 	_renderState = renderState;
 	_shaderProgram = shaderProgram;
 };
 
 DrawState::~DrawState() {
+	std::cout << "~DrawState" << std::endl;
 	if (_renderState != nullptr) {
 		delete _renderState;
 		_renderState = nullptr;

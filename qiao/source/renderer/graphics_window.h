@@ -5,6 +5,8 @@
 namespace qiao {
 	class GraphicsWindow {
 	public:
+		virtual ~GraphicsWindow();
+
 		void (*resize)();
 		void (*preRender)();
 		void (*render)();

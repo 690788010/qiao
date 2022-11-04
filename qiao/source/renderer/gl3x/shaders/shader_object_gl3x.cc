@@ -8,6 +8,7 @@ using namespace qiao;
 ShaderObjectGL3x::ShaderObjectGL3x() {}
 
 ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
+	std::cout << "ShaderObjectGL3x" << std::endl;
 	std::string builtinConstants = 
 						"#version 330 core\n";
 	builtinConstants += "#define og_positionVertexLocation          " + std::to_string(VertexLocations::POSITION);
@@ -18,7 +19,6 @@ ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
 	builtinConstants += ";\n";
 	builtinConstants += "#define og_colorVertexLocation             " + std::to_string(VertexLocations::COLOR);
 	builtinConstants += ";\n";
-	std::cout << builtinConstants << std::endl;
 
 	std::string builtinFunctions = "";
 
@@ -40,10 +40,11 @@ ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
 };
 
 ShaderObjectGL3x::~ShaderObjectGL3x() {
+	std::cout <<"~ShaderObjectGL3x" << std::endl;
 	if (_shader != 0) {
 		glDeleteShader(_shader);
 		_shader = 0;
-		std::cout << "~ShaderObjectGL3x" << std::endl;
+		std::cout << "glDeleteShader(_shader)" << std::endl;
 	}
 }
 

@@ -8,7 +8,7 @@ namespace qiao {
 	class ShaderProgramGL3x : public ShaderProgram {
 	public:
 		ShaderProgramGL3x(std::string vs, std::string fs);
-		~ShaderProgramGL3x();
+		virtual ~ShaderProgramGL3x();
 
 		virtual void use();
 

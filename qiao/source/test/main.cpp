@@ -20,12 +20,14 @@ std::function<void()> Wrapper::broker_func = nullptr;
 class Test {
 public:
 	Test() {
+
 		_window = qiao::Device::createWindow(800, 600, "qiao");
 		Wrapper::broker_func = std::bind(&Test::render, this);
 		// Wrapper wrapper;
 		_window->render = Wrapper::wrapper_func;
 
 		_clearState = new qiao::ClearState();
+
 		std::string vs =
 			  "in vec4 position;";
 		vs += "\nvoid main() {";
@@ -35,7 +37,9 @@ public:
 		fs += "\nvoid main() {";
 		fs += "\n	fragColor = vec4(0.0, 0.0, 0.0, 1.0);";
 		fs += "\n}";
+
 		qiao::RenderState* rs = new qiao::RenderState();
+		
 		qiao::ShaderProgramGL3x* sp = new qiao::ShaderProgramGL3x(vs, fs);
 		_drawState = new qiao::DrawState(rs, sp);
 	}

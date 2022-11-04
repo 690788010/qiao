@@ -1,13 +1,12 @@
 
 #include <iostream>
 #include <stdexcept>
-
 #include "graphics_window_gl3x.h"
-
 
 using namespace qiao;
 
 GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title, bool isFullScreen) {
+	std::cout << "GraphicsWindowGL3x(int width, int height, std::string title, bool isFullScreen)" << std::endl;
 	if (width < 0) {
 		throw std::invalid_argument("argument width can't be less than zero!");
 	}
@@ -47,13 +46,12 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title,
 };
 
 GraphicsWindowGL3x::~GraphicsWindowGL3x() {
+	std::cout << "~GraphicsWindowGL3x()" << std::endl;
 	if (_context != nullptr) {
-		std::cout << "clear context" << std::endl;
 		delete _context;
 		_context = nullptr;
 	}
 	if (_window != nullptr) {
-		std::cout << "clear window" << std::endl;
 		glfwTerminate();
 		_window = nullptr;
 	}

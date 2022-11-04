@@ -1,9 +1,11 @@
 
+#include <iostream>
 #include "render_state.h"
 
 using namespace qiao;
 
 RenderState::RenderState() {
+	std::cout << "RenderState()" << std::endl;
 	primitiveRestart = PrimitiveRestart();
 	cullFace = CullFace();
 	programPointSize = ProgramPointSize::Disabled;
@@ -12,6 +14,10 @@ RenderState::RenderState() {
 	depthTest = DepthTest();
 	colorMask = ColorMask(true, true, true, true);
 }
+
+RenderState::~RenderState() {
+	std::cout << "~RenderState" << std::endl;
+};
 
 PrimitiveRestart& RenderState::getPrimitiveRestart() {
 	return primitiveRestart;

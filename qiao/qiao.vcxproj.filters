@@ -137,6 +137,12 @@
     <ClCompile Include="source\renderer\gl3x\shaders\shader_object_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="source\renderer\graphics_window.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\shader_program.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third_party\glfw\lib\glfw3.lib" />

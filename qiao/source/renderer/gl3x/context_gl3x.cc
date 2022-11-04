@@ -1,6 +1,6 @@
 
+#include <iostream>
 #include <stdexcept>
-
 #include "context_gl3x.h"
 #include "shaders/shader_program_gl3x.h"
 
@@ -8,6 +8,7 @@
 using namespace qiao;
 
 ContextGL3x::ContextGL3x() {
+	std::cout << "ContextGL3x()" << std::endl;
 
 	_clearColor = Color::White();
 	_clearDepth = 1.0;
@@ -20,6 +21,7 @@ ContextGL3x::ContextGL3x() {
 }
 
 ContextGL3x::~ContextGL3x() {
+	std::cout << "~ContextGL3x()" << std::endl;
 	if (_renderState != nullptr) {
 		delete _renderState;
 		_renderState = nullptr;
