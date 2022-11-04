@@ -9,11 +9,16 @@ ShaderObjectGL3x::ShaderObjectGL3x() {}
 
 ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
 	std::string builtinConstants = 
-						"#version 330";
-	builtinConstants += "\n#define og_positionVertexLocation          " + VertexLocations::POSITION;
-	builtinConstants += "\n#define og_normalVertexLocation            " + VertexLocations::NORMAL;
-	builtinConstants += "\n#define og_textureCoordinateVertexLocation " + VertexLocations::TEXTURECOORDINATE;
-	builtinConstants += "\n#define og_colorVertexLocation             " + VertexLocations::COLOR;
+						"#version 330 core\n";
+	builtinConstants += "#define og_positionVertexLocation          " + std::to_string(VertexLocations::POSITION);
+	builtinConstants += ";\n";
+	builtinConstants += "#define og_normalVertexLocation            " + std::to_string(VertexLocations::NORMAL);
+	builtinConstants += ";\n";
+	builtinConstants += "#define og_textureCoordinateVertexLocation " + std::to_string(VertexLocations::TEXTURECOORDINATE);
+	builtinConstants += ";\n";
+	builtinConstants += "#define og_colorVertexLocation             " + std::to_string(VertexLocations::COLOR);
+	builtinConstants += ";\n";
+	std::cout << builtinConstants << std::endl;
 
 	std::string builtinFunctions = "";
 
@@ -29,6 +34,7 @@ ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
 	glGetShaderiv(_shader, GL_COMPILE_STATUS, &success);
 	if (!success) {
 		glGetShaderInfoLog(_shader, 512, NULL, infoLog);
+		std::cout << std::string(infoLog) << std::endl;
 		throw std::invalid_argument("Could not compile shader object. Compile Log: \n" + std::string(infoLog));
 	}
 };

@@ -5,9 +5,9 @@
 
 using namespace qiao;
 
-ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
-	_vertexShader = ShaderObjectGL3x(ShaderType::VERTEX_SHADER, vs);
-	_fragmentShader = ShaderObjectGL3x(ShaderType::FRAGMENT_SHADER, fs);
+ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) : _vertexShader(ShaderType::VERTEX_SHADER, vs), 
+	_fragmentShader(ShaderType::FRAGMENT_SHADER, fs) {
+
 	_program = glCreateProgram();
 
 	glAttachShader(_program, _vertexShader.handle());
@@ -18,6 +18,7 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
 	glGetProgramiv(_program, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(_program, 512, NULL, infoLog);
+		std::cout << std::string(infoLog) << std::endl;
 		throw std::invalid_argument("Could not link shader program.  Link Log:  \n" + std::string(infoLog));
 	}
 };

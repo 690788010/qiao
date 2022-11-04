@@ -140,6 +140,10 @@ void ContextGL3x::verifyDraw(DrawState* drawState) {
 	if (drawState->getRenderState() == nullptr) {
 		throw std::invalid_argument("drawState.renderState is null!");
 	}
+
+	if (drawState->getShaderProgram() == nullptr) {
+		throw std::invalid_argument("drawState.shaderProgram is null!");
+	}
 };
 
 void ContextGL3x::applyBeforeDraw(DrawState* drawState) {

@@ -5,7 +5,7 @@
 using namespace qiao;
 
 DrawState::DrawState() {
-	
+	_renderState = new RenderState();
 }
 
 DrawState::DrawState(RenderState* renderState, ShaderProgram* shaderProgram) {
