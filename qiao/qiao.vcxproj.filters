@@ -81,6 +81,12 @@
     <ClInclude Include="source\renderer\gl3x\shaders\shader_object_gl3x.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\shaders\shader_vertex_attribute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\shader_vertex_attribute_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -141,6 +147,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\shaders\shader_program.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\shader_vertex_attribute.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\shader_vertex_attribute_collection.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

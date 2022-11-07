@@ -44,7 +44,6 @@ ShaderObjectGL3x::~ShaderObjectGL3x() {
 	if (_shader != 0) {
 		glDeleteShader(_shader);
 		_shader = 0;
-		std::cout << "glDeleteShader(_shader)" << std::endl;
 	}
 }
 
