@@ -25,6 +25,9 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
 		throw std::invalid_argument("Could not link shader program.  Link Log:  \n" + std::string(infoLog));
 	}
 
+	// 用于查找片元着色器out变量的索引位置
+	_fragmentOutputs = FragmentOutputsGL3x(_program);
+	// 为顶点着色器里的每个激活的attribute变量构建元数据
 	_vertexAttributes = findVertexAttributes(_program);
 };
 
@@ -44,6 +47,10 @@ ShaderProgramGL3x::~ShaderProgramGL3x() {
 void ShaderProgramGL3x::use() {
 	glUseProgram(_program);
 }
+
+ShaderVertexAttributeCollection ShaderProgramGL3x::vertexAttributes() {
+	return _vertexAttributes;
+};
 
 ShaderVertexAttributeCollection ShaderProgramGL3x::findVertexAttributes(GLuint program) {
 	int numberOfAttributes;
