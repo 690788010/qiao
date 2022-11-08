@@ -31,7 +31,6 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
 	// 为顶点着色器里的每个激活的attribute变量构建元数据
 	_vertexAttributes = findVertexAttributes(_program);
 	_uniforms = findUniforms(_program);
-	std::cout << _dirtyUniforms.size() << std::endl;
 };
 
 ShaderProgramGL3x::~ShaderProgramGL3x() {
@@ -51,14 +50,17 @@ void ShaderProgramGL3x::use() {
 	glUseProgram(_program);
 }
 
-//void ShaderProgramGL3x::clean(Context* context, DrawState* drawState) {
-//	//SetDrawAutomaticUniforms(context, drawState, sceneState);
-//	/*std::list<ICleanable*>::iterator it = _dirtyUniforms.begin();
-//	while (it != _dirtyUniforms.end()) {
-//		(*it)->clean();
-//	}
-//	_dirtyUniforms.clear();*/
-//};
+void ShaderProgramGL3x::clean(Context* context, DrawState* drawState) {
+	//SetDrawAutomaticUniforms(context, drawState, sceneState);
+	
+	// 使用GL调用将Uniform值传送到GPU
+	std::list<ICleanable*>::iterator it = _dirtyUniforms.begin();
+	while (it != _dirtyUniforms.end()) {
+		(*it)->clean();
+		it++;
+	}
+	_dirtyUniforms.clear();
+};
 
 ShaderVertexAttributeCollection ShaderProgramGL3x::vertexAttributes() {
 	return _vertexAttributes;
@@ -128,7 +130,7 @@ UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
 	return uniforms;
 };
 
-UniformBase* ShaderProgramGL3x::createUniform(std::string name, int location, GLenum type) {
+Uniform* ShaderProgramGL3x::createUniform(std::string name, int location, GLenum type) {
 	switch (type) {
 		case GL_FLOAT:
 			return new UniformFloatGL3x(name, location, type, this);

@@ -1,3 +1,5 @@
+
+#include <iostream>
 #include "uniform_float_gl3x.h"
 
 using namespace qiao;
@@ -7,6 +9,7 @@ UniformFloatGL3x::UniformFloatGL3x(std::string name, int location, unsigned int 
 {
 	_value = 0.0;
 	_dirty = true;
+	_observer->notifyDirty(this);
 };
 
 std::string UniformFloatGL3x::getName() {

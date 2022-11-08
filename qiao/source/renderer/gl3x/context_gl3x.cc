@@ -291,5 +291,5 @@ void ContextGL3x::applyShaderProgram(DrawState* drawState) {
 		shaderProgram->use();
 		_boundShaderProgram = shaderProgram;
 	}
-	//_boundShaderProgram->clean(this, drawState);
+	_boundShaderProgram->clean(this, drawState);
 };

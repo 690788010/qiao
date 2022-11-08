@@ -4,8 +4,5 @@
 #include "shader_vertex_attribute.h"
 
 namespace qiao {
-	class ShaderVertexAttributeCollection: public std::vector<ShaderVertexAttribute*> {
-	public:
-		
-	};
+	class ShaderVertexAttributeCollection: public std::vector<ShaderVertexAttribute*> {};
 }

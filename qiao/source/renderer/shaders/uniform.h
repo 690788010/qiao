@@ -3,13 +3,13 @@
 #include <string>
 
 namespace qiao {
-	class UniformBase {
+	class Uniform {
 		virtual std::string getName() = 0;
 		virtual unsigned int getType() = 0;
 	};
 
 	template <typename T>
-	class Uniform :public UniformBase {
+	class UniformGeneric : public Uniform {
 	public:
 		virtual int getLocation() = 0;
 		virtual T getValue() = 0;

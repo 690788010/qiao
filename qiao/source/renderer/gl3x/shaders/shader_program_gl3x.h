@@ -16,7 +16,7 @@ namespace qiao {
 
 		virtual void use();
 
-		//virtual void clean(Context* context, DrawState* drawState);
+		virtual void clean(Context* context, DrawState* drawState);
 
 		virtual ShaderVertexAttributeCollection vertexAttributes();
 
@@ -29,7 +29,7 @@ namespace qiao {
 		// 为顶点着色器里的每个激活的attribute变量构建元数据
 		ShaderVertexAttributeCollection findVertexAttributes(GLuint program);
 		UniformCollection findUniforms(GLuint program);
-		UniformBase* createUniform(std::string name, int location, GLenum type);
+		Uniform* createUniform(std::string name, int location, GLenum type);
 
 		GLuint _program;
 		FragmentOutputsGL3x _fragmentOutputs;

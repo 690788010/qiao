@@ -6,7 +6,7 @@
 #include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {
-	class UniformFloatGL3x : public Uniform<float>, public ICleanable {
+	class UniformFloatGL3x : public UniformGeneric<float>, public ICleanable {
 	public:
 		UniformFloatGL3x(std::string name, int location, unsigned int type, ICleanableObserver* observer);
 

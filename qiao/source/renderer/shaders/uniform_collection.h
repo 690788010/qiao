@@ -4,5 +4,5 @@
 #include "uniform.h"
 
 namespace qiao {
-	class UniformCollection : public std::vector<UniformBase*> { };
+	class UniformCollection : public std::vector<Uniform*> { };
 }
