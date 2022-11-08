@@ -93,6 +93,21 @@
     <ClInclude Include="source\renderer\shaders\fragment_outputs.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\shaders\uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\shaders\uniform_float_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\i_cleanable_observer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\i_cleanable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\uniform_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -162,6 +177,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\gl3x\shaders\fragment_outputs_gl3x.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\shaders\uniform_float_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

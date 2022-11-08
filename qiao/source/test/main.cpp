@@ -34,8 +34,9 @@ public:
 		vs += "\n	gl_Position = position;";
 		vs += "\n}";
 		std::string fs = "out vec4 fragColor;";
+		fs += "\nuniform float color;";
 		fs += "\nvoid main() {";
-		fs += "\n	fragColor = vec4(0.0, 0.0, 0.0, 1.0);";
+		fs += "\n	fragColor = vec4(color, 0.0, 0.0, 1.0);";
 		fs += "\n}";
 
 		qiao::RenderState* rs = new qiao::RenderState();

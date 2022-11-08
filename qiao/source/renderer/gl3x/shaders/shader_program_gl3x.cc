@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <string>
 #include "shader_program_gl3x.h"
+#include "uniform_float_gl3x.h"
 
 using namespace qiao;
 
@@ -29,6 +30,8 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
 	_fragmentOutputs = FragmentOutputsGL3x(_program);
 	// 为顶点着色器里的每个激活的attribute变量构建元数据
 	_vertexAttributes = findVertexAttributes(_program);
+	_uniforms = findUniforms(_program);
+	std::cout << _dirtyUniforms.size() << std::endl;
 };
 
 ShaderProgramGL3x::~ShaderProgramGL3x() {
@@ -48,8 +51,25 @@ void ShaderProgramGL3x::use() {
 	glUseProgram(_program);
 }
 
+//void ShaderProgramGL3x::clean(Context* context, DrawState* drawState) {
+//	//SetDrawAutomaticUniforms(context, drawState, sceneState);
+//	/*std::list<ICleanable*>::iterator it = _dirtyUniforms.begin();
+//	while (it != _dirtyUniforms.end()) {
+//		(*it)->clean();
+//	}
+//	_dirtyUniforms.clear();*/
+//};
+
 ShaderVertexAttributeCollection ShaderProgramGL3x::vertexAttributes() {
 	return _vertexAttributes;
+};
+
+UniformCollection ShaderProgramGL3x::uniforms() {
+	return _uniforms;
+};
+
+void ShaderProgramGL3x::notifyDirty(ICleanable* val) {
+	_dirtyUniforms.push_back(val);
 };
 
 ShaderVertexAttributeCollection ShaderProgramGL3x::findVertexAttributes(GLuint program) {
@@ -62,17 +82,56 @@ ShaderVertexAttributeCollection ShaderProgramGL3x::findVertexAttributes(GLuint p
 	ShaderVertexAttributeCollection vertexAttributes;
 	for (int i = 0; i < numberOfAttributes; i++) {
 		int attributeNameLength;
-		int attributeLength;
+		int attributeSize;
 		GLenum attributeType;
 		char* attributeName = new char[attributeNameMaxLength];
-		glGetActiveAttrib(program, i, attributeNameMaxLength, &attributeNameLength, &attributeLength, &attributeType, attributeName);
+		glGetActiveAttrib(program, i, attributeNameMaxLength, &attributeNameLength, 
+			&attributeSize, &attributeType, attributeName);
 
 		if (strcmp(attributeName, "gl_") == 0) {
 			continue;
 		};
 
 		int attributeLocation = glGetAttribLocation(program, attributeName);
-		vertexAttributes.push_back(new ShaderVertexAttribute(attributeName, attributeLocation, attributeType, attributeLength));
+		vertexAttributes.push_back(new ShaderVertexAttribute(attributeName, attributeLocation, 
+			attributeType, attributeSize));
 	}
 	return vertexAttributes;
+};
+
+UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
+	// 获取激活的Uniform变量的个数
+	int numberOfUniforms;
+	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &numberOfUniforms);
+	
+	// 获取激活的Uniform变量的变量名的最大长度
+	int uniformNameMaxLength;
+	glGetProgramiv(program, GL_ACTIVE_UNIFORM_MAX_LENGTH, &uniformNameMaxLength);
+	
+	UniformCollection uniforms;
+	for (int i = 0; i < numberOfUniforms; i++) {
+		int uniformNameLength;		// uniform变量名的长度
+		int uniformSize;			// 
+		GLenum uniformType;			// uniform变量的类型
+		char* uniformName = new char[uniformNameMaxLength];
+		glGetActiveUniform(program, i, uniformNameMaxLength, &uniformNameLength,
+			&uniformSize, &uniformType, uniformName);
+
+		if (strcmp(uniformName, "gl_") == 0) {
+			continue;
+		}
+
+		int uniformLocation = glGetUniformLocation(program, uniformName);
+		uniforms.push_back(createUniform(uniformName, uniformLocation, uniformType));
+	}
+
+	return uniforms;
+};
+
+UniformBase* ShaderProgramGL3x::createUniform(std::string name, int location, GLenum type) {
+	switch (type) {
+		case GL_FLOAT:
+			return new UniformFloatGL3x(name, location, type, this);
+	}
+	throw std::invalid_argument("An implementation for argument uniform type does not exist.");
 };

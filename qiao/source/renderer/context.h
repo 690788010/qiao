@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "./clear_state.h"
 #include "./draw_state.h"
 
