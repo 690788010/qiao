@@ -120,6 +120,33 @@
     <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\link_auto_uniform_collection.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\shaders\link_auto_uniforms\link_auto_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\link_auto_uniforms\link_auto_uniform_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\link_auto_uniforms\texture_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_factory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform_factory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_factory_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -191,10 +218,16 @@
     <ClCompile Include="source\renderer\gl3x\shaders\uniform_float_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\shaders\linkAutomaticUniforms\texture_uniform.cc">
+    <ClCompile Include="source\renderer\gl3x\shaders\uniform_int_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\shaders\uniform_int_gl3x.cc">
+    <ClCompile Include="source\renderer\shaders\link_auto_uniforms\texture_uniform.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform_factory.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

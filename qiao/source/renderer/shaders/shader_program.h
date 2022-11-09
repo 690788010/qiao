@@ -2,8 +2,10 @@
 
 #include "shader_vertex_attribute_collection.h"
 #include "uniform_collection.h"
-#include "./linkAutomaticUniforms/link_auto_uniform_collection.h"
-#include "./linkAutomaticUniforms/texture_uniform.h"
+#include "./link_auto_uniforms/link_auto_uniform_collection.h"
+#include "./link_auto_uniforms/texture_uniform.h"
+#include "./draw_auto_uniforms/draw_auto_uniform_factory_collection.h"
+#include "./draw_auto_uniforms/draw_auto_uniform_collection.h"
 
 namespace qiao {
 	class DrawState;
@@ -24,5 +26,7 @@ namespace qiao {
 
 	private:
 		LinkAutoUniformCollection _linkAutoUniforms;
+		DrawAutoUniformFactoryCollection _drawAutoUniformFactories;
+		DrawAutoUniformCollection _drawAutoUniforms;
 	};
 }
