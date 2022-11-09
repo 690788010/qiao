@@ -3,7 +3,6 @@
 #include <stdexcept>
 #include <string>
 #include "shader_program_gl3x.h"
-#include "uniform_float_gl3x.h"
 
 using namespace qiao;
 
@@ -31,6 +30,9 @@ ShaderProgramGL3x::ShaderProgramGL3x(std::string vs, std::string fs) {
 	// 为顶点着色器里的每个激活的attribute变量构建元数据
 	_vertexAttributes = findVertexAttributes(_program);
 	_uniforms = findUniforms(_program);
+
+	// 初始化AutoUniform
+	initAutoUniforms(_uniforms);
 };
 
 ShaderProgramGL3x::~ShaderProgramGL3x() {
@@ -43,6 +45,13 @@ ShaderProgramGL3x::~ShaderProgramGL3x() {
 	// 释放vector内各个元素的资源
 	for (size_t i = 0; i < _vertexAttributes.size(); i++) {
 		delete _vertexAttributes[i];
+	}
+
+	// 释放UniformCollection内各个元素的资源
+	std::map<std::string, Uniform*>::iterator it = _uniforms.begin();
+	while (it != _uniforms.end()) {
+		delete it->second;
+		it++;
 	}
 }
 
@@ -66,7 +75,7 @@ ShaderVertexAttributeCollection ShaderProgramGL3x::vertexAttributes() {
 	return _vertexAttributes;
 };
 
-UniformCollection ShaderProgramGL3x::uniforms() {
+UniformCollection& ShaderProgramGL3x::uniforms() {
 	return _uniforms;
 };
 
@@ -124,7 +133,7 @@ UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
 		}
 
 		int uniformLocation = glGetUniformLocation(program, uniformName);
-		uniforms.push_back(createUniform(uniformName, uniformLocation, uniformType));
+		uniforms.insert(std::pair<std::string, Uniform*>(uniformName, createUniform(uniformName, uniformLocation, uniformType)));
 	}
 
 	return uniforms;
@@ -132,6 +141,8 @@ UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
 
 Uniform* ShaderProgramGL3x::createUniform(std::string name, int location, GLenum type) {
 	switch (type) {
+		case GL_INT:
+			return new UniformIntGL3x(name, location, type, this);
 		case GL_FLOAT:
 			return new UniformFloatGL3x(name, location, type, this);
 	}

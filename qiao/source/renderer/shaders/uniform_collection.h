@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
+#include <map>
 #include "uniform.h"
 
 namespace qiao {
-	class UniformCollection : public std::vector<Uniform*> { };
+	class UniformCollection : public std::map<std::string, Uniform*> { };
 }

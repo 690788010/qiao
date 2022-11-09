@@ -108,6 +108,18 @@
     <ClInclude Include="source\renderer\shaders\uniform_collection.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\link_auto_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\texture_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\shaders\uniform_int_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\link_auto_uniform_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -177,6 +189,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\gl3x\shaders\uniform_float_gl3x.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\linkAutomaticUniforms\texture_uniform.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\shaders\uniform_int_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -152,6 +152,7 @@
     <ClInclude Include="source\renderer\gl3x\shaders\shader_object_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\shaders\shader_program_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\shaders\uniform_float_gl3x.h" />
+    <ClInclude Include="source\renderer\gl3x\shaders\uniform_int_gl3x.h" />
     <ClInclude Include="source\renderer\graphics_window.h" />
     <ClInclude Include="source\renderer\render_state\blending.h" />
     <ClInclude Include="source\renderer\render_state\color_mask.h" />
@@ -162,6 +163,9 @@
     <ClInclude Include="source\renderer\render_state\scissor_test.h" />
     <ClInclude Include="source\renderer\render_state\stencil_test.h" />
     <ClInclude Include="source\renderer\shaders\fragment_outputs.h" />
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\link_auto_uniform.h" />
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\link_auto_uniform_collection.h" />
+    <ClInclude Include="source\renderer\shaders\linkAutomaticUniforms\texture_uniform.h" />
     <ClInclude Include="source\renderer\shaders\shader_program.h" />
     <ClInclude Include="source\renderer\shaders\shader_vertex_attribute.h" />
     <ClInclude Include="source\renderer\shaders\shader_vertex_attribute_collection.h" />
@@ -182,6 +186,7 @@
     <ClCompile Include="source\renderer\gl3x\shaders\shader_object_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\shader_program_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\uniform_float_gl3x.cc" />
+    <ClCompile Include="source\renderer\gl3x\shaders\uniform_int_gl3x.cc" />
     <ClCompile Include="source\renderer\graphics_window.cc" />
     <ClCompile Include="source\renderer\render_state\blending.cc" />
     <ClCompile Include="source\renderer\render_state\color_mask.cc" />
@@ -191,6 +196,7 @@
     <ClCompile Include="source\renderer\render_state\render_state.cc" />
     <ClCompile Include="source\renderer\render_state\scissor_test.cc" />
     <ClCompile Include="source\renderer\render_state\stencil_test.cc" />
+    <ClCompile Include="source\renderer\shaders\linkAutomaticUniforms\texture_uniform.cc" />
     <ClCompile Include="source\renderer\shaders\shader_program.cc" />
     <ClCompile Include="source\renderer\shaders\shader_vertex_attribute.cc" />
     <ClCompile Include="source\test\main.cpp" />

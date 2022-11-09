@@ -42,7 +42,6 @@ GraphicsWindowGL3x::GraphicsWindowGL3x(int width, int height, std::string title,
 	}
 
 	_context = new ContextGL3x();
-
 };
 
 GraphicsWindowGL3x::~GraphicsWindowGL3x() {

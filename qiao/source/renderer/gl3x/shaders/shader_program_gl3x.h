@@ -7,6 +7,8 @@
 #include "../../shaders/shader_vertex_attribute_collection.h"
 #include "fragment_outputs_gl3x.h"
 #include "../i_cleanable_observer.h"
+#include "uniform_float_gl3x.h"
+#include "uniform_int_gl3x.h"
 
 namespace qiao {
 	class ShaderProgramGL3x : public ShaderProgram, public ICleanableObserver {
@@ -20,7 +22,7 @@ namespace qiao {
 
 		virtual ShaderVertexAttributeCollection vertexAttributes();
 
-		virtual UniformCollection uniforms();
+		virtual UniformCollection& uniforms();
 
 		// 将实现了ICleanable接口的类对象加入_dirtyUniforms中
 		virtual void notifyDirty(ICleanable* value);
