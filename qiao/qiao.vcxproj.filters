@@ -147,15 +147,21 @@
     <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_factory_collection.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\core\vector\vector4d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\vector\vector3d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\scene\camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="third_party\glad\source\glad.c">
@@ -228,6 +234,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform_factory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\vector\vector4d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\vector\vector3d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\core_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\scene\camera.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
