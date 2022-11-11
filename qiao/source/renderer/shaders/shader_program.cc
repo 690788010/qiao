@@ -42,8 +42,15 @@ void ShaderProgram::initAutoUniforms(UniformCollection uniforms) {
 			_linkAutoUniforms[name]->set(uniform);
 		}
 		else if (_drawAutoUniformFactories.find(name) != _drawAutoUniformFactories.end()) {
+			// 为Uniform创建对应的DrawAutoUniform并保存在DrawAutoUniformCollection中
 			DrawAutoUniform* drawAutoUniform = _drawAutoUniformFactories[name]->create(uniform);
 			_drawAutoUniforms.push_back(drawAutoUniform);
 		}
+	}
+};
+
+void ShaderProgram::setDrawAutoUniforms(Context* context, DrawState* drawState, SceneState* sceneState) {
+	for (auto it = _drawAutoUniforms.begin(); it != _drawAutoUniforms.end(); it++) {
+		(*it)->set(context, drawState, sceneState);
 	}
 };

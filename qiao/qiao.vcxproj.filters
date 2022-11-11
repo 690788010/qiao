@@ -156,6 +156,9 @@
     <ClInclude Include="source\renderer\scene\camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\scene\scene_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -242,10 +245,13 @@
     <ClCompile Include="source\core\vector\vector3d.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\core_test.cc">
+    <ClCompile Include="source\renderer\scene\camera.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\scene\camera.cc">
+    <ClCompile Include="source\test\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\scene\scene_state.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -40,8 +40,9 @@ public:
 		fs += "\n}";
 
 		qiao::RenderState* rs = new qiao::RenderState();
-		
 		qiao::ShaderProgramGL3x* sp = new qiao::ShaderProgramGL3x(vs, fs);
+		_sceneState = new qiao::SceneState();
+
 		_drawState = new qiao::DrawState(rs, sp);
 	}
 
@@ -64,7 +65,7 @@ private:
 	void render() {
 		qiao::Context* context = _window->getContext();
 		context->clear(_clearState);
-		context->draw(_drawState);
+		context->draw(_drawState, _sceneState);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -73,6 +74,7 @@ private:
 	qiao::GraphicsWindow* _window;
 	qiao::ClearState* _clearState;
 	qiao::DrawState* _drawState;
+	qiao::SceneState* _sceneState;
 };
 
 int main() {

@@ -8,7 +8,7 @@ namespace qiao {
 	public:
 		ModelMatrixUniform(Uniform* uniform);
 
-		virtual void set(Context* context, DrawState* drawState);
+		virtual void set(Context* context, DrawState* drawState, SceneState* sceneState);
 
 	private:
 		Uniform* _uniform;

@@ -165,6 +165,7 @@
     <ClInclude Include="source\renderer\render_state\scissor_test.h" />
     <ClInclude Include="source\renderer\render_state\stencil_test.h" />
     <ClInclude Include="source\renderer\scene\camera.h" />
+    <ClInclude Include="source\renderer\scene\scene_state.h" />
     <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform.h" />
     <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_collection.h" />
     <ClInclude Include="source\renderer\shaders\draw_auto_uniforms\draw_auto_uniform_factory.h" />
@@ -211,12 +212,13 @@
     <ClCompile Include="source\renderer\render_state\scissor_test.cc" />
     <ClCompile Include="source\renderer\render_state\stencil_test.cc" />
     <ClCompile Include="source\renderer\scene\camera.cc" />
+    <ClCompile Include="source\renderer\scene\scene_state.cc" />
     <ClCompile Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform.cc" />
     <ClCompile Include="source\renderer\shaders\draw_auto_uniforms\model_matrix_uniform_factory.cc" />
     <ClCompile Include="source\renderer\shaders\link_auto_uniforms\texture_uniform.cc" />
     <ClCompile Include="source\renderer\shaders\shader_program.cc" />
     <ClCompile Include="source\renderer\shaders\shader_vertex_attribute.cc" />
-    <ClCompile Include="source\test\core_test.cc" />
+    <ClCompile Include="source\test\main.cpp" />
     <ClCompile Include="third_party\glad\source\glad.c" />
   </ItemGroup>
   <ItemGroup>

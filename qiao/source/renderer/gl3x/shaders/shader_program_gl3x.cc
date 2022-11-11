@@ -59,8 +59,9 @@ void ShaderProgramGL3x::use() {
 	glUseProgram(_program);
 }
 
-void ShaderProgramGL3x::clean(Context* context, DrawState* drawState) {
-	//SetDrawAutomaticUniforms(context, drawState, sceneState);
+void ShaderProgramGL3x::clean(Context* context, DrawState* drawState, SceneState* sceneState) {
+	// 通过DrawAutoUniformCollection中保存的各个DrawAutoUniform为各个对应的Uniform自动设置值
+	setDrawAutoUniforms(context, drawState, sceneState);
 	
 	// 使用GL调用将Uniform值传送到GPU
 	std::list<ICleanable*>::iterator it = _dirtyUniforms.begin();

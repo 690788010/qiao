@@ -91,9 +91,9 @@ void ContextGL3x::clear(ClearState* clearState) {
 	glClear(clearState->getClearMask());
 };
 
-void ContextGL3x::draw(DrawState* drawState) {
-	verifyDraw(drawState);
-	applyBeforeDraw(drawState);
+void ContextGL3x::draw(DrawState* drawState, SceneState* sceneState) {
+	verifyDraw(drawState, sceneState);
+	applyBeforeDraw(drawState, sceneState);
 };
 
 void ContextGL3x::syncRenderState(RenderState* renderState) {
@@ -134,7 +134,7 @@ void ContextGL3x::enable(GLenum cap, bool enabled) {
 	}
 };
 
-void ContextGL3x::verifyDraw(DrawState* drawState) {
+void ContextGL3x::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	if (drawState == nullptr) {
 		throw std::invalid_argument("argument drawState is null!");
 	}
@@ -146,12 +146,16 @@ void ContextGL3x::verifyDraw(DrawState* drawState) {
 	if (drawState->getShaderProgram() == nullptr) {
 		throw std::invalid_argument("drawState.shaderProgram is null!");
 	}
+
+	if (sceneState == nullptr) {
+		throw std::invalid_argument("sceneState is null!");
+	}
 };
 
-void ContextGL3x::applyBeforeDraw(DrawState* drawState) {
+void ContextGL3x::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
 	applyRenderState(drawState->getRenderState());
 	// ApplyVertexArray
-	applyShaderProgram(drawState);
+	applyShaderProgram(drawState, sceneState);
 };
 
 void ContextGL3x::applyRenderState(RenderState* renderState) {
@@ -285,11 +289,11 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 	}
 };
 
-void ContextGL3x::applyShaderProgram(DrawState* drawState) {
+void ContextGL3x::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
 	ShaderProgram* shaderProgram = drawState->getShaderProgram();
 	if (shaderProgram != _boundShaderProgram) {
 		shaderProgram->use();
 		_boundShaderProgram = shaderProgram;
 	}
-	_boundShaderProgram->clean(this, drawState);
+	_boundShaderProgram->clean(this, drawState, sceneState);
 };

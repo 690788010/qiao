@@ -18,7 +18,9 @@ namespace qiao {
 
 		virtual void use();
 
-		virtual void clean(Context* context, DrawState* drawState);
+		// 更新DrawAutoUniform对应Uniform的值，并使用
+		// GL调用将_dirtyUniforms中Uniform已变化的值传送到GPU
+		virtual void clean(Context* context, DrawState* drawState, SceneState* sceneState);
 
 		virtual ShaderVertexAttributeCollection vertexAttributes();
 

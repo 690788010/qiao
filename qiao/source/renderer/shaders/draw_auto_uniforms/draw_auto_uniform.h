@@ -1,4 +1,5 @@
 #pragma once
+#include "../../scene/scene_state.h"
 
 namespace qiao {
 	class Context;
@@ -6,6 +7,6 @@ namespace qiao {
 
 	class DrawAutoUniform {
 	public:
-		virtual void set(Context* context, DrawState* drawState) = 0;
+		virtual void set(Context* context, DrawState* drawState, SceneState* sceneState) = 0;
 	};
 }

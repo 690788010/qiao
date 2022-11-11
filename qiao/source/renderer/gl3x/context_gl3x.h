@@ -15,7 +15,7 @@ namespace qiao {
 
 		virtual void clear(ClearState* clearState);
 
-		virtual void draw(DrawState* drawState);
+		virtual void draw(DrawState* drawState, SceneState* sceneState);
 
 	private:
 		// Sync GL state with default render state.
@@ -25,13 +25,13 @@ namespace qiao {
 		void enable(GLenum cap, bool enabled);
 
 		// verify arguments
-		void verifyDraw(DrawState* drawState);
+		void verifyDraw(DrawState* drawState, SceneState* sceneState);
 
-		void applyBeforeDraw(DrawState* drawState);
+		void applyBeforeDraw(DrawState* drawState, SceneState* sceneState);
 
 		void applyRenderState(RenderState* renderState);
 
-		void applyShaderProgram(DrawState* drawState);
+		void applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
 		Color _clearColor;
 		double _clearDepth;

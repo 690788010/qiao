@@ -6,6 +6,6 @@ ModelMatrixUniform::ModelMatrixUniform(Uniform* uniform) {
 	_uniform = uniform;
 };
 
-void ModelMatrixUniform::set(Context* context, DrawState* drawState) {
+void ModelMatrixUniform::set(Context* context, DrawState* drawState, SceneState* sceneState) {
 	
 };
