@@ -142,10 +142,13 @@
     <ClInclude Include="source\core\color\color.h" />
     <ClInclude Include="source\core\vector\vector3d.h" />
     <ClInclude Include="source\core\vector\vector4d.h" />
+    <ClInclude Include="source\renderer\buffers\vertex_buffer.h" />
     <ClInclude Include="source\renderer\clear_state.h" />
     <ClInclude Include="source\renderer\context.h" />
     <ClInclude Include="source\renderer\device.h" />
     <ClInclude Include="source\renderer\draw_state.h" />
+    <ClInclude Include="source\renderer\gl3x\buffers\buffer_gl3x.h" />
+    <ClInclude Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\context_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\graphics_window_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\i_cleanable.h" />
@@ -195,6 +198,7 @@
     <ClCompile Include="source\renderer\clear_state.cc" />
     <ClCompile Include="source\renderer\device.cc" />
     <ClCompile Include="source\renderer\draw_state.cc" />
+    <ClCompile Include="source\renderer\gl3x\buffers\buffer_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\context_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\fragment_outputs_gl3x.cc" />

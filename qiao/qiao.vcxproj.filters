@@ -159,6 +159,15 @@
     <ClInclude Include="source\renderer\scene\scene_state.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\buffers\vertex_buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\gl3x\buffers\buffer_gl3x.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\renderer\device.cc">
@@ -252,6 +261,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\scene\scene_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\buffers\buffer_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
