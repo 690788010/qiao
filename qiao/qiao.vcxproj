@@ -199,6 +199,7 @@
     <ClCompile Include="source\renderer\device.cc" />
     <ClCompile Include="source\renderer\draw_state.cc" />
     <ClCompile Include="source\renderer\gl3x\buffers\buffer_gl3x.cc" />
+    <ClCompile Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\context_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc" />
     <ClCompile Include="source\renderer\gl3x\shaders\fragment_outputs_gl3x.cc" />

@@ -266,6 +266,9 @@
     <ClCompile Include="source\renderer\gl3x\buffers\buffer_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third_party\glfw\lib\glfw3.lib" />
