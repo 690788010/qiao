@@ -10,3 +10,7 @@ VertexBuffer* Device::createVertexBuffer(GLenum usage, GLsizeiptr sizeInBytes) {
 	return new VertexBufferGL3x(usage, sizeInBytes);
 };
 
+IndexBuffer* Device::createIndexBuffer(GLenum usage, GLsizeiptr sizeInBytes) {
+	return new IndexBufferGL3x(usage, sizeInBytes);
+};
+

@@ -6,6 +6,7 @@
 #include "../renderer/render_state/render_state.h"
 #include "../renderer/gl3x/shaders/shader_program_gl3x.h"
 #include "../renderer/buffers/vertex_buffer.h"
+#include "../renderer/buffers/index_buffer.h"
 
 
 class Wrapper {
@@ -46,6 +47,12 @@ public:
 		float data2[4];
 		 _vertexBuffer->copyToSystemMemory(data2, 0, sizeof(data2));
 		std::cout << data2[3] << std::endl;
+		short index[] = { 5, 6, 7, 8 };
+		_indexBuffer = qiao::Device::createIndexBuffer(GL_STATIC_DRAW, sizeof(index));
+		_indexBuffer->copyFromSystemMemory(index, qiao::IndexBufferDataType::UNSIGNED_SHORT, 0, sizeof(index));
+		short index2[4];
+		_indexBuffer->copyToSystemMemory(index2, 0, sizeof(index2));
+		std::cout << index2[3] << std::endl;
 
 
 		qiao::RenderState* rs = new qiao::RenderState();
@@ -68,6 +75,10 @@ public:
 			delete _vertexBuffer;
 			_vertexBuffer = nullptr;
 		}
+		if (_indexBuffer != nullptr) {
+			delete _indexBuffer;
+			_indexBuffer = nullptr;
+		}
 	}
 
 	void run() {
@@ -89,6 +100,7 @@ private:
 	qiao::DrawState* _drawState;
 	qiao::SceneState* _sceneState;
 	qiao::VertexBuffer* _vertexBuffer;
+	qiao::IndexBuffer* _indexBuffer;
 };
 
 int main() {
