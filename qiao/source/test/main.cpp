@@ -6,7 +6,6 @@
 #include "../renderer/render_state/render_state.h"
 #include "../renderer/gl3x/shaders/shader_program_gl3x.h"
 #include "../renderer/buffers/vertex_buffer.h"
-#include "../renderer/gl3x/buffers/vertex_buffer_gl3x.h"
 
 
 class Wrapper {
@@ -41,12 +40,12 @@ public:
 		fs += "\n	fragColor = vec4(color, 0.0, 0.0, 1.0);";
 		fs += "\n}";
 
-		_vertexBuffer = new qiao::VertexBufferGL3x(GL_STATIC_DRAW, 32);
-		float data[] = {1.0, 2.0, 3.0};
-		_vertexBuffer->copyFromSystemMemory(data, 0, 8);
-		void* data2 = _vertexBuffer->copyToSystemMemory(4, 0, 8);
-		float* data3 = (float*)data2;
-		//std::cout << data2 << std::endl;
+		_vertexBuffer = qiao::Device::createVertexBuffer(GL_STATIC_DRAW, 32);
+		float data[] = {1.0, 2.0, 3.0, 4.0};
+		_vertexBuffer->copyFromSystemMemory(data, 0, 16);
+		float data2[4];
+		 _vertexBuffer->copyToSystemMemory(data2, 0, sizeof(data2));
+		std::cout << data2[3] << std::endl;
 
 
 		qiao::RenderState* rs = new qiao::RenderState();
@@ -89,7 +88,7 @@ private:
 	qiao::ClearState* _clearState;
 	qiao::DrawState* _drawState;
 	qiao::SceneState* _sceneState;
-	qiao::VertexBufferGL3x* _vertexBuffer;
+	qiao::VertexBuffer* _vertexBuffer;
 };
 
 int main() {

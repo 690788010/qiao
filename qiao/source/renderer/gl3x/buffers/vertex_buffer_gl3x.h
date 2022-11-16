@@ -12,9 +12,8 @@ namespace qiao {
 		void bind();
 		void unBind();
 
-		void copyFromSystemMemory(float data[], unsigned int offset, unsigned int size);
-
-		void* copyToSystemMemory(unsigned int perElementSize, unsigned int offset, unsigned int size);
+		virtual void copyFromSystemMemory(void* data, unsigned int offset, unsigned int size);
+		virtual void copyToSystemMemory(void* data, unsigned int offset, unsigned int size);
 
 		virtual unsigned int getUsage();
 		virtual unsigned int getSizeInBytes();

@@ -6,3 +6,7 @@ GraphicsWindow* Device::createWindow(int width, int height, std::string title, b
 	return new GraphicsWindowGL3x(width, height, title, isFullScreen);
 };
 
+VertexBuffer* Device::createVertexBuffer(GLenum usage, GLsizeiptr sizeInBytes) {
+	return new VertexBufferGL3x(usage, sizeInBytes);
+};
+

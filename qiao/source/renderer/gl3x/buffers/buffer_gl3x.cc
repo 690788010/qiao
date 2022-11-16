@@ -29,20 +29,16 @@ void BufferGL3x::unBind() {
 	glBindBuffer(_target, 0);
 };
 
-template<typename T>
-void BufferGL3x::copyFromSystemMemory(T data[], unsigned int offset, unsigned int size) {
+void BufferGL3x::copyFromSystemMemory(void* data, unsigned int offset, unsigned int size) {
 	if (offset + size > _sizeInBytes) {
 		throw std::invalid_argument("offset + size must be less than or equal to _sizeInBytes!");
-	}
-	if (size > sizeof(data)) {
-		throw std::invalid_argument("size must be less than or equal to the size of data in bytes!");
 	}
 	glBindVertexArray(0);
 	bind();
 	glBufferSubData(_target, offset, size, data);
 };
 
-void* BufferGL3x::copyToSystemMemory(const unsigned int perElementSize, unsigned int offset, unsigned int size) {
+void BufferGL3x::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
 	if (size == 0) {
 		throw std::invalid_argument("size must be greater than zero!");
 	}
@@ -51,11 +47,7 @@ void* BufferGL3x::copyToSystemMemory(const unsigned int perElementSize, unsigned
 	}
 	glBindVertexArray(0);
 	bind();
-	void* data[2];
 	glGetBufferSubData(_target, offset, size, data);
-	float* data3 = (float*)data;
-	std::cout << data3[1] << std::endl;
-	return data;
 };
 
 GLuint BufferGL3x::getBuffer() {

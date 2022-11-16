@@ -21,12 +21,12 @@ void VertexBufferGL3x::unBind() {
 	_bufferGL3x->unBind();
 };
 
-void VertexBufferGL3x::copyFromSystemMemory(float data[], unsigned int offset, unsigned int size) {
-	_bufferGL3x->copyFromSystemMemory<float>(data, offset, size);
+void VertexBufferGL3x::copyFromSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	_bufferGL3x->copyFromSystemMemory(data, offset, size);
 };
 
-void* VertexBufferGL3x::copyToSystemMemory(unsigned int perElementSize, unsigned int offset, unsigned int size) {
-	return _bufferGL3x->copyToSystemMemory(perElementSize, offset, size);
+void VertexBufferGL3x::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	_bufferGL3x->copyToSystemMemory(data, offset, size);
 };
 
 unsigned int VertexBufferGL3x::getUsage() {

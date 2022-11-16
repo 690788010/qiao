@@ -1,4 +1,7 @@
 #pragma once
+
+#include <iostream>
+#include <stdexcept>
 #include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {
@@ -10,9 +13,8 @@ namespace qiao {
 		void bind();
 		void unBind();
 
-		template<typename T>
-		void copyFromSystemMemory(T data[], unsigned int offset, unsigned int size);
-		void* copyToSystemMemory(unsigned int perElementSize, unsigned int offset, unsigned int size);
+		void copyFromSystemMemory(void* data, unsigned int offset, unsigned int size);
+		void copyToSystemMemory(void* data, unsigned int offset, unsigned int size);
 
 		GLuint getBuffer();
 		GLenum getTarget();
