@@ -13,5 +13,6 @@ namespace qiao {
 		virtual unsigned int getOffsetInBytes() = 0;
 		virtual bool getDirty() = 0;
 		virtual void setDirty(bool val) = 0;
+		virtual bool operator==(VertexBufferAttribute* attribute) = 0;
 	};
 }

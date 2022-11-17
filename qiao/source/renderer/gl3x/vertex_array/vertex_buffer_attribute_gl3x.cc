@@ -50,3 +50,28 @@ bool VertexBufferAttributeGL3x::getDirty() {
 void VertexBufferAttributeGL3x::setDirty(bool val) {
 	_dirty = val;
 };
+
+bool VertexBufferAttributeGL3x::operator==(VertexBufferAttribute* attribute) {
+	if (_vertexBuffer != attribute->getVertexBuffer()) {
+		return false;
+	}
+	if (_numOfComponent != attribute->getNumOfComponent()) {
+		return false;
+	}
+	if (_componentDataType != attribute->getComponentDataType()) {
+		return false;
+	}
+	if (_normalized != attribute->getNormalized()) {
+		return false;
+	}
+	if (_strideInBytes != attribute->getStrideInBytes()) {
+		return false;
+	}
+	if (_offsetInBytes != attribute->getOffsetInBytes()) {
+		return false;
+	}
+	if (_dirty != attribute->getDirty()) {
+		return false;
+	}
+	return true;
+};

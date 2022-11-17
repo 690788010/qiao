@@ -9,7 +9,15 @@ namespace qiao {
 		VertexBufferAttributesGL3x();
 		~VertexBufferAttributesGL3x();
 
+		virtual VertexBufferAttributeGL3x* getByIndex(unsigned index);
+		virtual void setByIndex(unsigned index, VertexBufferAttributeGL3x* value);
+		virtual void clean();
+		void attach(unsigned index);
+		void detach(unsigned index);
+
 	private:
 		VertexBufferAttributeGL3x** _attributes;
+		unsigned int _count;
+		bool _dirty;
 	};
 }
