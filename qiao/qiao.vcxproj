@@ -160,6 +160,7 @@
     <ClInclude Include="source\renderer\gl3x\shaders\shader_program_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\shaders\uniform_float_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\shaders\uniform_int_gl3x.h" />
+    <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_array_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_buffer_attributes_gl3x.h" />
     <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_buffer_attribute_gl3x.h" />
     <ClInclude Include="source\renderer\graphics_window.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="source\renderer\shaders\shader_vertex_attribute_collection.h" />
     <ClInclude Include="source\renderer\shaders\uniform.h" />
     <ClInclude Include="source\renderer\shaders\uniform_collection.h" />
+    <ClInclude Include="source\renderer\vertex_array\vertex_array.h" />
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attribute.h" />
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attributes.h" />
     <ClInclude Include="third_party\glad\include\glad.h" />
