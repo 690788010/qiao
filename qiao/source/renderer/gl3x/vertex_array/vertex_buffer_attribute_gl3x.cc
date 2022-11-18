@@ -2,7 +2,7 @@
 
 using namespace qiao;
 
-VertexBufferAttributeGL3x::VertexBufferAttributeGL3x(VertexBuffer* vertexBuffer, unsigned int numOfComponent, unsigned int componentDataType,
+VertexBufferAttributeGL3x::VertexBufferAttributeGL3x(VertexBufferGL3x* vertexBuffer, unsigned int numOfComponent, unsigned int componentDataType,
 	bool normalized, unsigned int strideInBytes, unsigned int offsetInBytes) {
 	_vertexBuffer = vertexBuffer;
 	_numOfComponent = numOfComponent;
@@ -19,7 +19,7 @@ VertexBufferAttributeGL3x::~VertexBufferAttributeGL3x() {
 	}
 };
 
-VertexBuffer* VertexBufferAttributeGL3x::getVertexBuffer() {
+VertexBufferGL3x* VertexBufferAttributeGL3x::getVertexBuffer() {
 	return _vertexBuffer;
 };
 

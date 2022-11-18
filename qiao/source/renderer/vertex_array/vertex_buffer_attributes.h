@@ -7,7 +7,7 @@ namespace qiao {
 	public:
 		virtual VertexBufferAttribute* getByIndex(unsigned index) = 0;
 		virtual void setByIndex(unsigned index, VertexBufferAttribute* value) = 0;
-
 		virtual void clean() = 0;
+		virtual unsigned int getCount();
 	};
 }

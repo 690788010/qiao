@@ -5,9 +5,7 @@
 #include "../../../../third_party/glad/include/glad.h"
 #include "../buffers/vertex_buffer_gl3x.h"
 
-
 using namespace qiao;
-
 
 VertexBufferAttributesGL3x::VertexBufferAttributesGL3x() {
 	int numOfMaxVertexAttribs;
@@ -17,9 +15,10 @@ VertexBufferAttributesGL3x::VertexBufferAttributesGL3x() {
 
 VertexBufferAttributesGL3x::~VertexBufferAttributesGL3x() {
 	if (_attributes != nullptr) {
-		int len = sizeof(_attributes) / sizeof(_attributes[0]);
-		for (int i = 0; i < len; i++) {
+		size_t len = sizeof(_attributes) / sizeof(_attributes[0]);
+		for (size_t i = 0; i < len; i++) {
 			delete _attributes[i];
+			_attributes[i] = nullptr;
 		}
 		delete _attributes;
 		_attributes = nullptr;
@@ -61,6 +60,31 @@ void VertexBufferAttributesGL3x::setByIndex(unsigned index, VertexBufferAttribut
 		_attributes[index]->setDirty(true);
 		_dirty = true;
 	}
+};
+
+void VertexBufferAttributesGL3x::clean() {
+	if (_dirty) {
+		size_t len = sizeof(_attributes) / sizeof(_attributes[0]);
+		for (size_t i = 0; i < len; i++) {
+			if (_attributes[i] != nullptr) {
+				if (_attributes[i]->getDirty()) {
+					attach(i);
+					_attributes[i]->setDirty(false);
+				}
+			}
+			else {
+				if (_attributes[i]->getDirty()) {
+					detach(i);
+					_attributes[i]->setDirty(false);
+				}
+			}
+		}
+		_dirty = false;
+	}
+};
+
+unsigned int VertexBufferAttributesGL3x::getCount() {
+	return _count;
 };
 
 void VertexBufferAttributesGL3x::attach(unsigned index) {

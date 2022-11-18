@@ -12,6 +12,7 @@ namespace qiao {
 		virtual VertexBufferAttributeGL3x* getByIndex(unsigned index);
 		virtual void setByIndex(unsigned index, VertexBufferAttributeGL3x* value);
 		virtual void clean();
+		virtual unsigned int getCount();
 		void attach(unsigned index);
 		void detach(unsigned index);
 

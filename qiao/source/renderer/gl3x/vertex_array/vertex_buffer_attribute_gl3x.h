@@ -1,15 +1,16 @@
 #pragma once
 
 #include "../../vertex_array/vertex_buffer_attribute.h"
+#include "../buffers/vertex_buffer_gl3x.h"
 
 namespace qiao {
 	class VertexBufferAttributeGL3x : public qiao::VertexBufferAttribute {
 	public:
-		VertexBufferAttributeGL3x(VertexBuffer* vertexBuffer, unsigned int numOfComponent, unsigned int componentDataType,
+		VertexBufferAttributeGL3x(VertexBufferGL3x* vertexBuffer, unsigned int numOfComponent, unsigned int componentDataType,
 			bool normalized, unsigned int _strideInBytes, unsigned int _offsetInBytes);
 		~VertexBufferAttributeGL3x();
 
-		virtual VertexBuffer* getVertexBuffer();
+		virtual VertexBufferGL3x* getVertexBuffer();
 		virtual unsigned int getNumOfComponent();
 		virtual unsigned int getComponentDataType();
 		virtual bool getNormalized();
@@ -20,7 +21,7 @@ namespace qiao {
 		virtual bool operator==(VertexBufferAttribute* attribute);
 
 	private:
-		VertexBuffer* _vertexBuffer;
+		VertexBufferGL3x* _vertexBuffer;
 		unsigned int _numOfComponent;
 		unsigned int _componentDataType;
 		bool _normalized;
