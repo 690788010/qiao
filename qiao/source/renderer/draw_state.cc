@@ -42,3 +42,11 @@ ShaderProgram* DrawState::getShaderProgram() {
 void DrawState::setShaderProgram(ShaderProgram* shaderProgram) {
 	_shaderProgram = shaderProgram;
 };
+
+VertexArray* DrawState::getVertexArray() {
+	return _vertexArray;
+};
+
+void DrawState::setVertexArray(VertexArray* vertexArray) {
+	_vertexArray = vertexArray;
+};

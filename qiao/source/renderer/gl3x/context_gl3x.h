@@ -31,6 +31,8 @@ namespace qiao {
 
 		void applyRenderState(RenderState* renderState);
 
+		void applyVertexArray(VertexArray* vertexArray);
+
 		void applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
 		Color _clearColor;

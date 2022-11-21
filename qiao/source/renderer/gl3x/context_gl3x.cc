@@ -147,6 +147,10 @@ void ContextGL3x::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 		throw std::invalid_argument("drawState.shaderProgram is null!");
 	}
 
+	if (drawState->getVertexArray() == nullptr) {
+		throw std::invalid_argument("drawState.vertexArray is null!");
+	}
+
 	if (sceneState == nullptr) {
 		throw std::invalid_argument("sceneState is null!");
 	}
@@ -287,6 +291,10 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
 		_renderState->setColorMask(colorMask);
 	}
+};
+
+void ContextGL3x::applyVertexArray(VertexArray* vertexArray) {
+
 };
 
 void ContextGL3x::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {

@@ -29,7 +29,8 @@ VertexBufferAttributeGL3x* VertexBufferAttributesGL3x::getByIndex(unsigned index
 	return _attributes[index];
 };
 
-void VertexBufferAttributesGL3x::setByIndex(unsigned index, VertexBufferAttributeGL3x* value) {
+void VertexBufferAttributesGL3x::setByIndex(unsigned int index, VertexBufferAttribute* value)
+{
 	if (!(_attributes[index] == value)) {				// ÖØÔØ¹ý==ÔËËã·û
 		if (value != nullptr) {
 			if (value->getNumOfComponent() < 1 || value->getNumOfComponent() > 4) {
@@ -56,11 +57,11 @@ void VertexBufferAttributesGL3x::setByIndex(unsigned index, VertexBufferAttribut
 				_count--;
 			}
 		}
-		_attributes[index] = value;
+		_attributes[index] = (VertexBufferAttributeGL3x*)value;
 		_attributes[index]->setDirty(true);
 		_dirty = true;
 	}
-};
+}
 
 void VertexBufferAttributesGL3x::clean() {
 	if (_dirty) {

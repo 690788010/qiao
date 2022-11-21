@@ -10,12 +10,18 @@ namespace qiao {
 		VertexArrayGL3x();
 		~VertexArrayGL3x();
 
-		VertexBufferAttributesGL3x* getAttributes();
-		IndexBufferGL3x* getIndexBuffer();
-		void setIndexBuffer(IndexBufferGL3x* indexBuffer);
+		virtual void clean();
+
+		void bind();
+
+		virtual VertexBufferAttributesGL3x* getAttributes();
+		virtual IndexBufferGL3x* getIndexBuffer();
+		virtual void setIndexBuffer(IndexBuffer* indexBuffer);
 
 	private:
-		VertexBufferAttributesGL3x* _atttributes;
+		unsigned int _vao;
+		VertexBufferAttributesGL3x* _attributes;
 		IndexBufferGL3x* _indexBuffer;
+		bool _dirtyIndex;
 	};
 }
