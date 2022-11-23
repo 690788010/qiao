@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include "context_gl3x.h"
 #include "shaders/shader_program_gl3x.h"
+#include "vertex_array/vertex_array_gl3x.h"
 
 
 using namespace qiao;
@@ -158,7 +159,7 @@ void ContextGL3x::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 
 void ContextGL3x::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
 	applyRenderState(drawState->getRenderState());
-	// ApplyVertexArray
+	applyVertexArray(drawState->getVertexArray());
 	applyShaderProgram(drawState, sceneState);
 };
 
@@ -294,7 +295,9 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 };
 
 void ContextGL3x::applyVertexArray(VertexArray* vertexArray) {
-
+	VertexArrayGL3x* vertexArrayGL3x = (VertexArrayGL3x*)vertexArray;
+	vertexArrayGL3x->bind();
+	vertexArrayGL3x->clean();
 };
 
 void ContextGL3x::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
