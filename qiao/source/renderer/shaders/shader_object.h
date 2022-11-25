@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "../../../../third_party/glad/include/glad.h"
+#include "../../../third_party/glad/include/glad.h"
 
 namespace qiao {
 	enum VertexLocations {
@@ -16,12 +16,11 @@ namespace qiao {
 		FRAGMENT_SHADER = GL_FRAGMENT_SHADER
 	};
 
-	class ShaderObjectGL3x {
+	class ShaderObject {
 	public:
-		ShaderObjectGL3x();
-		ShaderObjectGL3x(ShaderType shaderType, std::string source);
+		ShaderObject(ShaderType shaderType, std::string source);
 
-		~ShaderObjectGL3x();
+		~ShaderObject();
 
 		GLuint handle();
 	private:

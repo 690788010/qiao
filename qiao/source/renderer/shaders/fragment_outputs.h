@@ -1,9 +1,17 @@
 #pragma once
 
 #include <string>
+#include <stdexcept>
 
-namespace qiao {
+#include "../../../third_party/glad/include/glad.h"
+
+namespace qiao{
 	class FragmentOutputs {
-		virtual int operator[](std::string name) = 0;
+	public:
+		FragmentOutputs(GLuint program);
+
+		virtual int operator[](std::string index);
+	private:
+		GLuint _program;
 	};
 }

@@ -1,14 +1,14 @@
 
-#include <stdexcept>
-#include "fragment_outputs_gl3x.h"
+
+#include "fragment_outputs.h"
 
 using namespace qiao;
 
-FragmentOutputsGL3x::FragmentOutputsGL3x(GLuint program) {
+FragmentOutputs::FragmentOutputs(GLuint program) {
 	_program = program;
 };
 
-int FragmentOutputsGL3x::operator[](std::string name) {
+int FragmentOutputs::operator[](std::string name) {
 	int i = glGetFragDataLocation(_program, name.c_str());
 
 	if (i == -1) {

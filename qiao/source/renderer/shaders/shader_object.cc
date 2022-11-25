@@ -1,14 +1,11 @@
-
 #include <iostream>
 #include <stdexcept>
-#include "shader_object_gl3x.h"
+#include "shader_object.h"
 
 using namespace qiao;
 
-ShaderObjectGL3x::ShaderObjectGL3x() {}
-
-ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
-	std::cout << "ShaderObjectGL3x" << std::endl;
+ShaderObject::ShaderObject(ShaderType shaderType, std::string source) {
+	std::cout << "ShaderObject" << std::endl;
 	std::string builtinConstants = 
 						"#version 330 core\n";
 	builtinConstants += "#define og_positionVertexLocation          " + std::to_string(VertexLocations::POSITION);
@@ -39,14 +36,14 @@ ShaderObjectGL3x::ShaderObjectGL3x(ShaderType shaderType, std::string source) {
 	}
 };
 
-ShaderObjectGL3x::~ShaderObjectGL3x() {
-	std::cout <<"~ShaderObjectGL3x" << std::endl;
+ShaderObject::~ShaderObject() {
+	std::cout <<"~ShaderObject" << std::endl;
 	if (_shader != 0) {
 		glDeleteShader(_shader);
 		_shader = 0;
 	}
 }
 
-GLuint ShaderObjectGL3x::handle() {
+GLuint ShaderObject::handle() {
 	return _shader;
 };
