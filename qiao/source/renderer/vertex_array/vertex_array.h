@@ -10,5 +10,6 @@ namespace qiao {
 		virtual VertexBufferAttributes* getAttributes() = 0;
 		virtual IndexBuffer* getIndexBuffer() = 0;
 		virtual void setIndexBuffer(IndexBuffer* indexBuffer) = 0;
+		void bind();
 	};
 }

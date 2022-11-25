@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\renderer\device.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\graphics_window.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\graphics_window_gl3x.h">
+    <ClInclude Include="source\renderer\window.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="third_party\glad\include\glad.h">
@@ -34,9 +28,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="source\renderer\context.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\context_gl3x.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="source\renderer\render_state\render_state.h">
@@ -183,27 +174,39 @@
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attributes.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_buffer_attributes_gl3x.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="source\renderer\vertex_array\vertex_array.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_array_gl3x.h">
+    <ClInclude Include="source\core\geometry\mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\indices\indices_base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\indices\indices_unsigned_int.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\indices\indices_unsigned_short.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\vertex_attributes\vertexattribute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\vertex_attributes\vertex_attribute_float.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\vertex_attributes\vertex_attribute_vector4f.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\vector\vector4f.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\geometry\vertex_attributes\vertexAttribute_collection.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\renderer\device.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\graphics_window_gl3x.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="third_party\glad\source\glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\context_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\render_state\primitive_restart.cc">
@@ -245,7 +248,7 @@
     <ClCompile Include="source\renderer\gl3x\shaders\shader_object_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\graphics_window.cc">
+    <ClCompile Include="source\renderer\window.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\shaders\shader_program.cc">
@@ -281,9 +284,6 @@
     <ClCompile Include="source\renderer\scene\camera.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\renderer\scene\scene_state.cc">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -299,10 +299,28 @@
     <ClCompile Include="source\renderer\gl3x\vertex_array\vertex_buffer_attribute_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\vertex_array\vertex_buffer_attributes_gl3x.cc">
+    <ClCompile Include="source\core\geometry\indices\indices_unsigned_int.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\vertex_array\vertex_array_gl3x.cc">
+    <ClCompile Include="source\core\geometry\indices\indices_unsigned_short.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\geometry\mesh.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\geometry\vertex_attributes\vertex_attribute_float.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\geometry\vertex_attributes\vertex_attribute_vector4f.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\vector\vector4f.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\context.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

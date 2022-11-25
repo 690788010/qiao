@@ -1,16 +1,8 @@
-
-#include <iostream>
-#include <stdexcept>
-#include "context_gl3x.h"
-#include "shaders/shader_program_gl3x.h"
-#include "vertex_array/vertex_array_gl3x.h"
-
+#include "context.h"
 
 using namespace qiao;
 
-ContextGL3x::ContextGL3x() {
-	std::cout << "ContextGL3x()" << std::endl;
-
+Context::Context() {
 	_clearColor = Color::White();
 	_clearDepth = 1.0;
 	_clearStencil = 0;
@@ -19,17 +11,16 @@ ContextGL3x::ContextGL3x() {
 
 	// Sync GL state with default render state.
 	syncRenderState(_renderState);
-}
+};
 
-ContextGL3x::~ContextGL3x() {
-	std::cout << "~ContextGL3x()" << std::endl;
+Context::~Context() {
 	if (_renderState != nullptr) {
 		delete _renderState;
 		_renderState = nullptr;
 	}
-}
+};
 
-void ContextGL3x::clear(ClearState* clearState) {
+void Context::clear(ClearState* clearState) {
 	// apply ScissorTest
 	ScissorTest scissorTest = clearState->getScissorTest();
 	ScissorTest _scissorTest = _renderState->getScissorTest();
@@ -92,12 +83,12 @@ void ContextGL3x::clear(ClearState* clearState) {
 	glClear(clearState->getClearMask());
 };
 
-void ContextGL3x::draw(DrawState* drawState, SceneState* sceneState) {
+void Context::draw(DrawState* drawState, SceneState* sceneState) {
 	verifyDraw(drawState, sceneState);
 	applyBeforeDraw(drawState, sceneState);
 };
 
-void ContextGL3x::syncRenderState(RenderState* renderState) {
+void Context::syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 	glPrimitiveRestartIndex(primitiveRestart.getIndex());
@@ -127,15 +118,16 @@ void ContextGL3x::syncRenderState(RenderState* renderState) {
 	glBlendEquationSeparate(blending.getRgbEquation(), blending.getAlphaEquation());
 };
 
-void ContextGL3x::enable(GLenum cap, bool enabled) {
+void Context::enable(GLenum cap, bool enabled) {
 	if (enabled) {
 		glEnable(cap);
-	} else {
+	}
+	else {
 		glDisable(cap);
 	}
 };
 
-void ContextGL3x::verifyDraw(DrawState* drawState, SceneState* sceneState) {
+void Context::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	if (drawState == nullptr) {
 		throw std::invalid_argument("argument drawState is null!");
 	}
@@ -157,13 +149,13 @@ void ContextGL3x::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	}
 };
 
-void ContextGL3x::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
+void Context::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
 	applyRenderState(drawState->getRenderState());
 	applyVertexArray(drawState->getVertexArray());
 	applyShaderProgram(drawState, sceneState);
 };
 
-void ContextGL3x::applyRenderState(RenderState* renderState) {
+void Context::applyRenderState(RenderState* renderState) {
 	// apply PrimitiveRestart
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
 	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
@@ -294,13 +286,12 @@ void ContextGL3x::applyRenderState(RenderState* renderState) {
 	}
 };
 
-void ContextGL3x::applyVertexArray(VertexArray* vertexArray) {
-	VertexArrayGL3x* vertexArrayGL3x = (VertexArrayGL3x*)vertexArray;
-	vertexArrayGL3x->bind();
-	vertexArrayGL3x->clean();
+void Context::applyVertexArray(VertexArray* vertexArray) {
+	/*vertexArray->bind();
+	vertexArray->clean();*/
 };
 
-void ContextGL3x::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
+void Context::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
 	ShaderProgram* shaderProgram = drawState->getShaderProgram();
 	if (shaderProgram != _boundShaderProgram) {
 		shaderProgram->use();
