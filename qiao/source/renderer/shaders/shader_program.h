@@ -2,17 +2,19 @@
 
 #include <string>
 
-#include "shader_vertex_attribute_collection.h"
-#include "uniform_collection.h"
-#include "./link_auto_uniforms/link_auto_uniform_collection.h"
-#include "./link_auto_uniforms/texture_uniform.h"
-#include "draw_auto_uniforms/model_matrix_uniform_factory.h"
-#include "./draw_auto_uniforms/draw_auto_uniform_factory_collection.h"
-#include "./draw_auto_uniforms/draw_auto_uniform_collection.h"
-#include "shader_object.h"
+#include "./shader_components/shader_vertex_attribute_collection.h"
+#include "./uniforms/uniform_collection.h"
+#include "./uniforms/link_auto_uniforms/link_auto_uniform_collection.h"
+#include "./uniforms/link_auto_uniforms/texture_uniform.h"
+#include "./uniforms/draw_auto_uniforms/model_matrix_uniform_factory.h"
+#include "./uniforms/draw_auto_uniforms/draw_auto_uniform_factory_collection.h"
+#include "./uniforms/draw_auto_uniforms/draw_auto_uniform_collection.h"
+#include "./shader_components/shader_object.h"
 #include "../scene/scene_state.h"
 #include "../i_cleanable_observer.h"
-#include "fragment_outputs.h"
+#include "./shader_components/fragment_outputs.h"
+#include "./uniforms/uniform_int.h"
+#include "./uniforms/uniform_float.h"
 
 namespace qiao {
 	class DrawState;

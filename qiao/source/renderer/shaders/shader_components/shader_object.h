@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "../../../third_party/glad/include/glad.h"
+#include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {
 	enum VertexLocations {

@@ -1,5 +1,4 @@
 
-
 #include "fragment_outputs.h"
 
 using namespace qiao;

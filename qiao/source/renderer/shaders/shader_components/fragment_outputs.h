@@ -3,7 +3,7 @@
 #include <string>
 #include <stdexcept>
 
-#include "../../../third_party/glad/include/glad.h"
+#include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao{
 	class FragmentOutputs {

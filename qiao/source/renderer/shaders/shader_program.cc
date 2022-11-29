@@ -36,7 +36,7 @@ ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
 	}
 
 	// 用于查找片元着色器out变量的索引位置
-	_fragmentOutputs = FragmentOutputs(_program);
+	_fragmentOutputs = new FragmentOutputs(_program);
 	// 为顶点着色器里的每个激活的attribute变量构建元数据
 	_vertexAttributes = findVertexAttributes(_program);
 	_uniforms = findUniforms(_program);
@@ -48,21 +48,14 @@ ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
 ShaderProgram::~ShaderProgram() {
 	std::cout << "~ShaderProgram" << std::endl;
 
-	for (auto it = _linkAutoUniforms.begin(); it != _linkAutoUniforms.end(); it++) {
-		delete it->second;
-	}
-
-	for (auto it = _drawAutoUniformFactories.begin(); it != _drawAutoUniformFactories.end(); it++) {
-		delete it->second;
-	}
-
-	for (auto it = _drawAutoUniforms.begin(); it != _drawAutoUniforms.end(); it++) {
-		delete (*it);
-	}
-
 	if (_program != 0) {
 		glDeleteProgram(_program);
 		_program = 0;
+	}
+
+	if (_fragmentOutputs != nullptr) {
+		delete _fragmentOutputs;
+		_fragmentOutputs = nullptr;
 	}
 
 	// 释放vector内各个元素的资源
@@ -74,7 +67,22 @@ ShaderProgram::~ShaderProgram() {
 	std::map<std::string, Uniform*>::iterator it = _uniforms.begin();
 	while (it != _uniforms.end()) {
 		delete it->second;
+		it->second = nullptr;
 		it++;
+	}
+
+	for (auto it = _linkAutoUniforms.begin(); it != _linkAutoUniforms.end(); it++) {
+		delete it->second;
+		it->second = nullptr;
+	}
+
+	for (auto it = _drawAutoUniformFactories.begin(); it != _drawAutoUniformFactories.end(); it++) {
+		delete it->second;
+		it->second = nullptr;
+	}
+
+	for (auto it = _drawAutoUniforms.begin(); it != _drawAutoUniforms.end(); it++) {
+		delete (*it);
 	}
 }
 
@@ -95,19 +103,19 @@ void ShaderProgram::clean(Context* context, DrawState* drawState, SceneState* sc
 	_dirtyUniforms.clear();
 };
 
-ShaderVertexAttributeCollection ShaderProgramGL3x::vertexAttributes() {
+ShaderVertexAttributeCollection ShaderProgram::vertexAttributes() {
 	return _vertexAttributes;
 };
 
-UniformCollection& ShaderProgramGL3x::uniforms() {
+UniformCollection& ShaderProgram::uniforms() {
 	return _uniforms;
 };
 
-void ShaderProgramGL3x::notifyDirty(ICleanable* val) {
+void ShaderProgram::notifyDirty(ICleanable* val) {
 	_dirtyUniforms.push_back(val);
 };
 
-ShaderVertexAttributeCollection ShaderProgramGL3x::findVertexAttributes(GLuint program) {
+ShaderVertexAttributeCollection ShaderProgram::findVertexAttributes(GLuint program) {
 	int numberOfAttributes;
 	glGetProgramiv(program, GL_ACTIVE_ATTRIBUTES, &numberOfAttributes);
 
@@ -134,7 +142,7 @@ ShaderVertexAttributeCollection ShaderProgramGL3x::findVertexAttributes(GLuint p
 	return vertexAttributes;
 };
 
-UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
+UniformCollection ShaderProgram::findUniforms(GLuint program) {
 	// 获取激活的Uniform变量的个数
 	int numberOfUniforms;
 	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &numberOfUniforms);
@@ -163,12 +171,12 @@ UniformCollection ShaderProgramGL3x::findUniforms(GLuint program) {
 	return uniforms;
 };
 
-Uniform* ShaderProgramGL3x::createUniform(std::string name, int location, GLenum type) {
+Uniform* ShaderProgram::createUniform(std::string name, int location, GLenum type) {
 	switch (type) {
 	case GL_INT:
-		return new UniformIntGL3x(name, location, type, this);
+		return new UniformInt(name, location, type, this);
 	case GL_FLOAT:
-		return new UniformFloatGL3x(name, location, type, this);
+		return new UniformFloat(name, location, type, this);
 	}
 	throw std::invalid_argument("An implementation for argument uniform type does not exist.");
 };
