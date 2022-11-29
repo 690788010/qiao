@@ -30,36 +30,6 @@
     <ClInclude Include="source\renderer\context.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="source\renderer\render_state\render_state.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\primitive_restart.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\cull_face.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\scissor_test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\stencil_test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\depth_test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\blending.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\draw_state.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\render_state\color_mask.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\clear_state.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="source\core\color\color.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -198,42 +168,42 @@
     <ClInclude Include="source\renderer\shaders\uniforms\link_auto_uniforms\texture_uniform.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\state\clear_state\clear_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\draw_state\draw_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\blending.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\color_mask.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\cull_face.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\depth_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\primitive_restart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\render_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\scissor_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\state\render_state\stencil_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="third_party\glad\source\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer\render_state\primitive_restart.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\render_state.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\cull_face.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\scissor_test.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\depth_test.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\stencil_test.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\blending.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\draw_state.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\render_state\color_mask.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\core\color\color.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\clear_state.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\window.cc">
@@ -312,6 +282,36 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\shaders\uniforms\link_auto_uniforms\texture_uniform.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\clear_state\clear_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\draw_state\draw_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\blending.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\color_mask.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\cull_face.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\depth_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\primitive_restart.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\render_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\scissor_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\state\render_state\stencil_test.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

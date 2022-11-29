@@ -1,10 +1,10 @@
 #pragma once
 
-#include "./render_state/scissor_test.h"
-#include "./render_state/color_mask.h"
+#include "../render_state/scissor_test.h"
+#include "../render_state/color_mask.h"
 #include "../../third_party/glad/include/glad.h"
-#include "../core/color/color.h"
-#include "./render_state/depth_test.h"
+#include "../../../core/color/color.h"
+#include "../render_state/depth_test.h"
 
 namespace qiao {
 	enum ClearMask {

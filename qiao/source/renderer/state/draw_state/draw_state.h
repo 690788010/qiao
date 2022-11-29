@@ -1,8 +1,8 @@
 #pragma once
 
-#include "./render_state/render_state.h"
-#include "shaders/shader_program.h"
-#include "vertex_array/vertex_array.h"
+#include "../render_state/render_state.h"
+#include "../../shaders/shader_program.h"
+#include "../../vertex_array/vertex_array.h"
 
 namespace qiao {
 	class DrawState {

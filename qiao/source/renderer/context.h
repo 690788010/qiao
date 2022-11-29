@@ -2,11 +2,12 @@
 
 #include <stdexcept>
 
-#include "./clear_state.h"
-#include "./draw_state.h"
+#include "./state/clear_state/clear_state.h"
+#include "./state/draw_state/draw_state.h"
 #include "scene/scene_state.h"
 #include "../core/geometry/mesh.h"
 #include "vertex_array/vertex_array.h"
+#include "./state/render_state/render_state.h"
 
 namespace qiao {
 	class Context {
