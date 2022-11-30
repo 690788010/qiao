@@ -1,19 +1,28 @@
 #pragma once
 
-namespace qiao {
-	enum IndexBufferDataType {
-		UNSIGNED_BYTE = 1,
-		UNSIGNED_SHORT = 2,
-		UNSIGNED_INT = 4
-	};
+#include "buffer.h"
 
+namespace qiao {
 	class IndexBuffer {
 	public:
-		virtual void copyFromSystemMemory(void* data, IndexBufferDataType dataType, unsigned int offset, unsigned int size) = 0;
-		virtual void copyToSystemMemory(void* data, unsigned int offset, unsigned int size) = 0;
+		IndexBuffer(GLenum usage, GLsizeiptr sizeInBytes);
+		~IndexBuffer();
 
-		virtual unsigned int getUsage() = 0;
-		virtual unsigned int getSizeInBytes() = 0;
-		virtual unsigned int getDataType() = 0;
+		void bind();
+		void unBind();
+
+		// 将数据从系统内存复制到GPU显存，type参数必须为 GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, 或 GL_UNSIGNED_INT
+		void copyFromSystemMemory(void* data, GLenum type, unsigned int offset, unsigned int size);
+		// 将数据从GPU显存复制到系统内存
+		void copyToSystemMemory(void* data, unsigned int offset, unsigned int size);
+
+		GLenum getUsage();
+		GLsizeiptr getSizeInBytes();
+		GLenum getType();
+
+	private:
+		Buffer* _buffer;
+		GLenum _type;			    // data type. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT.
+		unsigned int _count;		// the number of elements to be rendered.
 	};
 }

@@ -1,10 +1,10 @@
 #include <iostream>
 #include <stdexcept>
-#include "buffer_gl3x.h"
+#include "buffer.h"
 
 using namespace qiao;
 
-BufferGL3x::BufferGL3x(GLenum target, GLenum usage, GLsizeiptr sizeInBytes) :
+Buffer::Buffer(GLenum target, GLenum usage, GLsizeiptr sizeInBytes) :
 	_target{ target }, _usage{ usage }, _sizeInBytes{sizeInBytes}
 {
 	glGenBuffers(1, &_buffer);
@@ -14,22 +14,25 @@ BufferGL3x::BufferGL3x(GLenum target, GLenum usage, GLsizeiptr sizeInBytes) :
 	glBufferData(_target, _sizeInBytes, nullptr, _usage);
 };
 
-BufferGL3x::~BufferGL3x() {
+Buffer::~Buffer() {
 	if (_buffer != 0) {
 		glDeleteBuffers(1, &_buffer);
 		_buffer = 0;
 	}
 };
 
-void BufferGL3x::bind() {
+void Buffer::bind() {
 	glBindBuffer(_target, _buffer);
 };
 
-void BufferGL3x::unBind() {
+void Buffer::unBind() {
 	glBindBuffer(_target, 0);
 };
 
-void BufferGL3x::copyFromSystemMemory(void* data, unsigned int offset, unsigned int size) {
+void Buffer::copyFromSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	if (size == 0) {
+		throw std::invalid_argument("size must be greater than zero!");
+	}
 	if (offset + size > _sizeInBytes) {
 		throw std::invalid_argument("offset + size must be less than or equal to _sizeInBytes!");
 	}
@@ -38,7 +41,7 @@ void BufferGL3x::copyFromSystemMemory(void* data, unsigned int offset, unsigned 
 	glBufferSubData(_target, offset, size, data);
 };
 
-void BufferGL3x::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
+void Buffer::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
 	if (size == 0) {
 		throw std::invalid_argument("size must be greater than zero!");
 	}
@@ -50,18 +53,18 @@ void BufferGL3x::copyToSystemMemory(void* data, unsigned int offset, unsigned in
 	glGetBufferSubData(_target, offset, size, data);
 };
 
-GLuint BufferGL3x::getBuffer() {
+GLuint Buffer::getBuffer() {
 	return _buffer;
 };
 
-GLenum BufferGL3x::getTarget() {
+GLenum Buffer::getTarget() {
 	return _target;
 };
 
-GLenum BufferGL3x::getUsage() {
+GLenum Buffer::getUsage() {
 	return _usage;
 };
 
-GLsizeiptr BufferGL3x::getSizeInBytes() {
+GLsizeiptr Buffer::getSizeInBytes() {
 	return _sizeInBytes;
 };
