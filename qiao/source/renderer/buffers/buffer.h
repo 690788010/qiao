@@ -2,13 +2,13 @@
 
 #include <iostream>
 #include <stdexcept>
-#include "../../../../third_party/glad/include/glad.h"
+#include "../../../third_party/glad/include/glad.h"
 
 namespace qiao {
-	class BufferGL3x {
+	class Buffer {
 	public:
-		BufferGL3x(GLenum target, GLenum usage, GLsizeiptr sizeInBytes);
-		~BufferGL3x();
+		Buffer(GLenum target, GLenum usage, GLsizeiptr sizeInBytes);
+		~Buffer();
 
 		void bind();
 		void unBind();

@@ -57,25 +57,7 @@
     <ClInclude Include="source\renderer\scene\scene_state.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="source\renderer\buffers\vertex_buffer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\buffers\buffer_gl3x.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\buffers\index_buffer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\buffers\index_buffer_gl3x.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attribute.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="source\renderer\gl3x\vertex_array\vertex_buffer_attribute_gl3x.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attributes.h">
@@ -198,6 +180,15 @@
     <ClInclude Include="source\renderer\state\render_state\stencil_test.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\buffers\buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\buffers\index_buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\buffers\vertex_buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="third_party\glad\source\glad.c">
@@ -222,18 +213,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\scene\scene_state.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\buffers\buffer_gl3x.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\buffers\vertex_buffer_gl3x.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\buffers\index_buffer_gl3x.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\renderer\gl3x\vertex_array\vertex_buffer_attribute_gl3x.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\core\geometry\indices\indices_unsigned_int.cc">
@@ -312,6 +291,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\state\render_state\stencil_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\buffers\buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\buffers\index_buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\buffers\vertex_buffer.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
