@@ -1,19 +1,18 @@
 
 #include <stdexcept>
 
-#include "vertex_buffer_attributes_gl3x.h"
-#include "../../../../third_party/glad/include/glad.h"
-#include "../buffers/vertex_buffer_gl3x.h"
+#include "vertex_buffer_attributes.h"
+#include "../../../third_party/glad/include/glad.h"
 
 using namespace qiao;
 
-VertexBufferAttributesGL3x::VertexBufferAttributesGL3x() {
+VertexBufferAttributes::VertexBufferAttributes() {
 	int numOfMaxVertexAttribs;
 	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numOfMaxVertexAttribs);
-	_attributes = new VertexBufferAttributeGL3x*[numOfMaxVertexAttribs];
+	_attributes = new VertexBufferAttribute*[numOfMaxVertexAttribs];
 }
 
-VertexBufferAttributesGL3x::~VertexBufferAttributesGL3x() {
+VertexBufferAttributes::~VertexBufferAttributes() {
 	if (_attributes != nullptr) {
 		size_t len = sizeof(_attributes) / sizeof(_attributes[0]);
 		for (size_t i = 0; i < len; i++) {
@@ -25,19 +24,19 @@ VertexBufferAttributesGL3x::~VertexBufferAttributesGL3x() {
 	}
 };
 
-VertexBufferAttributeGL3x* VertexBufferAttributesGL3x::getByIndex(unsigned index) {
+VertexBufferAttribute* VertexBufferAttributes::getByIndex(unsigned index) {
 	return _attributes[index];
 };
 
-void VertexBufferAttributesGL3x::setByIndex(unsigned int index, VertexBufferAttribute* value)
+void VertexBufferAttributes::setByIndex(unsigned int index, VertexBufferAttribute* value)
 {
 	if (!(_attributes[index] == value)) {				// ÖØÔØ¹ý==ÔËËã·û
 		if (value != nullptr) {
-			if (value->getNumOfComponent() < 1 || value->getNumOfComponent() > 4) {
+			if (value->getSize() < 1 || value->getSize() > 4) {
 				throw std::invalid_argument("NumberOfComponents must be between one and four!");
 			}
 			if (value->getNormalized()) {
-				unsigned int dataType = value->getComponentDataType();
+				unsigned int dataType = value->getType();
 				if ((dataType != GL_BYTE) &&
 					(dataType != GL_UNSIGNED_BYTE) &&
 					(dataType != GL_SHORT) &&
@@ -45,7 +44,7 @@ void VertexBufferAttributesGL3x::setByIndex(unsigned int index, VertexBufferAttr
 					(dataType != GL_INT) &&
 					(dataType != GL_UNSIGNED_INT))
 				{
-					throw std::invalid_argument("When Normalize is true, ComponentDatatype must be GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, or GL_UNSIGNED_INT.");
+					throw std::invalid_argument("When Normalize is true, type must be GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, or GL_UNSIGNED_INT.");
 				}
 			}
 			if (_attributes[index] == nullptr) {
@@ -57,13 +56,13 @@ void VertexBufferAttributesGL3x::setByIndex(unsigned int index, VertexBufferAttr
 				_count--;
 			}
 		}
-		_attributes[index] = (VertexBufferAttributeGL3x*)value;
+		_attributes[index] = value;
 		_attributes[index]->setDirty(true);
 		_dirty = true;
 	}
 }
 
-void VertexBufferAttributesGL3x::clean() {
+void VertexBufferAttributes::clean() {
 	if (_dirty) {
 		size_t len = sizeof(_attributes) / sizeof(_attributes[0]);
 		for (size_t i = 0; i < len; i++) {

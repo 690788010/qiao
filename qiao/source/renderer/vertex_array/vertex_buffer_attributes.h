@@ -5,9 +5,19 @@
 namespace qiao {
 	class VertexBufferAttributes {
 	public:
-		virtual VertexBufferAttribute* getByIndex(unsigned int index) = 0;
-		virtual void setByIndex(unsigned int index, VertexBufferAttribute* value) = 0;
-		virtual void clean() = 0;
-		virtual unsigned int getCount();
+		VertexBufferAttributes();
+		~VertexBufferAttributes();
+
+		VertexBufferAttribute* getByIndex(unsigned int index);
+		void setByIndex(unsigned int index, VertexBufferAttribute* value);
+		void clean();
+		unsigned int getCount();
+		void attach(unsigned index);
+		void detach(unsigned index);
+
+	private:
+		VertexBufferAttribute** _attributes;
+		unsigned int _count;
+		bool _dirty;
 	};
 }
