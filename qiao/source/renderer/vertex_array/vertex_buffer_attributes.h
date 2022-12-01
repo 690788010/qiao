@@ -17,7 +17,9 @@ namespace qiao {
 
 	private:
 		VertexBufferAttribute** _attributes;
-		unsigned int _count;
-		bool _dirty;
+		bool* _dirties;						// 标识对应的VertexBufferAttribute是否未同步到OpenGL
+		unsigned int _count;				// 着色器中当前处于激活状态的Vertex Attribute的数量
+		bool _dirty;                        // 是否又VertexBufferAttribute未同步到OpenGL
+		int _maxVertexAttribs;				// the maximum number of 4-component generic vertex attributes accessible to a vertex shader
 	};
 }

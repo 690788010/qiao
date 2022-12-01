@@ -17,9 +17,6 @@ namespace qiao {
 		unsigned int getOffset();
 		bool getEnabled();
 		void setEnabled(bool val);
-		bool getDirty();
-		void setDirty(bool val);
-		bool operator==(VertexBufferAttribute* attribute);
 
 	private:
 		VertexBuffer* _vertexBuffer;
@@ -28,7 +25,5 @@ namespace qiao {
 		GLboolean _normalized;			// specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed.
 		GLsizei _stride;				// Specifies the byte offset between consecutive generic vertex attributes.
 		unsigned int _offset;			// Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target.
-		bool _enabled;
-		bool _dirty;
 	};
 }

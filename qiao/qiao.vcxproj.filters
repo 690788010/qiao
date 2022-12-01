@@ -63,9 +63,6 @@
     <ClInclude Include="source\renderer\vertex_array\vertex_buffer_attributes.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="source\renderer\vertex_array\vertex_array.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="source\core\geometry\mesh.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -189,6 +186,9 @@
     <ClInclude Include="source\renderer\buffers\vertex_buffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\vertex_array\vertex_array.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="third_party\glad\source\glad.c">
@@ -300,6 +300,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\buffers\vertex_buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\vertex_array\vertex_buffer_attribute.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\vertex_array\vertex_buffer_attributes.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\vertex_array\vertex_array.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

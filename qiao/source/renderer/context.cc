@@ -287,8 +287,8 @@ void Context::applyRenderState(RenderState* renderState) {
 };
 
 void Context::applyVertexArray(VertexArray* vertexArray) {
-	/*vertexArray->bind();
-	vertexArray->clean();*/
+	vertexArray->bind();
+	vertexArray->clean();
 };
 
 void Context::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {

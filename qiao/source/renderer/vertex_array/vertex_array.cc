@@ -1,15 +1,15 @@
-#include "vertex_array_gl3x.h"
+#include "vertex_array.h"
 
 using namespace qiao;
 
-VertexArrayGL3x::VertexArrayGL3x() {
+VertexArray::VertexArray() {
 	glGenVertexArrays(1, &_vao);
-	_attributes = new VertexBufferAttributesGL3x();
+	_attributes = new VertexBufferAttributes();
 	_indexBuffer = nullptr;
 	_dirtyIndex = false;
 };
 
-VertexArrayGL3x::~VertexArrayGL3x() {
+VertexArray::~VertexArray() {
 	if (_vao != 0) {
 		glDeleteVertexArrays(1, &_vao);
 		_vao = 0;
@@ -24,7 +24,11 @@ VertexArrayGL3x::~VertexArrayGL3x() {
 	}
 };
 
-void VertexArrayGL3x::clean() {
+void VertexArray::bind() {
+	glBindVertexArray(_vao);
+};
+
+void VertexArray::clean() {
 	_attributes->clean();
 	if (_dirtyIndex) {
 		if (_indexBuffer != nullptr) {
@@ -37,19 +41,15 @@ void VertexArrayGL3x::clean() {
 	}
 };
 
-void VertexArrayGL3x::bind() {
-	glBindVertexArray(_vao);
-};
-
-VertexBufferAttributesGL3x* VertexArrayGL3x::getAttributes() {
+VertexBufferAttributes* VertexArray::getAttributes() {
 	return _attributes;
 };
 
-IndexBufferGL3x* VertexArrayGL3x::getIndexBuffer() {
+IndexBuffer* VertexArray::getIndexBuffer() {
 	return _indexBuffer;
 };
 
-void VertexArrayGL3x::setIndexBuffer(IndexBuffer* indexBuffer) {
-	_indexBuffer = (IndexBufferGL3x*)indexBuffer;
+void VertexArray::setIndexBuffer(IndexBuffer* indexBuffer) {
+	_indexBuffer = indexBuffer;
 	_dirtyIndex = true;
 };

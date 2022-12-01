@@ -6,10 +6,21 @@
 namespace qiao {
 	class VertexArray {
 	public:
-		virtual void clean() = 0;
-		virtual VertexBufferAttributes* getAttributes() = 0;
-		virtual IndexBuffer* getIndexBuffer() = 0;
-		virtual void setIndexBuffer(IndexBuffer* indexBuffer) = 0;
+		VertexArray();
+		~VertexArray();
+
 		void bind();
+		// 同步各个VertexBufferAttribute（包含在VertexBufferAttributes中）和IndexBuffer
+		void clean();
+
+		virtual VertexBufferAttributes* getAttributes();
+		virtual IndexBuffer* getIndexBuffer();
+		virtual void setIndexBuffer(IndexBuffer* indexBuffer);
+
+	private:
+		unsigned int _vao;
+		VertexBufferAttributes* _attributes;
+		IndexBuffer* _indexBuffer;
+		bool _dirtyIndex;
 	};
 }

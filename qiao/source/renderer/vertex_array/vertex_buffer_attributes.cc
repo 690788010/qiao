@@ -7,9 +7,12 @@
 using namespace qiao;
 
 VertexBufferAttributes::VertexBufferAttributes() {
-	int numOfMaxVertexAttribs;
-	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numOfMaxVertexAttribs);
-	_attributes = new VertexBufferAttribute*[numOfMaxVertexAttribs];
+	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &_maxVertexAttribs);
+	_attributes = new VertexBufferAttribute*[_maxVertexAttribs];
+	_dirties = new bool[_maxVertexAttribs];
+	for (int i = 0; i < _maxVertexAttribs; i++) {
+		_dirties[i] = false;
+	}
 }
 
 VertexBufferAttributes::~VertexBufferAttributes() {
@@ -19,8 +22,11 @@ VertexBufferAttributes::~VertexBufferAttributes() {
 			delete _attributes[i];
 			_attributes[i] = nullptr;
 		}
-		delete _attributes;
+		delete[] _attributes;
 		_attributes = nullptr;
+	}
+	if (_dirties != nullptr) {
+		delete[] _dirties;
 	}
 };
 
@@ -30,7 +36,7 @@ VertexBufferAttribute* VertexBufferAttributes::getByIndex(unsigned index) {
 
 void VertexBufferAttributes::setByIndex(unsigned int index, VertexBufferAttribute* value)
 {
-	if (!(_attributes[index] == value)) {				// 重载过==运算符
+	if (_attributes[index] != value) {			
 		if (value != nullptr) {
 			if (value->getSize() < 1 || value->getSize() > 4) {
 				throw std::invalid_argument("NumberOfComponents must be between one and four!");
@@ -57,48 +63,44 @@ void VertexBufferAttributes::setByIndex(unsigned int index, VertexBufferAttribut
 			}
 		}
 		_attributes[index] = value;
-		_attributes[index]->setDirty(true);
+		_dirties[index] = true;
 		_dirty = true;
 	}
 }
 
 void VertexBufferAttributes::clean() {
 	if (_dirty) {
-		size_t len = sizeof(_attributes) / sizeof(_attributes[0]);
-		for (size_t i = 0; i < len; i++) {
-			if (_attributes[i] != nullptr) {
-				if (_attributes[i]->getDirty()) {
+		for (int i = 0; i < _maxVertexAttribs; i++) {
+			if (_dirties[i]) {							// 对应的VertexBufferAttribute未同步到OpenGL
+				if (_attributes[i] != nullptr) {
 					attach(i);
-					_attributes[i]->setDirty(false);
 				}
-			}
-			else {
-				if (_attributes[i]->getDirty()) {
+				else {
 					detach(i);
-					_attributes[i]->setDirty(false);
 				}
+				_dirties[i] = false;
 			}
 		}
 		_dirty = false;
 	}
 };
 
-unsigned int VertexBufferAttributesGL3x::getCount() {
+unsigned int VertexBufferAttributes::getCount() {
 	return _count;
 };
 
-void VertexBufferAttributesGL3x::attach(unsigned index) {
-	VertexBufferAttributeGL3x* attribute = _attributes[index];
-	VertexBufferGL3x* vertexBufferGL3x = (VertexBufferGL3x*)(attribute->getVertexBuffer());
-	vertexBufferGL3x->bind();
+void VertexBufferAttributes::attach(unsigned index) {
+	VertexBufferAttribute* attribute = _attributes[index];
+	VertexBuffer* vertexBuffer = attribute->getVertexBuffer();
+	vertexBuffer->bind();
 	glVertexAttribPointer(index,
-		attribute->getNumOfComponent(),
-		attribute->getComponentDataType(),
+		attribute->getSize(),
+		attribute->getType(),
 		attribute->getNormalized(),
-		attribute->getStrideInBytes(),
-		(void *)attribute->getOffsetInBytes());
+		attribute->getStride(),
+		(void *)attribute->getOffset());
 };
 
-void VertexBufferAttributesGL3x::detach(unsigned index) {
+void VertexBufferAttributes::detach(unsigned index) {
 	glDisableVertexAttribArray(index);
 };
