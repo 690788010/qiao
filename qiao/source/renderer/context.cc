@@ -92,8 +92,11 @@ VertexArray createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shader
 	if (mesh == nullptr) {
 		throw std::invalid_argument("argument mesh can't be null!");
 	}
-	if (mesh->getIndices() != nullptr) {
+	IndicesBase* indices = mesh->getIndices();
+	if (indices != nullptr) {
+		if (indices->getType() == GL_UNSIGNED_SHORT) {
 
+		}
 	}
 };
 

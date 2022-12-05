@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-
 #include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {

@@ -5,6 +5,6 @@
 namespace qiao {
 	class IndicesBase {
 	public:
-		virtual GLenum getDataType() = 0;
+		virtual GLenum getType() = 0;
 	};
 }

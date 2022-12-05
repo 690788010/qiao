@@ -2,7 +2,7 @@
 
 using namespace qiao;
 
-GLenum IndicesUnsignedInt::getDataType() {
+GLenum IndicesUnsignedInt::getType() {
 	return GL_UNSIGNED_INT;
 };
 

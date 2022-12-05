@@ -4,6 +4,7 @@ using namespace qiao;
 
 Mesh::Mesh() {
 	_attributes = new VertexAttributeCollection();
+	_primitiveType = GL_TRIANGLES;
 };
 
 Mesh::~Mesh() {

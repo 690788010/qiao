@@ -2,8 +2,8 @@
 
 using namespace qiao;
 
-GLenum IndicesUnsignedShort::getDataType() {
-	return GL_UNSIGNED_INT;
+GLenum IndicesUnsignedShort::getType() {
+	return GL_UNSIGNED_SHORT;
 };
 
 void IndicesUnsignedShort::addIndex(unsigned short index) {

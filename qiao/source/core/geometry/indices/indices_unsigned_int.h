@@ -7,7 +7,7 @@
 namespace qiao {
 	class IndicesUnsignedInt : public IndicesBase {
 	public:
-		virtual GLenum getDataType();
+		virtual GLenum getType();
 
 		void addIndex(unsigned int index);
 
