@@ -88,6 +88,15 @@ void Context::draw(DrawState* drawState, SceneState* sceneState) {
 	applyBeforeDraw(drawState, sceneState);
 };
 
+VertexArray createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
+	if (mesh == nullptr) {
+		throw std::invalid_argument("argument mesh can't be null!");
+	}
+	if (mesh->getIndices() != nullptr) {
+
+	}
+};
+
 void Context::syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
