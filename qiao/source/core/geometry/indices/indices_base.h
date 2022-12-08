@@ -6,5 +6,6 @@ namespace qiao {
 	class IndicesBase {
 	public:
 		virtual GLenum getType() = 0;
+		virtual size_t getSize();
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <list>
+#include <vector>
 
 #include "indices_base.h"
 
@@ -9,9 +9,13 @@ namespace qiao {
 	public:
 		virtual GLenum getType();
 
+		virtual size_t getSize();
+
 		void addIndex(unsigned int index);
 
+		unsigned short getIndex(unsigned int idx);
+
 	private:
-		std::list<unsigned int> _values;
+		std::vector<unsigned int> _values;
 	};
 }

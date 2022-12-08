@@ -8,6 +8,8 @@
 #include "../core/geometry/mesh.h"
 #include "vertex_array/vertex_array.h"
 #include "./state/render_state/render_state.h"
+#include "../core/geometry/indices/indices_unsigned_short.h"
+#include "../core/geometry/indices/indices_unsigned_int.h"
 
 namespace qiao {
 	class Context {

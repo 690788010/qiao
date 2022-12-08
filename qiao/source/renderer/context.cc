@@ -88,14 +88,38 @@ void Context::draw(DrawState* drawState, SceneState* sceneState) {
 	applyBeforeDraw(drawState, sceneState);
 };
 
-VertexArray createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
+VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
 	if (mesh == nullptr) {
 		throw std::invalid_argument("argument mesh can't be null!");
 	}
-	IndicesBase* indices = mesh->getIndices();
-	if (indices != nullptr) {
-		if (indices->getType() == GL_UNSIGNED_SHORT) {
-
+	VertexArray* vertexArray = new VertexArray();
+	IndicesBase* meshIndices = mesh->getIndices();
+	// 为VertexArray设置对应的IndexBuffer
+	if (meshIndices != nullptr) {
+		if (meshIndices->getType() == GL_UNSIGNED_SHORT) {
+			IndicesUnsignedShort* indicesUnsignedShort = (IndicesUnsignedShort*)meshIndices;
+			size_t size = meshIndices->getSize();
+			unsigned short* indices = new unsigned short[size];
+			for (size_t i = 0; i < size; i++) {
+				indices[i] = indicesUnsignedShort->getIndex(i);
+			}
+			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(indices));
+			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_SHORT, 0, sizeof(indices));
+			vertexArray->setIndexBuffer(indexBuffer);
+		}
+		else if (meshIndices->getType() == GL_UNSIGNED_INT) {
+			IndicesUnsignedInt* indicesUnsignedInt = (IndicesUnsignedInt*)meshIndices;
+			size_t size = meshIndices->getSize();
+			unsigned int* indices = new unsigned int[size];
+			for (size_t i = 0; i < size; i++) {
+				indices[i] = indicesUnsignedInt->getIndex(i);
+			}
+			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(indices));
+			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_INT, 0, sizeof(indices));
+			vertexArray->setIndexBuffer(indexBuffer);
+		}
+		else {
+			throw std::invalid_argument("mesh.Indices.type is not supported!");
 		}
 	}
 };
