@@ -6,10 +6,11 @@
 #include "./state/draw_state/draw_state.h"
 #include "scene/scene_state.h"
 #include "../core/geometry/mesh.h"
-#include "vertex_array/vertex_array.h"
+#include "./vertex_array/vertex_array.h"
 #include "./state/render_state/render_state.h"
 #include "../core/geometry/indices/indices_unsigned_short.h"
 #include "../core/geometry/indices/indices_unsigned_int.h"
+#include "../core/geometry/vertex_attributes/vertex_attribute_float.h"
 
 namespace qiao {
 	class Context {

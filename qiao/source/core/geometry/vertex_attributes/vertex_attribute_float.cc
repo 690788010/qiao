@@ -18,3 +18,7 @@ GLenum VertexAttributeFloat::getType() {
 void VertexAttributeFloat::addData(float data) {
 	_values.push_back(data);
 };
+
+std::list<float> VertexAttributeFloat::getValues() {
+	return _values;
+};

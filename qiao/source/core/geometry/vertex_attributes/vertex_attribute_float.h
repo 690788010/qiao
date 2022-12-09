@@ -12,6 +12,7 @@ namespace qiao {
 		virtual GLenum getType();
 		
 		void addData(float data);
+		std::list<float> getValues();
 
 	private:
 		std::string _name;

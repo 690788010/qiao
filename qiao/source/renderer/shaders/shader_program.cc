@@ -136,8 +136,9 @@ ShaderVertexAttributeCollection ShaderProgram::findVertexAttributes(GLuint progr
 		};
 
 		int attributeLocation = glGetAttribLocation(program, attributeName);
-		vertexAttributes.push_back(new ShaderVertexAttribute(attributeName, attributeLocation,
-			attributeType, attributeSize));
+		vertexAttributes.insert(std::pair<std::string, ShaderVertexAttribute*>(
+			attributeName, 
+			new ShaderVertexAttribute(attributeName, attributeLocation, attributeType, attributeSize)));
 	}
 	return vertexAttributes;
 };

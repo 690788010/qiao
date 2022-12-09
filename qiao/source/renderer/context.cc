@@ -93,6 +93,7 @@ VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shade
 		throw std::invalid_argument("argument mesh can't be null!");
 	}
 	VertexArray* vertexArray = new VertexArray();
+
 	IndicesBase* meshIndices = mesh->getIndices();
 	// 为VertexArray设置对应的IndexBuffer
 	if (meshIndices != nullptr) {
@@ -122,6 +123,45 @@ VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shade
 			throw std::invalid_argument("mesh.Indices.type is not supported!");
 		}
 	}
+
+	// 为VertexArray设置对应的VertexBufferAttributes
+	VertexAttributeCollection* attributes = mesh->getAttributes();
+	for (VertexAttribute* attribute : (*attributes)) {
+		// 如果在ShaderVertexAttributeCollection中找不到对应的ShaderVertexAttribute则抛出异常
+		if (shaderAttributes.find(attribute->getName()) == shaderAttributes.end()) {
+			std::string msg = "VertexAttribute " + attribute->getName();
+			msg += " is not present in ShaderVertexAttributeCollection!";
+			throw std::invalid_argument(msg);
+		}
+
+		// 如果VertexAttribute数据类型和ShaderVertexAttribute数据类型不相同则抛出异常
+		ShaderVertexAttribute* shaderAttribute = shaderAttributes[attribute->getName()];
+		if (attribute->getType() != shaderAttribute->getType()) {
+			std::string msg = "The type of VertexAttribute " + attribute->getName();
+			msg += " is not equal to the type of ShaderVertexAttribute ";
+			msg += shaderAttribute->getName();
+			throw std::invalid_argument(msg);
+		}
+
+		if (attribute->getType() == GL_FLOAT) {
+			VertexAttributeFloat* attributeFloat = (VertexAttributeFloat*)attribute;
+			// 将数据存为一维数组
+			size_t idx = 0;
+			float* valuesArr = new float[attributeFloat->getValues().size()];
+			for (float value : attributeFloat->getValues()) {
+				valuesArr[idx++] = value;
+			}
+			// 创建VertexBuffer并将数据存入显存缓冲区
+			VertexBuffer* vertexBuffer = new VertexBuffer(usage, sizeof(valuesArr));
+			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
+
+			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 1, GL_FLOAT, GL_FALSE, 0, 0);
+			vertexArray->getAttributes()->setByIndex(shaderAttribute->getLocation(), bufferAttribute);
+		}
+
+	}
+
+	return vertexArray;
 };
 
 void Context::syncRenderState(RenderState* renderState) {
