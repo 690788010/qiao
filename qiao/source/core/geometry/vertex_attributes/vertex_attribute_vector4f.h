@@ -15,6 +15,7 @@ namespace qiao {
 		virtual GLenum getType();
 
 		void addData(Vector4F* data);
+		std::list<Vector4F*> getValues();
 
 	private:
 		std::string _name;

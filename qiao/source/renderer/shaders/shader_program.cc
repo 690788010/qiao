@@ -59,8 +59,8 @@ ShaderProgram::~ShaderProgram() {
 	}
 
 	// 释放vector内各个元素的资源
-	for (size_t i = 0; i < _vertexAttributes.size(); i++) {
-		delete _vertexAttributes[i];
+	for (auto it : _vertexAttributes) {
+		delete it.second;
 	}
 
 	// 释放UniformCollection内各个元素的资源

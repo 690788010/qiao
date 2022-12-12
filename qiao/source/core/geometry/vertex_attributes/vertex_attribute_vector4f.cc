@@ -27,3 +27,7 @@ GLenum VertexAttributeVector4F::getType() {
 void VertexAttributeVector4F::addData(Vector4F* data) {
 	_values.push_back(data);
 };
+
+std::list<Vector4F*> VertexAttributeVector4F::getValues() {
+	return _values;
+};

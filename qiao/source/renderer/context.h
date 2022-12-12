@@ -11,6 +11,7 @@
 #include "../core/geometry/indices/indices_unsigned_short.h"
 #include "../core/geometry/indices/indices_unsigned_int.h"
 #include "../core/geometry/vertex_attributes/vertex_attribute_float.h"
+#include "../core/geometry/vertex_attributes/vertex_attribute_vector4f.h"
 
 namespace qiao {
 	class Context {
@@ -20,7 +21,7 @@ namespace qiao {
 
 		void clear(ClearState* clearState);
 		void draw(DrawState* drawState, SceneState* sceneState);
-		VertexArray createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
+		VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
 
 	private:
 		// Sync GL state with default render state.

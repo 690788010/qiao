@@ -88,7 +88,7 @@ void Context::draw(DrawState* drawState, SceneState* sceneState) {
 	applyBeforeDraw(drawState, sceneState);
 };
 
-VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
+VertexArray* Context::createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
 	if (mesh == nullptr) {
 		throw std::invalid_argument("argument mesh can't be null!");
 	}
@@ -156,6 +156,24 @@ VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shade
 			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
 
 			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 1, GL_FLOAT, GL_FALSE, 0, 0);
+			vertexArray->getAttributes()->setByIndex(shaderAttribute->getLocation(), bufferAttribute);
+		}
+		else if (attribute->getType() == GL_FLOAT_MAT4) {
+			VertexAttributeVector4F* attributeVector4F = (VertexAttributeVector4F*)attribute;
+			// 将数据存为一维数组
+			size_t idx = 0;
+			float* valuesArr = new float[attributeVector4F->getValues().size() * 4];
+			for (Vector4F* vector4F : attributeVector4F->getValues()) {
+				valuesArr[idx++] = vector4F->getX();
+				valuesArr[idx++] = vector4F->getY();
+				valuesArr[idx++] = vector4F->getZ();
+				valuesArr[idx++] = vector4F->getW();
+			}
+			// 创建VertexBuffer并将数据存入显存缓冲区
+			VertexBuffer* vertexBuffer = new VertexBuffer(usage, sizeof(valuesArr));
+			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
+			// 将顶点属性指针的配置保存到VAO
+			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 4, GL_FLOAT, GL_FALSE, 0, 0);
 			vertexArray->getAttributes()->setByIndex(shaderAttribute->getLocation(), bufferAttribute);
 		}
 
