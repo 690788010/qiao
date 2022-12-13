@@ -13,10 +13,10 @@ VertexBufferAttribute::VertexBufferAttribute(VertexBuffer* vertexBuffer, GLint s
 };
 
 VertexBufferAttribute::~VertexBufferAttribute() {
-	if (_vertexBuffer != nullptr) {
+	/*if (_vertexBuffer != nullptr) {
 		delete _vertexBuffer;
 		_vertexBuffer = nullptr;
-	}
+	}*/
 };
 
 VertexBuffer* VertexBufferAttribute::getVertexBuffer() {

@@ -4,15 +4,11 @@
 
 using namespace qiao;
 
-DrawState::DrawState() {
-	std::cout << "DrawState()" << std::endl;
-	_renderState = new RenderState();
-}
-
-DrawState::DrawState(RenderState* renderState, ShaderProgram* shaderProgram) {
+DrawState::DrawState(RenderState* renderState, ShaderProgram* shaderProgram, VertexArray* vertexArray) {
 	std::cout << "DrawState(RenderState* renderState, ShaderProgram* shaderProgram)" << std::endl;
 	_renderState = renderState;
 	_shaderProgram = shaderProgram;
+	_vertexArray = vertexArray;
 };
 
 DrawState::~DrawState() {
@@ -24,6 +20,10 @@ DrawState::~DrawState() {
 	if (_shaderProgram != nullptr) {
 		delete _shaderProgram;
 		_shaderProgram = nullptr;
+	}
+	if (_vertexArray != nullptr) {
+		delete _vertexArray;
+		_vertexArray = nullptr;
 	}
 }
 

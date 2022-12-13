@@ -33,9 +33,9 @@ public:
 		std::string fs = "out vec4 fragColor;";
 		fs += "\nuniform float color;";
 		fs += "\nvoid main() {";
-		fs += "\n	fragColor = vec4(color, 0.0, 0.0, 1.0);";
+		fs += "\n	fragColor = vec4(1.0, 0.0, 0.0, 1.0);";
 		fs += "\n}";
-		_sp = new qiao::ShaderProgram(vs, fs);
+		qiao::ShaderProgram* sp = new qiao::ShaderProgram(vs, fs);
 		
 		qiao::Mesh* mesh = new qiao::Mesh();
 		mesh->setPrimitiveType(GL_TRIANGLES);
@@ -54,9 +54,14 @@ public:
 
 		qiao::Context* context = _window->getContext();
 
-		qiao::VertexArray* va = context->createVertexArray(mesh, _sp->vertexAttributes(), GL_STATIC_DRAW);
+		qiao::VertexArray* va = context->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
+
+		//qiao::RenderState* renderState = new qiao::RenderState();
+
+		//_drawState = new qiao::DrawState(renderState, sp, va);
 
 		delete mesh;
+		delete va;
 	}
 	~Test() {
 		if (_window != nullptr) {
@@ -64,9 +69,9 @@ public:
 			_window = nullptr;
 		}
 
-		if (_sp != nullptr) {
-			delete _sp;
-			_sp = nullptr;
+		if (_drawState != nullptr) {
+			delete _drawState;
+			_drawState = nullptr;
 		}
 	}
 
@@ -77,12 +82,16 @@ public:
 
 private:
 	void render() {
+		qiao::Context* context = _window->getContext();
+
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		//context->draw();
 	}
 
 	qiao::Window* _window;
-	qiao::ShaderProgram* _sp;
+	qiao::DrawState* _drawState;
 };
 
 int main() {

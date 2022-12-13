@@ -7,8 +7,7 @@
 namespace qiao {
 	class DrawState {
 	public:
-		DrawState();
-		DrawState(RenderState* renderState, ShaderProgram* shaderProgram);
+		DrawState(RenderState* renderState, ShaderProgram* shaderProgram, VertexArray* vertexArray);
 
 		~DrawState();
 
