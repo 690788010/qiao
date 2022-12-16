@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   window.h
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #pragma once
 
 #include <string>
@@ -7,22 +15,54 @@
 
 #include "context.h"
 
-
 namespace qiao {
 	class Window {
 	public:
+		/**
+		 * .
+		 * 构造函数
+		 * \param width 窗口长度
+		 * \param height 窗口高度
+		 * \param title 窗口标题
+		 * \param isFullScreen 窗口是否全屏
+		 */
 		Window(int width, int height, std::string title, bool isFullScreen = false);
 		~Window();
 
+		/**
+		 * 启动循环渲染.
+		 */
 		void run();
+
+		/**
+		 * 获取Context对象指针.
+		 * 
+		 * \return Context*
+		 */
 		Context* getContext();
 
+		/**
+		 * 函数指针，可以赋值，在窗口大小变化时会调用这个函数指针指向的函数.
+		 */
 		void (*resize)();
+
+		/**
+		 * 函数指针，可以赋值，渲染每一帧前会调用这个函数指针指向的函数.
+		 */
 		void (*preRender)();
+
+		/**
+		 * 函数指针，可以赋值，循环会调用这个函数指针指向的函数去渲染一帧.
+		 */
 		void (*render)();
+
+		/**
+		 * 函数指针，可以赋值，渲染每一帧后会调用这个函数指针指向的函数.
+		 */
 		void (*postRender)();
+
 	private:
-		// 循环渲染
+		// 通过循环不停的调用对应函数去渲染，并不停循环做相关的处理操作
 		void renderLoop();
 
 		// glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -33,7 +73,5 @@ namespace qiao {
 
 		GLFWwindow* _gltfWindow;
 		Context* _context;
-		int _width;
-		int _height;
 	};
 }
