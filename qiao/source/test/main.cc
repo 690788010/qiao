@@ -27,8 +27,9 @@ public:
 
 		std::string vs =
 			"in vec4 position;";
+		vs += "uniform mat4 og_modelMatrix;";
 		vs += "\nvoid main() {";
-		vs += "\n	gl_Position = position;";
+		vs += "\n	gl_Position = og_modelMatrix * position;";
 		vs += "\n}";
 		std::string fs = "out vec4 fragColor;";
 		fs += "\nuniform float color;";

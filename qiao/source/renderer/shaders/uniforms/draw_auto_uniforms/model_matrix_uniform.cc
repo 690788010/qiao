@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   model_matrix_uniform.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #include "model_matrix_uniform.h"
 
 using namespace qiao;

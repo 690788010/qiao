@@ -20,9 +20,10 @@ ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
 		_linkAutoUniforms.insert(std::pair<std::string, LinkAutoUniform*>(textureUniform->getName(), textureUniform));
 	}
 
-	// 初始化各个DrawAutoUniform，用于之后自动设置着色器中对应Uniform的值
+	// 初始化各个DrawAutoUniformFactory，用于之后自动设置着色器中对应Uniform的值
+	ModelMatrixUniformFactory* modelMatrixUniformFactory = new ModelMatrixUniformFactory();
 	_drawAutoUniformFactories.insert(
-		std::pair<std::string, DrawAutoUniformFactory*>("og_modelMatrix", new ModelMatrixUniformFactory()));
+		std::pair<std::string, DrawAutoUniformFactory*>(modelMatrixUniformFactory->getName(), modelMatrixUniformFactory));
 
 	ShaderObject _vertexShader(ShaderType::VERTEX_SHADER, vs);
 	ShaderObject _fragmentShader(ShaderType::FRAGMENT_SHADER, fs);
@@ -75,15 +76,6 @@ ShaderProgram::~ShaderProgram() {
 		delete it->second;
 		it->second = nullptr;
 		it++;
-	}
-
-	for (auto it = _drawAutoUniformFactories.begin(); it != _drawAutoUniformFactories.end(); it++) {
-		delete it->second;
-		it->second = nullptr;
-	}
-
-	for (auto it = _drawAutoUniforms.begin(); it != _drawAutoUniforms.end(); it++) {
-		delete (*it);
 	}
 }
 
@@ -180,6 +172,8 @@ Uniform* ShaderProgram::createUniform(std::string name, int location, GLenum typ
 			return new UniformInt(name, location, type, this);
 		case GL_FLOAT:
 			return new UniformFloat(name, location, type, this);
+		case GL_FLOAT_MAT4:
+			//return new GL_FLOAT_MAT4(name, location, type, this);
 	}
 	throw std::invalid_argument("An implementation for argument uniform type does not exist.");
 };
