@@ -20,7 +20,7 @@ std::function<void()> Wrapper::broker_func = nullptr;
 class Test {
 public:
 	Test() {
-		_window = new qiao::Window(800, 600, "qiao");
+		_window = new qiao::Window(800, 600, "qiao", false);
 		Wrapper::broker_func = std::bind(&Test::render, this);
 		// Wrapper wrapper;
 		_window->render = Wrapper::wrapper_func;
@@ -32,8 +32,9 @@ public:
 		vs += "\n}";
 		std::string fs = "out vec4 fragColor;";
 		fs += "\nuniform float color;";
+		fs += "\nuniform sampler2D og_texture2;";
 		fs += "\nvoid main() {";
-		fs += "\n	fragColor = vec4(1.0, 0.0, 0.0, 1.0);";
+		fs += "\n	fragColor = texture(og_texture2, vec2(0.5, 0.5));";
 		fs += "\n}";
 		qiao::ShaderProgram* sp = new qiao::ShaderProgram(vs, fs);
 		
@@ -56,12 +57,13 @@ public:
 
 		qiao::VertexArray* va = context->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
 
-		//qiao::RenderState* renderState = new qiao::RenderState();
+		qiao::RenderState* renderState = new qiao::RenderState();
 
-		//_drawState = new qiao::DrawState(renderState, sp, va);
+		_drawState = new qiao::DrawState(renderState, sp, va);
+
+		_sceneState = new qiao::SceneState();
 
 		delete mesh;
-		delete va;
 	}
 	~Test() {
 		if (_window != nullptr) {
@@ -87,11 +89,12 @@ private:
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//context->draw();
+		context->draw(GL_TRIANGLES, _drawState, _sceneState);
 	}
 
 	qiao::Window* _window;
 	qiao::DrawState* _drawState;
+	qiao::SceneState* _sceneState;
 };
 
 int main() {

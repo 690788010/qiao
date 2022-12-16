@@ -20,7 +20,7 @@ namespace qiao {
 		~Context();
 
 		void clear(ClearState* clearState);
-		void draw(DrawState* drawState, SceneState* sceneState);
+		void draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState);
 		VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
 
 	private:

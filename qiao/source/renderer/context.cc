@@ -83,9 +83,19 @@ void Context::clear(ClearState* clearState) {
 	glClear(clearState->getClearMask());
 };
 
-void Context::draw(DrawState* drawState, SceneState* sceneState) {
+void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState) {
 	verifyDraw(drawState, sceneState);
 	applyBeforeDraw(drawState, sceneState);
+
+	VertexArray* vertexArray = drawState->getVertexArray();
+	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
+
+	if (indexBuffer != nullptr) {
+		glDrawElements(primitiveType, 3, indexBuffer->getType(), 0);
+	}
+	else {
+
+	}
 };
 
 VertexArray* Context::createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
