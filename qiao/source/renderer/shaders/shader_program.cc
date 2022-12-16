@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   shader_program.cc
+ * \brief  
+ * 
+ * \author DELL
+ * \date   December 2022
+ *********************************************************************/
 
 #include <iostream>
 #include "shader_program.h"
@@ -5,13 +12,12 @@
 using namespace qiao;
 
 ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
-	std::cout << "ShaderProgram" << std::endl;
-	
 	// 初始化各个LinkAutoUniform，用于之后自动设置着色器中对应Uniform的值
 	int _numberOfTextureUnits;
 	glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &_numberOfTextureUnits);
 	for (int i = 0; i < _numberOfTextureUnits; i++) {
-		_linkAutoUniforms.insert(std::pair<std::string, LinkAutoUniform*>("og_texture" + i, new TextureUniform(i)));
+		TextureUniform* textureUniform = new TextureUniform(i);
+		_linkAutoUniforms.insert(std::pair<std::string, LinkAutoUniform*>(textureUniform->getName(), textureUniform));
 	}
 
 	// 初始化各个DrawAutoUniform，用于之后自动设置着色器中对应Uniform的值
@@ -69,11 +75,6 @@ ShaderProgram::~ShaderProgram() {
 		delete it->second;
 		it->second = nullptr;
 		it++;
-	}
-
-	for (auto it = _linkAutoUniforms.begin(); it != _linkAutoUniforms.end(); it++) {
-		delete it->second;
-		it->second = nullptr;
 	}
 
 	for (auto it = _drawAutoUniformFactories.begin(); it != _drawAutoUniformFactories.end(); it++) {
@@ -174,14 +175,14 @@ UniformCollection ShaderProgram::findUniforms(GLuint program) {
 
 Uniform* ShaderProgram::createUniform(std::string name, int location, GLenum type) {
 	switch (type) {
-	case GL_INT:
-		return new UniformInt(name, location, type, this);
-	case GL_FLOAT:
-		return new UniformFloat(name, location, type, this);
+		case GL_INT:
+		case GL_SAMPLER_2D:
+			return new UniformInt(name, location, type, this);
+		case GL_FLOAT:
+			return new UniformFloat(name, location, type, this);
 	}
 	throw std::invalid_argument("An implementation for argument uniform type does not exist.");
 };
-
 
 
 void ShaderProgram::initAutoUniforms(UniformCollection uniforms) {
@@ -189,7 +190,7 @@ void ShaderProgram::initAutoUniforms(UniformCollection uniforms) {
 		std::string name = it->first;
 		Uniform* uniform = it->second;
 		if (_linkAutoUniforms.find(name) != _linkAutoUniforms.end()) {
-			// 为与LinkAutoUniform对应的Uniform设置自动计算的值
+			// 为与LinkAutoUniform对应的Uniform自动设置值
 			_linkAutoUniforms[name]->set(uniform);
 		}
 		else if (_drawAutoUniformFactories.find(name) != _drawAutoUniformFactories.end()) {

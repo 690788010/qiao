@@ -15,7 +15,7 @@ TextureUniform::TextureUniform(int textureUnit) {
 
 // 获取Uniform变量名
 std::string TextureUniform::getName() {
-	return "og_texture" + _textureUnit;		// 着色器中Sampler Uniform变量名与之一致才能匹配
+	return "og_texture" + std::to_string(_textureUnit);		// 着色器中Sampler Uniform变量名与之一致才能匹配
 };
 
 // 为Uniform设置值

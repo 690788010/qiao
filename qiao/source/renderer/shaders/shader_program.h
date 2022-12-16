@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   shader_program.h
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #pragma once
 
 #include <string>
@@ -20,8 +28,17 @@ namespace qiao {
 	class DrawState;
 	class Context;
 
+	/**
+	 * ShaderProgram类用于封装着色器程序，提供对着色器的编译、链接等操作.
+	 */
 	class ShaderProgram : public ICleanableObserver {
 	public:
+		/**
+		 * 构造函数.
+		 * 
+		 * \param vs 顶点着色器源代码
+		 * \param fs 片元着色器源代码
+		 */
 		ShaderProgram(std::string vs, std::string fs);
 		~ShaderProgram();
 
