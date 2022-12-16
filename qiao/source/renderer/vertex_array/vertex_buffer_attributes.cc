@@ -17,8 +17,7 @@ VertexBufferAttributes::VertexBufferAttributes() {
 
 VertexBufferAttributes::~VertexBufferAttributes() {
 	if (_attributes != nullptr) {
-		std::cout << _maxVertexAttribs << std::endl;
-		for (int i = 0; i < _maxVertexAttribs; i++) {
+		for (int i = 0; i < _count; i++) {
 			delete _attributes[i];
 			_attributes[i] = nullptr;
 		}
