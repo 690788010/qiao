@@ -193,7 +193,6 @@ void ShaderProgram::initAutoUniforms(UniformCollection uniforms) {
 			_drawAutoUniforms.push_back(drawAutoUniform);
 		}
 	}
-
 };
 
 void ShaderProgram::setDrawAutoUniforms(Context* context, DrawState* drawState, SceneState* sceneState) {

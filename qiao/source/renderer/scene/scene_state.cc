@@ -2,7 +2,7 @@
 
 using namespace qiao;
 
-SceneState::SceneState() {
+SceneState::SceneState() : _modelMatrix{ Matrix4D::Identity() } {
 	_camera = new Camera();
 }
 
@@ -19,4 +19,8 @@ Camera* SceneState::getCamera() {
 
 void SceneState::setCamera(Camera* camera) {
 	_camera = camera;
+};
+
+Matrix4D& SceneState::getModelMatrix() {
+	return _modelMatrix;
 };
