@@ -23,6 +23,7 @@
 #include "./shader_components/fragment_outputs.h"
 #include "./uniforms/uniform_int.h"
 #include "./uniforms/uniform_float.h"
+#include "./uniforms/uniform_matrix_4d.h"
 
 namespace qiao {
 	class DrawState;

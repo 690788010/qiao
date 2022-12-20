@@ -53,10 +53,44 @@ namespace qiao {
 			double column0row2, double column1row2, double column2row2, double column3row2,
 			double column0row3, double column1row3, double column2row3, double column3row3);
 
+		/**
+		 * 拷贝构造函数.
+		 * 
+		 * \param mat4
+		 */
+		Matrix4D(const Matrix4D& mat4);
+
+		/**
+		 * 移动构造函数.
+		 * 
+		 * \param mat4
+		 */
+		Matrix4D(Matrix4D&& mat4);
+
 		~Matrix4D();
+
+		/**
+		 * 拷贝赋值运算符.
+		 * 
+		 * \param mat4
+		 * \return 
+		 */
+		Matrix4D& operator=(const Matrix4D& mat4);
+
+		/**
+		 * 移动赋值运算符.
+		 * 
+		 * \param mat4
+		 * \return 
+		 */
+		Matrix4D& operator=(Matrix4D&& mat4);
 
 		static Matrix4D Identity();
 
+		double* getValues();
+
+		bool operator==(const Matrix4D& mat4d) const;
+		bool operator!=(const Matrix4D& mat4d) const;
 
 	private:
 		double* _values;			// 存储矩阵的数组（列主序）

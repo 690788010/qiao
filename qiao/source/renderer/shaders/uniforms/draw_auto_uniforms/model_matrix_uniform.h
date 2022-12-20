@@ -10,6 +10,7 @@
 
 #include "draw_auto_uniform.h"
 #include "../uniform.h"
+#include "../uniform_matrix_4d.h"
 
 namespace qiao {
 	/**

@@ -23,11 +23,11 @@ int UniformFloat::getLocation() {
 	return _location;
 };
 
-float UniformFloat::getValue() {
+float& UniformFloat::getValue() {
 	return _value;
 };
 
-void UniformFloat::setValue(float val) {
+void UniformFloat::setValue(const float& val) {
 	if (!_dirty && (_value != val)) {
 		_dirty = true;
 		_observer->notifyDirty(this);		// 通知ShaderProgram有Uniform设置了新值而未同步到GPU

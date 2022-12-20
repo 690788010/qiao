@@ -189,6 +189,15 @@
     <ClInclude Include="source\renderer\vertex_array\vertex_array.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\core\matrix\matrix4d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\matrix\matrix4f.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\shaders\uniforms\uniform_matrix_4d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="third_party\glad\source\glad.c">
@@ -309,6 +318,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\vertex_array\vertex_array.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\matrix\matrix4d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\matrix\matrix4f.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\shaders\uniforms\uniform_matrix_4d.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

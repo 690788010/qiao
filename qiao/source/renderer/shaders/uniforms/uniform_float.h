@@ -13,8 +13,8 @@ namespace qiao {
 		virtual std::string getName();
 		virtual unsigned int getType();
 		virtual int getLocation();
-		virtual float getValue();
-		virtual void setValue(float val);
+		virtual float& getValue();
+		virtual void setValue(const float& val);
 		virtual void clean();				// 将新值同步到GPU
 
 	private:

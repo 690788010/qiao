@@ -12,6 +12,7 @@
 #include "../../i_cleanable.h"
 #include "../../i_cleanable_observer.h"
 #include "../../../core/matrix/matrix4d.h"
+#include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {
 	/**

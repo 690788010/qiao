@@ -148,6 +148,8 @@
     <ClInclude Include="source\core\geometry\vertex_attributes\vertexAttribute_collection.h" />
     <ClInclude Include="source\core\geometry\vertex_attributes\vertex_attribute_float.h" />
     <ClInclude Include="source\core\geometry\vertex_attributes\vertex_attribute_vector4f.h" />
+    <ClInclude Include="source\core\matrix\matrix4d.h" />
+    <ClInclude Include="source\core\matrix\matrix4f.h" />
     <ClInclude Include="source\core\vector\vector3d.h" />
     <ClInclude Include="source\core\vector\vector4d.h" />
     <ClInclude Include="source\core\vector\vector4f.h" />
@@ -174,6 +176,7 @@
     <ClInclude Include="source\renderer\shaders\uniforms\uniform_collection.h" />
     <ClInclude Include="source\renderer\shaders\uniforms\uniform_float.h" />
     <ClInclude Include="source\renderer\shaders\uniforms\uniform_int.h" />
+    <ClInclude Include="source\renderer\shaders\uniforms\uniform_matrix_4d.h" />
     <ClInclude Include="source\renderer\state\clear_state\clear_state.h" />
     <ClInclude Include="source\renderer\state\draw_state\draw_state.h" />
     <ClInclude Include="source\renderer\state\render_state\blending.h" />
@@ -205,6 +208,8 @@
     <ClCompile Include="source\core\geometry\mesh.cc" />
     <ClCompile Include="source\core\geometry\vertex_attributes\vertex_attribute_float.cc" />
     <ClCompile Include="source\core\geometry\vertex_attributes\vertex_attribute_vector4f.cc" />
+    <ClCompile Include="source\core\matrix\matrix4d.cc" />
+    <ClCompile Include="source\core\matrix\matrix4f.cc" />
     <ClCompile Include="source\core\vector\vector3d.cc" />
     <ClCompile Include="source\core\vector\vector4d.cc" />
     <ClCompile Include="source\core\vector\vector4f.cc" />
@@ -220,6 +225,7 @@
     <ClCompile Include="source\renderer\shaders\uniforms\link_auto_uniforms\texture_uniform.cc" />
     <ClCompile Include="source\renderer\shaders\uniforms\uniform_float.cc" />
     <ClCompile Include="source\renderer\shaders\uniforms\uniform_int.cc" />
+    <ClCompile Include="source\renderer\shaders\uniforms\uniform_matrix_4d.cc" />
     <ClCompile Include="source\renderer\state\clear_state\clear_state.cc" />
     <ClCompile Include="source\renderer\state\draw_state\draw_state.cc" />
     <ClCompile Include="source\renderer\state\render_state\blending.cc" />

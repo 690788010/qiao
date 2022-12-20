@@ -34,10 +34,21 @@ Matrix4D::Matrix4D(
 {
 	_values = new double[] {
 		column0row0, column0row1, column0row2, column0row3,
-			column1row0, column1row1, column1row2, column1row3,
-			column2row0, column2row1, column2row2, column2row3,
-			column3row0, column3row1, column3row2, column3row3
+		column1row0, column1row1, column1row2, column1row3,
+		column2row0, column2row1, column2row2, column2row3,
+		column3row0, column3row1, column3row2, column3row3
 	};
+};
+
+Matrix4D::Matrix4D(const Matrix4D& mat4) {
+	_values = new double[16];
+	for (int i = 0; i < 16; i++) {
+		_values[i] = mat4._values[i];
+	}
+};
+
+Matrix4D::Matrix4D(Matrix4D&& mat4) : _values{ mat4._values } {
+	mat4._values = nullptr;
 };
 
 Matrix4D::~Matrix4D() {
@@ -45,6 +56,23 @@ Matrix4D::~Matrix4D() {
 		delete[] _values;
 		_values = nullptr;
 	}
+};
+
+Matrix4D& Matrix4D::operator=(const Matrix4D& mat4) {
+	delete[] _values;			// É¾³ý¾ÉÔªËØ
+	for (int i = 0; i < 16; i++) {
+		_values[i] = mat4._values[i];
+	}
+	return *this;
+};
+
+Matrix4D& Matrix4D::operator=(Matrix4D&& mat4) {
+	delete[] _values;			// É¾³ý¾ÉÔªËØ
+	// ´Ómat4ÖÐ¶áÈ¡_values
+	_values = mat4._values;
+	mat4._values = nullptr;
+	return *this;
+
 };
 
 Matrix4D Matrix4D::Identity() {
@@ -55,3 +83,27 @@ Matrix4D Matrix4D::Identity() {
 		0.0, 0.0, 0.0, 1.0);
 	return identity;
 }
+
+double* Matrix4D::getValues() {
+	return _values;
+};
+
+bool Matrix4D::operator==(const Matrix4D& mat4d) const {
+	double* vals = mat4d._values;
+	for (int i = 0; i < 16; i++) {
+		if (_values[i] != vals[i]) {
+			return false;
+		}
+	}
+	return true;
+};
+
+bool Matrix4D::operator!=(const Matrix4D& mat4d) const {
+	double* vals = mat4d._values;
+	for (int i = 0; i < 16; i++) {
+		if (_values[i] != vals[i]) {
+			return true;
+		}
+	}
+	return false;
+};

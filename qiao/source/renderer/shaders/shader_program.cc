@@ -173,7 +173,7 @@ Uniform* ShaderProgram::createUniform(std::string name, int location, GLenum typ
 		case GL_FLOAT:
 			return new UniformFloat(name, location, type, this);
 		case GL_FLOAT_MAT4:
-			//return new GL_FLOAT_MAT4(name, location, type, this);
+			return new UniformMatrix4D(name, location, type, this);
 	}
 	throw std::invalid_argument("An implementation for argument uniform type does not exist.");
 };
@@ -196,7 +196,7 @@ void ShaderProgram::initAutoUniforms(UniformCollection uniforms) {
 };
 
 void ShaderProgram::setDrawAutoUniforms(Context* context, DrawState* drawState, SceneState* sceneState) {
-	for (auto it = _drawAutoUniforms.begin(); it != _drawAutoUniforms.end(); it++) {
-		(*it)->set(context, drawState, sceneState);
+	for (auto& autoUniform : _drawAutoUniforms) {
+		autoUniform->set(context, drawState, sceneState);
 	}
 };

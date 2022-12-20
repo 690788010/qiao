@@ -15,5 +15,5 @@ ModelMatrixUniform::ModelMatrixUniform(Uniform* uniform) {
 };
 
 void ModelMatrixUniform::set(Context* context, DrawState* drawState, SceneState* sceneState) {
-	
+	((UniformMatrix4D*)_uniform)->setValue(sceneState->getModelMatrix());
 };
