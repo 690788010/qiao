@@ -24,3 +24,7 @@ void SceneState::setCamera(Camera* camera) {
 Matrix4D& SceneState::getModelMatrix() {
 	return _modelMatrix;
 };
+
+void SceneState::setModelMatrix(const Matrix4D& mat4) {
+	_modelMatrix = mat4;
+};

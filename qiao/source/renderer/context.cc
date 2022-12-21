@@ -87,7 +87,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	verifyDraw(drawState, sceneState);
 	applyBeforeDraw(drawState, sceneState);
 
-	VertexArray* vertexArray = drawState->getVertexArray();
+	/*VertexArray* vertexArray = drawState->getVertexArray();
 	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
 
 	if (indexBuffer != nullptr) {
@@ -95,7 +95,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	}
 	else {
 
-	}
+	}*/
 };
 
 VertexArray* Context::createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {

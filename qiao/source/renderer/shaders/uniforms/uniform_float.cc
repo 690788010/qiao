@@ -1,4 +1,11 @@
-#include <iostream>
+/*****************************************************************//**
+ * \file   uniform_float.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #include "uniform_float.h"
 
 using namespace qiao;

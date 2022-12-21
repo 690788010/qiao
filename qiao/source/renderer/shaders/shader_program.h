@@ -62,10 +62,14 @@ namespace qiao {
 		void setDrawAutoUniforms(Context* context, DrawState* drawState, SceneState* sceneState);
 
 	private:
-		// 为顶点着色器里的每个激活的attribute变量构建元数据
-		ShaderVertexAttributeCollection findVertexAttributes(GLuint program);
-		UniformCollection findUniforms(GLuint program);
-		Uniform* createUniform(std::string name, int location, GLenum type);
+		// 为顶点着色器里的每个激活的attribute变量创建元数据
+		ShaderVertexAttributeCollection _findVertexAttributes(GLuint program);
+
+		// 为着色器里的每个激活的Uniform变量创建元数据
+		UniformCollection _findUniforms(GLuint program);
+
+		// 根据type创建对应类型的Uniform子类对象
+		Uniform* _createUniform(std::string name, int location, GLenum type);
 
 		GLuint _program;
 		FragmentOutputs* _fragmentOutputs;

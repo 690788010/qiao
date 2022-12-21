@@ -1,4 +1,11 @@
-#include <iostream>
+/*****************************************************************//**
+ * \file   uniform_int.cc
+ * \brief  
+ * 
+ * \author DELL
+ * \date   December 2022
+ *********************************************************************/
+
 #include "uniform_int.h"
 
 using namespace qiao;
@@ -6,7 +13,7 @@ using namespace qiao;
 UniformInt::UniformInt(std::string name, int location, unsigned int type, ICleanableObserver* observer) :
 	_name{ name }, _location{ location }, _type{ type }, _observer{ observer }
 {
-	_value = 0.0;
+	_value = 0;
 	_dirty = true;
 	_observer->notifyDirty(this);
 };

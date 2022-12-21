@@ -12,6 +12,7 @@ namespace qiao {
 		void setCamera(Camera* camera);
 
 		Matrix4D& getModelMatrix();
+		void setModelMatrix(const Matrix4D& mat4);
 
 	private:
 		Camera* _camera;

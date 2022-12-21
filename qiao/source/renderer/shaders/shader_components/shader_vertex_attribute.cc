@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   shader_vertex_attribute.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
 
 #include "shader_vertex_attribute.h"
 

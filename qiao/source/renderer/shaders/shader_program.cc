@@ -25,28 +25,34 @@ ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
 	_drawAutoUniformFactories.insert(
 		std::pair<std::string, DrawAutoUniformFactory*>(modelMatrixUniformFactory->getName(), modelMatrixUniformFactory));
 
+	// 创建着色器对象（编译着色器源码）
 	ShaderObject _vertexShader(ShaderType::VERTEX_SHADER, vs);
 	ShaderObject _fragmentShader(ShaderType::FRAGMENT_SHADER, fs);
 
+	// 创建程序对象
 	_program = glCreateProgram();
 
+	// 为程序对象绑定着色器对象
 	glAttachShader(_program, _vertexShader.handle());
 	glAttachShader(_program, _fragmentShader.handle());
+	// 链接
 	glLinkProgram(_program);
+
+	// 链接失败则抛出异常
 	int success;
 	char infoLog[512];
 	glGetProgramiv(_program, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(_program, 512, NULL, infoLog);
-		std::cout << std::string(infoLog) << std::endl;
 		throw std::invalid_argument("Could not link shader program.  Link Log:  \n" + std::string(infoLog));
 	}
 
+	// 将顶点着色器里的每个激活的attribute变量的元数据保存下来
+	_vertexAttributes = _findVertexAttributes(_program);
+	// 将着色器里Uniform变量的元数据保存下来
+	_uniforms = _findUniforms(_program);
 	// 用于查找片元着色器out变量的索引位置
 	_fragmentOutputs = new FragmentOutputs(_program);
-	// 为顶点着色器里的每个激活的attribute变量构建元数据
-	_vertexAttributes = findVertexAttributes(_program);
-	_uniforms = findUniforms(_program);
 
 	// 初始化AutoUniform
 	initAutoUniforms(_uniforms);
@@ -108,27 +114,31 @@ void ShaderProgram::notifyDirty(ICleanable* val) {
 	_dirtyUniforms.push_back(val);
 };
 
-ShaderVertexAttributeCollection ShaderProgram::findVertexAttributes(GLuint program) {
+ShaderVertexAttributeCollection ShaderProgram::_findVertexAttributes(GLuint program) {
+	// 顶点着色器中激活Attribute变量的数量
 	int numberOfAttributes;
 	glGetProgramiv(program, GL_ACTIVE_ATTRIBUTES, &numberOfAttributes);
-
+	// 顶点着色器中激活Attribute变量名的最大长度
 	int attributeNameMaxLength;
 	glGetProgramiv(program, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, &attributeNameMaxLength);
 
 	ShaderVertexAttributeCollection vertexAttributes;
 	for (int i = 0; i < numberOfAttributes; i++) {
-		int attributeNameLength;
-		int attributeSize;
-		GLenum attributeType;
+		int attributeNameLength;		// 变量名实际长度
+		int attributeSize;				// 变量占用字节数量
+		GLenum attributeType;			// 变量类型
 		char* attributeName = new char[attributeNameMaxLength];
 		glGetActiveAttrib(program, i, attributeNameMaxLength, &attributeNameLength,
 			&attributeSize, &attributeType, attributeName);
 
+		// 如果变量名以"gl_"开头，则跳过
 		if (strcmp(attributeName, "gl_") == 0) {
 			continue;
 		};
 
+		// 获取变量索引位置
 		int attributeLocation = glGetAttribLocation(program, attributeName);
+		// 保存该变量相关的元数据
 		vertexAttributes.insert(std::pair<std::string, ShaderVertexAttribute*>(
 			attributeName, 
 			new ShaderVertexAttribute(attributeName, attributeLocation, attributeType, attributeSize)));
@@ -136,8 +146,8 @@ ShaderVertexAttributeCollection ShaderProgram::findVertexAttributes(GLuint progr
 	return vertexAttributes;
 };
 
-UniformCollection ShaderProgram::findUniforms(GLuint program) {
-	// 获取激活的Uniform变量的个数
+UniformCollection ShaderProgram::_findUniforms(GLuint program) {
+	// 获取着色器中激活的Uniform变量的个数
 	int numberOfUniforms;
 	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &numberOfUniforms);
 
@@ -148,24 +158,26 @@ UniformCollection ShaderProgram::findUniforms(GLuint program) {
 	UniformCollection uniforms;
 	for (int i = 0; i < numberOfUniforms; i++) {
 		int uniformNameLength;		// uniform变量名的长度
-		int uniformSize;			// 
+		int uniformSize;			// uniform变量占用字节数量
 		GLenum uniformType;			// uniform变量的类型
 		char* uniformName = new char[uniformNameMaxLength];
 		glGetActiveUniform(program, i, uniformNameMaxLength, &uniformNameLength,
 			&uniformSize, &uniformType, uniformName);
-
+		
+		// 如果Uniform变量名以"gl_"开头，则跳过
 		if (strcmp(uniformName, "gl_") == 0) {
 			continue;
 		}
 
+		// 保存该Uniform变量相关的元数据
 		int uniformLocation = glGetUniformLocation(program, uniformName);
-		uniforms.insert(std::pair<std::string, Uniform*>(uniformName, createUniform(uniformName, uniformLocation, uniformType)));
+		uniforms.insert(std::pair<std::string, Uniform*>(uniformName, _createUniform(uniformName, uniformLocation, uniformType)));
 	}
 
 	return uniforms;
 };
 
-Uniform* ShaderProgram::createUniform(std::string name, int location, GLenum type) {
+Uniform* ShaderProgram::_createUniform(std::string name, int location, GLenum type) {
 	switch (type) {
 		case GL_INT:
 		case GL_SAMPLER_2D:

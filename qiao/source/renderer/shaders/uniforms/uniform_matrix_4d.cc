@@ -38,7 +38,7 @@ void UniformMatrix4D::setValue(const Matrix4D& val) {
 		_dirty = true;
 		_observer->notifyDirty(this);		// 通知ShaderProgram有Uniform设置了新值而未同步到GPU
 	}
-	_value = std::move(val);
+	_value = val;
 };
 
 void UniformMatrix4D::clean() {

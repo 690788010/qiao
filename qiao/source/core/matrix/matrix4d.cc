@@ -59,7 +59,6 @@ Matrix4D::~Matrix4D() {
 };
 
 Matrix4D& Matrix4D::operator=(const Matrix4D& mat4) {
-	delete[] _values;			// É¾³ı¾ÉÔªËØ
 	for (int i = 0; i < 16; i++) {
 		_values[i] = mat4._values[i];
 	}
