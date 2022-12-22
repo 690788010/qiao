@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   draw_state.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
 
 #include <iostream>
 #include "draw_state.h"
@@ -5,14 +12,12 @@
 using namespace qiao;
 
 DrawState::DrawState(RenderState* renderState, ShaderProgram* shaderProgram, VertexArray* vertexArray) {
-	std::cout << "DrawState(RenderState* renderState, ShaderProgram* shaderProgram)" << std::endl;
 	_renderState = renderState;
 	_shaderProgram = shaderProgram;
 	_vertexArray = vertexArray;
 };
 
 DrawState::~DrawState() {
-	std::cout << "~DrawState" << std::endl;
 	if (_renderState != nullptr) {
 		delete _renderState;
 		_renderState = nullptr;
