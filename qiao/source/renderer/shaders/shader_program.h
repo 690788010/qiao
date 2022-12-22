@@ -45,14 +45,11 @@ namespace qiao {
 		void use();
 
 		// 更新DrawAutoUniform对应Uniform的值，并使用
-		// GL调用将_dirtyUniforms中Uniform已变化的值传送到GPU
+		// GL调用将_dirtyUniforms中Uniform的新值传送到GPU
 		void clean(Context* context, DrawState* drawState, SceneState* sceneState);
 
-		// 将实现了ICleanable接口的类对象加入_dirtyUniforms中
+		// 将设置了新值的Uniform对象加入_dirtyUniforms中
 		virtual void notifyDirty(ICleanable* value);
-
-		ShaderVertexAttributeCollection vertexAttributes();
-		UniformCollection& uniforms();
 
 		// 使用变量名查找片元着色器out变量的索引位置
 		GLint getFragLocByName(std::string name);
@@ -62,6 +59,9 @@ namespace qiao {
 
 		// 通过DrawAutoUniformCollection中保存的各个DrawAutoUniform为各个对应的Uniform自动设置值
 		void setDrawAutoUniforms(Context* context, DrawState* drawState, SceneState* sceneState);
+
+		ShaderVertexAttributeCollection vertexAttributes();
+		UniformCollection uniforms();
 
 	private:
 		// 为顶点着色器里的每个激活的attribute变量创建元数据

@@ -87,12 +87,12 @@ void ShaderProgram::clean(Context* context, DrawState* drawState, SceneState* sc
 	// 通过DrawAutoUniformCollection中保存的各个DrawAutoUniform为各个对应的Uniform自动设置值
 	setDrawAutoUniforms(context, drawState, sceneState);
 
-	// 使用GL调用将Uniform值传送到GPU
-	std::list<ICleanable*>::iterator it = _dirtyUniforms.begin();
-	while (it != _dirtyUniforms.end()) {
-		(*it)->clean();
-		it++;
+	// 通过调用各个Uniform的clean()方法将新值传送到GPU
+	for (ICleanable* cleaner : _dirtyUniforms) {
+		cleaner->clean();
 	}
+
+	// 清空_dirtyUniforms
 	_dirtyUniforms.clear();
 };
 
@@ -100,7 +100,7 @@ ShaderVertexAttributeCollection ShaderProgram::vertexAttributes() {
 	return _vertexAttributes;
 };
 
-UniformCollection& ShaderProgram::uniforms() {
+UniformCollection ShaderProgram::uniforms() {
 	return _uniforms;
 };
 
