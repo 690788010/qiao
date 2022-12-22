@@ -87,7 +87,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	verifyDraw(drawState, sceneState);
 	applyBeforeDraw(drawState, sceneState);
 
-	/*VertexArray* vertexArray = drawState->getVertexArray();
+	VertexArray* vertexArray = drawState->getVertexArray();
 	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
 
 	if (indexBuffer != nullptr) {
@@ -95,7 +95,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	}
 	else {
 
-	}*/
+	}
 };
 
 VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
@@ -195,10 +195,10 @@ void Context::syncRenderState(RenderState* renderState) {
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 	glPrimitiveRestartIndex(primitiveRestart.getIndex());
 
-	CullFace cullFace = renderState->getCullFace();
+	/*CullFace cullFace = renderState->getCullFace();
 	enable(GL_CULL_FACE, cullFace.getEnabled());
 	glFrontFace(cullFace.getFrontFaceMode());
-	glCullFace(cullFace.getCullFaceMode());
+	glCullFace(cullFace.getCullFaceMode());*/
 
 	enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
 
@@ -208,11 +208,11 @@ void Context::syncRenderState(RenderState* renderState) {
 	enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 	glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
 
-	DepthTest depthTest = renderState->getDepthTest();
+	/*DepthTest depthTest = renderState->getDepthTest();
 	enable(GL_DEPTH_TEST, depthTest.getEnabled());
 	glDepthFunc(depthTest.getDepthFunc());
 	glDepthMask(depthTest.getDepthMask());
-	glDepthRange(depthTest.getNear(), depthTest.getFar());
+	glDepthRange(depthTest.getNear(), depthTest.getFar());*/
 
 	Blending blending = renderState->getBlending();
 	enable(GL_BLEND, blending.getEnabled());

@@ -239,9 +239,6 @@
     <ClCompile Include="source\core\vector\vector4f.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\main.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\renderer\context.cc">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -321,6 +318,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\shaders\uniforms\uniform_matrix_4d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\main.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

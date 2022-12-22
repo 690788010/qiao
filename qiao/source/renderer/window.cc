@@ -40,7 +40,7 @@ Window::Window(int width, int height, std::string title, bool isFullScreen) {
 		throw std::runtime_error("Failed to initialize GLAD");
 	}
 
-	_context = new Context();
+	_context = new Context(); 
 };
 
 Window::~Window() {
