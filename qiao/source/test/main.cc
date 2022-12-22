@@ -39,23 +39,22 @@ public:
 		fs += "\n}";
 		qiao::ShaderProgram* sp = new qiao::ShaderProgram(vs, fs);
 		
-		qiao::Mesh* mesh = new qiao::Mesh();
-		mesh->setPrimitiveType(GL_TRIANGLES);
+		qiao::Mesh mesh;
+		mesh.setPrimitiveType(GL_TRIANGLES);
 
 		qiao::VertexAttributeVector4F* attributeVector4F = new qiao::VertexAttributeVector4F("position");
 		attributeVector4F->addData(new qiao::Vector4F(0, 0, 0, 1.0));
 		attributeVector4F->addData(new qiao::Vector4F(1, 0, 0, 1.0));
 		attributeVector4F->addData(new qiao::Vector4F(0, 0, 1, 1.0));
-		mesh->getAttributes()->push_back(attributeVector4F);
+		mesh.getAttributes().push_back(attributeVector4F);
 
 		qiao::IndicesUnsignedShort* indices = new qiao::IndicesUnsignedShort();
 		indices->addIndex(0);
 		indices->addIndex(1);
 		indices->addIndex(2);
-		mesh->setIndices(indices);
+		mesh.setIndices(indices);
 
 		qiao::Context* context = _window->getContext();
-
 		qiao::VertexArray* va = context->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
 
 		qiao::RenderState* renderState = new qiao::RenderState();
@@ -64,7 +63,6 @@ public:
 
 		_sceneState = new qiao::SceneState();
 
-		delete mesh;
 	}
 	~Test() {
 		if (_window != nullptr) {

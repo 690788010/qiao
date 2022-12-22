@@ -3,21 +3,12 @@
 using namespace qiao;
 
 Mesh::Mesh() {
-	_attributes = new VertexAttributeCollection();
 	_primitiveType = GL_TRIANGLES;
 };
 
 Mesh::~Mesh() {
 	if (_indices != nullptr) {
 		delete _indices;
-	}
-	if (_attributes != nullptr) {
-		for (VertexAttribute* attribute : (*_attributes)) {
-			delete attribute;
-			attribute = nullptr;
-		}
-		delete _attributes;
-		_attributes = nullptr;
 	}
 };
 
@@ -29,7 +20,7 @@ void Mesh::setIndices(IndicesBase* indices) {
 	_indices = indices;
 };
 
-VertexAttributeCollection* Mesh::getAttributes() {
+VertexAttributeCollection& Mesh::getAttributes() {
 	return _attributes;
 };
 

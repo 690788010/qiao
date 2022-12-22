@@ -98,14 +98,11 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	}*/
 };
 
-VertexArray* Context::createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
-	if (mesh == nullptr) {
-		throw std::invalid_argument("argument mesh can't be null!");
-	}
+VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
 	VertexArray* vertexArray = new VertexArray();
 
-	IndicesBase* meshIndices = mesh->getIndices();
 	// 为VertexArray设置对应的IndexBuffer
+	IndicesBase* meshIndices = mesh.getIndices();
 	if (meshIndices != nullptr) {
 		if (meshIndices->getType() == GL_UNSIGNED_SHORT) {
 			IndicesUnsignedShort* indicesUnsignedShort = (IndicesUnsignedShort*)meshIndices;
@@ -135,8 +132,8 @@ VertexArray* Context::createVertexArray(Mesh* mesh, ShaderVertexAttributeCollect
 	}
 
 	// 为VertexArray设置对应的VertexBufferAttributes
-	VertexAttributeCollection* attributes = mesh->getAttributes();
-	for (VertexAttribute* attribute : (*attributes)) {
+	VertexAttributeCollection attributes = mesh.getAttributes();
+	for (VertexAttribute* attribute : attributes) {
 		// 如果在ShaderVertexAttributeCollection中找不到对应的ShaderVertexAttribute则抛出异常
 		if (shaderAttributes.find(attribute->getName()) == shaderAttributes.end()) {
 			std::string msg = "VertexAttribute " + attribute->getName();

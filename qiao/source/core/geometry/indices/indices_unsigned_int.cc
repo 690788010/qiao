@@ -14,7 +14,7 @@ void IndicesUnsignedInt::addIndex(unsigned int index) {
 	_values.push_back(index);
 };
 
-unsigned short IndicesUnsignedInt::getIndex(unsigned int idx) {
+unsigned int IndicesUnsignedInt::getIndex(unsigned int idx) {
 	return _values[idx];
 };
 

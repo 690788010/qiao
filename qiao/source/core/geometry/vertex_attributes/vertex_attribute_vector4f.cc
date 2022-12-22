@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   vertex_attribute_vector4f.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #include "vertex_attribute_vector4f.h"
 
 using namespace qiao;
@@ -8,12 +16,7 @@ VertexAttributeVector4F::VertexAttributeVector4F(std::string name) {
 };
 
 VertexAttributeVector4F::~VertexAttributeVector4F() {
-	if (!_values.empty()) {
-		for (Vector4F* data : _values) {
-			delete data;
-			data = nullptr;
-		}
-	}
+	
 };
 
 std::string VertexAttributeVector4F::getName() {
@@ -28,6 +31,6 @@ void VertexAttributeVector4F::addData(Vector4F* data) {
 	_values.push_back(data);
 };
 
-std::list<Vector4F*> VertexAttributeVector4F::getValues() {
+std::list<Vector4F*>& VertexAttributeVector4F::getValues() {
 	return _values;
 };

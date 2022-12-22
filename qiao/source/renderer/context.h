@@ -21,7 +21,9 @@ namespace qiao {
 
 		void clear(ClearState* clearState);
 		void draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState);
-		VertexArray* createVertexArray(Mesh* mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
+
+		// 为特定Mesh生成对应的VertexArray
+		VertexArray* createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
 
 	private:
 		// Sync GL state with default render state.
