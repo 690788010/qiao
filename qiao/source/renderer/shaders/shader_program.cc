@@ -49,10 +49,9 @@ ShaderProgram::ShaderProgram(std::string vs, std::string fs) {
 
 	// 将顶点着色器里的每个激活的attribute变量的元数据保存下来
 	_vertexAttributes = _findVertexAttributes(_program);
+
 	// 将着色器里Uniform变量的元数据保存下来
 	_uniforms = _findUniforms(_program);
-	// 用于查找片元着色器out变量的索引位置
-	_fragmentOutputs = new FragmentOutputs(_program);
 
 	// 初始化AutoUniform
 	initAutoUniforms(_uniforms);
@@ -64,11 +63,6 @@ ShaderProgram::~ShaderProgram() {
 	if (_program != 0) {
 		glDeleteProgram(_program);
 		_program = 0;
-	}
-
-	if (_fragmentOutputs != nullptr) {
-		delete _fragmentOutputs;
-		_fragmentOutputs = nullptr;
 	}
 
 	// 释放vector内各个元素的资源
@@ -108,6 +102,18 @@ ShaderVertexAttributeCollection ShaderProgram::vertexAttributes() {
 
 UniformCollection& ShaderProgram::uniforms() {
 	return _uniforms;
+};
+
+// 使用变量名查找片元着色器out变量的索引位置
+GLint ShaderProgram::getFragLocByName(std::string name) {
+	GLint i = glGetFragDataLocation(_program, name.c_str());
+
+	if (i == -1) {
+		throw std::invalid_argument(
+			"the argument is not the name of an active user-defined varying out fragment shader variable within program!");
+	}
+
+	return i;
 };
 
 void ShaderProgram::notifyDirty(ICleanable* val) {

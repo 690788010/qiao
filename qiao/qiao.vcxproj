@@ -159,7 +159,6 @@
     <ClInclude Include="source\renderer\context.h" />
     <ClInclude Include="source\renderer\i_cleanable.h" />
     <ClInclude Include="source\renderer\i_cleanable_observer.h" />
-    <ClInclude Include="source\renderer\shaders\shader_components\fragment_outputs.h" />
     <ClInclude Include="source\renderer\shaders\shader_components\shader_object.h" />
     <ClInclude Include="source\renderer\shaders\shader_components\shader_vertex_attribute.h" />
     <ClInclude Include="source\renderer\shaders\shader_components\shader_vertex_attribute_collection.h" />
@@ -217,7 +216,6 @@
     <ClCompile Include="source\renderer\buffers\index_buffer.cc" />
     <ClCompile Include="source\renderer\buffers\vertex_buffer.cc" />
     <ClCompile Include="source\renderer\context.cc" />
-    <ClCompile Include="source\renderer\shaders\shader_components\fragment_outputs.cc" />
     <ClCompile Include="source\renderer\shaders\shader_components\shader_object.cc" />
     <ClCompile Include="source\renderer\shaders\shader_components\shader_vertex_attribute.cc" />
     <ClCompile Include="source\renderer\shaders\uniforms\draw_auto_uniforms\model_matrix_uniform.cc" />

@@ -20,7 +20,6 @@
 #include "./shader_components/shader_object.h"
 #include "../scene/scene_state.h"
 #include "../i_cleanable_observer.h"
-#include "./shader_components/fragment_outputs.h"
 #include "./uniforms/uniform_int.h"
 #include "./uniforms/uniform_float.h"
 #include "./uniforms/uniform_matrix_4d.h"
@@ -55,6 +54,9 @@ namespace qiao {
 		ShaderVertexAttributeCollection vertexAttributes();
 		UniformCollection& uniforms();
 
+		// 使用变量名查找片元着色器out变量的索引位置
+		GLint getFragLocByName(std::string name);
+
 		// 初始化AutoUniform
 		void initAutoUniforms(UniformCollection uniforms);
 
@@ -72,7 +74,6 @@ namespace qiao {
 		Uniform* _createUniform(std::string name, int location, GLenum type);
 
 		GLuint _program;
-		FragmentOutputs* _fragmentOutputs;
 		ShaderVertexAttributeCollection _vertexAttributes;
 		std::list<ICleanable*> _dirtyUniforms;
 		UniformCollection _uniforms;
