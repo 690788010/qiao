@@ -1,4 +1,11 @@
-#include <iostream>
+/*****************************************************************//**
+ * \file   buffer.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #include <stdexcept>
 #include "buffer.h"
 
@@ -7,10 +14,14 @@ using namespace qiao;
 Buffer::Buffer(GLenum target, GLenum usage, GLsizeiptr sizeInBytes) :
 	_target{ target }, _usage{ usage }, _sizeInBytes{sizeInBytes}
 {
+	// 生成缓存
 	glGenBuffers(1, &_buffer);
 	
+	// 解绑VAO，使缓存不与任何VAO关联
 	glBindVertexArray(0);
+	// 为缓存绑定目标
 	bind();
+	// 为缓存设定参数
 	glBufferData(_target, _sizeInBytes, nullptr, _usage);
 };
 

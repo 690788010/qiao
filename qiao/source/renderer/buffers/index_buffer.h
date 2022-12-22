@@ -1,8 +1,19 @@
+/*****************************************************************//**
+ * \file   index_buffer.h
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #pragma once
 
 #include "buffer.h"
 
 namespace qiao {
+	/**
+	 * IndexBuffer类是保存顶点索引信息的缓存.
+	 */
 	class IndexBuffer {
 	public:
 		IndexBuffer(GLenum usage, GLsizeiptr sizeInBytes);
