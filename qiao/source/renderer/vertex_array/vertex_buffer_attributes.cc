@@ -1,12 +1,21 @@
+/*****************************************************************//**
+ * \file   vertex_buffer_attributes.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
 
 #include <stdexcept>
-
 #include "vertex_buffer_attributes.h"
 #include "../../../third_party/glad/include/glad.h"
 
 using namespace qiao;
 
 VertexBufferAttributes::VertexBufferAttributes() {
+	_dirty = false;
+	_count = 0;
+
 	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &_maxVertexAttribs);
 	_attributes = new VertexBufferAttribute*[_maxVertexAttribs];
 	_dirties = new bool[_maxVertexAttribs];
@@ -84,11 +93,8 @@ void VertexBufferAttributes::clean() {
 	}
 };
 
-unsigned int VertexBufferAttributes::getCount() {
-	return _count;
-};
-
 void VertexBufferAttributes::attach(unsigned index) {
+	// 将相关顶点的属性配置同步到GL
 	VertexBufferAttribute* attribute = _attributes[index];
 	VertexBuffer* vertexBuffer = attribute->getVertexBuffer();
 	vertexBuffer->bind();
@@ -98,8 +104,14 @@ void VertexBufferAttributes::attach(unsigned index) {
 		attribute->getNormalized(),
 		attribute->getStride(),
 		(void *)attribute->getOffset());
+	// 激活该顶点属性
+	glEnableVertexAttribArray(index);
 };
 
 void VertexBufferAttributes::detach(unsigned index) {
 	glDisableVertexAttribArray(index);
+};
+
+unsigned int VertexBufferAttributes::getCount() {
+	return _count;
 };

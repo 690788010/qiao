@@ -140,7 +140,7 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			msg += " is not present in ShaderVertexAttributeCollection!";
 			throw std::invalid_argument(msg);
 		}
-
+		
 		// 如果VertexAttribute数据类型和ShaderVertexAttribute数据类型不相同则抛出异常
 		ShaderVertexAttribute* shaderAttribute = shaderAttributes[attribute->getName()];
 		if (attribute->getType() != shaderAttribute->getType()) {
@@ -163,9 +163,10 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
 
 			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 1, GL_FLOAT, GL_FALSE, 0, 0);
-			vertexArray->getAttributes()->setByIndex(shaderAttribute->getLocation(), bufferAttribute);
+			vertexArray->getAttributes().setByIndex(shaderAttribute->getLocation(), bufferAttribute);
 		}
-		else if (attribute->getType() == GL_FLOAT_MAT4) {
+		else if (attribute->getType() == GL_FLOAT_VEC4) {
+
 			VertexAttributeVector4F* attributeVector4F = (VertexAttributeVector4F*)attribute;
 			// 将数据存为一维数组
 			size_t idx = 0;
@@ -181,7 +182,7 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
 			// 将顶点属性指针的配置保存到VAO
 			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 4, GL_FLOAT, GL_FALSE, 0, 0);
-			vertexArray->getAttributes()->setByIndex(shaderAttribute->getLocation(), bufferAttribute);
+			vertexArray->getAttributes().setByIndex(shaderAttribute->getLocation(), bufferAttribute);
 		}
 
 	}

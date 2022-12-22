@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   vertex_buffer_attribute.cc
+ * \brief  
+ * 
+ * \author yangqiao
+ * \date   December 2022
+ *********************************************************************/
+
 #include "vertex_buffer_attribute.h"
 
 using namespace qiao;

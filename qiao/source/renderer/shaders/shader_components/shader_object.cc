@@ -16,13 +16,13 @@ ShaderObject::ShaderObject(ShaderType shaderType, std::string source) {
 	std::string builtinConstants = 
 						"#version 330 core\n";
 	builtinConstants += "#define og_positionVertexLocation          " + std::to_string(VertexLocations::POSITION);
-	builtinConstants += ";\n";
+	builtinConstants += "\n";
 	builtinConstants += "#define og_normalVertexLocation            " + std::to_string(VertexLocations::NORMAL);
-	builtinConstants += ";\n";
+	builtinConstants += "\n";
 	builtinConstants += "#define og_textureCoordinateVertexLocation " + std::to_string(VertexLocations::TEXTURECOORDINATE);
-	builtinConstants += ";\n";
+	builtinConstants += "\n";
 	builtinConstants += "#define og_colorVertexLocation             " + std::to_string(VertexLocations::COLOR);
-	builtinConstants += ";\n";
+	builtinConstants += "\n";
 
 	// 内置着色器函数
 	std::string builtinFunctions = "";

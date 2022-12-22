@@ -26,8 +26,8 @@ public:
 		_window->render = Wrapper::wrapper_func;
 
 		std::string vs =
-			"in vec4 position;";
-		vs += "uniform mat4 og_modelMatrix;";
+			"layout (location = og_positionVertexLocation) in vec4 position;";
+		vs += "\nuniform mat4 og_modelMatrix;";
 		vs += "\nvoid main() {";
 		vs += "\n	gl_Position = og_modelMatrix * position;";
 		vs += "\n}";
@@ -45,7 +45,7 @@ public:
 		qiao::VertexAttributeVector4F* attributeVector4F = new qiao::VertexAttributeVector4F("position");
 		attributeVector4F->addData(new qiao::Vector4F(0, 0, 0, 1.0));
 		attributeVector4F->addData(new qiao::Vector4F(1, 0, 0, 1.0));
-		attributeVector4F->addData(new qiao::Vector4F(0, 0, 1, 1.0));
+		attributeVector4F->addData(new qiao::Vector4F(0, 1, 0, 1.0));
 		mesh.getAttributes().push_back(attributeVector4F);
 
 		qiao::IndicesUnsignedShort* indices = new qiao::IndicesUnsignedShort();
@@ -54,8 +54,7 @@ public:
 		indices->addIndex(2);
 		mesh.setIndices(indices);
 
-		qiao::Context* context = _window->getContext();
-		qiao::VertexArray* va = context->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
+		qiao::VertexArray* va = _window->getContext()->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
 
 		qiao::RenderState* renderState = new qiao::RenderState();
 
