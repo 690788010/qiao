@@ -7,20 +7,15 @@ Context::Context() {
 	_clearDepth = 1.0;
 	_clearStencil = 0;
 
-	_renderState = new RenderState();
-
 	// Sync GL state with default render state.
 	syncRenderState(_renderState);
 };
 
 Context::~Context() {
-	if (_renderState != nullptr) {
-		delete _renderState;
-		_renderState = nullptr;
-	}
+
 };
 
-void Context::clear(ClearState clearState) {
+void Context::clear(ClearState& clearState) {
 	// apply clearColor
 	Color color = clearState.getColor();
 	if (!color.equals(_clearColor)) {
@@ -45,7 +40,7 @@ void Context::clear(ClearState clearState) {
 
 	// apply ScissorTest
 	ScissorTest scissorTest = clearState.getScissorTest();
-	ScissorTest _scissorTest = _renderState->getScissorTest();
+	ScissorTest _scissorTest = _renderState.getScissorTest();
 	if (scissorTest.getWidth() < 0) {
 		throw std::invalid_argument("renderState.ScissorTest.Width must be greater than or equal to zero!");
 	}
@@ -71,16 +66,16 @@ void Context::clear(ClearState clearState) {
 
 	// apply ColorMask
 	ColorMask colorMask = clearState.getColorMask();
-	ColorMask _colorMask = _renderState->getColorMask();
+	ColorMask _colorMask = _renderState.getColorMask();
 	if (!colorMask.equals(_colorMask)) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
-		_renderState->setColorMask(colorMask);
+		_renderState.setColorMask(colorMask);
 	}
 
 	// apply DepthMask
-	if (clearState.getDepthMask() != _renderState->getDepthTest().getDepthMask()) {
+	if (clearState.getDepthMask() != _renderState.getDepthTest().getDepthMask()) {
 		glDepthMask(clearState.getDepthMask());
-		_renderState->getDepthTest().setDepthMask(clearState.getDepthMask());
+		_renderState.getDepthTest().setDepthMask(clearState.getDepthMask());
 	}
 };
 
@@ -191,31 +186,31 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 	return vertexArray;
 };
 
-void Context::syncRenderState(RenderState* renderState) {
-	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
+void Context::syncRenderState(RenderState& renderState) {
+	PrimitiveRestart primitiveRestart = renderState.getPrimitiveRestart();
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 	glPrimitiveRestartIndex(primitiveRestart.getIndex());
 
-	CullFace cullFace = renderState->getCullFace();
+	CullFace cullFace = renderState.getCullFace();
 	enable(GL_CULL_FACE, cullFace.getEnabled());
 	glFrontFace(cullFace.getFrontFaceMode());
 	glCullFace(cullFace.getCullFaceMode());
 
-	enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
+	enable(GL_PROGRAM_POINT_SIZE, renderState.getProgramPointSize());
 
-	glPolygonMode(GL_FRONT_AND_BACK, renderState->getPolygonMode());
+	glPolygonMode(GL_FRONT_AND_BACK, renderState.getPolygonMode());
 
-	ScissorTest scissorTest = renderState->getScissorTest();
+	ScissorTest scissorTest = renderState.getScissorTest();
 	enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 	glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
 
-	DepthTest depthTest = renderState->getDepthTest();
+	DepthTest depthTest = renderState.getDepthTest();
 	enable(GL_DEPTH_TEST, true);
 	glDepthFunc(depthTest.getDepthFunc());
 	glDepthMask(depthTest.getDepthMask());
 	glDepthRange(depthTest.getNear(), depthTest.getFar());
 
-	Blending blending = renderState->getBlending();
+	Blending blending = renderState.getBlending();
 	enable(GL_BLEND, blending.getEnabled());
 	glBlendFuncSeparate(blending.getSrcRGB(), blending.getDstRGB(), blending.getSrcAlpha(), blending.getDstAlpha());
 	glBlendEquationSeparate(blending.getRgbEquation(), blending.getAlphaEquation());
@@ -233,10 +228,6 @@ void Context::enable(GLenum cap, bool enabled) {
 void Context::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	if (drawState == nullptr) {
 		throw std::invalid_argument("argument drawState is null!");
-	}
-
-	if (drawState->getRenderState() == nullptr) {
-		throw std::invalid_argument("drawState.renderState is null!");
 	}
 
 	if (drawState->getShaderProgram() == nullptr) {
@@ -258,18 +249,18 @@ void Context::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
 	applyShaderProgram(drawState, sceneState);
 };
 
-void Context::applyRenderState(RenderState* renderState) {
+void Context::applyRenderState(RenderState& renderState) {
 	// apply PrimitiveRestart
-	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
-	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
+	PrimitiveRestart primitiveRestart = renderState.getPrimitiveRestart();
+	PrimitiveRestart _primitiveRestart = _renderState.getPrimitiveRestart();
 	if (primitiveRestart.getEnabled() != _primitiveRestart.getEnabled()) {
 		enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 		_primitiveRestart.setEnabled(primitiveRestart.getEnabled());
 	}
 
 	// apply CullFace
-	CullFace cullFace = renderState->getCullFace();
-	CullFace _cullFace = _renderState->getCullFace();
+	CullFace cullFace = renderState.getCullFace();
+	CullFace _cullFace = _renderState.getCullFace();
 	if (cullFace.getEnabled() != _cullFace.getEnabled()) {
 		enable(GL_CULL_FACE, cullFace.getEnabled());
 		_cullFace.setEnabled(cullFace.getEnabled());
@@ -286,20 +277,20 @@ void Context::applyRenderState(RenderState* renderState) {
 	}
 
 	// apply ProgramPointSize
-	if (renderState->getProgramPointSize() != _renderState->getProgramPointSize()) {
-		enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
-		_renderState->setProgramPointSize(renderState->getProgramPointSize());
+	if (renderState.getProgramPointSize() != _renderState.getProgramPointSize()) {
+		enable(GL_PROGRAM_POINT_SIZE, renderState.getProgramPointSize());
+		_renderState.setProgramPointSize(renderState.getProgramPointSize());
 	}
 
 	// apply PolygonMode
-	if (renderState->getPolygonMode() != _renderState->getPolygonMode()) {
-		glPolygonMode(GL_FRONT_AND_BACK, renderState->getPolygonMode());
-		_renderState->setPolygonMode(renderState->getPolygonMode());
+	if (renderState.getPolygonMode() != _renderState.getPolygonMode()) {
+		glPolygonMode(GL_FRONT_AND_BACK, renderState.getPolygonMode());
+		_renderState.setPolygonMode(renderState.getPolygonMode());
 	}
 
 	// apply ScissorTest
-	ScissorTest scissorTest = renderState->getScissorTest();
-	ScissorTest _scissorTest = _renderState->getScissorTest();
+	ScissorTest scissorTest = renderState.getScissorTest();
+	ScissorTest _scissorTest = _renderState.getScissorTest();
 	if (scissorTest.getWidth() < 0) {
 		throw std::invalid_argument("renderState.ScissorTest.Width must be greater than or equal to zero!");
 	}
@@ -324,16 +315,16 @@ void Context::applyRenderState(RenderState* renderState) {
 	}
 
 	// apply StencilTest
-	StencilTest stencilTest = renderState->getStencilTest();
-	StencilTest _stencilTest = _renderState->getStencilTest();
+	StencilTest stencilTest = renderState.getStencilTest();
+	StencilTest _stencilTest = _renderState.getStencilTest();
 	if (stencilTest.getEnabled() != _stencilTest.getEnabled()) {
 		enable(GL_STENCIL_TEST, stencilTest.getEnabled());
 		_stencilTest.setEnabled(stencilTest.getEnabled());
 	}
 
 	// apply DepthTest
-	DepthTest depthTest = renderState->getDepthTest();
-	DepthTest _depthTest = _renderState->getDepthTest();
+	DepthTest depthTest = renderState.getDepthTest();
+	DepthTest _depthTest = _renderState.getDepthTest();
 	if (depthTest.getEnabled() != _depthTest.getEnabled()) {
 		enable(GL_DEPTH_TEST, depthTest.getEnabled());
 		_depthTest.setEnabled(depthTest.getEnabled());
@@ -361,8 +352,8 @@ void Context::applyRenderState(RenderState* renderState) {
 	}
 
 	// apply Blending
-	Blending blending = renderState->getBlending();
-	Blending _blending = _renderState->getBlending();
+	Blending blending = renderState.getBlending();
+	Blending _blending = _renderState.getBlending();
 	if (blending.getEnabled() != _blending.getEnabled()) {
 		enable(GL_BLEND, blending.getEnabled());
 		_blending.setEnabled(blending.getEnabled());
@@ -381,11 +372,11 @@ void Context::applyRenderState(RenderState* renderState) {
 	}
 
 	// apply ColorMask
-	ColorMask colorMask = renderState->getColorMask();
-	ColorMask _colorMask = _renderState->getColorMask();
+	ColorMask colorMask = renderState.getColorMask();
+	ColorMask _colorMask = _renderState.getColorMask();
 	if (!colorMask.equals(_colorMask)) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
-		_renderState->setColorMask(colorMask);
+		_renderState.setColorMask(colorMask);
 	}
 };
 

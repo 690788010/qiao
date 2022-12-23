@@ -4,47 +4,47 @@
 using namespace qiao;
 
 DepthTest::DepthTest() {
-	enabled = true;
-	depthFunc = DepthFunc::LESS;
-	depthMask = GL_TRUE;
-	near = 0.0;
-	far = 1.0;
+	_enabled = true;
+	_depthFunc = DepthFunc::LESS;
+	_depthMask = GL_TRUE;
+	_near = 0.0;
+	_far = 1.0;
 };
 
 bool DepthTest::getEnabled() {
-	return enabled;
+	return _enabled;
 };
 
 void DepthTest::setEnabled(bool val) {
-	enabled = val;
+	_enabled = val;
 };
 
 DepthFunc DepthTest::getDepthFunc() {
-	return depthFunc;
+	return _depthFunc;
 };
 
 void DepthTest::setDepthFunc(DepthFunc val) {
-	depthFunc = val;
+	_depthFunc = val;
 };
 
 GLboolean DepthTest::getDepthMask() {
-	return depthMask;
+	return _depthMask;
 };
 
 void DepthTest::setDepthMask(GLboolean val) {
-	depthMask = val;
+	_depthMask = val;
 };
 
 double DepthTest::getNear() {
-	return near;
+	return _near;
 };
 void DepthTest::setNear(double val) {
-	near = val;
+	_near = val;
 };
 
 double DepthTest::getFar() {
-	return far;
+	return _far;
 };
 void DepthTest::setFar(double val) {
-	far = val;
+	_far = val;
 };

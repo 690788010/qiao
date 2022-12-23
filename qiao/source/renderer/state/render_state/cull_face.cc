@@ -4,30 +4,30 @@
 using namespace qiao;
 
 CullFace::CullFace() {
-	enabled = true;
-	cullFaceMode = CullFaceMode::BACK;
-	frontFaceMode = FrontFaceMode::CCW;
+	_enabled = true;
+	_cullFaceMode = CullFaceMode::BACK;
+	_frontFaceMode = FrontFaceMode::CCW;
 };
 
 bool CullFace::getEnabled() {
-	return enabled;
+	return _enabled;
 };
 void CullFace::setEnabled(bool val) {
-	enabled = val;
+	_enabled = val;
 };
 
 CullFaceMode CullFace::getCullFaceMode() {
-	return cullFaceMode;
+	return _cullFaceMode;
 };
 
 void CullFace::setCullFaceMode(CullFaceMode val) {
-	cullFaceMode = val;
+	_cullFaceMode = val;
 };
 
 FrontFaceMode CullFace::getFrontFaceMode() {
-	return frontFaceMode;
+	return _frontFaceMode;
 };
 
 void CullFace::setFrontFaceMode(FrontFaceMode val) {
-	frontFaceMode = val;
+	_frontFaceMode = val;
 };

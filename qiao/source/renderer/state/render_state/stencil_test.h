@@ -10,6 +10,6 @@ namespace qiao {
 		void setEnabled(bool val);
 
 	private:
-		bool enabled;
+		bool _enabled;
 	};
 }

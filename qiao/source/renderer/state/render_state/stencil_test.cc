@@ -4,13 +4,13 @@
 using namespace qiao;
 
 StencilTest::StencilTest() {
-	enabled = false;
+	_enabled = false;
 };
 
 bool StencilTest::getEnabled() {
-	return enabled;
+	return _enabled;
 };
 
 void StencilTest::setEnabled(bool val) {
-	enabled = val;
+	_enabled = val;
 };

@@ -63,7 +63,7 @@ public:
 
 		_clearState.setColor(qiao::Color(0.2f, 0.3f, 0.3f, 1.0f));
 
-		_drawState = new qiao::DrawState(renderState, sp, va);
+		_drawState = new qiao::DrawState(sp, va);
 
 		_sceneState = new qiao::SceneState();
 

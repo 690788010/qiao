@@ -54,12 +54,12 @@ namespace qiao {
         void setAlphaEquation(BlendEquation val);
 
 	private:
-		bool enabled;
-        BlendingFactor srcRGB;
-        BlendingFactor dstRGB;
-        BlendingFactor srcAlpha;
-        BlendingFactor dstAlpha;
-        BlendEquation rgbEquation;
-        BlendEquation alphaEquation;
+		bool _enabled;
+        BlendingFactor _srcRGB;
+        BlendingFactor _dstRGB;
+        BlendingFactor _srcAlpha;
+        BlendingFactor _dstAlpha;
+        BlendEquation _rgbEquation;
+        BlendEquation _alphaEquation;
 	};
 }

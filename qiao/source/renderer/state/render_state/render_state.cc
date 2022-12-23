@@ -5,87 +5,78 @@
 using namespace qiao;
 
 RenderState::RenderState() {
-	std::cout << "RenderState()" << std::endl;
-	primitiveRestart = PrimitiveRestart();
-	cullFace = CullFace();
-	programPointSize = ProgramPointSize::Disabled;
-	scissorTest = ScissorTest();
-	polygonMode = PolygonMode::FILL;
-	depthTest = DepthTest();
-	colorMask = ColorMask(true, true, true, true);
+	_programPointSize = GL_FALSE;
+	_polygonMode = PolygonMode::FILL;
 }
 
-RenderState::~RenderState() {
-	std::cout << "~RenderState" << std::endl;
-};
-
 PrimitiveRestart& RenderState::getPrimitiveRestart() {
-	return primitiveRestart;
+	return _primitiveRestart;
 };
 
-void RenderState::setPrimitiveRestart(PrimitiveRestart val) {
-	primitiveRestart = val;
+void RenderState::setPrimitiveRestart(PrimitiveRestart& val) {
+	_primitiveRestart = val;
 };
 
 CullFace& RenderState::getCullFace() {
-	return cullFace;
+	return _cullFace;
 };
 
-void RenderState::setCullFace(CullFace val) {
-	cullFace = val;
+void RenderState::setCullFace(CullFace& val) {
+	_cullFace = val;
 };
 
-ProgramPointSize RenderState::getProgramPointSize() {
-	return programPointSize;
+GLboolean RenderState::getProgramPointSize() {
+	return _programPointSize;
 };
 
-void RenderState::setProgramPointSize(ProgramPointSize val) {
-	programPointSize = val;
+void RenderState::setProgramPointSize(GLboolean val) {
+	_programPointSize = val;
 };
 
 ScissorTest& RenderState::getScissorTest() {
-	return scissorTest;
+	return _scissorTest;
 };
 
-void RenderState::setScissorTest(ScissorTest val) {
-	scissorTest = val;
+void RenderState::setScissorTest(ScissorTest& val) {
+	_scissorTest = val;
 };
 
 PolygonMode& RenderState::getPolygonMode() {
-	return polygonMode;
+	return _polygonMode;
 };
 
 void RenderState::setPolygonMode(PolygonMode val) {
-	polygonMode = val;
+	_polygonMode = val;
 };
 
 StencilTest& RenderState::getStencilTest() {
-	return stencilTest;
+	return _stencilTest;
 };
 
-void RenderState::setStencilTest(StencilTest val) {
-	stencilTest = val;
+void RenderState::setStencilTest(StencilTest& val) {
+	_stencilTest = val;
 };
 
 DepthTest& RenderState::getDepthTest() {
-	return depthTest;
+	return _depthTest;
 };
 
-void RenderState::setDepthTest(DepthTest val) {
-	depthTest = val;
+void RenderState::setDepthTest(DepthTest& val) {
+	_depthTest = val;
 };
 
 Blending& RenderState::getBlending() {
-	return blending;
+	return _blending;
 };
 
-void RenderState::setBlending(Blending val) {
-	blending = val;
+void RenderState::setBlending(Blending& val) {
+	_blending = val;
 };
 
 ColorMask& RenderState::getColorMask() {
-	return colorMask;
+	return _colorMask;
 };
-void RenderState::setColorMask(ColorMask val) {
-	colorMask = val;
+
+void RenderState::setColorMask(ColorMask& val) {
+	_colorMask = val;
 };

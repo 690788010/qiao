@@ -34,10 +34,10 @@ namespace qiao {
 		void setFar(double val);
 
 	private:
-		bool enabled;
-		DepthFunc depthFunc;
-		GLboolean depthMask;		// 是否开启对深度缓冲的写操作
-		double near;
-		double far;
+		bool _enabled;
+		DepthFunc _depthFunc;
+		GLboolean _depthMask;		// 是否开启对深度缓冲的写操作
+		double _near;
+		double _far;
 	};
 }

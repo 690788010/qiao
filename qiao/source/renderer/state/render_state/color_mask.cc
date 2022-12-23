@@ -3,7 +3,12 @@
 
 using namespace qiao;
 
-ColorMask::ColorMask() {}
+ColorMask::ColorMask() {
+	this->red = true;
+	this->green = true;
+	this->blue = true;
+	this->alpha = true;
+}
 
 ColorMask::ColorMask(bool red, bool green, bool blue, bool alpha) {
 	this->red = red;

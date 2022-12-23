@@ -4,68 +4,68 @@
 using namespace qiao;
 
 Blending::Blending() {
-    enabled = false;
-    srcRGB = BlendingFactor::ONE;
-    dstRGB = BlendingFactor::ZERO;
-    srcAlpha = BlendingFactor::ONE;
-    dstAlpha = BlendingFactor::ZERO;
-    rgbEquation = BlendEquation::FUNC_ADD;
-    alphaEquation = BlendEquation::FUNC_ADD;
+    _enabled = false;
+    _srcRGB = BlendingFactor::ONE;
+    _dstRGB = BlendingFactor::ZERO;
+    _srcAlpha = BlendingFactor::ONE;
+    _dstAlpha = BlendingFactor::ZERO;
+    _rgbEquation = BlendEquation::FUNC_ADD;
+    _alphaEquation = BlendEquation::FUNC_ADD;
 };
 
 bool Blending::getEnabled() {
-    return enabled;
+    return _enabled;
 };
 
 void Blending::setEnabled(bool val) {
-    enabled = val;
+    _enabled = val;
 };
 
 BlendingFactor Blending::getSrcRGB() {
-    return srcRGB;
+    return _srcRGB;
 };
 
 void Blending::setSrcRGB(BlendingFactor val) {
-    srcRGB = val;
+    _srcRGB = val;
 };
 
 BlendingFactor Blending::getDstRGB() {
-    return dstRGB;
+    return _dstRGB;
 };
 
 void Blending::setDstRGB(BlendingFactor val) {
-    dstRGB = val;
+    _dstRGB = val;
 };
 
 BlendingFactor Blending::getSrcAlpha() {
-    return srcAlpha;
+    return _srcAlpha;
 };
 
 void Blending::setSrcAlpha(BlendingFactor val) {
-    srcAlpha = val;
+    _srcAlpha = val;
 };
 
 BlendingFactor Blending::getDstAlpha() {
-    return dstAlpha;
+    return _dstAlpha;
 };
 
 void Blending::setDstApha(BlendingFactor val) {
-    dstAlpha = val;
+    _dstAlpha = val;
 };
 
 BlendEquation Blending::getRgbEquation() {
-    return rgbEquation;
+    return _rgbEquation;
 };
 
 void Blending::setRgbEquation(BlendEquation val) {
-    rgbEquation = val;
+    _rgbEquation = val;
 };
 
 BlendEquation Blending::getAlphaEquation() {
-    return alphaEquation;
+    return _alphaEquation;
 };
 
 void Blending::setAlphaEquation(BlendEquation val) {
-    alphaEquation = val;
+    _alphaEquation = val;
 };
 

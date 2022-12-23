@@ -17,16 +17,19 @@ namespace qiao {
 	class CullFace {
 	public:
 		CullFace();
+
 		bool getEnabled();
 		void setEnabled(bool val);
+		
 		CullFaceMode getCullFaceMode();
 		void setCullFaceMode(CullFaceMode val);
+
 		FrontFaceMode getFrontFaceMode();
 		void setFrontFaceMode(FrontFaceMode val);
 
 	private:
-		bool enabled;
-		CullFaceMode cullFaceMode;
-		FrontFaceMode frontFaceMode;
+		bool _enabled;
+		CullFaceMode _cullFaceMode;
+		FrontFaceMode _frontFaceMode;
 	};
 }

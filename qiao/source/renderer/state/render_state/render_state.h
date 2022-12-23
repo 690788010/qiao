@@ -9,10 +9,6 @@
 #include "color_mask.h"
 
 namespace qiao {
-	enum ProgramPointSize {
-		Enabled = true,
-		Disabled = false
-	};
 
 	enum PolygonMode {
 		POINT = GL_POINT,
@@ -23,44 +19,43 @@ namespace qiao {
 	class RenderState {
 	public:
 		RenderState();
-		~RenderState();
 
 		PrimitiveRestart& getPrimitiveRestart();
-		void setPrimitiveRestart(PrimitiveRestart val);
+		void setPrimitiveRestart(PrimitiveRestart& val);
 
 		CullFace& getCullFace();
-		void setCullFace(CullFace val);
+		void setCullFace(CullFace& val);
 
-		ProgramPointSize getProgramPointSize();
-		void setProgramPointSize(ProgramPointSize val);
+		GLboolean getProgramPointSize();
+		void setProgramPointSize(GLboolean val);
 
 		PolygonMode& getPolygonMode();
 		void setPolygonMode(PolygonMode val);
 
 		ScissorTest& getScissorTest();
-		void setScissorTest(ScissorTest val);
+		void setScissorTest(ScissorTest& val);
 
 		StencilTest& getStencilTest();
-		void setStencilTest(StencilTest val);
+		void setStencilTest(StencilTest& val);
 
 		DepthTest& getDepthTest();
-		void setDepthTest(DepthTest val);
+		void setDepthTest(DepthTest& val);
 
 		Blending& getBlending();
-		void setBlending(Blending val);
+		void setBlending(Blending& val);
 
 		ColorMask& getColorMask();
-		void setColorMask(ColorMask val);
+		void setColorMask(ColorMask& val);
 
 	private:
-		PrimitiveRestart primitiveRestart;
-		CullFace cullFace;
-		ProgramPointSize programPointSize;
-		PolygonMode polygonMode;
-		ScissorTest scissorTest;
-		StencilTest stencilTest;
-		DepthTest depthTest;
-		Blending blending;
-		ColorMask colorMask;
+		PrimitiveRestart _primitiveRestart;
+		CullFace _cullFace;
+		GLboolean _programPointSize;
+		PolygonMode _polygonMode;
+		ScissorTest _scissorTest;
+		StencilTest _stencilTest;
+		DepthTest _depthTest;
+		Blending _blending;
+		ColorMask _colorMask;
 	};
 }
