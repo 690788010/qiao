@@ -32,7 +32,7 @@ void IndexBuffer::copyFromSystemMemory(void* data, GLenum type, unsigned int off
 		case GL_UNSIGNED_INT: typeSize = 4; break;
 		default: throw std::invalid_argument("argument dataType is incorrect!"); break;
 	}
-	_count = _buffer->getSizeInBytes() / typeSize;
+	_count += (size / typeSize);			// 计算当前缓存中存储了多少个索引
 	_buffer->copyFromSystemMemory(data, offset, size);
 };
 
@@ -50,4 +50,8 @@ GLsizeiptr IndexBuffer::getSizeInBytes() {
 
 GLenum IndexBuffer::getType() {
 	return  _type;
+};
+
+unsigned int IndexBuffer::getCount() {
+	return _count;
 };

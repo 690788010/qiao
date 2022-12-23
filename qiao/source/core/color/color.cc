@@ -3,7 +3,13 @@
 
 using namespace qiao;
 
-Color::Color() {};
+Color::Color() {
+	this->red = 1.0;
+	this->green = 1.0;
+	this->blue = 1.0;
+	this->alpha = 1.0;
+};
+
 Color::Color(double red, double green, double blue, double alpha) {
 	this->red = red;
 	this->green = green;
@@ -59,6 +65,10 @@ bool Color::equals(Color color) {
 	return true;
 };
 
-Color Color::White() {
+Color Color::WHITE() {
 	return Color(1.0, 1.0, 1.0, 1.0);
 };
+
+Color Color::BLACK() {
+	return Color(0.0, 0.0, 0.0, 1.0);
+}

@@ -30,6 +30,7 @@ namespace qiao {
 		GLenum getUsage();
 		GLsizeiptr getSizeInBytes();
 		GLenum getType();
+		unsigned int getCount();
 
 	private:
 		Buffer* _buffer;

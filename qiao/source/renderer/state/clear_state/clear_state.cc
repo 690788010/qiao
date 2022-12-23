@@ -9,7 +9,7 @@ ClearState::ClearState() {
 	_depthMask = DepthMask::TRUE;
 
 	_clearMask = ClearMask::ALL;
-	_color = Color::White();
+	_color = Color::WHITE();
 	_depth = 1.0;
 	_stencil = 0;
 }

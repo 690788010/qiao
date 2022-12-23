@@ -3,7 +3,7 @@
 using namespace qiao;
 
 Context::Context() {
-	_clearColor = Color::White();
+	_clearColor = Color::BLACK();
 	_clearDepth = 1.0;
 	_clearStencil = 0;
 
@@ -91,7 +91,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
 
 	if (indexBuffer != nullptr) {
-		glDrawElements(primitiveType, 3, indexBuffer->getType(), 0);
+		glDrawElements(primitiveType, indexBuffer->getCount(), indexBuffer->getType(), 0);
 	}
 	else {
 
@@ -111,8 +111,8 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			for (size_t i = 0; i < size; i++) {
 				indices[i] = indicesUnsignedShort->getIndex(i);
 			}
-			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(indices));
-			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_SHORT, 0, sizeof(indices));
+			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(unsigned short) * size);
+			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_SHORT, 0, sizeof(unsigned short) * size);
 			vertexArray->setIndexBuffer(indexBuffer);
 		}
 		else if (meshIndices->getType() == GL_UNSIGNED_INT) {
@@ -122,8 +122,8 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			for (size_t i = 0; i < size; i++) {
 				indices[i] = indicesUnsignedInt->getIndex(i);
 			}
-			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(indices));
-			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_INT, 0, sizeof(indices));
+			IndexBuffer* indexBuffer = new IndexBuffer(usage, sizeof(unsigned int) * size);
+			indexBuffer->copyFromSystemMemory(indices, GL_UNSIGNED_INT, 0, sizeof(unsigned int) * size);
 			vertexArray->setIndexBuffer(indexBuffer);
 		}
 		else {
@@ -166,11 +166,11 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 			vertexArray->getAttributes().setByIndex(shaderAttribute->getLocation(), bufferAttribute);
 		}
 		else if (attribute->getType() == GL_FLOAT_VEC4) {
-
 			VertexAttributeVector4F* attributeVector4F = (VertexAttributeVector4F*)attribute;
 			// 将数据存为一维数组
+			size_t len = attributeVector4F->getValues().size() * 4;
+			float* valuesArr = new float[len];
 			size_t idx = 0;
-			float* valuesArr = new float[attributeVector4F->getValues().size() * 4];
 			for (Vector4F* vector4F : attributeVector4F->getValues()) {
 				valuesArr[idx++] = vector4F->getX();
 				valuesArr[idx++] = vector4F->getY();
@@ -178,8 +178,8 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 				valuesArr[idx++] = vector4F->getW();
 			}
 			// 创建VertexBuffer并将数据存入显存缓冲区
-			VertexBuffer* vertexBuffer = new VertexBuffer(usage, sizeof(valuesArr));
-			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(valuesArr));
+			VertexBuffer* vertexBuffer = new VertexBuffer(usage, sizeof(float) * len);
+			vertexBuffer->copyFromSystemMemory(valuesArr, 0, sizeof(float) * len);
 			// 将顶点属性指针的配置保存到VAO
 			VertexBufferAttribute* bufferAttribute = new VertexBufferAttribute(vertexBuffer, 4, GL_FLOAT, GL_FALSE, 0, 0);
 			vertexArray->getAttributes().setByIndex(shaderAttribute->getLocation(), bufferAttribute);
@@ -195,10 +195,10 @@ void Context::syncRenderState(RenderState* renderState) {
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 	glPrimitiveRestartIndex(primitiveRestart.getIndex());
 
-	/*CullFace cullFace = renderState->getCullFace();
+	CullFace cullFace = renderState->getCullFace();
 	enable(GL_CULL_FACE, cullFace.getEnabled());
 	glFrontFace(cullFace.getFrontFaceMode());
-	glCullFace(cullFace.getCullFaceMode());*/
+	glCullFace(cullFace.getCullFaceMode());
 
 	enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
 
@@ -208,11 +208,11 @@ void Context::syncRenderState(RenderState* renderState) {
 	enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 	glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
 
-	/*DepthTest depthTest = renderState->getDepthTest();
-	enable(GL_DEPTH_TEST, depthTest.getEnabled());
+	DepthTest depthTest = renderState->getDepthTest();
+	enable(GL_DEPTH_TEST, true);
 	glDepthFunc(depthTest.getDepthFunc());
 	glDepthMask(depthTest.getDepthMask());
-	glDepthRange(depthTest.getNear(), depthTest.getFar());*/
+	glDepthRange(depthTest.getNear(), depthTest.getFar());
 
 	Blending blending = renderState->getBlending();
 	enable(GL_BLEND, blending.getEnabled());

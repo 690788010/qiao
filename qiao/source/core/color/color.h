@@ -20,7 +20,8 @@ namespace qiao {
 
 		bool equals(Color color);
 
-		static Color White();
+		static Color WHITE();
+		static Color BLACK();
 
 	private:
 		double red;
