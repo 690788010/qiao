@@ -19,7 +19,7 @@ namespace qiao {
 		Context();
 		~Context();
 
-		void clear(ClearState* clearState);
+		void clear(ClearState clearState);
 		void draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState);
 
 		// 为特定Mesh生成对应的VertexArray

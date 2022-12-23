@@ -14,11 +14,6 @@ namespace qiao {
 		ALWAYS = GL_ALWAYS
 	};
 
-	enum DepthMask {
-		TRUE = GL_TRUE,
-		FALSE = GL_FALSE
-	};
-
 	class DepthTest {
 	public:
 		DepthTest();
@@ -29,8 +24,8 @@ namespace qiao {
 		DepthFunc getDepthFunc();
 		void setDepthFunc(DepthFunc val);
 
-		DepthMask getDepthMask();
-		void setDepthMask(DepthMask val);
+		GLboolean getDepthMask();
+		void setDepthMask(GLboolean flag);
 
 		double getNear();
 		void setNear(double val);
@@ -41,7 +36,7 @@ namespace qiao {
 	private:
 		bool enabled;
 		DepthFunc depthFunc;
-		DepthMask depthMask;
+		GLboolean depthMask;		// 是否开启对深度缓冲的写操作
 		double near;
 		double far;
 	};

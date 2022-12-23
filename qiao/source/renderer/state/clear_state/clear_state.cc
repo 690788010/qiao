@@ -4,39 +4,15 @@
 using namespace qiao;
 
 ClearState::ClearState() {
-	_scissorTest = ScissorTest();
-	_colorMask = ColorMask(true, true, true, true);
-	_depthMask = DepthMask::TRUE;
-
 	_clearMask = ClearMask::ALL;
 	_color = Color::WHITE();
 	_depth = 1.0;
 	_stencil = 0;
+
+	_scissorTest = ScissorTest();
+	_colorMask = ColorMask(true, true, true, true);
+	_depthMask = GL_TRUE;
 }
-
-ScissorTest& ClearState::getScissorTest() {
-	return _scissorTest;
-};
-
-void ClearState::setScissorTest(ScissorTest val) {
-	_scissorTest = val;
-};
-
-ColorMask& ClearState::getColorMask() {
-	return _colorMask;
-};
-
-void ClearState::setColorMask(ColorMask val) {
-	_colorMask = val;
-};
-
-DepthMask ClearState::getDepthMask() {
-	return _depthMask;
-};
-
-void ClearState::setDepthMask(DepthMask val) {
-	_depthMask = val;
-};
 
 GLbitfield ClearState::getClearMask() {
 	return _clearMask;
@@ -68,4 +44,28 @@ int ClearState::getStencil() {
 
 void ClearState::setStencil(int val) {
 	_stencil = val;
+};
+
+ScissorTest& ClearState::getScissorTest() {
+	return _scissorTest;
+};
+
+void ClearState::setScissorTest(ScissorTest val) {
+	_scissorTest = val;
+};
+
+ColorMask& ClearState::getColorMask() {
+	return _colorMask;
+};
+
+void ClearState::setColorMask(ColorMask val) {
+	_colorMask = val;
+};
+
+GLboolean ClearState::getDepthMask() {
+	return _depthMask;
+};
+
+void ClearState::setDepthMask(GLboolean flag) {
+	_depthMask = flag;
 };

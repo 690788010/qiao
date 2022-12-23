@@ -60,8 +60,8 @@ public:
 		qiao::VertexArray* va = _window->getContext()->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
 
 		qiao::RenderState* renderState = new qiao::RenderState();
-		_clearState = new qiao::ClearState();
-		_clearState->setColor(qiao::Color(0.2f, 0.3f, 0.3f, 1.0f));
+
+		_clearState.setColor(qiao::Color(0.2f, 0.3f, 0.3f, 1.0f));
 
 		_drawState = new qiao::DrawState(renderState, sp, va);
 
@@ -102,7 +102,7 @@ private:
 	qiao::Window* _window;
 	qiao::DrawState* _drawState;
 	qiao::SceneState* _sceneState;
-	qiao::ClearState* _clearState;
+	qiao::ClearState _clearState;
 };
 
 int main() {

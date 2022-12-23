@@ -24,8 +24,8 @@ namespace qiao {
 		ColorMask& getColorMask();
 		void setColorMask(ColorMask val);
 
-		DepthMask getDepthMask();
-		void setDepthMask(DepthMask val);
+		GLboolean getDepthMask();
+		void setDepthMask(GLboolean flag);
 
 		GLbitfield getClearMask();
 		void setClearMask(GLbitfield val);
@@ -40,13 +40,13 @@ namespace qiao {
 		void setStencil(int val);
 
 	private:
-		ScissorTest _scissorTest;
-		ColorMask _colorMask;
-		DepthMask _depthMask;
+		ScissorTest _scissorTest;		// 裁剪测试相关配置
+		ColorMask _colorMask;			// 
+		GLboolean _depthMask;			// 是否开启对深度缓冲的写操作
 
-		GLbitfield _clearMask;
-		Color _color;
-		double _depth;
+		GLbitfield _clearMask;			// 标识清除哪个缓存
+		Color _color;				// 颜色缓存的颜色
+		double _depth;					
 		int _stencil;
 	};
 }

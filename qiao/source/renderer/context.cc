@@ -20,9 +20,31 @@ Context::~Context() {
 	}
 };
 
-void Context::clear(ClearState* clearState) {
+void Context::clear(ClearState clearState) {
+	// apply clearColor
+	Color color = clearState.getColor();
+	if (!color.equals(_clearColor)) {
+		glClearColor(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+		_clearColor = color;
+	}
+
+	// apply clearDepth
+	if (clearState.getDepth() != _clearDepth) {
+		glClearDepth(clearState.getDepth());
+		_clearDepth = clearState.getDepth();
+	}
+
+	// apply clearStencil
+	if (clearState.getStencil() != _clearStencil) {
+		glClearStencil(clearState.getStencil());
+		_clearStencil = clearState.getStencil();
+	}
+
+	// Çå³ý»º´æ
+	glClear(clearState.getClearMask());
+
 	// apply ScissorTest
-	ScissorTest scissorTest = clearState->getScissorTest();
+	ScissorTest scissorTest = clearState.getScissorTest();
 	ScissorTest _scissorTest = _renderState->getScissorTest();
 	if (scissorTest.getWidth() < 0) {
 		throw std::invalid_argument("renderState.ScissorTest.Width must be greater than or equal to zero!");
@@ -48,7 +70,7 @@ void Context::clear(ClearState* clearState) {
 	}
 
 	// apply ColorMask
-	ColorMask colorMask = clearState->getColorMask();
+	ColorMask colorMask = clearState.getColorMask();
 	ColorMask _colorMask = _renderState->getColorMask();
 	if (!colorMask.equals(_colorMask)) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
@@ -56,31 +78,10 @@ void Context::clear(ClearState* clearState) {
 	}
 
 	// apply DepthMask
-	if (clearState->getDepthMask() != _renderState->getDepthTest().getDepthMask()) {
-		glDepthMask(clearState->getDepthMask());
-		_renderState->getDepthTest().setDepthMask(clearState->getDepthMask());
+	if (clearState.getDepthMask() != _renderState->getDepthTest().getDepthMask()) {
+		glDepthMask(clearState.getDepthMask());
+		_renderState->getDepthTest().setDepthMask(clearState.getDepthMask());
 	}
-
-	// apply clearColor
-	Color color = clearState->getColor();
-	if (!color.equals(_clearColor)) {
-		glClearColor(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
-		_clearColor = color;
-	}
-
-	// apply clearDepth
-	if (clearState->getDepth() != _clearDepth) {
-		glClearDepth(clearState->getDepth());
-		_clearDepth = clearState->getDepth();
-	}
-
-	// apply clearStencil
-	if (clearState->getStencil() != _clearStencil) {
-		glClearStencil(clearState->getStencil());
-		_clearStencil = clearState->getStencil();
-	}
-
-	glClear(clearState->getClearMask());
 };
 
 void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState) {
