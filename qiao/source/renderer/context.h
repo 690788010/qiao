@@ -27,7 +27,7 @@ namespace qiao {
 
 	private:
 		// Sync GL state with default render state.
-		void syncRenderState(RenderState& renderState);
+		void syncRenderState(RenderState* renderState);
 
 		// enable or disable server-side GL capabilities
 		void enable(GLenum cap, bool enabled);
@@ -37,7 +37,7 @@ namespace qiao {
 
 		void applyBeforeDraw(DrawState* drawState, SceneState* sceneState);
 
-		void applyRenderState(RenderState& renderState);
+		void applyRenderState(RenderState* renderState);
 
 		void applyVertexArray(VertexArray* vertexArray);
 
@@ -46,7 +46,7 @@ namespace qiao {
 		Color _clearColor;
 		double _clearDepth;
 		int _clearStencil;
-		RenderState _renderState;
+		RenderState* _renderState;
 		ShaderProgram* _boundShaderProgram;
 	};
 }

@@ -59,11 +59,10 @@ public:
 
 		qiao::VertexArray* va = _window->getContext()->createVertexArray(mesh, sp->vertexAttributes(), GL_STATIC_DRAW);
 
-		qiao::RenderState* renderState = new qiao::RenderState();
-
 		_clearState.setColor(qiao::Color(0.2f, 0.3f, 0.3f, 1.0f));
 
-		_drawState = new qiao::DrawState(sp, va);
+		qiao::RenderState* rs = new qiao::RenderState();
+		_drawState = new qiao::DrawState(rs, sp, va);
 
 		_sceneState = new qiao::SceneState();
 

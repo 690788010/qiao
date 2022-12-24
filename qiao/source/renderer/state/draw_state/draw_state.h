@@ -18,13 +18,12 @@ namespace qiao {
 	 */
 	class DrawState {
 	public:
-		DrawState(ShaderProgram* shaderProgram, VertexArray* vertexArray);
-		DrawState(RenderState& renderState, ShaderProgram* shaderProgram, VertexArray* vertexArray);
+		DrawState(RenderState* renderState, ShaderProgram* shaderProgram, VertexArray* vertexArray);
 
 		~DrawState();
 
-		RenderState& getRenderState();
-		void setRenderState(RenderState& renderState);
+		RenderState* getRenderState();
+		void setRenderState(RenderState* renderState);
 
 		ShaderProgram* getShaderProgram();
 		void setShaderProgram(ShaderProgram* shaderProgram);
@@ -33,7 +32,7 @@ namespace qiao {
 		void setVertexArray(VertexArray* vertexArray);
 
 	private:
-		RenderState _renderState;
+		RenderState* _renderState;
 		ShaderProgram* _shaderProgram;
 		VertexArray* _vertexArray;
 	};
