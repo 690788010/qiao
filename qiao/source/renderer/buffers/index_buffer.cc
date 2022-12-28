@@ -5,6 +5,8 @@ using namespace qiao;
 IndexBuffer::IndexBuffer(GLenum usage, GLsizeiptr sizeInBytes) {
 	_type = 0;
 	_count = 0;
+	// 解绑VAO，使缓存不与任何VAO关联
+	glBindVertexArray(0);
 	_buffer = new Buffer(GL_ELEMENT_ARRAY_BUFFER, usage, sizeInBytes);
 };
 
@@ -33,10 +35,12 @@ void IndexBuffer::copyFromSystemMemory(void* data, GLenum type, unsigned int off
 		default: throw std::invalid_argument("argument dataType is incorrect!"); break;
 	}
 	_count += (size / typeSize);			// 计算当前缓存中存储了多少个索引
+	glBindVertexArray(0);
 	_buffer->copyFromSystemMemory(data, offset, size);
 };
 
 void IndexBuffer::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	glBindVertexArray(0);
 	_buffer->copyToSystemMemory(data, offset, size);
 };
 

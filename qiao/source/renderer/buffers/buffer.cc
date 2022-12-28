@@ -17,8 +17,6 @@ Buffer::Buffer(GLenum target, GLenum usage, GLsizeiptr sizeInBytes) :
 	// 生成缓存
 	glGenBuffers(1, &_buffer);
 	
-	// 解绑VAO，使缓存不与任何VAO关联
-	glBindVertexArray(0);
 	// 为缓存绑定目标
 	bind();
 	// 为缓存设定参数
@@ -47,7 +45,6 @@ void Buffer::copyFromSystemMemory(void* data, unsigned int offset, unsigned int 
 	if (offset + size > _sizeInBytes) {
 		throw std::invalid_argument("offset + size must be less than or equal to _sizeInBytes!");
 	}
-	glBindVertexArray(0);
 	bind();
 	glBufferSubData(_target, offset, size, data);
 };
@@ -59,7 +56,6 @@ void Buffer::copyToSystemMemory(void* data, unsigned int offset, unsigned int si
 	if (offset + size > _sizeInBytes) {
 		throw std::invalid_argument("offset + size must be less than or equal to _sizeInBytes.");
 	}
-	glBindVertexArray(0);
 	bind();
 	glGetBufferSubData(_target, offset, size, data);
 };

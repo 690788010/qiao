@@ -3,6 +3,8 @@
 using namespace qiao;
 
 VertexBuffer::VertexBuffer(GLenum usage, GLsizeiptr sizeInBytes) {
+	// 解绑VAO，使缓存不与任何VAO关联
+	glBindVertexArray(0);
 	_buffer = new Buffer(GL_ARRAY_BUFFER, usage, sizeInBytes);
 }
 
@@ -22,10 +24,12 @@ void VertexBuffer::unBind() {
 };
 
 void VertexBuffer::copyFromSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	glBindVertexArray(0);
 	_buffer->copyFromSystemMemory(data, offset, size);
 };
 
 void VertexBuffer::copyToSystemMemory(void* data, unsigned int offset, unsigned int size) {
+	glBindVertexArray(0);
 	_buffer->copyToSystemMemory(data, offset, size);
 };
 
