@@ -195,6 +195,12 @@
     <ClInclude Include="source\renderer\shaders\uniforms\uniform_matrix_4d.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="source\renderer\buffers\write_pixel_buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\stb_image\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="third_party\glad\source\glad.c">
@@ -320,11 +326,25 @@
     <ClCompile Include="source\renderer\shaders\uniforms\uniform_matrix_4d.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\main.cc">
+    <ClCompile Include="source\renderer\buffers\write_pixel_buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\test.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third_party\glfw\lib\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\NaturalEarth\NE2_50M_SR_W.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="source\test\awesomeface.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="third_party\stb_image\awesomeface.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

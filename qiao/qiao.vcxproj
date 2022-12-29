@@ -156,6 +156,7 @@
     <ClInclude Include="source\renderer\buffers\buffer.h" />
     <ClInclude Include="source\renderer\buffers\index_buffer.h" />
     <ClInclude Include="source\renderer\buffers\vertex_buffer.h" />
+    <ClInclude Include="source\renderer\buffers\write_pixel_buffer.h" />
     <ClInclude Include="source\renderer\context.h" />
     <ClInclude Include="source\renderer\i_cleanable.h" />
     <ClInclude Include="source\renderer\i_cleanable_observer.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="third_party\glad\include\glad.h" />
     <ClInclude Include="third_party\glad\include\khrplatform.h" />
     <ClInclude Include="third_party\glfw\include\glfw3.h" />
+    <ClInclude Include="third_party\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\core\color\color.cc" />
@@ -215,6 +217,7 @@
     <ClCompile Include="source\renderer\buffers\buffer.cc" />
     <ClCompile Include="source\renderer\buffers\index_buffer.cc" />
     <ClCompile Include="source\renderer\buffers\vertex_buffer.cc" />
+    <ClCompile Include="source\renderer\buffers\write_pixel_buffer.cc" />
     <ClCompile Include="source\renderer\context.cc" />
     <ClCompile Include="source\renderer\shaders\shader_components\shader_object.cc" />
     <ClCompile Include="source\renderer\shaders\shader_components\shader_vertex_attribute.cc" />
@@ -241,11 +244,16 @@
     <ClCompile Include="source\renderer\scene\camera.cc" />
     <ClCompile Include="source\renderer\scene\scene_state.cc" />
     <ClCompile Include="source\renderer\shaders\shader_program.cc" />
-    <ClCompile Include="source\test\main.cc" />
+    <ClCompile Include="source\test\test.cc" />
     <ClCompile Include="third_party\glad\source\glad.c" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="third_party\glfw\lib\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\NaturalEarth\NE2_50M_SR_W.jpg" />
+    <Image Include="source\test\awesomeface.png" />
+    <Image Include="third_party\stb_image\awesomeface.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
