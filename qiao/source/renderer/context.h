@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdexcept>
+#include <direct.h>
 
 #include "./state/clear_state/clear_state.h"
 #include "./state/draw_state/draw_state.h"
@@ -12,6 +13,12 @@
 #include "../core/geometry/indices/indices_unsigned_int.h"
 #include "../core/geometry/vertex_attributes/vertex_attribute_float.h"
 #include "../core/geometry/vertex_attributes/vertex_attribute_vector4f.h"
+#include "textures/texture2d.h"
+#include "buffers/write_pixel_buffer.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "../../third_party/stb_image/stb_image.h"
+
 
 namespace qiao {
 	class Context {
@@ -24,6 +31,9 @@ namespace qiao {
 
 		// 为特定Mesh生成对应的VertexArray
 		VertexArray* createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage);
+
+		Texture2D* createTexture2D(std::string imgPath, GLenum target, GLint internalformat, GLenum format, 
+			GLenum type, bool generateMipmaps);
 
 	private:
 		// Sync GL state with default render state.

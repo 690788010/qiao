@@ -340,11 +340,5 @@
     <Image Include="assets\textures\NaturalEarth\NE2_50M_SR_W.jpg">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="source\test\awesomeface.png">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="third_party\stb_image\awesomeface.png">
-      <Filter>资源文件</Filter>
-    </Image>
   </ItemGroup>
 </Project>

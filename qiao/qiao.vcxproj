@@ -252,8 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\textures\NaturalEarth\NE2_50M_SR_W.jpg" />
-    <Image Include="source\test\awesomeface.png" />
-    <Image Include="third_party\stb_image\awesomeface.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

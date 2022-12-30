@@ -187,6 +187,32 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 	return vertexArray;
 };
 
+Texture2D* Context::createTexture2D(std::string imgPath, GLenum target, GLint internalformat, GLenum format, 
+	GLenum type, bool generateMipmaps) 
+{
+	// 获取图片的绝对路径
+	char* cwd;
+	cwd = _getcwd(NULL, 0);
+	std::string path = cwd;
+	path += imgPath;
+
+	// 加载图片数据到内存
+	int width, height, nrChannels;
+	unsigned char* data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
+	if (!data) {
+		throw std::invalid_argument("Failed to load texture");
+	}
+
+	// 将内存中的图片数据拷贝到显存
+	unsigned int size = width * height * nrChannels;
+	WritePixelBuffer* write_pixel_buffer = new WritePixelBuffer(GL_STATIC_DRAW, size);
+	write_pixel_buffer->copyFromSystemMemory(data, 0, size);
+
+	Texture2D* texture = new Texture2D(target, internalformat, width, height, format, type, generateMipmaps);
+
+	return texture;
+};
+
 void Context::syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
 	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
