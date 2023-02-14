@@ -1,0 +1,35 @@
+\hypertarget{vertex__attribute__vector4f_8h_source}{}\doxysection{vertex\+\_\+attribute\+\_\+vector4f.\+h}
+\label{vertex__attribute__vector4f_8h_source}\index{source/core/geometry/vertex\_attributes/vertex\_attribute\_vector4f.h@{source/core/geometry/vertex\_attributes/vertex\_attribute\_vector4f.h}}
+\mbox{\hyperlink{vertex__attribute__vector4f_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertexattribute_8h}{vertexattribute.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../vector/vector4f.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_vertex_attribute_vector4_f}{VertexAttributeVector4F}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_vertex_attribute}{VertexAttribute}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_attribute_vector4_f}{VertexAttributeVector4F}}(std::string\ name);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_attribute_vector4_f}{\string~VertexAttributeVector4F}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ GLenum\ getType();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 添加一个单精度浮点数向量数据}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addData(\mbox{\hyperlink{classqiao_1_1_vector4_f}{Vector4F}}*\ data);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 获取保存数据的list容器}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::list<Vector4F*>\&\ getValues();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::string\ \_name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 变量名}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ GLenum\ \_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 对应的OpenGL数据类型}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::list<Vector4F*>\ \_values;}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\hypertarget{vertex__buffer__attribute_8h_source}{}\doxysection{vertex\+\_\+buffer\+\_\+attribute.\+h}
+\label{vertex__buffer__attribute_8h_source}\index{source/renderer/vertex\_array/vertex\_buffer\_attribute.h@{source/renderer/vertex\_array/vertex\_buffer\_attribute.h}}
+\mbox{\hyperlink{vertex__buffer__attribute_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../buffers/vertex\_buffer.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{VertexBufferAttribute}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{VertexBufferAttribute}}(\mbox{\hyperlink{classqiao_1_1_vertex_buffer}{VertexBuffer}}*\ vertexBuffer,\ GLint\ size,\ GLenum\ type,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ GLboolean\ normalized,\ GLsizei\ stride,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_offset);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{\string~VertexBufferAttribute}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer}{VertexBuffer}}*\ getVertexBuffer();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ GLint\ getSize();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ GLenum\ getType();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ GLboolean\ getNormalized();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ GLsizei\ getStride();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getOffset();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getEnabled();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ val);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer}{VertexBuffer}}*\ \_vertexBuffer;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ GLint\ \_size;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Specifies\ the\ number\ of\ components\ per\ generic\ vertex\ attribute.\ Must\ be\ 1,\ 2,\ 3,\ 4.}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ GLenum\ \_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Specifies\ the\ data\ type\ of\ each\ component\ in\ the\ array.}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ GLboolean\ \_normalized;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ specifies\ whether\ fixed-\/point\ data\ values\ should\ be\ normalized\ (GL\_TRUE)\ or\ converted\ directly\ as\ fixed-\/point\ values\ (GL\_FALSE)\ when\ they\ are\ accessed.}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ GLsizei\ \_stride;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Specifies\ the\ byte\ offset\ between\ consecutive\ generic\ vertex\ attributes.}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_offset;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Specifies\ a\ offset\ of\ the\ first\ component\ of\ the\ first\ generic\ vertex\ attribute\ in\ the\ array\ in\ the\ data\ store\ of\ the\ buffer\ currently\ bound\ to\ the\ GL\_ARRAY\_BUFFER\ target.}}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\hypertarget{classqiao_1_1_texture_uniform}{}\doxysection{qiao\+::Texture\+Uniform Class Reference}
+\label{classqiao_1_1_texture_uniform}\index{qiao::TextureUniform@{qiao::TextureUniform}}
+
+
+{\ttfamily \#include $<$texture\+\_\+uniform.\+h$>$}
+
+Inheritance diagram for qiao\+::Texture\+Uniform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqiao_1_1_texture_uniform}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqiao_1_1_texture_uniform_a337034554685f2976991cceebe27a5f0}{Texture\+Uniform}} (int texture\+Unit)
+\item 
+virtual std\+::string \mbox{\hyperlink{classqiao_1_1_texture_uniform_a968dc40b59a52c3be0124d8fd022d1e2}{get\+Name}} ()
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_texture_uniform_a70811e7f2a1893d2974f3dab1ca817a3}{set}} (\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}} $\ast$uniform)
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_link_auto_uniform_ade1ca7a07e431c636bf0477fbd54a621}\label{classqiao_1_1_link_auto_uniform_ade1ca7a07e431c636bf0477fbd54a621}} 
+virtual std\+::string {\bfseries get\+Name} ()=0
+\item 
+\mbox{\Hypertarget{classqiao_1_1_link_auto_uniform_aa26a3f81326a3fdaf8df7320e603eb7c}\label{classqiao_1_1_link_auto_uniform_aa26a3f81326a3fdaf8df7320e603eb7c}} 
+virtual void {\bfseries set} (\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}} $\ast$uniform)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Texture\+Uniform是\+Link\+Auto\+Uniform类的子类，它用于对sampler2\+D对应的\+Uniform自动设置值. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_texture_uniform_a337034554685f2976991cceebe27a5f0}\label{classqiao_1_1_texture_uniform_a337034554685f2976991cceebe27a5f0}} 
+\index{qiao::TextureUniform@{qiao::TextureUniform}!TextureUniform@{TextureUniform}}
+\index{TextureUniform@{TextureUniform}!qiao::TextureUniform@{qiao::TextureUniform}}
+\doxysubsubsection{\texorpdfstring{TextureUniform()}{TextureUniform()}}
+{\footnotesize\ttfamily Texture\+Uniform\+::\+Texture\+Uniform (\begin{DoxyParamCaption}\item[{int}]{texture\+Unit }\end{DoxyParamCaption})}
+
+构造函数.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Unit} & 纹理单元的值 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_texture_uniform_a968dc40b59a52c3be0124d8fd022d1e2}\label{classqiao_1_1_texture_uniform_a968dc40b59a52c3be0124d8fd022d1e2}} 
+\index{qiao::TextureUniform@{qiao::TextureUniform}!getName@{getName}}
+\index{getName@{getName}!qiao::TextureUniform@{qiao::TextureUniform}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Texture\+Uniform\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_link_auto_uniform}{qiao\+::\+Link\+Auto\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_texture_uniform_a70811e7f2a1893d2974f3dab1ca817a3}\label{classqiao_1_1_texture_uniform_a70811e7f2a1893d2974f3dab1ca817a3}} 
+\index{qiao::TextureUniform@{qiao::TextureUniform}!set@{set}}
+\index{set@{set}!qiao::TextureUniform@{qiao::TextureUniform}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Texture\+Uniform\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}} $\ast$}]{uniform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_link_auto_uniform}{qiao\+::\+Link\+Auto\+Uniform}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/uniforms/link\+\_\+auto\+\_\+uniforms/\mbox{\hyperlink{texture__uniform_8h}{texture\+\_\+uniform.\+h}}\item 
+source/renderer/shaders/uniforms/link\+\_\+auto\+\_\+uniforms/\mbox{\hyperlink{texture__uniform_8cc}{texture\+\_\+uniform.\+cc}}\end{DoxyCompactItemize}

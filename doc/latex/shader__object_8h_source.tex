@@ -1,0 +1,37 @@
+\hypertarget{shader__object_8h_source}{}\doxysection{shader\+\_\+object.\+h}
+\label{shader__object_8h_source}\index{source/renderer/shaders/shader\_components/shader\_object.h@{source/renderer/shaders/shader\_components/shader\_object.h}}
+\mbox{\hyperlink{shader__object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{shader__object_8h_a900f39781ef44d5ff8a0f91dbdc20376}{VertexLocations}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ POSITION\ =\ 0,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ NORMAL\ =\ 2,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ TEXTURECOORDINATE\ =\ 3,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ COLOR\ =\ 4}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{shader__object_8h_a85c0517e07e6d38756648ff37f1bca6a}{ShaderType}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ VERTEX\_SHADER\ =\ GL\_VERTEX\_SHADER,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ FRAGMENT\_SHADER\ =\ GL\_FRAGMENT\_SHADER}
+\DoxyCodeLine{00031\ \ \ \ \ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_shader_object}{ShaderObject}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_object}{ShaderObject}}(\mbox{\hyperlink{shader__object_8h_a85c0517e07e6d38756648ff37f1bca6a}{ShaderType}}\ shaderType,\ std::string\ source);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_object}{\string~ShaderObject}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ GLuint\ handle();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ GLuint\ \_shader;}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}

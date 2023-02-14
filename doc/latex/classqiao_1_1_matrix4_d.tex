@@ -1,0 +1,173 @@
+\hypertarget{classqiao_1_1_matrix4_d}{}\doxysection{qiao\+::Matrix4D Class Reference}
+\label{classqiao_1_1_matrix4_d}\index{qiao::Matrix4D@{qiao::Matrix4D}}
+
+
+{\ttfamily \#include $<$matrix4d.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}} ()
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d_a0d90251344b8d515fc5c20538a0e58b9}{Matrix4D}} (double value)
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d_a2a9f561257ad729663e190c66fa8e5ec}{Matrix4D}} (double column0row0, double column1row0, double column2row0, double column3row0, double column0row1, double column1row1, double column2row1, double column3row1, double column0row2, double column1row2, double column2row2, double column3row2, double column0row3, double column1row3, double column2row3, double column3row3)
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d_aa064407f148553a5de558d4bc8c9cb57}{Matrix4D}} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&mat4)
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d_a04c8f9e535a601504908ec3aa4114fee}{Matrix4D}} (\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&\&mat4)
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& \mbox{\hyperlink{classqiao_1_1_matrix4_d_a34eac29051e4b9b428fd6971cdee835a}{operator=}} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&mat4)
+\item 
+\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& \mbox{\hyperlink{classqiao_1_1_matrix4_d_af8710e4b0acce4bb2512f14aa933b86e}{operator=}} (\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&\&mat4)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_afa41e6c2cff6af5bb8990aef33555dde}\label{classqiao_1_1_matrix4_d_afa41e6c2cff6af5bb8990aef33555dde}} 
+double $\ast$ {\bfseries get\+Values} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a34283f86c81278aca648de5b7fff828f}\label{classqiao_1_1_matrix4_d_a34283f86c81278aca648de5b7fff828f}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&mat4d) const
+\item 
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a9c7b6d9857d1a3cec1b6205e26fddc51}\label{classqiao_1_1_matrix4_d_a9c7b6d9857d1a3cec1b6205e26fddc51}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&mat4d) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_aaad00c45d3e43082fad63cdeb7f303ed}\label{classqiao_1_1_matrix4_d_aaad00c45d3e43082fad63cdeb7f303ed}} 
+static \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} {\bfseries Identity} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Matrix4\+D类表示一个双精度浮点数值的4x4矩阵. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}\label{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!Matrix4D@{Matrix4D}}
+\index{Matrix4D@{Matrix4D}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{Matrix4D()}{Matrix4D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Matrix4\+D\+::\+Matrix4D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+无参构造函数. \mbox{\Hypertarget{classqiao_1_1_matrix4_d_a0d90251344b8d515fc5c20538a0e58b9}\label{classqiao_1_1_matrix4_d_a0d90251344b8d515fc5c20538a0e58b9}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!Matrix4D@{Matrix4D}}
+\index{Matrix4D@{Matrix4D}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{Matrix4D()}{Matrix4D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Matrix4\+D\+::\+Matrix4D (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+构造函数，将矩阵里的各个元素设为同一个值.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 矩阵元素值 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a2a9f561257ad729663e190c66fa8e5ec}\label{classqiao_1_1_matrix4_d_a2a9f561257ad729663e190c66fa8e5ec}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!Matrix4D@{Matrix4D}}
+\index{Matrix4D@{Matrix4D}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{Matrix4D()}{Matrix4D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Matrix4\+D\+::\+Matrix4D (\begin{DoxyParamCaption}\item[{double}]{column0row0,  }\item[{double}]{column1row0,  }\item[{double}]{column2row0,  }\item[{double}]{column3row0,  }\item[{double}]{column0row1,  }\item[{double}]{column1row1,  }\item[{double}]{column2row1,  }\item[{double}]{column3row1,  }\item[{double}]{column0row2,  }\item[{double}]{column1row2,  }\item[{double}]{column2row2,  }\item[{double}]{column3row2,  }\item[{double}]{column0row3,  }\item[{double}]{column1row3,  }\item[{double}]{column2row3,  }\item[{double}]{column3row3 }\end{DoxyParamCaption})}
+
+构造函数，明确设定矩阵里各个元素的值.
+
+
+\begin{DoxyParams}{Parameters}
+{\em column0row0} & \\
+\hline
+{\em column1row0} & \\
+\hline
+{\em column2row0} & \\
+\hline
+{\em column3row0} & \\
+\hline
+{\em column0row1} & \\
+\hline
+{\em column1row1} & \\
+\hline
+{\em column2row1} & \\
+\hline
+{\em column3row1} & \\
+\hline
+{\em column0row2} & \\
+\hline
+{\em column1row2} & \\
+\hline
+{\em column2row2} & \\
+\hline
+{\em column3row2} & \\
+\hline
+{\em column0row3} & \\
+\hline
+{\em column1row3} & \\
+\hline
+{\em column2row3} & \\
+\hline
+{\em column3row3} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_aa064407f148553a5de558d4bc8c9cb57}\label{classqiao_1_1_matrix4_d_aa064407f148553a5de558d4bc8c9cb57}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!Matrix4D@{Matrix4D}}
+\index{Matrix4D@{Matrix4D}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{Matrix4D()}{Matrix4D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Matrix4\+D\+::\+Matrix4D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&}]{mat4 }\end{DoxyParamCaption})}
+
+拷贝构造函数.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat4} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a04c8f9e535a601504908ec3aa4114fee}\label{classqiao_1_1_matrix4_d_a04c8f9e535a601504908ec3aa4114fee}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!Matrix4D@{Matrix4D}}
+\index{Matrix4D@{Matrix4D}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{Matrix4D()}{Matrix4D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Matrix4\+D\+::\+Matrix4D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&\&}]{mat4 }\end{DoxyParamCaption})}
+
+移动构造函数.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat4} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_a34eac29051e4b9b428fd6971cdee835a}\label{classqiao_1_1_matrix4_d_a34eac29051e4b9b428fd6971cdee835a}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!operator=@{operator=}}
+\index{operator=@{operator=}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& Matrix4\+D\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&}]{mat4 }\end{DoxyParamCaption})}
+
+拷贝赋值运算符.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat4} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_matrix4_d_af8710e4b0acce4bb2512f14aa933b86e}\label{classqiao_1_1_matrix4_d_af8710e4b0acce4bb2512f14aa933b86e}} 
+\index{qiao::Matrix4D@{qiao::Matrix4D}!operator=@{operator=}}
+\index{operator=@{operator=}!qiao::Matrix4D@{qiao::Matrix4D}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& Matrix4\+D\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&\&}]{mat4 }\end{DoxyParamCaption})}
+
+移动赋值运算符.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat4} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/core/matrix/\mbox{\hyperlink{matrix4d_8h}{matrix4d.\+h}}\item 
+source/core/matrix/\mbox{\hyperlink{matrix4d_8cc}{matrix4d.\+cc}}\end{DoxyCompactItemize}

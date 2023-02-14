@@ -1,0 +1,65 @@
+\hypertarget{classqiao_1_1_draw_auto_uniform_factory}{}\doxysection{qiao\+::Draw\+Auto\+Uniform\+Factory Class Reference}
+\label{classqiao_1_1_draw_auto_uniform_factory}\index{qiao::DrawAutoUniformFactory@{qiao::DrawAutoUniformFactory}}
+
+
+{\ttfamily \#include $<$draw\+\_\+auto\+\_\+uniform\+\_\+factory.\+h$>$}
+
+Inheritance diagram for qiao\+::Draw\+Auto\+Uniform\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqiao_1_1_draw_auto_uniform_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform_factory_a9cdb4c93c4de3490b4a416fa61d4d6ab}{get\+Name}} ()=0
+\item 
+virtual \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform}{Draw\+Auto\+Uniform}} $\ast$ \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform_factory_a08449c7d9c424472f7f280be2f3113d8}{create}} (\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}} $\ast$uniform)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Draw\+Auto\+Uniform\+Factory类是用于创建对应的\+Draw\+Auto\+Uniform对象的工厂类， Draw\+Auto\+Uniform\+Factory类是一个抽象类，不可直接实例化. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_draw_auto_uniform_factory_a08449c7d9c424472f7f280be2f3113d8}\label{classqiao_1_1_draw_auto_uniform_factory_a08449c7d9c424472f7f280be2f3113d8}} 
+\index{qiao::DrawAutoUniformFactory@{qiao::DrawAutoUniformFactory}!create@{create}}
+\index{create@{create}!qiao::DrawAutoUniformFactory@{qiao::DrawAutoUniformFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform}{Draw\+Auto\+Uniform}} $\ast$ qiao\+::\+Draw\+Auto\+Uniform\+Factory\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}} $\ast$}]{uniform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+纯虚函数，用于创建对应的\+Draw\+Auto\+Uniform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Draw\+Auto\+Uniform$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classqiao_1_1_model_matrix_uniform_factory_a03dace32fefa6c4e913d7ea99bcb7f43}{qiao\+::\+Model\+Matrix\+Uniform\+Factory}}.
+
+\mbox{\Hypertarget{classqiao_1_1_draw_auto_uniform_factory_a9cdb4c93c4de3490b4a416fa61d4d6ab}\label{classqiao_1_1_draw_auto_uniform_factory_a9cdb4c93c4de3490b4a416fa61d4d6ab}} 
+\index{qiao::DrawAutoUniformFactory@{qiao::DrawAutoUniformFactory}!getName@{getName}}
+\index{getName@{getName}!qiao::DrawAutoUniformFactory@{qiao::DrawAutoUniformFactory}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual std\+::string qiao\+::\+Draw\+Auto\+Uniform\+Factory\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+纯虚函数，用于返回对应的name.
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classqiao_1_1_model_matrix_uniform_factory_a83367492c2a8fdb8eed09fafd4b1522e}{qiao\+::\+Model\+Matrix\+Uniform\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/uniforms/draw\+\_\+auto\+\_\+uniforms/\mbox{\hyperlink{draw__auto__uniform__factory_8h}{draw\+\_\+auto\+\_\+uniform\+\_\+factory.\+h}}\end{DoxyCompactItemize}

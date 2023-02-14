@@ -1,0 +1,65 @@
+\hypertarget{classqiao_1_1_buffer}{}\doxysection{qiao\+::Buffer Class Reference}
+\label{classqiao_1_1_buffer}\index{qiao::Buffer@{qiao::Buffer}}
+
+
+{\ttfamily \#include $<$buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqiao_1_1_buffer_a19a8f766f71dd5e6d99e52b98628fcdd}{Buffer}} (GLenum target, GLenum usage, GLsizeiptr size\+In\+Bytes)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}\label{classqiao_1_1_buffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}} 
+void {\bfseries bind} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_a5f78f73ab4554e85b1acfd7be2a28f1e}\label{classqiao_1_1_buffer_a5f78f73ab4554e85b1acfd7be2a28f1e}} 
+void {\bfseries un\+Bind} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_a2263f7ec5e509bea3707dcd67244870c}\label{classqiao_1_1_buffer_a2263f7ec5e509bea3707dcd67244870c}} 
+void {\bfseries copy\+From\+System\+Memory} (void $\ast$data, unsigned int offset, unsigned int size)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_aa9790d0f0168621766083b0863132f46}\label{classqiao_1_1_buffer_aa9790d0f0168621766083b0863132f46}} 
+void {\bfseries copy\+To\+System\+Memory} (void $\ast$data, unsigned int offset, unsigned int size)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_a47e7e8f2ed9f3a7c6e9b93cd26cfe06e}\label{classqiao_1_1_buffer_a47e7e8f2ed9f3a7c6e9b93cd26cfe06e}} 
+GLuint {\bfseries get\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_acf83d894890343933d9fccd4c3b43c58}\label{classqiao_1_1_buffer_acf83d894890343933d9fccd4c3b43c58}} 
+GLenum {\bfseries get\+Target} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_af8f51dd076221c9cdbf307110ec834b8}\label{classqiao_1_1_buffer_af8f51dd076221c9cdbf307110ec834b8}} 
+GLenum {\bfseries get\+Usage} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_buffer_a919c4955e13063cbbd1f9321aaeddfcf}\label{classqiao_1_1_buffer_a919c4955e13063cbbd1f9321aaeddfcf}} 
+GLsizeiptr {\bfseries get\+Size\+In\+Bytes} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Buffer类表示\+Open\+GL的显存缓冲.\+它为\+Index\+Buffer类和\+Vertex\+Buffer类提供底层操作 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_buffer_a19a8f766f71dd5e6d99e52b98628fcdd}\label{classqiao_1_1_buffer_a19a8f766f71dd5e6d99e52b98628fcdd}} 
+\index{qiao::Buffer@{qiao::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!qiao::Buffer@{qiao::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{GLenum}]{target,  }\item[{GLenum}]{usage,  }\item[{GLsizeiptr}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+构造函数.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & 缓存绑定目标 \\
+\hline
+{\em usage} & 用例参数 ~\newline
+ \\
+\hline
+{\em size\+In\+Bytes} & 缓存的字节大小 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/buffers/\mbox{\hyperlink{buffer_8h}{buffer.\+h}}\item 
+source/renderer/buffers/\mbox{\hyperlink{buffer_8cc}{buffer.\+cc}}\end{DoxyCompactItemize}

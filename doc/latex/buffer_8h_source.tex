@@ -1,0 +1,42 @@
+\hypertarget{buffer_8h_source}{}\doxysection{buffer.\+h}
+\label{buffer_8h_source}\index{source/renderer/buffers/buffer.h@{source/renderer/buffers/buffer.h}}
+\mbox{\hyperlink{buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_buffer}{Buffer}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_buffer}{Buffer}}(GLenum\ target,\ GLenum\ usage,\ GLsizeiptr\ sizeInBytes);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_buffer}{\string~Buffer}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为缓存绑定目标}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ bind();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 解绑}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unBind();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 从内存数据拷贝}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ copyFromSystemMemory(\textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将数据拷贝到内存}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ copyToSystemMemory(\textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ GLuint\ getBuffer();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ GLenum\ getTarget();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ GLenum\ getUsage();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ GLsizeiptr\ getSizeInBytes();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ GLuint\ \_buffer;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ GLenum\ \_target;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ GLenum\ \_usage;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ GLsizeiptr\ \_sizeInBytes;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ unsigned\ int}}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}

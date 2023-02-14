@@ -1,0 +1,85 @@
+\hypertarget{classqiao_1_1_shader_program}{}\doxysection{qiao\+::Shader\+Program Class Reference}
+\label{classqiao_1_1_shader_program}\index{qiao::ShaderProgram@{qiao::ShaderProgram}}
+
+
+{\ttfamily \#include $<$shader\+\_\+program.\+h$>$}
+
+Inheritance diagram for qiao\+::Shader\+Program\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqiao_1_1_shader_program}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqiao_1_1_shader_program_a9f98c8503d708d35f0dad1b211ddebae}{Shader\+Program}} (std\+::string vs, std\+::string fs)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a285c27da064068522f4900a8e8075f68}\label{classqiao_1_1_shader_program_a285c27da064068522f4900a8e8075f68}} 
+void {\bfseries use} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a3dcee1ebed32251e3320b8707455b6ac}\label{classqiao_1_1_shader_program_a3dcee1ebed32251e3320b8707455b6ac}} 
+void {\bfseries clean} (\mbox{\hyperlink{classqiao_1_1_context}{Context}} $\ast$context, \mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$draw\+State, \mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$scene\+State)
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_shader_program_a7933abff88b2d27c17767e30efd15f8f}{notify\+Dirty}} (\mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}} $\ast$value)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a50a8d8cc8e9e1713f88c6048883ecd58}\label{classqiao_1_1_shader_program_a50a8d8cc8e9e1713f88c6048883ecd58}} 
+GLint {\bfseries get\+Frag\+Loc\+By\+Name} (std\+::string name)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_afeb0898e694cc227f948b10b88362701}\label{classqiao_1_1_shader_program_afeb0898e694cc227f948b10b88362701}} 
+void {\bfseries init\+Auto\+Uniforms} (\mbox{\hyperlink{classqiao_1_1_uniform_collection}{Uniform\+Collection}} uniforms)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a6d7589f448953f4b96e31ffb356841a5}\label{classqiao_1_1_shader_program_a6d7589f448953f4b96e31ffb356841a5}} 
+void {\bfseries set\+Draw\+Auto\+Uniforms} (\mbox{\hyperlink{classqiao_1_1_context}{Context}} $\ast$context, \mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$draw\+State, \mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$scene\+State)
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a90dc8020dd5b7e839763645a03bf3c88}\label{classqiao_1_1_shader_program_a90dc8020dd5b7e839763645a03bf3c88}} 
+\mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}} {\bfseries vertex\+Attributes} ()
+\item 
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a618c1926ff59bc8abb8242e3b6af4a1a}\label{classqiao_1_1_shader_program_a618c1926ff59bc8abb8242e3b6af4a1a}} 
+\mbox{\hyperlink{classqiao_1_1_uniform_collection}{Uniform\+Collection}} {\bfseries uniforms} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_i_cleanable_observer_a30c26f566d604f6cae1158432b4cd81f}\label{classqiao_1_1_i_cleanable_observer_a30c26f566d604f6cae1158432b4cd81f}} 
+virtual void {\bfseries notify\+Dirty} (\mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}} $\ast$value)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Shader\+Program类用于封装着色器程序，提供对着色器的编译、链接等操作. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a9f98c8503d708d35f0dad1b211ddebae}\label{classqiao_1_1_shader_program_a9f98c8503d708d35f0dad1b211ddebae}} 
+\index{qiao::ShaderProgram@{qiao::ShaderProgram}!ShaderProgram@{ShaderProgram}}
+\index{ShaderProgram@{ShaderProgram}!qiao::ShaderProgram@{qiao::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{ShaderProgram()}{ShaderProgram()}}
+{\footnotesize\ttfamily Shader\+Program\+::\+Shader\+Program (\begin{DoxyParamCaption}\item[{std\+::string}]{vs,  }\item[{std\+::string}]{fs }\end{DoxyParamCaption})}
+
+构造函数.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vs} & 顶点着色器源代码 \\
+\hline
+{\em fs} & 片元着色器源代码 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_shader_program_a7933abff88b2d27c17767e30efd15f8f}\label{classqiao_1_1_shader_program_a7933abff88b2d27c17767e30efd15f8f}} 
+\index{qiao::ShaderProgram@{qiao::ShaderProgram}!notifyDirty@{notifyDirty}}
+\index{notifyDirty@{notifyDirty}!qiao::ShaderProgram@{qiao::ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{notifyDirty()}{notifyDirty()}}
+{\footnotesize\ttfamily void Shader\+Program\+::notify\+Dirty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}} $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{qiao\+::\+ICleanable\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/\mbox{\hyperlink{shader__program_8h}{shader\+\_\+program.\+h}}\item 
+source/renderer/shaders/\mbox{\hyperlink{shader__program_8cc}{shader\+\_\+program.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\hypertarget{matrix4d_8h_source}{}\doxysection{matrix4d.\+h}
+\label{matrix4d_8h_source}\index{source/core/matrix/matrix4d.h@{source/core/matrix/matrix4d.h}}
+\mbox{\hyperlink{matrix4d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ column0row0,\ \textcolor{keywordtype}{double}\ column1row0,\ \textcolor{keywordtype}{double}\ column2row0,\ \textcolor{keywordtype}{double}\ column3row0,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ column0row1,\ \textcolor{keywordtype}{double}\ column1row1,\ \textcolor{keywordtype}{double}\ column2row1,\ \textcolor{keywordtype}{double}\ column3row1,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ column0row2,\ \textcolor{keywordtype}{double}\ column1row2,\ \textcolor{keywordtype}{double}\ column2row2,\ \textcolor{keywordtype}{double}\ column3row2,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ column0row3,\ \textcolor{keywordtype}{double}\ column1row3,\ \textcolor{keywordtype}{double}\ column2row3,\ \textcolor{keywordtype}{double}\ column3row3);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ mat4);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a7cecf058dd181984d8ca7fee1423c6e2}{Matrix4D}}(\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\&\ mat4);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{\string~Matrix4D}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a34eac29051e4b9b428fd6971cdee835a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ mat4);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ \mbox{\hyperlink{classqiao_1_1_matrix4_d_a34eac29051e4b9b428fd6971cdee835a}{operator=}}(\mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\&\ mat4);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\ Identity();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}*\ getValues();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ mat4d)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ mat4d)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}*\ \_values;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 存储矩阵的数组（列主序）}}
+\DoxyCodeLine{00097\ \ \ \ \ \};}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\hypertarget{texture2d_8h_source}{}\doxysection{texture2d.\+h}
+\label{texture2d_8h_source}\index{source/renderer/textures/texture2d.h@{source/renderer/textures/texture2d.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../buffers/write\_pixel\_buffer.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}}(GLenum\ target,\ GLint\ internalformat,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ }
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ format,\ GLenum\ type,\ \textcolor{keywordtype}{bool}\ generateMipmaps);}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_texture2_d}{\string~Texture2D}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ bind();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ copyFromBuffer(\mbox{\hyperlink{classqiao_1_1_write_pixel_buffer}{WritePixelBuffer}}*\ writePixelBuffer,\ \textcolor{keywordtype}{int}\ xOffset,\ \textcolor{keywordtype}{int}\ yOffset,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ GLenum\ format,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ type,\ \textcolor{keywordtype}{int}\ rowAlignment);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_bindFirstTextureUnit();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_requiredSizeInBytes(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ GLenum\ format,\ GLenum\ type,\ \textcolor{keywordtype}{int}\ rowAlignment);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_numberOfChannels(GLenum\ format);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_sizeInBytes(GLenum\ type);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_texture;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ GLenum\ \_firstTextureUnit;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ GLenum\ \_target;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ GLint\ \_internalformat;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ GLenum\ \_format;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ GLenum\ \_type;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_generateMipmaps;}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\hypertarget{index__buffer_8h_source}{}\doxysection{index\+\_\+buffer.\+h}
+\label{index__buffer_8h_source}\index{source/renderer/buffers/index\_buffer.h@{source/renderer/buffers/index\_buffer.h}}
+\mbox{\hyperlink{index__buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8h}{buffer.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_index_buffer}{IndexBuffer}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_index_buffer}{IndexBuffer}}(GLenum\ usage,\ GLsizeiptr\ sizeInBytes);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_index_buffer}{\string~IndexBuffer}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ bind();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unBind();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将数据从系统内存复制到GPU显存，type参数必须为\ GL\_UNSIGNED\_BYTE,\ GL\_UNSIGNED\_SHORT,\ 或\ GL\_UNSIGNED\_INT}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ copyFromSystemMemory(\textcolor{keywordtype}{void}*\ data,\ GLenum\ type,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将数据从GPU显存复制到系统内存}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ copyToSystemMemory(\textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ GLenum\ getUsage();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ GLsizeiptr\ getSizeInBytes();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ GLenum\ getType();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getCount();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_buffer}{Buffer}}*\ \_buffer;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ GLenum\ \_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ data\ type.\ Must\ be\ one\ of\ GL\_UNSIGNED\_BYTE,\ GL\_UNSIGNED\_SHORT,\ or\ GL\_UNSIGNED\_INT.}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_count;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ number\ of\ elements\ to\ be\ rendered.}}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}

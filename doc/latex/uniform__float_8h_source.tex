@@ -1,0 +1,36 @@
+\hypertarget{uniform__float_8h_source}{}\doxysection{uniform\+\_\+float.\+h}
+\label{uniform__float_8h_source}\index{source/renderer/shaders/uniforms/uniform\_float.h@{source/renderer/shaders/uniforms/uniform\_float.h}}
+\mbox{\hyperlink{uniform__float_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform_8h}{uniform.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../i\_cleanable.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../i\_cleanable\_observer.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_uniform_float}{UniformFloat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_uniform_generic}{UniformGeneric}}<float>,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform_float}{UniformFloat}}(std::string\ name,\ \textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ type,\ \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanableObserver}}*\ observer);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getType();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ getLocation();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\&\ getValue();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setValue(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ val);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ clean();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将新值同步到GPU}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::string\ \_name;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_location;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_type;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_value;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_dirty;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否设置了新值而还未同步到GPU}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanableObserver}}*\ \_observer;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 保存ShaderProgram对象指针}}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

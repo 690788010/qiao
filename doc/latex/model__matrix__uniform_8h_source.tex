@@ -1,0 +1,25 @@
+\hypertarget{model__matrix__uniform_8h_source}{}\doxysection{model\+\_\+matrix\+\_\+uniform.\+h}
+\label{model__matrix__uniform_8h_source}\index{source/renderer/shaders/uniforms/draw\_auto\_uniforms/model\_matrix\_uniform.h@{source/renderer/shaders/uniforms/draw\_auto\_uniforms/model\_matrix\_uniform.h}}
+\mbox{\hyperlink{model__matrix__uniform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__auto__uniform_8h}{draw\_auto\_uniform.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../uniform.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../uniform\_matrix\_4d.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_model_matrix_uniform}{ModelMatrixUniform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform}{DrawAutoUniform}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_model_matrix_uniform}{ModelMatrixUniform}}(\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}}*\ uniform);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为保存的建模矩阵的Uniform自动设置值}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ set(\mbox{\hyperlink{classqiao_1_1_context}{Context}}*\ context,\ \mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}}*\ \_uniform;}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

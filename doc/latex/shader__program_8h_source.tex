@@ -1,0 +1,75 @@
+\hypertarget{shader__program_8h_source}{}\doxysection{shader\+\_\+program.\+h}
+\label{shader__program_8h_source}\index{source/renderer/shaders/shader\_program.h@{source/renderer/shaders/shader\_program.h}}
+\mbox{\hyperlink{shader__program_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shader__vertex__attribute__collection_8h}{./shader\_components/shader\_vertex\_attribute\_collection.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform__collection_8h}{./uniforms/uniform\_collection.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{link__auto__uniform__collection_8h}{./uniforms/link\_auto\_uniforms/link\_auto\_uniform\_collection.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture__uniform_8h}{./uniforms/link\_auto\_uniforms/texture\_uniform.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model__matrix__uniform__factory_8h}{./uniforms/draw\_auto\_uniforms/model\_matrix\_uniform\_factory.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__auto__uniform__factory__collection_8h}{./uniforms/draw\_auto\_uniforms/draw\_auto\_uniform\_factory\_collection.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__auto__uniform__collection_8h}{./uniforms/draw\_auto\_uniforms/draw\_auto\_uniform\_collection.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shader__object_8h}{./shader\_components/shader\_object.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../scene/scene\_state.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}../i\_cleanable\_observer.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform__int_8h}{./uniforms/uniform\_int.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform__float_8h}{./uniforms/uniform\_float.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform__matrix__4d_8h}{./uniforms/uniform\_matrix\_4d.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }DrawState;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }Context;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanableObserver}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}(std::string\ vs,\ std::string\ fs);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{\string~ShaderProgram}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ use();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 更新DrawAutoUniform对应Uniform的值，并使用}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL调用将\_dirtyUniforms中Uniform的新值传送到GPU}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clean(\mbox{\hyperlink{classqiao_1_1_context}{Context}}*\ context,\ \mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将设置了新值的Uniform对象加入\_dirtyUniforms中}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ notifyDirty(\mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}}*\ value);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用变量名查找片元着色器out变量的索引位置}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ GLint\ getFragLocByName(std::string\ name);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 初始化AutoUniform}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initAutoUniforms(\mbox{\hyperlink{classqiao_1_1_uniform_collection}{UniformCollection}}\ uniforms);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 通过DrawAutoUniformCollection中保存的各个DrawAutoUniform为各个对应的Uniform自动设置值}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDrawAutoUniforms(\mbox{\hyperlink{classqiao_1_1_context}{Context}}*\ context,\ \mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{ShaderVertexAttributeCollection}}\ vertexAttributes();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform_collection}{UniformCollection}}\ uniforms();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为顶点着色器里的每个激活的attribute变量创建元数据}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{ShaderVertexAttributeCollection}}\ \_findVertexAttributes(GLuint\ program);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为着色器里的每个激活的Uniform变量创建元数据}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform_collection}{UniformCollection}}\ \_findUniforms(GLuint\ program);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 根据type创建对应类型的Uniform子类对象}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}}*\ \_createUniform(std::string\ name,\ \textcolor{keywordtype}{int}\ location,\ GLenum\ type);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ GLuint\ \_program;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{ShaderVertexAttributeCollection}}\ \_vertexAttributes;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::list<ICleanable*>\ \_dirtyUniforms;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform_collection}{UniformCollection}}\ \_uniforms;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_link_auto_uniform_collection}{LinkAutoUniformCollection}}\ \_linkAutoUniforms;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform_factory_collection}{DrawAutoUniformFactoryCollection}}\ \_drawAutoUniformFactories;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_draw_auto_uniform_collection}{DrawAutoUniformCollection}}\ \_drawAutoUniforms;}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}

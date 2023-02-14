@@ -1,0 +1,115 @@
+\hypertarget{classqiao_1_1_uniform_int}{}\doxysection{qiao\+::Uniform\+Int Class Reference}
+\label{classqiao_1_1_uniform_int}\index{qiao::UniformInt@{qiao::UniformInt}}
+
+
+{\ttfamily \#include $<$uniform\+\_\+int.\+h$>$}
+
+Inheritance diagram for qiao\+::Uniform\+Int\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classqiao_1_1_uniform_int}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_a067008694036f5cb2aa03a772096890e}\label{classqiao_1_1_uniform_int_a067008694036f5cb2aa03a772096890e}} 
+{\bfseries Uniform\+Int} (std\+::string name, int location, unsigned int type, \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanable\+Observer}} $\ast$observer)
+\item 
+virtual std\+::string \mbox{\hyperlink{classqiao_1_1_uniform_int_ad76e19c4d339cdbf068f86cd173c2781}{get\+Name}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{classqiao_1_1_uniform_int_a037cd8eabfe8c248c6dbe531ac33abae}{get\+Type}} ()
+\item 
+virtual int \mbox{\hyperlink{classqiao_1_1_uniform_int_a19d85474e526b04b2fab4dd02eeb958f}{get\+Location}} ()
+\item 
+virtual int \& \mbox{\hyperlink{classqiao_1_1_uniform_int_a1408be5ca65f838f002051d486d88b12}{get\+Value}} ()
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_int_abac89188055d130c1e712fbaf77806bf}{set\+Value}} (const int \&val)
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_int_a6734f4cf174601ee4d1608fa2957bab0}{clean}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}\label{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}} 
+virtual int \& {\bfseries get\+Value} ()=0
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}\label{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}} 
+virtual void {\bfseries set\+Value} (const int \&val)=0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}\label{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}} 
+virtual void {\bfseries clean} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Uniform\+Int类是\+Uniform\+Generic类的子类，它用于表示着色器中整数类型的\+Uniform变量。 Uniform\+Int类实现了\+ICleanable接口，从而为外部提供了值同步到\+GPU的clean函数。 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_a6734f4cf174601ee4d1608fa2957bab0}\label{classqiao_1_1_uniform_int_a6734f4cf174601ee4d1608fa2957bab0}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!clean@{clean}}
+\index{clean@{clean}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void Uniform\+Int\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_i_cleanable}{qiao\+::\+ICleanable}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_a19d85474e526b04b2fab4dd02eeb958f}\label{classqiao_1_1_uniform_int_a19d85474e526b04b2fab4dd02eeb958f}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily int Uniform\+Int\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_ad76e19c4d339cdbf068f86cd173c2781}\label{classqiao_1_1_uniform_int_ad76e19c4d339cdbf068f86cd173c2781}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!getName@{getName}}
+\index{getName@{getName}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Uniform\+Int\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_a037cd8eabfe8c248c6dbe531ac33abae}\label{classqiao_1_1_uniform_int_a037cd8eabfe8c248c6dbe531ac33abae}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!getType@{getType}}
+\index{getType@{getType}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily unsigned int Uniform\+Int\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_a1408be5ca65f838f002051d486d88b12}\label{classqiao_1_1_uniform_int_a1408be5ca65f838f002051d486d88b12}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!getValue@{getValue}}
+\index{getValue@{getValue}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily int \& Uniform\+Int\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ int $>$}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_int_abac89188055d130c1e712fbaf77806bf}\label{classqiao_1_1_uniform_int_abac89188055d130c1e712fbaf77806bf}} 
+\index{qiao::UniformInt@{qiao::UniformInt}!setValue@{setValue}}
+\index{setValue@{setValue}!qiao::UniformInt@{qiao::UniformInt}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Uniform\+Int\+::set\+Value (\begin{DoxyParamCaption}\item[{const int \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ int $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__int_8h}{uniform\+\_\+int.\+h}}\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__int_8cc}{uniform\+\_\+int.\+cc}}\end{DoxyCompactItemize}

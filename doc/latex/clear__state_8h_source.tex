@@ -1,0 +1,58 @@
+\hypertarget{clear__state_8h_source}{}\doxysection{clear\+\_\+state.\+h}
+\label{clear__state_8h_source}\index{source/renderer/state/clear\_state/clear\_state.h@{source/renderer/state/clear\_state/clear\_state.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../render\_state/scissor\_test.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../render\_state/color\_mask.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../../core/color/color.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../render\_state/depth\_test.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{enum}\ ClearMask\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ COLOR\_BUFFER\_BIT\ =\ GL\_COLOR\_BUFFER\_BIT,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ DEPTH\_BUFFER\_BIT\ =\ GL\_DEPTH\_BUFFER\_BIT,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ STENCIL\_BUFFER\_BIT\ =\ GL\_STENCIL\_BUFFER\_BIT,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ALL\ =\ GL\_COLOR\_BUFFER\_BIT\ |\ GL\_DEPTH\_BUFFER\_BIT\ |\ GL\_STENCIL\_BUFFER\_BIT}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ getScissorTest();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScissorTest(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ val);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ getColorMask();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setColorMask(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ val);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ GLboolean\ getDepthMask();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthMask(GLboolean\ flag);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ GLbitfield\ getClearMask();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setClearMask(GLbitfield\ val);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\&\ getColor();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setColor(\mbox{\hyperlink{classqiao_1_1_color}{Color}}\ val);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getDepth();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepth(\textcolor{keywordtype}{double}\ val);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getStencil();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setStencil(\textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ \_scissorTest;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 裁剪测试相关配置}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ \_colorMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启对深度缓冲的写操作}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ GLbitfield\ \_clearMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 标识清除哪个缓存}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_color;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_depth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_stencil;}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\hypertarget{texture__uniform_8h_source}{}\doxysection{texture\+\_\+uniform.\+h}
+\label{texture__uniform_8h_source}\index{source/renderer/shaders/uniforms/link\_auto\_uniforms/texture\_uniform.h@{source/renderer/shaders/uniforms/link\_auto\_uniforms/texture\_uniform.h}}
+\mbox{\hyperlink{texture__uniform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{link__auto__uniform_8h}{link\_auto\_uniform.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_texture_uniform}{TextureUniform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_link_auto_uniform}{LinkAutoUniform}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_texture_uniform}{TextureUniform}}(\textcolor{keywordtype}{int}\ textureUnit);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 获取Uniform变量名}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为Uniform设置值}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ set(\mbox{\hyperlink{classqiao_1_1_uniform}{Uniform}}*\ uniform);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_textureUnit;}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

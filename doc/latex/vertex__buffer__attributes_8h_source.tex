@@ -1,0 +1,38 @@
+\hypertarget{vertex__buffer__attributes_8h_source}{}\doxysection{vertex\+\_\+buffer\+\_\+attributes.\+h}
+\label{vertex__buffer__attributes_8h_source}\index{source/renderer/vertex\_array/vertex\_buffer\_attributes.h@{source/renderer/vertex\_array/vertex\_buffer\_attributes.h}}
+\mbox{\hyperlink{vertex__buffer__attributes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertex__buffer__attribute_8h}{vertex\_buffer\_attribute.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_vertex_buffer_attributes}{VertexBufferAttributes}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attributes}{VertexBufferAttributes}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attributes}{\string~VertexBufferAttributes}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{VertexBufferAttribute}}*\ getByIndex(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setByIndex(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{VertexBufferAttribute}}*\ value);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将新配置同步到GL}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clean();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将相关顶点的属性配置同步到GL并激活该顶点属性}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ attach(\textcolor{keywordtype}{unsigned}\ index);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 取消激活特定的顶点属性}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ detach(\textcolor{keywordtype}{unsigned}\ index);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getCount();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_buffer_attribute}{VertexBufferAttribute}}**\ \_attributes;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}*\ \_dirties;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 标识对应的VertexBufferAttribute是否未同步到OpenGL}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_dirty;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否又VertexBufferAttribute未同步到OpenGL}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_count;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 着色器中当前处于激活状态的Vertex\ Attribute的数量}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_maxVertexAttribs;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ maximum\ number\ of\ 4-\/component\ generic\ vertex\ attributes\ accessible\ to\ a\ vertex\ shader}}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}

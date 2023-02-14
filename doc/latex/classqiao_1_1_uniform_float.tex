@@ -1,0 +1,115 @@
+\hypertarget{classqiao_1_1_uniform_float}{}\doxysection{qiao\+::Uniform\+Float Class Reference}
+\label{classqiao_1_1_uniform_float}\index{qiao::UniformFloat@{qiao::UniformFloat}}
+
+
+{\ttfamily \#include $<$uniform\+\_\+float.\+h$>$}
+
+Inheritance diagram for qiao\+::Uniform\+Float\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classqiao_1_1_uniform_float}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_a4bc2b134a653ff345c8bc11deba1f4f5}\label{classqiao_1_1_uniform_float_a4bc2b134a653ff345c8bc11deba1f4f5}} 
+{\bfseries Uniform\+Float} (std\+::string name, int location, unsigned int type, \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanable\+Observer}} $\ast$observer)
+\item 
+virtual std\+::string \mbox{\hyperlink{classqiao_1_1_uniform_float_a6cd5bb2b28faf83c6cb40517e843418b}{get\+Name}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{classqiao_1_1_uniform_float_a8f6dcc5464198737a66905cec55b6d5a}{get\+Type}} ()
+\item 
+virtual int \mbox{\hyperlink{classqiao_1_1_uniform_float_abf0d84efc48b7ae9852e724a2b74d206}{get\+Location}} ()
+\item 
+virtual float \& \mbox{\hyperlink{classqiao_1_1_uniform_float_ad67b39a33edb2d76b03d58a74668bb14}{get\+Value}} ()
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_float_a95409afa0dbe8076afd9a01ae9cd8580}{set\+Value}} (const float \&val)
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_float_a005701cf29188323cba06a3933033129}{clean}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}\label{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}} 
+virtual float \& {\bfseries get\+Value} ()=0
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}\label{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}} 
+virtual void {\bfseries set\+Value} (const float \&val)=0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}\label{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}} 
+virtual void {\bfseries clean} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Uniform\+Float类是\+Uniform\+Generic类的子类，它用于表示着色器中浮点数类型的\+Uniform变量。 Uniform\+Float类实现了\+ICleanable接口，从而为外部提供了值同步到\+GPU的clean函数。 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_a005701cf29188323cba06a3933033129}\label{classqiao_1_1_uniform_float_a005701cf29188323cba06a3933033129}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!clean@{clean}}
+\index{clean@{clean}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void Uniform\+Float\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_i_cleanable}{qiao\+::\+ICleanable}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_abf0d84efc48b7ae9852e724a2b74d206}\label{classqiao_1_1_uniform_float_abf0d84efc48b7ae9852e724a2b74d206}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily int Uniform\+Float\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_a6cd5bb2b28faf83c6cb40517e843418b}\label{classqiao_1_1_uniform_float_a6cd5bb2b28faf83c6cb40517e843418b}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!getName@{getName}}
+\index{getName@{getName}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Uniform\+Float\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_a8f6dcc5464198737a66905cec55b6d5a}\label{classqiao_1_1_uniform_float_a8f6dcc5464198737a66905cec55b6d5a}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!getType@{getType}}
+\index{getType@{getType}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily unsigned int Uniform\+Float\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_ad67b39a33edb2d76b03d58a74668bb14}\label{classqiao_1_1_uniform_float_ad67b39a33edb2d76b03d58a74668bb14}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!getValue@{getValue}}
+\index{getValue@{getValue}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily float \& Uniform\+Float\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ float $>$}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_float_a95409afa0dbe8076afd9a01ae9cd8580}\label{classqiao_1_1_uniform_float_a95409afa0dbe8076afd9a01ae9cd8580}} 
+\index{qiao::UniformFloat@{qiao::UniformFloat}!setValue@{setValue}}
+\index{setValue@{setValue}!qiao::UniformFloat@{qiao::UniformFloat}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Uniform\+Float\+::set\+Value (\begin{DoxyParamCaption}\item[{const float \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ float $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__float_8h}{uniform\+\_\+float.\+h}}\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__float_8cc}{uniform\+\_\+float.\+cc}}\end{DoxyCompactItemize}

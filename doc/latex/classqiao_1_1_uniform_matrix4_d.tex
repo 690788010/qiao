@@ -1,0 +1,115 @@
+\hypertarget{classqiao_1_1_uniform_matrix4_d}{}\doxysection{qiao\+::Uniform\+Matrix4D Class Reference}
+\label{classqiao_1_1_uniform_matrix4_d}\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+
+
+{\ttfamily \#include $<$uniform\+\_\+matrix\+\_\+4d.\+h$>$}
+
+Inheritance diagram for qiao\+::Uniform\+Matrix4D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classqiao_1_1_uniform_matrix4_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_af5cabaab327a52588e99fd7a27296329}\label{classqiao_1_1_uniform_matrix4_d_af5cabaab327a52588e99fd7a27296329}} 
+{\bfseries Uniform\+Matrix4D} (std\+::string name, int location, unsigned int type, \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanable\+Observer}} $\ast$observer)
+\item 
+virtual std\+::string \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_a4f9450a0bc94104bc542bad283c01265}{get\+Name}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_a07918d223f180443c50934742983fadb}{get\+Type}} ()
+\item 
+virtual int \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_a25247bec5524e4e352a6d77f6afd818b}{get\+Location}} ()
+\item 
+virtual \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_af132667fa10fd1155f8eb96f74f170ca}{get\+Value}} ()
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_a85cad7147c94a2fcbf485efdd44f7c19}{set\+Value}} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&val)
+\item 
+virtual void \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d_a40060c90af5cf85e5d10866bc11d69c8}{clean}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}\label{classqiao_1_1_uniform_generic_a21109e63b704e94c47ec33917c49eaed}} 
+virtual \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& {\bfseries get\+Value} ()=0
+\item 
+\mbox{\Hypertarget{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}\label{classqiao_1_1_uniform_generic_a931ebd1f5b1d09135ed7d775e5a813fc}} 
+virtual void {\bfseries set\+Value} (const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&val)=0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}\label{classqiao_1_1_i_cleanable_acd0db653fa13b2ea530a67bea644d1c1}} 
+virtual void {\bfseries clean} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Uniform\+Matrix4\+D类是\+Uniform\+Generic类的子类，它用于表示着色器中4x4矩阵类型的\+Uniform变量，支持双精度浮点数。 Uniform\+Matrix4\+D类实现了\+ICleanable接口，从而为外部提供了值同步到\+GPU的clean函数。 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_a40060c90af5cf85e5d10866bc11d69c8}\label{classqiao_1_1_uniform_matrix4_d_a40060c90af5cf85e5d10866bc11d69c8}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!clean@{clean}}
+\index{clean@{clean}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void Uniform\+Matrix4\+D\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_i_cleanable}{qiao\+::\+ICleanable}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_a25247bec5524e4e352a6d77f6afd818b}\label{classqiao_1_1_uniform_matrix4_d_a25247bec5524e4e352a6d77f6afd818b}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily int Uniform\+Matrix4\+D\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_a4f9450a0bc94104bc542bad283c01265}\label{classqiao_1_1_uniform_matrix4_d_a4f9450a0bc94104bc542bad283c01265}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!getName@{getName}}
+\index{getName@{getName}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Uniform\+Matrix4\+D\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_a07918d223f180443c50934742983fadb}\label{classqiao_1_1_uniform_matrix4_d_a07918d223f180443c50934742983fadb}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!getType@{getType}}
+\index{getType@{getType}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily unsigned int Uniform\+Matrix4\+D\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform}{qiao\+::\+Uniform}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_af132667fa10fd1155f8eb96f74f170ca}\label{classqiao_1_1_uniform_matrix4_d_af132667fa10fd1155f8eb96f74f170ca}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!getValue@{getValue}}
+\index{getValue@{getValue}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \& Uniform\+Matrix4\+D\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ Matrix4\+D $>$}}.
+
+\mbox{\Hypertarget{classqiao_1_1_uniform_matrix4_d_a85cad7147c94a2fcbf485efdd44f7c19}\label{classqiao_1_1_uniform_matrix4_d_a85cad7147c94a2fcbf485efdd44f7c19}} 
+\index{qiao::UniformMatrix4D@{qiao::UniformMatrix4D}!setValue@{setValue}}
+\index{setValue@{setValue}!qiao::UniformMatrix4D@{qiao::UniformMatrix4D}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Uniform\+Matrix4\+D\+::set\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}} \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classqiao_1_1_uniform_generic}{qiao\+::\+Uniform\+Generic$<$ Matrix4\+D $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__matrix__4d_8h}{uniform\+\_\+matrix\+\_\+4d.\+h}}\item 
+source/renderer/shaders/uniforms/\mbox{\hyperlink{uniform__matrix__4d_8cc}{uniform\+\_\+matrix\+\_\+4d.\+cc}}\end{DoxyCompactItemize}

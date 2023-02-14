@@ -1,0 +1,36 @@
+\hypertarget{uniform__matrix__4d_8h_source}{}\doxysection{uniform\+\_\+matrix\+\_\+4d.\+h}
+\label{uniform__matrix__4d_8h_source}\index{source/renderer/shaders/uniforms/uniform\_matrix\_4d.h@{source/renderer/shaders/uniforms/uniform\_matrix\_4d.h}}
+\mbox{\hyperlink{uniform__matrix__4d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform_8h}{uniform.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../i\_cleanable.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../i\_cleanable\_observer.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../../core/matrix/matrix4d.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d}{UniformMatrix4D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_uniform_generic}{UniformGeneric}}<Matrix4D>,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_i_cleanable}{ICleanable}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_uniform_matrix4_d}{UniformMatrix4D}}(std::string\ name,\ \textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ type,\ \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanableObserver}}*\ observer);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getType();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ getLocation();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ getValue();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ val);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ clean();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将新值同步到GPU}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::string\ \_name;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_location;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_type;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\ \_value;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_dirty;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否设置了新值而还未同步到GPU}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_i_cleanable_observer}{ICleanableObserver}}*\ \_observer;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 保存ShaderProgram对象指针}}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

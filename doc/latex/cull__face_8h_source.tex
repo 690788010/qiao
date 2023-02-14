@@ -1,0 +1,41 @@
+\hypertarget{cull__face_8h_source}{}\doxysection{cull\+\_\+face.\+h}
+\label{cull__face_8h_source}\index{source/renderer/state/render\_state/cull\_face.h@{source/renderer/state/render\_state/cull\_face.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum}\ CullFaceMode\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ FRONT\ =\ GL\_FRONT,}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ BACK\ =\ GL\_BACK,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ FRONT\_AND\_BACK\ =\ GL\_FRONT\_AND\_BACK}
+\DoxyCodeLine{00010\ \ \ \ \ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{enum}\ FrontFaceMode\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ CW\ =\ GL\_CW,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ CCW\ =\ GL\_CCW}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getEnabled();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ val);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ CullFaceMode\ getCullFaceMode();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCullFaceMode(CullFaceMode\ val);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ FrontFaceMode\ getFrontFaceMode();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFrontFaceMode(FrontFaceMode\ val);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ CullFaceMode\ \_cullFaceMode;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ FrontFaceMode\ \_frontFaceMode;}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

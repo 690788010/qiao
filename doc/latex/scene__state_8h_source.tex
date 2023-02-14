@@ -1,0 +1,27 @@
+\hypertarget{scene__state_8h_source}{}\doxysection{scene\+\_\+state.\+h}
+\label{scene__state_8h_source}\index{source/renderer/scene/scene\_state.h@{source/renderer/scene/scene\_state.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}camera.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../core/matrix/matrix4d.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}();}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scene_state}{\string~SceneState}}();}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_camera}{Camera}}*\ getCamera();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCamera(\mbox{\hyperlink{classqiao_1_1_camera}{Camera}}*\ camera);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ getModelMatrix();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setModelMatrix(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\&\ mat4);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_camera}{Camera}}*\ \_camera;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_matrix4_d}{Matrix4D}}\ \_modelMatrix;}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+\hypertarget{indices__unsigned__short_8h_source}{}\doxysection{indices\+\_\+unsigned\+\_\+short.\+h}
+\label{indices__unsigned__short_8h_source}\index{source/core/geometry/indices/indices\_unsigned\_short.h@{source/core/geometry/indices/indices\_unsigned\_short.h}}
+\mbox{\hyperlink{indices__unsigned__short_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{indices__base_8h}{indices\_base.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_indices_unsigned_short}{IndicesUnsignedShort}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_indices_base}{IndicesBase}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ GLenum\ getType();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getSize();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 添加一个索引}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addIndex(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ index);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ getIndex(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::vector<unsigned\ short>\ \_values;}
+\DoxyCodeLine{00031\ \ \ \ \ \};}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}

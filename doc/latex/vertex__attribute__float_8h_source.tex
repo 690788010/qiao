@@ -1,0 +1,32 @@
+\hypertarget{vertex__attribute__float_8h_source}{}\doxysection{vertex\+\_\+attribute\+\_\+float.\+h}
+\label{vertex__attribute__float_8h_source}\index{source/core/geometry/vertex\_attributes/vertex\_attribute\_float.h@{source/core/geometry/vertex\_attributes/vertex\_attribute\_float.h}}
+\mbox{\hyperlink{vertex__attribute__float_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertexattribute_8h}{vertexattribute.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_vertex_attribute_float}{VertexAttributeFloat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqiao_1_1_vertex_attribute}{VertexAttribute}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_attribute_float}{VertexAttributeFloat}}(std::string\ name);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ GLenum\ getType();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 添加一个单精度浮点数数据}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addData(\textcolor{keywordtype}{float}\ data);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 获取保存数据的list容器}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::list<float>\&\ getValues();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ \_name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 变量名}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ GLenum\ \_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 对应的OpenGL数据类型}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::list<float>\ \_values;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}

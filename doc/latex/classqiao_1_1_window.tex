@@ -1,0 +1,97 @@
+\hypertarget{classqiao_1_1_window}{}\doxysection{qiao\+::Window Class Reference}
+\label{classqiao_1_1_window}\index{qiao::Window@{qiao::Window}}
+
+
+窗口类，和用户交互窗口的抽象.  
+
+
+
+
+{\ttfamily \#include $<$window.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqiao_1_1_window_a16708281212ff6a28ad6653c6fbb9ec1}{Window}} (int width, int height, std\+::string title, bool is\+Full\+Screen=false)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_window_ae137ec42ddc87d666d49661484410091}{run}} ()
+\begin{DoxyCompactList}\small\item\em 启动循环渲染. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqiao_1_1_context}{Context}} $\ast$ \mbox{\hyperlink{classqiao_1_1_window_ae218eec6fb42dad59b03c464bdf05125}{get\+Context}} ()
+\begin{DoxyCompactList}\small\item\em 获取\+Context对象指针. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classqiao_1_1_window_a464ae1044f8d8d2fa915b43adb61e036}\label{classqiao_1_1_window_a464ae1044f8d8d2fa915b43adb61e036}} 
+void($\ast$ {\bfseries resize} )()
+\begin{DoxyCompactList}\small\item\em 函数指针，可以赋值，在窗口大小变化时会调用这个函数指针指向的函数. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classqiao_1_1_window_ac6db318dc9a60fd3cc64331c89043238}\label{classqiao_1_1_window_ac6db318dc9a60fd3cc64331c89043238}} 
+void($\ast$ {\bfseries pre\+Render} )()
+\begin{DoxyCompactList}\small\item\em 函数指针，可以赋值，渲染每一帧前会调用这个函数指针指向的函数. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classqiao_1_1_window_a7775efc3624e23de6d7738dabae7a5d6}\label{classqiao_1_1_window_a7775efc3624e23de6d7738dabae7a5d6}} 
+void($\ast$ {\bfseries render} )()
+\begin{DoxyCompactList}\small\item\em 函数指针，可以赋值，循环会调用这个函数指针指向的函数去渲染一帧. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classqiao_1_1_window_a3b1cb78b04375bf2031ed900f65e1acf}\label{classqiao_1_1_window_a3b1cb78b04375bf2031ed900f65e1acf}} 
+void($\ast$ {\bfseries post\+Render} )()
+\begin{DoxyCompactList}\small\item\em 函数指针，可以赋值，渲染每一帧后会调用这个函数指针指向的函数. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+窗口类，和用户交互窗口的抽象. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_window_a16708281212ff6a28ad6653c6fbb9ec1}\label{classqiao_1_1_window_a16708281212ff6a28ad6653c6fbb9ec1}} 
+\index{qiao::Window@{qiao::Window}!Window@{Window}}
+\index{Window@{Window}!qiao::Window@{qiao::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{std\+::string}]{title,  }\item[{bool}]{is\+Full\+Screen = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & 窗口宽度 \\
+\hline
+{\em height} & 窗口高度 \\
+\hline
+{\em title} & 窗口标题 \\
+\hline
+{\em is\+Full\+Screen} & 窗口是否全屏 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_window_ae218eec6fb42dad59b03c464bdf05125}\label{classqiao_1_1_window_ae218eec6fb42dad59b03c464bdf05125}} 
+\index{qiao::Window@{qiao::Window}!getContext@{getContext}}
+\index{getContext@{getContext}!qiao::Window@{qiao::Window}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_context}{Context}} $\ast$ Window\+::get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取\+Context对象指针. 
+
+\begin{DoxyReturn}{Returns}
+Context对象的指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_window_ae137ec42ddc87d666d49661484410091}\label{classqiao_1_1_window_ae137ec42ddc87d666d49661484410091}} 
+\index{qiao::Window@{qiao::Window}!run@{run}}
+\index{run@{run}!qiao::Window@{qiao::Window}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Window\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+启动循环渲染. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/renderer/\mbox{\hyperlink{window_8h}{window.\+h}}\item 
+source/renderer/window.\+cc\end{DoxyCompactItemize}

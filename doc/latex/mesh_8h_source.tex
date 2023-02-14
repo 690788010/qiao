@@ -1,0 +1,33 @@
+\hypertarget{mesh_8h_source}{}\doxysection{mesh.\+h}
+\label{mesh_8h_source}\index{source/core/geometry/mesh.h@{source/core/geometry/mesh.h}}
+\mbox{\hyperlink{mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{indices__base_8h}{indices/indices\_base.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertexattribute_8h}{vertex\_attributes/vertexattribute.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertex_attribute__collection_8h}{vertex\_attributes/vertexAttribute\_collection.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_mesh}{\string~Mesh}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_indices_base}{IndicesBase}}*\ getIndices();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setIndices(\mbox{\hyperlink{classqiao_1_1_indices_base}{IndicesBase}}*\ indices);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_attribute_collection}{VertexAttributeCollection}}\&\ getAttributes();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ GLenum\ getPrimitiveType();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPrimitiveType(GLenum\ primitiveType);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_indices_base}{IndicesBase}}*\ \_indices;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_attribute_collection}{VertexAttributeCollection}}\ \_attributes;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ GLenum\ \_primitiveType;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OpenGL图元类型}}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}

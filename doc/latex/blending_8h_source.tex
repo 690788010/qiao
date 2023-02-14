@@ -1,0 +1,71 @@
+\hypertarget{blending_8h_source}{}\doxysection{blending.\+h}
+\label{blending_8h_source}\index{source/renderer/state/render\_state/blending.h@{source/renderer/state/render\_state/blending.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum}\ BlendingFactor\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ ZERO\ =\ GL\_ZERO,}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ ONE\ =\ GL\_ONE,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ SRC\_COLOR\ =\ GL\_COLOR,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ ONE\_MINUS\_SRC\_COLOR\ =\ GL\_ONE\_MINUS\_SRC\_COLOR,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ DST\_COLOR\ =\ GL\_DST\_COLOR,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ ONE\_MINUS\_DST\_COLOR\ =\ GL\_ONE\_MINUS\_DST\_COLOR,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ SRC\_ALPHA\ =\ GL\_SRC\_ALPHA,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ONE\_MINUS\_SRC\_ALPHA\ =\ GL\_ONE\_MINUS\_SRC\_ALPHA,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ DST\_ALPHA\ =\ GL\_DST\_ALPHA,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ ONE\_MINUS\_DST\_ALPHA\ =\ GL\_ONE\_MINUS\_DST\_ALPHA,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ CONSTANT\_COLOR\ =\ GL\_CONSTANT\_COLOR,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ ONE\_MINUS\_CONSTANT\_COLOR\ =\ GL\_ONE\_MINUS\_CONSTANT\_COLOR,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ CONSTANT\_ALPHA\ =\ GL\_CONSTANT\_ALPHA,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ONE\_MINUS\_CONSTANT\_ALPHA\ =\ GL\_ONE\_MINUS\_CONSTANT\_ALPHA}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{enum}\ BlendEquation\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ FUNC\_ADD\ =\ GL\_FUNC\_ADD,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ FUNC\_SUBTRACT\ =\ GL\_FUNC\_SUBTRACT,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ FUNC\_REVERSE\_SUBTRACT\ =\ GL\_FUNC\_REVERSE\_SUBTRACT,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ MIN\ =\ GL\_MIN,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ MAX\ =\ GL\_MAX}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_blending}{Blending}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_blending}{Blending}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getEnabled();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ val);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ BlendingFactor\ getSrcRGB();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setSrcRGB(BlendingFactor\ val);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ BlendingFactor\ getDstRGB();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDstRGB(BlendingFactor\ val);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ BlendingFactor\ getSrcAlpha();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setSrcAlpha(BlendingFactor\ val);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ BlendingFactor\ getDstAlpha();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDstApha(BlendingFactor\ val);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ BlendEquation\ getRgbEquation();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setRgbEquation(BlendEquation\ val);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ BlendEquation\ getAlphaEquation();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setAlphaEquation(BlendEquation\ val);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ BlendingFactor\ \_srcRGB;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ BlendingFactor\ \_dstRGB;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ BlendingFactor\ \_srcAlpha;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ BlendingFactor\ \_dstAlpha;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ BlendEquation\ \_rgbEquation;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ BlendEquation\ \_alphaEquation;}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
