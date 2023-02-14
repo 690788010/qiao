@@ -101,25 +101,220 @@ $(document).ready(function(){initNavTree('classqiao_1_1_context.html',''); initR
   <div class="headertitle"><div class="title">qiao::Context Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>上下文类，主要用于控制窗口画布的渲染与清除  
+ <a href="classqiao_1_1_context.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="context_8h_source.html">context.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5abc00861ad1485d2df9a0774afde73d"><td class="memItemLeft" align="right" valign="top"><a id="a5abc00861ad1485d2df9a0774afde73d" name="a5abc00861ad1485d2df9a0774afde73d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> (<a class="el" href="classqiao_1_1_clear_state.html">ClearState</a> &amp;clearState)</td></tr>
-<tr class="separator:a5abc00861ad1485d2df9a0774afde73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d0ee477e51659eadf84d7412691d7a"><td class="memItemLeft" align="right" valign="top"><a id="ab9d0ee477e51659eadf84d7412691d7a" name="ab9d0ee477e51659eadf84d7412691d7a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (GLenum primitiveType, <a class="el" href="classqiao_1_1_draw_state.html">DrawState</a> *drawState, <a class="el" href="classqiao_1_1_scene_state.html">SceneState</a> *sceneState)</td></tr>
+<tr class="memitem:a652cdcd2eedc8dbd9110bd284c5d5cf0"><td class="memItemLeft" align="right" valign="top"><a id="a652cdcd2eedc8dbd9110bd284c5d5cf0" name="a652cdcd2eedc8dbd9110bd284c5d5cf0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Context</b> ()</td></tr>
+<tr class="memdesc:a652cdcd2eedc8dbd9110bd284c5d5cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数 <br /></td></tr>
+<tr class="separator:a652cdcd2eedc8dbd9110bd284c5d5cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d0ee477e51659eadf84d7412691d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_context.html#ab9d0ee477e51659eadf84d7412691d7a">draw</a> (GLenum primitiveType, <a class="el" href="classqiao_1_1_draw_state.html">DrawState</a> *drawState, <a class="el" href="classqiao_1_1_scene_state.html">SceneState</a> *sceneState)</td></tr>
+<tr class="memdesc:ab9d0ee477e51659eadf84d7412691d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制函数，每调用一次，绘制当前的一帧  <br /></td></tr>
 <tr class="separator:ab9d0ee477e51659eadf84d7412691d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b2c8b4631e4c4cc4ffda62357469e6"><td class="memItemLeft" align="right" valign="top"><a id="a25b2c8b4631e4c4cc4ffda62357469e6" name="a25b2c8b4631e4c4cc4ffda62357469e6"></a>
-<a class="el" href="classqiao_1_1_vertex_array.html">VertexArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createVertexArray</b> (<a class="el" href="classqiao_1_1_mesh.html">Mesh</a> &amp;mesh, <a class="el" href="classqiao_1_1_shader_vertex_attribute_collection.html">ShaderVertexAttributeCollection</a> shaderAttributes, GLenum usage)</td></tr>
+<tr class="memitem:a5abc00861ad1485d2df9a0774afde73d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_context.html#a5abc00861ad1485d2df9a0774afde73d">clear</a> (<a class="el" href="classqiao_1_1_clear_state.html">ClearState</a> &amp;clearState)</td></tr>
+<tr class="memdesc:a5abc00861ad1485d2df9a0774afde73d"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除函数，清除画布内容，恢复为默认状态  <br /></td></tr>
+<tr class="separator:a5abc00861ad1485d2df9a0774afde73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b2c8b4631e4c4cc4ffda62357469e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqiao_1_1_vertex_array.html">VertexArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_context.html#a25b2c8b4631e4c4cc4ffda62357469e6">createVertexArray</a> (<a class="el" href="classqiao_1_1_mesh.html">Mesh</a> &amp;mesh, <a class="el" href="classqiao_1_1_shader_vertex_attribute_collection.html">ShaderVertexAttributeCollection</a> shaderAttributes, GLenum usage)</td></tr>
+<tr class="memdesc:a25b2c8b4631e4c4cc4ffda62357469e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">为特定Mesh生成对应的VertexArray对象  <br /></td></tr>
 <tr class="separator:a25b2c8b4631e4c4cc4ffda62357469e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a74ad32b0aa0288cd93615b6a5dbfa3"><td class="memItemLeft" align="right" valign="top"><a id="a3a74ad32b0aa0288cd93615b6a5dbfa3" name="a3a74ad32b0aa0288cd93615b6a5dbfa3"></a>
-<a class="el" href="classqiao_1_1_texture2_d.html">Texture2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createTexture2D</b> (std::string imgPath, GLenum target, GLint internalformat, GLenum format, GLenum type, bool generateMipmaps)</td></tr>
+<tr class="memitem:a3a74ad32b0aa0288cd93615b6a5dbfa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqiao_1_1_texture2_d.html">Texture2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_context.html#a3a74ad32b0aa0288cd93615b6a5dbfa3">createTexture2D</a> (std::string imgPath, GLenum target, GLint internalformat, GLenum format, GLenum type, bool generateMipmaps)</td></tr>
+<tr class="memdesc:a3a74ad32b0aa0288cd93615b6a5dbfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">为特定图片生成对应的Texture2D对象  <br /></td></tr>
 <tr class="separator:a3a74ad32b0aa0288cd93615b6a5dbfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>上下文类，主要用于控制窗口画布的渲染与清除 </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5abc00861ad1485d2df9a0774afde73d" name="a5abc00861ad1485d2df9a0774afde73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abc00861ad1485d2df9a0774afde73d">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_clear_state.html">ClearState</a> &amp;&#160;</td>
+          <td class="paramname"><em>clearState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除函数，清除画布内容，恢复为默认状态 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clearState</td><td>ClearState对象的引用</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a3a74ad32b0aa0288cd93615b6a5dbfa3" name="a3a74ad32b0aa0288cd93615b6a5dbfa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a74ad32b0aa0288cd93615b6a5dbfa3">&#9670;&#160;</a></span>createTexture2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqiao_1_1_texture2_d.html">Texture2D</a> * qiao::Context::createTexture2D </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>imgPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLint&#160;</td>
+          <td class="paramname"><em>internalformat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>generateMipmaps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>为特定图片生成对应的Texture2D对象 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgPath</td><td>图片的路径 </td></tr>
+    <tr><td class="paramname">target</td><td>纹理目标。可选常量：GL_TEXTURE_2D, GL_PROXY_TEXTURE_2D, GL_TEXTURE_1D_ARRAY, GL_PROXY_TEXTURE_1D_ARRAY, GL_TEXTURE_RECTANGLE, GL_PROXY_TEXTURE_RECTANGLE, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, GL_PROXY_TEXTURE_CUBE_MAP. </td></tr>
+    <tr><td class="paramname">internalformat</td><td>纹理的颜色成分的数量。详查：https://registry.khronos.org/OpenGL-Refpages/gl4/ </td></tr>
+    <tr><td class="paramname">format</td><td>像素数据的格式。可选常量：GL_RED, GL_RG, GL_RGB, GL_BGR, GL_RGBA, GL_BGRA, GL_RED_INTEGER, GL_RG_INTEGER, GL_RGB_INTEGER, GL_BGR_INTEGER, GL_RGBA_INTEGER, GL_BGRA_INTEGER, GL_STENCIL_INDEX, GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL. </td></tr>
+    <tr><td class="paramname">type</td><td>像素数据的数据类型。可选常量：GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT, GL_FLOAT, GL_UNSIGNED_BYTE_3_3_2, GL_UNSIGNED_BYTE_2_3_3_REV, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_5_6_5_REV, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_4_4_4_4_REV, GL_UNSIGNED_SHORT_5_5_5_1, GL_UNSIGNED_SHORT_1_5_5_5_REV, GL_UNSIGNED_INT_8_8_8_8, GL_UNSIGNED_INT_8_8_8_8_REV, GL_UNSIGNED_INT_10_10_10_2, GL_UNSIGNED_INT_2_10_10_10_REV. </td></tr>
+    <tr><td class="paramname">generateMipmaps</td><td>是否创建Mipmap</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Texture2D对象的指针 </dd></dl>
+
+</div>
+</div>
+<a id="a25b2c8b4631e4c4cc4ffda62357469e6" name="a25b2c8b4631e4c4cc4ffda62357469e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b2c8b4631e4c4cc4ffda62357469e6">&#9670;&#160;</a></span>createVertexArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqiao_1_1_vertex_array.html">VertexArray</a> * Context::createVertexArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_shader_vertex_attribute_collection.html">ShaderVertexAttributeCollection</a>&#160;</td>
+          <td class="paramname"><em>shaderAttributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>usage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>为特定Mesh生成对应的VertexArray对象 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>Mesh对象的引用 </td></tr>
+    <tr><td class="paramname">shaderAttributes</td><td>ShaderVertexAttributeCollection对象 </td></tr>
+    <tr><td class="paramname">usage</td><td>数据的用例模式。可以允许设置为以下常量：GL_STREAM_DRAW, GL_STREAM_READ, GL_STREAM_COPY, GL_STATIC_DRAW, GL_STATIC_READ, GL_STATIC_COPY, GL_DYNAMIC_DRAW, GL_DYNAMIC_READ, GL_DYNAMIC_COPY.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VertexArray对象的指针 </dd></dl>
+
+</div>
+</div>
+<a id="ab9d0ee477e51659eadf84d7412691d7a" name="ab9d0ee477e51659eadf84d7412691d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d0ee477e51659eadf84d7412691d7a">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::draw </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>primitiveType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_draw_state.html">DrawState</a> *&#160;</td>
+          <td class="paramname"><em>drawState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_scene_state.html">SceneState</a> *&#160;</td>
+          <td class="paramname"><em>sceneState</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绘制函数，每调用一次，绘制当前的一帧 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">primitiveType</td><td>指定绘制的图元类型。可传入以下常量：GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_PATCHES </td></tr>
+    <tr><td class="paramname">drawState</td><td>DrawState对象的指针 </td></tr>
+    <tr><td class="paramname">sceneState</td><td>SceneState对象的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>source/renderer/<a class="el" href="context_8h_source.html">context.h</a></li>
-<li>source/renderer/context.cc</li>
+<li>D:/cppRepos/qiao/source/renderer/<a class="el" href="context_8h_source.html">context.h</a></li>
+<li>D:/cppRepos/qiao/source/renderer/context.cc</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

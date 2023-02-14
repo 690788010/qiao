@@ -7,7 +7,7 @@ var annotated_dup =
       [ "ClearState", "classqiao_1_1_clear_state.html", null ],
       [ "Color", "classqiao_1_1_color.html", null ],
       [ "ColorMask", "classqiao_1_1_color_mask.html", null ],
-      [ "Context", "classqiao_1_1_context.html", null ],
+      [ "Context", "classqiao_1_1_context.html", "classqiao_1_1_context" ],
       [ "CullFace", "classqiao_1_1_cull_face.html", null ],
       [ "DepthTest", "classqiao_1_1_depth_test.html", null ],
       [ "DrawAutoUniform", "classqiao_1_1_draw_auto_uniform.html", null ],

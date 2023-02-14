@@ -1,23 +1,127 @@
 \hypertarget{classqiao_1_1_context}{}\doxysection{qiao\+::Context Class Reference}
 \label{classqiao_1_1_context}\index{qiao::Context@{qiao::Context}}
+
+
+上下文类，主要用于控制窗口画布的渲染与清除  
+
+
+
+
+{\ttfamily \#include $<$context.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classqiao_1_1_context_a652cdcd2eedc8dbd9110bd284c5d5cf0}\label{classqiao_1_1_context_a652cdcd2eedc8dbd9110bd284c5d5cf0}} 
+{\bfseries Context} ()
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}{draw}} (GLenum primitive\+Type, \mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$draw\+State, \mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$scene\+State)
+\begin{DoxyCompactList}\small\item\em 绘制函数，每调用一次，绘制当前的一帧 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}{clear}} (\mbox{\hyperlink{classqiao_1_1_clear_state}{Clear\+State}} \&clear\+State)
+\begin{DoxyCompactList}\small\item\em 清除函数，清除画布内容，恢复为默认状态 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqiao_1_1_vertex_array}{Vertex\+Array}} $\ast$ \mbox{\hyperlink{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}{create\+Vertex\+Array}} (\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}} \&mesh, \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}} shader\+Attributes, GLenum usage)
+\begin{DoxyCompactList}\small\item\em 为特定\+Mesh生成对应的\+Vertex\+Array对象 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}} $\ast$ \mbox{\hyperlink{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}{create\+Texture2D}} (std\+::string img\+Path, GLenum target, GLint internalformat, GLenum format, GLenum type, bool generate\+Mipmaps)
+\begin{DoxyCompactList}\small\item\em 为特定图片生成对应的\+Texture2\+D对象 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+上下文类，主要用于控制窗口画布的渲染与清除 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}\label{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}} 
-void {\bfseries clear} (\mbox{\hyperlink{classqiao_1_1_clear_state}{Clear\+State}} \&clear\+State)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}\label{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}} 
-void {\bfseries draw} (GLenum primitive\+Type, \mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$draw\+State, \mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$scene\+State)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}\label{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}} 
-\mbox{\hyperlink{classqiao_1_1_vertex_array}{Vertex\+Array}} $\ast$ {\bfseries create\+Vertex\+Array} (\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}} \&mesh, \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}} shader\+Attributes, GLenum usage)
-\item 
+\index{qiao::Context@{qiao::Context}!clear@{clear}}
+\index{clear@{clear}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Context\+::clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_clear_state}{Clear\+State}} \&}]{clear\+State }\end{DoxyParamCaption})}
+
+
+
+清除函数，清除画布内容，恢复为默认状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+State} & Clear\+State对象的引用\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}\label{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}} 
-\mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}} $\ast$ {\bfseries create\+Texture2D} (std\+::string img\+Path, GLenum target, GLint internalformat, GLenum format, GLenum type, bool generate\+Mipmaps)
-\end{DoxyCompactItemize}
+\index{qiao::Context@{qiao::Context}!createTexture2D@{createTexture2D}}
+\index{createTexture2D@{createTexture2D}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{createTexture2D()}{createTexture2D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}} $\ast$ qiao\+::\+Context\+::create\+Texture2D (\begin{DoxyParamCaption}\item[{std\+::string}]{img\+Path,  }\item[{GLenum}]{target,  }\item[{GLint}]{internalformat,  }\item[{GLenum}]{format,  }\item[{GLenum}]{type,  }\item[{bool}]{generate\+Mipmaps }\end{DoxyParamCaption})}
+
+
+
+为特定图片生成对应的\+Texture2\+D对象 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+Path} & 图片的路径 \\
+\hline
+{\em target} & 纹理目标。可选常量：\+GL\+\_\+\+TEXTURE\+\_\+2D, GL\+\_\+\+PROXY\+\_\+\+TEXTURE\+\_\+2D, GL\+\_\+\+TEXTURE\+\_\+1\+D\+\_\+\+ARRAY, GL\+\_\+\+PROXY\+\_\+\+TEXTURE\+\_\+1\+D\+\_\+\+ARRAY, GL\+\_\+\+TEXTURE\+\_\+\+RECTANGLE, GL\+\_\+\+PROXY\+\_\+\+TEXTURE\+\_\+\+RECTANGLE, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+X, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+X, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+Y, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+Y, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+Z, GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+Z, GL\+\_\+\+PROXY\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP. \\
+\hline
+{\em internalformat} & 纹理的颜色成分的数量。详查：https\+://registry.khronos.\+org/\+Open\+GL-\/\+Refpages/gl4/ \\
+\hline
+{\em format} & 像素数据的格式。可选常量：\+GL\+\_\+\+RED, GL\+\_\+\+RG, GL\+\_\+\+RGB, GL\+\_\+\+BGR, GL\+\_\+\+RGBA, GL\+\_\+\+BGRA, GL\+\_\+\+RED\+\_\+\+INTEGER, GL\+\_\+\+RG\+\_\+\+INTEGER, GL\+\_\+\+RGB\+\_\+\+INTEGER, GL\+\_\+\+BGR\+\_\+\+INTEGER, GL\+\_\+\+RGBA\+\_\+\+INTEGER, GL\+\_\+\+BGRA\+\_\+\+INTEGER, GL\+\_\+\+STENCIL\+\_\+\+INDEX, GL\+\_\+\+DEPTH\+\_\+\+COMPONENT, GL\+\_\+\+DEPTH\+\_\+\+STENCIL. \\
+\hline
+{\em type} & 像素数据的数据类型。可选常量：\+GL\+\_\+\+UNSIGNED\+\_\+\+BYTE, GL\+\_\+\+BYTE, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT, GL\+\_\+\+SHORT, GL\+\_\+\+UNSIGNED\+\_\+\+INT, GL\+\_\+\+INT, GL\+\_\+\+HALF\+\_\+\+FLOAT, GL\+\_\+\+FLOAT, GL\+\_\+\+UNSIGNED\+\_\+\+BYTE\+\_\+3\+\_\+3\+\_\+2, GL\+\_\+\+UNSIGNED\+\_\+\+BYTE\+\_\+2\+\_\+3\+\_\+3\+\_\+\+REV, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+5\+\_\+6\+\_\+5, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+5\+\_\+6\+\_\+5\+\_\+\+REV, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+4\+\_\+4\+\_\+4\+\_\+4, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+4\+\_\+4\+\_\+4\+\_\+4\+\_\+\+REV, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+5\+\_\+5\+\_\+5\+\_\+1, GL\+\_\+\+UNSIGNED\+\_\+\+SHORT\+\_\+1\+\_\+5\+\_\+5\+\_\+5\+\_\+\+REV, GL\+\_\+\+UNSIGNED\+\_\+\+INT\+\_\+8\+\_\+8\+\_\+8\+\_\+8, GL\+\_\+\+UNSIGNED\+\_\+\+INT\+\_\+8\+\_\+8\+\_\+8\+\_\+8\+\_\+\+REV, GL\+\_\+\+UNSIGNED\+\_\+\+INT\+\_\+10\+\_\+10\+\_\+10\+\_\+2, GL\+\_\+\+UNSIGNED\+\_\+\+INT\+\_\+2\+\_\+10\+\_\+10\+\_\+10\+\_\+\+REV. \\
+\hline
+{\em generate\+Mipmaps} & 是否创建\+Mipmap\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Texture2\+D对象的指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}\label{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}} 
+\index{qiao::Context@{qiao::Context}!createVertexArray@{createVertexArray}}
+\index{createVertexArray@{createVertexArray}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{createVertexArray()}{createVertexArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_vertex_array}{Vertex\+Array}} $\ast$ Context\+::create\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}} \&}]{mesh,  }\item[{\mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}}}]{shader\+Attributes,  }\item[{GLenum}]{usage }\end{DoxyParamCaption})}
+
+
+
+为特定\+Mesh生成对应的\+Vertex\+Array对象 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Mesh对象的引用 \\
+\hline
+{\em shader\+Attributes} & Shader\+Vertex\+Attribute\+Collection对象 \\
+\hline
+{\em usage} & 数据的用例模式。可以允许设置为以下常量：\+GL\+\_\+\+STREAM\+\_\+\+DRAW, GL\+\_\+\+STREAM\+\_\+\+READ, GL\+\_\+\+STREAM\+\_\+\+COPY, GL\+\_\+\+STATIC\+\_\+\+DRAW, GL\+\_\+\+STATIC\+\_\+\+READ, GL\+\_\+\+STATIC\+\_\+\+COPY, GL\+\_\+\+DYNAMIC\+\_\+\+DRAW, GL\+\_\+\+DYNAMIC\+\_\+\+READ, GL\+\_\+\+DYNAMIC\+\_\+\+COPY.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex\+Array对象的指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}\label{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}} 
+\index{qiao::Context@{qiao::Context}!draw@{draw}}
+\index{draw@{draw}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Context\+::draw (\begin{DoxyParamCaption}\item[{GLenum}]{primitive\+Type,  }\item[{\mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$}]{draw\+State,  }\item[{\mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$}]{scene\+State }\end{DoxyParamCaption})}
+
+
+
+绘制函数，每调用一次，绘制当前的一帧 
+
+
+\begin{DoxyParams}{Parameters}
+{\em primitive\+Type} & 指定绘制的图元类型。可传入以下常量：\+GL\+\_\+\+POINTS, GL\+\_\+\+LINE\+\_\+\+STRIP, GL\+\_\+\+LINE\+\_\+\+LOOP, GL\+\_\+\+LINES, GL\+\_\+\+LINE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+LINES\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP, GL\+\_\+\+TRIANGLE\+\_\+\+FAN, GL\+\_\+\+TRIANGLES, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLES\+\_\+\+ADJACENCY, GL\+\_\+\+PATCHES \\
+\hline
+{\em draw\+State} & Draw\+State对象的指针 \\
+\hline
+{\em scene\+State} & Scene\+State对象的指针\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/renderer/context.\+h\item 
-source/renderer/context.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/\mbox{\hyperlink{context_8h}{context.\+h}}\item 
+D\+:/cpp\+Repos/qiao/source/renderer/context.\+cc\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 \hypertarget{window_8h_source}{}\doxysection{window.\+h}
-\label{window_8h_source}\index{source/renderer/window.h@{source/renderer/window.h}}
+\label{window_8h_source}\index{D:/cppRepos/qiao/source/renderer/window.h@{D:/cppRepos/qiao/source/renderer/window.h}}
 \mbox{\hyperlink{window_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -10,7 +10,7 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../third\_party/glad/include/glad.h"{}}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../third\_party/glfw/include/glfw3.h"{}}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}context.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{context_8h}{context.h}}"{}}}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }qiao\ \{}
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_window}{Window}}\ \{}
@@ -32,13 +32,13 @@
 \DoxyCodeLine{00052\ }
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 通过循环不停的调用对应函数去渲染，并不停循环做相关的处理操作}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ renderLoop();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_renderLoop();}
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ glfw:\ whenever\ the\ window\ size\ changed\ (by\ OS\ or\ user\ resize)\ this\ callback\ function\ executes}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ framebuffer\_size\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_framebuffer\_size\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
 \DoxyCodeLine{00059\ }
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ process\ all\ input:\ query\ GLFW\ whether\ relevant\ keys\ are\ pressed/released\ this\ frame\ and\ react\ accordingly}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ processInput(GLFWwindow*\ window);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_processInput(GLFWwindow*\ window);}
 \DoxyCodeLine{00062\ }
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ GLFWwindow*\ \_gltfWindow;}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_context}{Context}}*\ \_context;}

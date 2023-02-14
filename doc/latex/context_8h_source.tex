@@ -1,68 +1,71 @@
 \hypertarget{context_8h_source}{}\doxysection{context.\+h}
-\label{context_8h_source}\index{source/renderer/context.h@{source/renderer/context.h}}
-
+\label{context_8h_source}\index{D:/cppRepos/qiao/source/renderer/context.h@{D:/cppRepos/qiao/source/renderer/context.h}}
+\mbox{\hyperlink{context_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <direct.h>}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}./state/clear\_state/clear\_state.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__state_8h}{./state/draw\_state/draw\_state.h}}"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}scene/scene\_state.h"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/mesh.h"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertex__array_8h}{./vertex\_array/vertex\_array.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}./state/render\_state/render\_state.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/indices/indices\_unsigned\_short.h"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/indices/indices\_unsigned\_int.h"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/vertex\_attributes/vertex\_attribute\_float.h"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/vertex\_attributes/vertex\_attribute\_vector4f.h"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}textures/texture2d.h"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}buffers/write\_pixel\_buffer.h"{}}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{comment}{//\#define\ STB\_IMAGE\_IMPLEMENTATION}}
-\DoxyCodeLine{00020\ \textcolor{comment}{//\#include\ "{}../../third\_party/stb\_image/stb\_image.h"{}}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }qiao\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_context}{Context}}\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_context}{Context}}();}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_context}{\string~Context}}();}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <direct.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}./state/clear\_state/clear\_state.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__state_8h}{./state/draw\_state/draw\_state.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}scene/scene\_state.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/mesh.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vertex__array_8h}{./vertex\_array/vertex\_array.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}./state/render\_state/render\_state.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/indices/indices\_unsigned\_short.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/indices/indices\_unsigned\_int.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/vertex\_attributes/vertex\_attribute\_float.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}../core/geometry/vertex\_attributes/vertex\_attribute\_vector4f.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}textures/texture2d.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}buffers/write\_pixel\_buffer.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\#define\ STB\_IMAGE\_IMPLEMENTATION}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\#include\ "{}../../third\_party/stb\_image/stb\_image.h"{}}}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clear(\mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}\&\ clearState);}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ draw(GLenum\ primitiveType,\ \mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为特定Mesh生成对应的VertexArray}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_array}{VertexArray}}*\ createVertexArray(\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}}\&\ mesh,\ \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{ShaderVertexAttributeCollection}}\ shaderAttributes,\ GLenum\ usage);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}}*\ createTexture2D(std::string\ imgPath,\ GLenum\ target,\ GLint\ internalformat,\ GLenum\ format,\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ type,\ \textcolor{keywordtype}{bool}\ generateMipmaps);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sync\ GL\ state\ with\ default\ render\ state.}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ syncRenderState(\mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ renderState);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_context}{Context}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_context_a652cdcd2eedc8dbd9110bd284c5d5cf0}{Context}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_context}{\string~Context}}();}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enable\ or\ disable\ server-\/side\ GL\ capabilities}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enable(GLenum\ cap,\ \textcolor{keywordtype}{bool}\ enabled);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ verify\ arguments}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ verifyDraw(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyBeforeDraw(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyRenderState(\mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ renderState);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyVertexArray(\mbox{\hyperlink{classqiao_1_1_vertex_array}{VertexArray}}*\ vertexArray);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}{draw}}(GLenum\ primitiveType,\ \mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyShaderProgram(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}*\ \_boundShaderProgram;}
-\DoxyCodeLine{00061\ \ \ \ \ \};}
-\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}{clear}}(\mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}\&\ clearState);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_vertex_array}{VertexArray}}*\ \mbox{\hyperlink{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}{createVertexArray}}(\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}}\&\ mesh,\ \mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{ShaderVertexAttributeCollection}}\ shaderAttributes,\ GLenum\ usage);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_texture2_d}{Texture2D}}*\ \mbox{\hyperlink{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}{createTexture2D}}(std::string\ imgPath,\ GLenum\ target,\ GLint\ internalformat,\ GLenum\ format,\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ type,\ \textcolor{keywordtype}{bool}\ generateMipmaps);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sync\ GL\ state\ with\ default\ render\ state.}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ syncRenderState(\mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ renderState);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enable\ or\ disable\ server-\/side\ GL\ capabilities}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enable(GLenum\ cap,\ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ verify\ arguments}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ verifyDraw(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyBeforeDraw(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyRenderState(\mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ renderState);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyVertexArray(\mbox{\hyperlink{classqiao_1_1_vertex_array}{VertexArray}}*\ vertexArray);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyShaderProgram(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用者传进来的ShaderProgram对象的指针，本类不负责回收该ShaderProgram对象的内存，}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 而是让该ShaderProgram对象的创建者负责回收内存。}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}*\ \_boundShaderProgram;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \};}
+\DoxyCodeLine{00125\ \}}
 
 \end{DoxyCode}

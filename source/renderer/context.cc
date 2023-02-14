@@ -9,11 +9,30 @@ Context::Context() {
 
 	// Sync GL state with default render state.
 	_renderState = new RenderState();
-	syncRenderState(_renderState);
+	_syncRenderState(_renderState);
 };
 
 Context::~Context() {
+	if (_renderState != nullptr) {
+		delete _renderState;
+		_renderState = nullptr;
+	}
 
+};
+
+void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState) {
+	_verifyDraw(drawState, sceneState);
+	_applyBeforeDraw(drawState, sceneState);
+
+	VertexArray* vertexArray = drawState->getVertexArray();
+	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
+
+	if (indexBuffer != nullptr) {
+		glDrawElements(primitiveType, indexBuffer->getCount(), indexBuffer->getType(), 0);
+	}
+	else {
+
+	}
 };
 
 void Context::clear(ClearState& clearState) {
@@ -49,7 +68,7 @@ void Context::clear(ClearState& clearState) {
 		throw std::invalid_argument("renderState->ScissorTest.Height must be greater than or equal to zero!");
 	}
 	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
-		enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
+		_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 		_scissorTest.setEnabled(scissorTest.getEnabled());
 	}
 	if (scissorTest.getEnabled()) {
@@ -80,20 +99,6 @@ void Context::clear(ClearState& clearState) {
 	}
 };
 
-void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState) {
-	verifyDraw(drawState, sceneState);
-	applyBeforeDraw(drawState, sceneState);
-
-	VertexArray* vertexArray = drawState->getVertexArray();
-	IndexBuffer* indexBuffer = vertexArray->getIndexBuffer();
-
-	if (indexBuffer != nullptr) {
-		glDrawElements(primitiveType, indexBuffer->getCount(), indexBuffer->getType(), 0);
-	}
-	else {
-
-	}
-};
 
 VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
 	VertexArray* vertexArray = new VertexArray();
@@ -213,37 +218,37 @@ VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollect
 //	return texture;
 //};
 
-void Context::syncRenderState(RenderState* renderState) {
+void Context::_syncRenderState(RenderState* renderState) {
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
-	enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
+	_enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 	glPrimitiveRestartIndex(primitiveRestart.getIndex());
 
 	CullFace cullFace = renderState->getCullFace();
-	enable(GL_CULL_FACE, cullFace.getEnabled());
+	_enable(GL_CULL_FACE, cullFace.getEnabled());
 	glFrontFace(cullFace.getFrontFaceMode());
 	glCullFace(cullFace.getCullFaceMode());
 
-	enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
+	_enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
 
 	glPolygonMode(GL_FRONT_AND_BACK, renderState->getPolygonMode());
 
 	ScissorTest scissorTest = renderState->getScissorTest();
-	enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
+	_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 	glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
 
 	DepthTest depthTest = renderState->getDepthTest();
-	enable(GL_DEPTH_TEST, true);
+	_enable(GL_DEPTH_TEST, true);
 	glDepthFunc(depthTest.getDepthFunc());
 	glDepthMask(depthTest.getDepthMask());
 	glDepthRange(depthTest.getNear(), depthTest.getFar());
 
 	Blending blending = renderState->getBlending();
-	enable(GL_BLEND, blending.getEnabled());
+	_enable(GL_BLEND, blending.getEnabled());
 	glBlendFuncSeparate(blending.getSrcRGB(), blending.getDstRGB(), blending.getSrcAlpha(), blending.getDstAlpha());
 	glBlendEquationSeparate(blending.getRgbEquation(), blending.getAlphaEquation());
 };
 
-void Context::enable(GLenum cap, bool enabled) {
+void Context::_enable(GLenum cap, bool enabled) {
 	if (enabled) {
 		glEnable(cap);
 	}
@@ -252,7 +257,7 @@ void Context::enable(GLenum cap, bool enabled) {
 	}
 };
 
-void Context::verifyDraw(DrawState* drawState, SceneState* sceneState) {
+void Context::_verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	if (drawState == nullptr) {
 		throw std::invalid_argument("argument drawState is null!");
 	}
@@ -270,18 +275,18 @@ void Context::verifyDraw(DrawState* drawState, SceneState* sceneState) {
 	}
 };
 
-void Context::applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
-	applyRenderState(drawState->getRenderState());
-	applyVertexArray(drawState->getVertexArray());
-	applyShaderProgram(drawState, sceneState);
+void Context::_applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
+	_applyRenderState(drawState->getRenderState());
+	_applyVertexArray(drawState->getVertexArray());
+	_applyShaderProgram(drawState, sceneState);
 };
 
-void Context::applyRenderState(RenderState* renderState) {
+void Context::_applyRenderState(RenderState* renderState) {
 	// apply PrimitiveRestart
 	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
 	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
 	if (primitiveRestart.getEnabled() != _primitiveRestart.getEnabled()) {
-		enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
+		_enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
 		_primitiveRestart.setEnabled(primitiveRestart.getEnabled());
 	}
 
@@ -289,7 +294,7 @@ void Context::applyRenderState(RenderState* renderState) {
 	CullFace cullFace = renderState->getCullFace();
 	CullFace _cullFace = _renderState->getCullFace();
 	if (cullFace.getEnabled() != _cullFace.getEnabled()) {
-		enable(GL_CULL_FACE, cullFace.getEnabled());
+		_enable(GL_CULL_FACE, cullFace.getEnabled());
 		_cullFace.setEnabled(cullFace.getEnabled());
 	}
 	if (cullFace.getEnabled()) {
@@ -305,7 +310,7 @@ void Context::applyRenderState(RenderState* renderState) {
 
 	// apply ProgramPointSize
 	if (renderState->getProgramPointSize() != _renderState->getProgramPointSize()) {
-		enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
+		_enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
 		_renderState->setProgramPointSize(renderState->getProgramPointSize());
 	}
 
@@ -325,7 +330,7 @@ void Context::applyRenderState(RenderState* renderState) {
 		throw std::invalid_argument("renderState->ScissorTest.Height must be greater than or equal to zero!");
 	}
 	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
-		enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
+		_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
 		_scissorTest.setEnabled(scissorTest.getEnabled());
 	}
 	if (scissorTest.getEnabled()) {
@@ -345,7 +350,7 @@ void Context::applyRenderState(RenderState* renderState) {
 	StencilTest stencilTest = renderState->getStencilTest();
 	StencilTest _stencilTest = _renderState->getStencilTest();
 	if (stencilTest.getEnabled() != _stencilTest.getEnabled()) {
-		enable(GL_STENCIL_TEST, stencilTest.getEnabled());
+		_enable(GL_STENCIL_TEST, stencilTest.getEnabled());
 		_stencilTest.setEnabled(stencilTest.getEnabled());
 	}
 
@@ -353,7 +358,7 @@ void Context::applyRenderState(RenderState* renderState) {
 	DepthTest depthTest = renderState->getDepthTest();
 	DepthTest _depthTest = _renderState->getDepthTest();
 	if (depthTest.getEnabled() != _depthTest.getEnabled()) {
-		enable(GL_DEPTH_TEST, depthTest.getEnabled());
+		_enable(GL_DEPTH_TEST, depthTest.getEnabled());
 		_depthTest.setEnabled(depthTest.getEnabled());
 	}
 	if (depthTest.getEnabled()) {
@@ -382,7 +387,7 @@ void Context::applyRenderState(RenderState* renderState) {
 	Blending blending = renderState->getBlending();
 	Blending _blending = _renderState->getBlending();
 	if (blending.getEnabled() != _blending.getEnabled()) {
-		enable(GL_BLEND, blending.getEnabled());
+		_enable(GL_BLEND, blending.getEnabled());
 		_blending.setEnabled(blending.getEnabled());
 	}
 	if (blending.getEnabled()) {
@@ -407,12 +412,12 @@ void Context::applyRenderState(RenderState* renderState) {
 	}
 };
 
-void Context::applyVertexArray(VertexArray* vertexArray) {
+void Context::_applyVertexArray(VertexArray* vertexArray) {
 	vertexArray->bind();
 	vertexArray->clean();
 };
 
-void Context::applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
+void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
 	ShaderProgram* shaderProgram = drawState->getShaderProgram();
 	if (shaderProgram != _boundShaderProgram) {
 		shaderProgram->use();
