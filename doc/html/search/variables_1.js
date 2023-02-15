@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['render_0',['render',['../classqiao_1_1_window.html#a7775efc3624e23de6d7738dabae7a5d6',1,'qiao::Window']]],
-  ['resize_1',['resize',['../classqiao_1_1_window.html#a464ae1044f8d8d2fa915b43adb61e036',1,'qiao::Window']]]
+  ['postrender_0',['postRender',['../classqiao_1_1_window.html#a3b1cb78b04375bf2031ed900f65e1acf',1,'qiao::Window']]],
+  ['prerender_1',['preRender',['../classqiao_1_1_window.html#ac6db318dc9a60fd3cc64331c89043238',1,'qiao::Window']]]
 ];

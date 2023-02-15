@@ -1,9 +1,16 @@
+/**
+ * @file context.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
+
 #include "context.h"
 
 using namespace qiao;
 
 Context::Context() {
-	_clearColor = Color::BLACK();
+	_clearColor = Color::BLACK;
 	_clearDepth = 1.0;
 	_clearStencil = 0;
 
@@ -38,7 +45,7 @@ void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* scene
 void Context::clear(ClearState& clearState) {
 	// apply clearColor
 	Color color = clearState.getColor();
-	if (!color.equals(_clearColor)) {
+	if (color != _clearColor) {
 		glClearColor(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
 		_clearColor = color;
 	}

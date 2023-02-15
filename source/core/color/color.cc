@@ -3,72 +3,83 @@
 
 using namespace qiao;
 
+Color Color::WHITE = Color(1.0, 1.0, 1.0, 1.0);
+Color Color::BLACK = Color(0.0, 0.0, 0.0, 1.0);
+
 Color::Color() {
-	this->red = 1.0;
-	this->green = 1.0;
-	this->blue = 1.0;
-	this->alpha = 1.0;
+	this->_red = 1.0;
+	this->_green = 1.0;
+	this->_blue = 1.0;
+	this->_alpha = 1.0;
 };
 
 Color::Color(double red, double green, double blue, double alpha) {
-	this->red = red;
-	this->green = green;
-	this->blue = blue;
-	this->alpha = alpha;
+	this->_red = red;
+	this->_green = green;
+	this->_blue = blue;
+	this->_alpha = alpha;
 };
 
-double Color::getRed() {
-	return red;
+double Color::getRed() const {
+	return _red;
 };
 
 void Color::setRed(double val) {
-	red = val;
+	_red = val;
 };
 
-double Color::getGreen() {
-	return green;
+double Color::getGreen() const {
+	return _green;
 };
 
 void Color::setGreen(double val) {
-	green = val;
+	_green = val;
 };
 
-double Color::getBlue() {
-	return blue;
+double Color::getBlue() const {
+	return _blue;
 };
 
 void Color::setBlue(double val) {
-	blue = val;
+	_blue = val;
 };
 
-double Color::getAlpha() {
-	return alpha;
+double Color::getAlpha() const {
+	return _alpha;
 };
 
 void Color::setAlpha(double val) {
-	alpha = val;
+	_alpha = val;
 };
 
-bool Color::equals(Color color) {
-	if (red != color.getRed()) {
+bool Color::operator==(Color& color) const {
+	if (_red != color.getRed()) {
 		return false;
 	}
-	if (green != color.getGreen()) {
+	if (_green != color.getGreen()) {
 		return false;
 	}
-	if (blue != color.getBlue()) {
+	if (_blue != color.getBlue()) {
 		return false;
 	}
-	if (alpha != color.getAlpha()) {
+	if (_alpha != color.getAlpha()) {
 		return false;
 	}
 	return true;
 };
 
-Color Color::WHITE() {
-	return Color(1.0, 1.0, 1.0, 1.0);
+bool Color::operator!=(Color& color) const {
+	if (_red != color.getRed()) {
+		return true;
+	}
+	if (_green != color.getGreen()) {
+		return true;
+	}
+	if (_blue != color.getBlue()) {
+		return true;
+	}
+	if (_alpha != color.getAlpha()) {
+		return true;
+	}
+	return false;
 };
-
-Color Color::BLACK() {
-	return Color(0.0, 0.0, 0.0, 1.0);
-}

@@ -5,7 +5,7 @@ var annotated_dup =
       [ "Buffer", "classqiao_1_1_buffer.html", "classqiao_1_1_buffer" ],
       [ "Camera", "classqiao_1_1_camera.html", null ],
       [ "ClearState", "classqiao_1_1_clear_state.html", null ],
-      [ "Color", "classqiao_1_1_color.html", null ],
+      [ "Color", "classqiao_1_1_color.html", "classqiao_1_1_color" ],
       [ "ColorMask", "classqiao_1_1_color_mask.html", null ],
       [ "Context", "classqiao_1_1_context.html", "classqiao_1_1_context" ],
       [ "CullFace", "classqiao_1_1_cull_face.html", null ],

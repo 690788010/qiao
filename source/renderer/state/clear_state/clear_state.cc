@@ -5,7 +5,7 @@ using namespace qiao;
 
 ClearState::ClearState() {
 	_clearMask = ClearMask::ALL;
-	_color = Color::WHITE();
+	_color = Color::WHITE;
 	_depth = 1.0;
 	_stencil = 0;
 
