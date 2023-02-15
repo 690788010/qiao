@@ -1,5 +1,11 @@
+/**
+ * @file color.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
-#include "Color.h"
+#include "color.h"
 
 using namespace qiao;
 

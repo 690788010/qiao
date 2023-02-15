@@ -94,7 +94,7 @@ void Context::clear(ClearState& clearState) {
 	// apply ColorMask
 	ColorMask colorMask = clearState.getColorMask();
 	ColorMask _colorMask = _renderState->getColorMask();
-	if (!colorMask.equals(_colorMask)) {
+	if (colorMask != _colorMask) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
 		_renderState->setColorMask(colorMask);
 	}
@@ -413,7 +413,7 @@ void Context::_applyRenderState(RenderState* renderState) {
 	// apply ColorMask
 	ColorMask colorMask = renderState->getColorMask();
 	ColorMask _colorMask = _renderState->getColorMask();
-	if (!colorMask.equals(_colorMask)) {
+	if (colorMask != _colorMask) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
 		_renderState->setColorMask(colorMask);
 	}

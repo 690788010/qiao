@@ -2,57 +2,56 @@
 \label{clear__state_8h_source}\index{D:/cppRepos/qiao/source/renderer/state/clear\_state/clear\_state.h@{D:/cppRepos/qiao/source/renderer/state/clear\_state/clear\_state.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../render\_state/scissor\_test.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../render\_state/color\_mask.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../third\_party/glad/include/glad.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../../core/color/color.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../render\_state/depth\_test.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }qiao\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{enum}\ ClearMask\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ COLOR\_BUFFER\_BIT\ =\ GL\_COLOR\_BUFFER\_BIT,}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ DEPTH\_BUFFER\_BIT\ =\ GL\_DEPTH\_BUFFER\_BIT,}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ STENCIL\_BUFFER\_BIT\ =\ GL\_STENCIL\_BUFFER\_BIT,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ALL\ =\ GL\_COLOR\_BUFFER\_BIT\ |\ GL\_DEPTH\_BUFFER\_BIT\ |\ GL\_STENCIL\_BUFFER\_BIT}
-\DoxyCodeLine{00015\ \ \ \ \ \};}
-\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../render\_state/scissor\_test.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../render\_state/color\_mask.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../../core/color/color.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../render\_state/depth\_test.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }qiao\ \{}
 \DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}\ \{}
 \DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_clear_state}{ClearState}}();}
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ getScissorTest();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScissorTest(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ val);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ getColorMask();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setColorMask(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ val);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ GLboolean\ getDepthMask();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthMask(GLboolean\ flag);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ GLbitfield\ getClearMask();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setClearMask(GLbitfield\ val);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\&\ getColor();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setColor(\mbox{\hyperlink{classqiao_1_1_color}{Color}}\ val);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getDepth();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepth(\textcolor{keywordtype}{double}\ val);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getStencil();}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setStencil(\textcolor{keywordtype}{int}\ val);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ \_scissorTest;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 裁剪测试相关配置}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ \_colorMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ }}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启对深度缓冲的写操作}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ GLbitfield\ \_clearMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 标识清除哪个缓存}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_color;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_depth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_stencil;}
-\DoxyCodeLine{00051\ \ \ \ \ \};}
-\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ GLbitfield\ \mbox{\hyperlink{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}{getClearMask}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_a707fbe1e9efc3572b62086472edfd3c2}{setClearMask}}(GLbitfield\ clearMask);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\&\ \mbox{\hyperlink{classqiao_1_1_clear_state_aca1081e0650542bf175d3dfd82a0ba5a}{getColor}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_a05b04d5ff841b52baea539bbad4cfc6c}{setColor}}(\mbox{\hyperlink{classqiao_1_1_color}{Color}}\ color);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}{getDepth}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_ab7815f0c87db54742c4e40636c9fe327}{setDepth}}(\textcolor{keywordtype}{double}\ depth);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}{getStencil}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_a10ce309ea74859178cc80ca3856b07b9}{setStencil}}(\textcolor{keywordtype}{int}\ stencil);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ \mbox{\hyperlink{classqiao_1_1_clear_state_a4b77c9e05fe15502f579b18bf2ffcee6}{getColorMask}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}{setColorMask}}(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ colorMask);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ GLboolean\ getDepthMask();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthMask(GLboolean\ flag);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ getScissorTest();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScissorTest(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ val);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ GLbitfield\ \_clearMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 指示清除哪个缓存的掩码。可选的三个掩码值：GL\_COLOR\_BUFFER\_BIT,\ }}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_DEPTH\_BUFFER\_BIT,\ GL\_STENCIL\_BUFFER\_BIT}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_color;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_depth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度缓存的深度值\ \ \ \ \ }}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_stencil;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 模板缓存的模板值}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ \_colorMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启颜色缓冲各个颜色分量的写操作}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启深度缓冲的写操作}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ \_scissorTest;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 裁剪测试相关配置}}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00114\ \}}
 
 \end{DoxyCode}

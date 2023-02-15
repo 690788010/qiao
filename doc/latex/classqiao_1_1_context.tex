@@ -29,6 +29,28 @@ void \mbox{\hyperlink{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}{c
 上下文类，主要用于控制窗口画布的渲染与清除 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}\label{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}} 
+\index{qiao::Context@{qiao::Context}!draw@{draw}}
+\index{draw@{draw}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Context\+::draw (\begin{DoxyParamCaption}\item[{GLenum}]{primitive\+Type,  }\item[{\mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$}]{draw\+State,  }\item[{\mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$}]{scene\+State }\end{DoxyParamCaption})}
+
+
+
+绘制函数，每调用一次，绘制当前的一帧 
+
+
+\begin{DoxyParams}{Parameters}
+{\em primitive\+Type} & 指定绘制的图元类型。可传入以下常量：\+GL\+\_\+\+POINTS, GL\+\_\+\+LINE\+\_\+\+STRIP, GL\+\_\+\+LINE\+\_\+\+LOOP, GL\+\_\+\+LINES, GL\+\_\+\+LINE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+LINES\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP, GL\+\_\+\+TRIANGLE\+\_\+\+FAN, GL\+\_\+\+TRIANGLES, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLES\+\_\+\+ADJACENCY, GL\+\_\+\+PATCHES \\
+\hline
+{\em draw\+State} & Draw\+State对象的指针 \\
+\hline
+{\em scene\+State} & Scene\+State对象的指针\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}\label{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}} 
 \index{qiao::Context@{qiao::Context}!clear@{clear}}
 \index{clear@{clear}!qiao::Context@{qiao::Context}}
@@ -46,6 +68,28 @@ void \mbox{\hyperlink{classqiao_1_1_context_a5abc00861ad1485d2df9a0774afde73d}{c
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}\label{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}} 
+\index{qiao::Context@{qiao::Context}!createVertexArray@{createVertexArray}}
+\index{createVertexArray@{createVertexArray}!qiao::Context@{qiao::Context}}
+\doxysubsubsection{\texorpdfstring{createVertexArray()}{createVertexArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_vertex_array}{Vertex\+Array}} $\ast$ Context\+::create\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}} \&}]{mesh,  }\item[{\mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}}}]{shader\+Attributes,  }\item[{GLenum}]{usage }\end{DoxyParamCaption})}
+
+
+
+为特定\+Mesh生成对应的\+Vertex\+Array对象 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Mesh对象的引用 \\
+\hline
+{\em shader\+Attributes} & Shader\+Vertex\+Attribute\+Collection对象 \\
+\hline
+{\em usage} & 数据的用例模式。可以允许设置为以下常量：\+GL\+\_\+\+STREAM\+\_\+\+DRAW, GL\+\_\+\+STREAM\+\_\+\+READ, GL\+\_\+\+STREAM\+\_\+\+COPY, GL\+\_\+\+STATIC\+\_\+\+DRAW, GL\+\_\+\+STATIC\+\_\+\+READ, GL\+\_\+\+STATIC\+\_\+\+COPY, GL\+\_\+\+DYNAMIC\+\_\+\+DRAW, GL\+\_\+\+DYNAMIC\+\_\+\+READ, GL\+\_\+\+DYNAMIC\+\_\+\+COPY.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex\+Array对象的指针 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}\label{classqiao_1_1_context_a3a74ad32b0aa0288cd93615b6a5dbfa3}} 
 \index{qiao::Context@{qiao::Context}!createTexture2D@{createTexture2D}}
@@ -74,50 +118,6 @@ void
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Texture2\+D对象的指针 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}\label{classqiao_1_1_context_a25b2c8b4631e4c4cc4ffda62357469e6}} 
-\index{qiao::Context@{qiao::Context}!createVertexArray@{createVertexArray}}
-\index{createVertexArray@{createVertexArray}!qiao::Context@{qiao::Context}}
-\doxysubsubsection{\texorpdfstring{createVertexArray()}{createVertexArray()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_vertex_array}{Vertex\+Array}} $\ast$ Context\+::create\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_mesh}{Mesh}} \&}]{mesh,  }\item[{\mbox{\hyperlink{classqiao_1_1_shader_vertex_attribute_collection}{Shader\+Vertex\+Attribute\+Collection}}}]{shader\+Attributes,  }\item[{GLenum}]{usage }\end{DoxyParamCaption})}
-
-
-
-为特定\+Mesh生成对应的\+Vertex\+Array对象 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mesh} & Mesh对象的引用 \\
-\hline
-{\em shader\+Attributes} & Shader\+Vertex\+Attribute\+Collection对象 \\
-\hline
-{\em usage} & 数据的用例模式。可以允许设置为以下常量：\+GL\+\_\+\+STREAM\+\_\+\+DRAW, GL\+\_\+\+STREAM\+\_\+\+READ, GL\+\_\+\+STREAM\+\_\+\+COPY, GL\+\_\+\+STATIC\+\_\+\+DRAW, GL\+\_\+\+STATIC\+\_\+\+READ, GL\+\_\+\+STATIC\+\_\+\+COPY, GL\+\_\+\+DYNAMIC\+\_\+\+DRAW, GL\+\_\+\+DYNAMIC\+\_\+\+READ, GL\+\_\+\+DYNAMIC\+\_\+\+COPY.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Vertex\+Array对象的指针 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}\label{classqiao_1_1_context_ab9d0ee477e51659eadf84d7412691d7a}} 
-\index{qiao::Context@{qiao::Context}!draw@{draw}}
-\index{draw@{draw}!qiao::Context@{qiao::Context}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Context\+::draw (\begin{DoxyParamCaption}\item[{GLenum}]{primitive\+Type,  }\item[{\mbox{\hyperlink{classqiao_1_1_draw_state}{Draw\+State}} $\ast$}]{draw\+State,  }\item[{\mbox{\hyperlink{classqiao_1_1_scene_state}{Scene\+State}} $\ast$}]{scene\+State }\end{DoxyParamCaption})}
-
-
-
-绘制函数，每调用一次，绘制当前的一帧 
-
-
-\begin{DoxyParams}{Parameters}
-{\em primitive\+Type} & 指定绘制的图元类型。可传入以下常量：\+GL\+\_\+\+POINTS, GL\+\_\+\+LINE\+\_\+\+STRIP, GL\+\_\+\+LINE\+\_\+\+LOOP, GL\+\_\+\+LINES, GL\+\_\+\+LINE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+LINES\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP, GL\+\_\+\+TRIANGLE\+\_\+\+FAN, GL\+\_\+\+TRIANGLES, GL\+\_\+\+TRIANGLE\+\_\+\+STRIP\+\_\+\+ADJACENCY, GL\+\_\+\+TRIANGLES\+\_\+\+ADJACENCY, GL\+\_\+\+PATCHES \\
-\hline
-{\em draw\+State} & Draw\+State对象的指针 \\
-\hline
-{\em scene\+State} & Scene\+State对象的指针\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
 \end{DoxyReturn}
 
 

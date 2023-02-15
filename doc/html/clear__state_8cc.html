@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>qiao: D:/cppRepos/qiao/source/renderer/shaders/shader_components/shader_object.h File Reference</title>
+<title>qiao: D:/cppRepos/qiao/source/renderer/state/clear_state/clear_state.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('shader__object_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('clear__state_8cc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,81 +95,19 @@ $(document).ready(function(){initNavTree('shader__object_8h.html',''); initResiz
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
-  <div class="headertitle"><div class="title">shader_object.h File Reference</div></div>
+  <div class="headertitle"><div class="title">clear_state.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><br  />
-  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &quot;../../../../third_party/glad/include/glad.h&quot;</code><br />
-</div>
-<p><a href="shader__object_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_shader_object.html">qiao::ShaderObject</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a900f39781ef44d5ff8a0f91dbdc20376"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shader__object_8h.html#a900f39781ef44d5ff8a0f91dbdc20376">qiao::VertexLocations</a> { <b>POSITION</b> = 0
-, <b>NORMAL</b> = 2
-, <b>TEXTURECOORDINATE</b> = 3
-, <b>COLOR</b> = 4
- }</td></tr>
-<tr class="separator:a900f39781ef44d5ff8a0f91dbdc20376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85c0517e07e6d38756648ff37f1bca6a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shader__object_8h.html#a85c0517e07e6d38756648ff37f1bca6a">qiao::ShaderType</a> { <b>VERTEX_SHADER</b> = GL_VERTEX_SHADER
-, <b>FRAGMENT_SHADER</b> = GL_FRAGMENT_SHADER
- }</td></tr>
-<tr class="separator:a85c0517e07e6d38756648ff37f1bca6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><br  />
- </p>
-<dl class="section author"><dt>Author</dt><dd>yangqiao </dd></dl>
+<div class="textblock"><code>#include &quot;clear_state.h&quot;</code><br />
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>yangqiao </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>December 2022 </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a900f39781ef44d5ff8a0f91dbdc20376" name="a900f39781ef44d5ff8a0f91dbdc20376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a900f39781ef44d5ff8a0f91dbdc20376">&#9670;&#160;</a></span>VertexLocations</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="shader__object_8h.html#a900f39781ef44d5ff8a0f91dbdc20376">qiao::VertexLocations</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>着色器attribute变量的索引位置的枚举. </p>
-
-</div>
-</div>
-<a id="a85c0517e07e6d38756648ff37f1bca6a" name="a85c0517e07e6d38756648ff37f1bca6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85c0517e07e6d38756648ff37f1bca6a">&#9670;&#160;</a></span>ShaderType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="shader__object_8h.html#a85c0517e07e6d38756648ff37f1bca6a">qiao::ShaderType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>着色器类型的枚举. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_cfe299f2c045a102dc7069561a29caaa.html">renderer</a></li><li class="navelem"><a class="el" href="dir_390daad818bc36e381b9935ad1b770aa.html">shaders</a></li><li class="navelem"><a class="el" href="dir_5e706601dd9bbf9fbc5379f4c91f1371.html">shader_components</a></li><li class="navelem"><a class="el" href="shader__object_8h.html">shader_object.h</a></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_cfe299f2c045a102dc7069561a29caaa.html">renderer</a></li><li class="navelem"><a class="el" href="dir_b319d00b388d78c0e626141ca4f78cc4.html">state</a></li><li class="navelem"><a class="el" href="dir_5cc440b1238cea9c4d2ec418d60eb181.html">clear_state</a></li><li class="navelem"><a class="el" href="clear__state_8cc.html">clear_state.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

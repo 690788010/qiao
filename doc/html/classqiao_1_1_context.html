@@ -129,6 +129,51 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>上下文类，主要用于控制窗口画布的渲染与清除 </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab9d0ee477e51659eadf84d7412691d7a" name="ab9d0ee477e51659eadf84d7412691d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d0ee477e51659eadf84d7412691d7a">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::draw </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>primitiveType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_draw_state.html">DrawState</a> *&#160;</td>
+          <td class="paramname"><em>drawState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_scene_state.html">SceneState</a> *&#160;</td>
+          <td class="paramname"><em>sceneState</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绘制函数，每调用一次，绘制当前的一帧 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">primitiveType</td><td>指定绘制的图元类型。可传入以下常量：GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_PATCHES </td></tr>
+    <tr><td class="paramname">drawState</td><td>DrawState对象的指针 </td></tr>
+    <tr><td class="paramname">sceneState</td><td>SceneState对象的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <a id="a5abc00861ad1485d2df9a0774afde73d" name="a5abc00861ad1485d2df9a0774afde73d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5abc00861ad1485d2df9a0774afde73d">&#9670;&#160;</a></span>clear()</h2>
 
@@ -153,6 +198,51 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a25b2c8b4631e4c4cc4ffda62357469e6" name="a25b2c8b4631e4c4cc4ffda62357469e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b2c8b4631e4c4cc4ffda62357469e6">&#9670;&#160;</a></span>createVertexArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqiao_1_1_vertex_array.html">VertexArray</a> * Context::createVertexArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqiao_1_1_shader_vertex_attribute_collection.html">ShaderVertexAttributeCollection</a>&#160;</td>
+          <td class="paramname"><em>shaderAttributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>usage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>为特定Mesh生成对应的VertexArray对象 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>Mesh对象的引用 </td></tr>
+    <tr><td class="paramname">shaderAttributes</td><td>ShaderVertexAttributeCollection对象 </td></tr>
+    <tr><td class="paramname">usage</td><td>数据的用例模式。可以允许设置为以下常量：GL_STREAM_DRAW, GL_STREAM_READ, GL_STREAM_COPY, GL_STATIC_DRAW, GL_STATIC_READ, GL_STATIC_COPY, GL_DYNAMIC_DRAW, GL_DYNAMIC_READ, GL_DYNAMIC_COPY.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VertexArray对象的指针 </dd></dl>
 
 </div>
 </div>
@@ -219,96 +309,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Texture2D对象的指针 </dd></dl>
-
-</div>
-</div>
-<a id="a25b2c8b4631e4c4cc4ffda62357469e6" name="a25b2c8b4631e4c4cc4ffda62357469e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25b2c8b4631e4c4cc4ffda62357469e6">&#9670;&#160;</a></span>createVertexArray()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqiao_1_1_vertex_array.html">VertexArray</a> * Context::createVertexArray </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classqiao_1_1_mesh.html">Mesh</a> &amp;&#160;</td>
-          <td class="paramname"><em>mesh</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classqiao_1_1_shader_vertex_attribute_collection.html">ShaderVertexAttributeCollection</a>&#160;</td>
-          <td class="paramname"><em>shaderAttributes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">GLenum&#160;</td>
-          <td class="paramname"><em>usage</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>为特定Mesh生成对应的VertexArray对象 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mesh</td><td>Mesh对象的引用 </td></tr>
-    <tr><td class="paramname">shaderAttributes</td><td>ShaderVertexAttributeCollection对象 </td></tr>
-    <tr><td class="paramname">usage</td><td>数据的用例模式。可以允许设置为以下常量：GL_STREAM_DRAW, GL_STREAM_READ, GL_STREAM_COPY, GL_STATIC_DRAW, GL_STATIC_READ, GL_STATIC_COPY, GL_DYNAMIC_DRAW, GL_DYNAMIC_READ, GL_DYNAMIC_COPY.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>VertexArray对象的指针 </dd></dl>
-
-</div>
-</div>
-<a id="ab9d0ee477e51659eadf84d7412691d7a" name="ab9d0ee477e51659eadf84d7412691d7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9d0ee477e51659eadf84d7412691d7a">&#9670;&#160;</a></span>draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Context::draw </td>
-          <td>(</td>
-          <td class="paramtype">GLenum&#160;</td>
-          <td class="paramname"><em>primitiveType</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classqiao_1_1_draw_state.html">DrawState</a> *&#160;</td>
-          <td class="paramname"><em>drawState</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classqiao_1_1_scene_state.html">SceneState</a> *&#160;</td>
-          <td class="paramname"><em>sceneState</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>绘制函数，每调用一次，绘制当前的一帧 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">primitiveType</td><td>指定绘制的图元类型。可传入以下常量：GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_PATCHES </td></tr>
-    <tr><td class="paramname">drawState</td><td>DrawState对象的指针 </td></tr>
-    <tr><td class="paramname">sceneState</td><td>SceneState对象的指针</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

@@ -3,51 +3,201 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}\label{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}} 
-\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} \& {\bfseries get\+Scissor\+Test} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}\label{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}} 
-void {\bfseries set\+Scissor\+Test} (\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_ab3fe1859a8ef87652a4cefc63907ba2d}\label{classqiao_1_1_clear_state_ab3fe1859a8ef87652a4cefc63907ba2d}} 
-\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \& {\bfseries get\+Color\+Mask} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a3d230694d15d1c5857c53503f303c1e2}\label{classqiao_1_1_clear_state_a3d230694d15d1c5857c53503f303c1e2}} 
-void {\bfseries set\+Color\+Mask} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} val)
-\item 
+GLbitfield \mbox{\hyperlink{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}{get\+Clear\+Mask}} ()
+\begin{DoxyCompactList}\small\item\em 获取指示清除哪个缓存的掩码 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_a707fbe1e9efc3572b62086472edfd3c2}{set\+Clear\+Mask}} (GLbitfield clear\+Mask)
+\begin{DoxyCompactList}\small\item\em 设置指示清除哪个缓存的掩码 \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classqiao_1_1_color}{Color}} \& \mbox{\hyperlink{classqiao_1_1_clear_state_aca1081e0650542bf175d3dfd82a0ba5a}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em 获取颜色缓存的颜色值 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_a05b04d5ff841b52baea539bbad4cfc6c}{set\+Color}} (\mbox{\hyperlink{classqiao_1_1_color}{Color}} color)
+\begin{DoxyCompactList}\small\item\em 设置颜色缓存的颜色值 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}{get\+Depth}} ()
+\begin{DoxyCompactList}\small\item\em 获取深度缓存的深度值 ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_ab7815f0c87db54742c4e40636c9fe327}{set\+Depth}} (double depth)
+\begin{DoxyCompactList}\small\item\em 设置深度缓存的深度值 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}{get\+Stencil}} ()
+\begin{DoxyCompactList}\small\item\em 获取模板缓存的模板值 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_a10ce309ea74859178cc80ca3856b07b9}{set\+Stencil}} (int stencil)
+\begin{DoxyCompactList}\small\item\em 设置模板缓存的模板值 \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \& \mbox{\hyperlink{classqiao_1_1_clear_state_a4b77c9e05fe15502f579b18bf2ffcee6}{get\+Color\+Mask}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲各个颜色分量的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}{set\+Color\+Mask}} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} color\+Mask)
+\begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲各个颜色分量的写操作 \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}\label{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}} 
 GLboolean {\bfseries get\+Depth\+Mask} ()
 \item 
 \mbox{\Hypertarget{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}\label{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}} 
 void {\bfseries set\+Depth\+Mask} (GLboolean flag)
 \item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}\label{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}} 
-GLbitfield {\bfseries get\+Clear\+Mask} ()
+\mbox{\Hypertarget{classqiao_1_1_clear_state_ab1c1d0df01638c2284522d0600ee2499}\label{classqiao_1_1_clear_state_ab1c1d0df01638c2284522d0600ee2499}} 
+const \mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} \& {\bfseries get\+Scissor\+Test} ()
 \item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_acffb64c517f53918d53c937ce6d8f751}\label{classqiao_1_1_clear_state_acffb64c517f53918d53c937ce6d8f751}} 
-void {\bfseries set\+Clear\+Mask} (GLbitfield val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a9e991731d623a86ea76e110e0aba59c7}\label{classqiao_1_1_clear_state_a9e991731d623a86ea76e110e0aba59c7}} 
-\mbox{\hyperlink{classqiao_1_1_color}{Color}} \& {\bfseries get\+Color} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a27e554c9d4568c6f48ce43ee7affd0b8}\label{classqiao_1_1_clear_state_a27e554c9d4568c6f48ce43ee7affd0b8}} 
-void {\bfseries set\+Color} (\mbox{\hyperlink{classqiao_1_1_color}{Color}} val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}\label{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}} 
-double {\bfseries get\+Depth} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a4362f52d7bfe1b3163885be1c9d37b61}\label{classqiao_1_1_clear_state_a4362f52d7bfe1b3163885be1c9d37b61}} 
-void {\bfseries set\+Depth} (double val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}\label{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}} 
-int {\bfseries get\+Stencil} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_aac8d9586125b9f6f18be4de24f914939}\label{classqiao_1_1_clear_state_aac8d9586125b9f6f18be4de24f914939}} 
-void {\bfseries set\+Stencil} (int val)
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}\label{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}} 
+void {\bfseries set\+Scissor\+Test} (\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} val)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}\label{classqiao_1_1_clear_state_a20a4eb6f4d9f9aec4d8be72d68a4120a}} 
+\index{qiao::ClearState@{qiao::ClearState}!getClearMask@{getClearMask}}
+\index{getClearMask@{getClearMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getClearMask()}{getClearMask()}}
+{\footnotesize\ttfamily GLbitfield Clear\+State\+::get\+Clear\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取指示清除哪个缓存的掩码 
+
+\begin{DoxyReturn}{Returns}
+指示清除哪个缓存的掩码 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a707fbe1e9efc3572b62086472edfd3c2}\label{classqiao_1_1_clear_state_a707fbe1e9efc3572b62086472edfd3c2}} 
+\index{qiao::ClearState@{qiao::ClearState}!setClearMask@{setClearMask}}
+\index{setClearMask@{setClearMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setClearMask()}{setClearMask()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Clear\+Mask (\begin{DoxyParamCaption}\item[{GLbitfield}]{clear\+Mask }\end{DoxyParamCaption})}
+
+
+
+设置指示清除哪个缓存的掩码 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Mask} & 指示清除哪个缓存的掩码\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_aca1081e0650542bf175d3dfd82a0ba5a}\label{classqiao_1_1_clear_state_aca1081e0650542bf175d3dfd82a0ba5a}} 
+\index{qiao::ClearState@{qiao::ClearState}!getColor@{getColor}}
+\index{getColor@{getColor}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classqiao_1_1_color}{Color}} \& Clear\+State\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取颜色缓存的颜色值 
+
+\begin{DoxyReturn}{Returns}
+颜色缓存的颜色值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a05b04d5ff841b52baea539bbad4cfc6c}\label{classqiao_1_1_clear_state_a05b04d5ff841b52baea539bbad4cfc6c}} 
+\index{qiao::ClearState@{qiao::ClearState}!setColor@{setColor}}
+\index{setColor@{setColor}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_color}{Color}}}]{color }\end{DoxyParamCaption})}
+
+
+
+设置颜色缓存的颜色值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & 颜色缓存的颜色值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}\label{classqiao_1_1_clear_state_ac739d5c12d1b45b0e342a690f85d065c}} 
+\index{qiao::ClearState@{qiao::ClearState}!getDepth@{getDepth}}
+\index{getDepth@{getDepth}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getDepth()}{getDepth()}}
+{\footnotesize\ttfamily double Clear\+State\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取深度缓存的深度值 ~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+深度缓存的深度值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_ab7815f0c87db54742c4e40636c9fe327}\label{classqiao_1_1_clear_state_ab7815f0c87db54742c4e40636c9fe327}} 
+\index{qiao::ClearState@{qiao::ClearState}!setDepth@{setDepth}}
+\index{setDepth@{setDepth}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setDepth()}{setDepth()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Depth (\begin{DoxyParamCaption}\item[{double}]{depth }\end{DoxyParamCaption})}
+
+
+
+设置深度缓存的深度值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & 深度缓存的深度值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}\label{classqiao_1_1_clear_state_aad0b0b7fe653588ccf5157811946430a}} 
+\index{qiao::ClearState@{qiao::ClearState}!getStencil@{getStencil}}
+\index{getStencil@{getStencil}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getStencil()}{getStencil()}}
+{\footnotesize\ttfamily int Clear\+State\+::get\+Stencil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取模板缓存的模板值 
+
+\begin{DoxyReturn}{Returns}
+模板缓存的模板值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a10ce309ea74859178cc80ca3856b07b9}\label{classqiao_1_1_clear_state_a10ce309ea74859178cc80ca3856b07b9}} 
+\index{qiao::ClearState@{qiao::ClearState}!setStencil@{setStencil}}
+\index{setStencil@{setStencil}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setStencil()}{setStencil()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Stencil (\begin{DoxyParamCaption}\item[{int}]{stencil }\end{DoxyParamCaption})}
+
+
+
+设置模板缓存的模板值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stencil} & 模板缓存的模板值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a4b77c9e05fe15502f579b18bf2ffcee6}\label{classqiao_1_1_clear_state_a4b77c9e05fe15502f579b18bf2ffcee6}} 
+\index{qiao::ClearState@{qiao::ClearState}!getColorMask@{getColorMask}}
+\index{getColorMask@{getColorMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getColorMask()}{getColorMask()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \& Clear\+State\+::get\+Color\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启颜色缓冲各个颜色分量的写操作 
+
+\begin{DoxyReturn}{Returns}
+Color\+Mask对象的引用 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}\label{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}} 
+\index{qiao::ClearState@{qiao::ClearState}!setColorMask@{setColorMask}}
+\index{setColorMask@{setColorMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setColorMask()}{setColorMask()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Color\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}}}]{color\+Mask }\end{DoxyParamCaption})}
+
+
+
+设置是否开启颜色缓冲各个颜色分量的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+Mask} & 是否开启颜色缓冲各个颜色分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 D\+:/cpp\+Repos/qiao/source/renderer/state/clear\+\_\+state/clear\+\_\+state.\+h\item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/clear\+\_\+state/clear\+\_\+state.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/state/clear\+\_\+state/\mbox{\hyperlink{clear__state_8cc}{clear\+\_\+state.\+cc}}\end{DoxyCompactItemize}

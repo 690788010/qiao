@@ -1,10 +1,16 @@
+/**
+ * @file clear_state.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
 #include "clear_state.h"
 
 using namespace qiao;
 
 ClearState::ClearState() {
-	_clearMask = ClearMask::ALL;
+	_clearMask = GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT;
 	_color = Color::WHITE;
 	_depth = 1.0;
 	_stencil = 0;
@@ -22,7 +28,7 @@ void ClearState::setClearMask(GLbitfield val) {
 	_clearMask = val;
 };
 
-Color& ClearState::getColor() {
+const Color& ClearState::getColor() {
 	return _color;
 };
 
@@ -46,20 +52,12 @@ void ClearState::setStencil(int val) {
 	_stencil = val;
 };
 
-ScissorTest& ClearState::getScissorTest() {
-	return _scissorTest;
-};
-
-void ClearState::setScissorTest(ScissorTest val) {
-	_scissorTest = val;
-};
-
-ColorMask& ClearState::getColorMask() {
+const ColorMask& ClearState::getColorMask() {
 	return _colorMask;
 };
 
-void ClearState::setColorMask(ColorMask val) {
-	_colorMask = val;
+void ClearState::setColorMask(ColorMask colorMask) {
+	_colorMask = colorMask;
 };
 
 GLboolean ClearState::getDepthMask() {
@@ -68,4 +66,12 @@ GLboolean ClearState::getDepthMask() {
 
 void ClearState::setDepthMask(GLboolean flag) {
 	_depthMask = flag;
+};
+
+const ScissorTest& ClearState::getScissorTest() {
+	return _scissorTest;
+};
+
+void ClearState::setScissorTest(ScissorTest val) {
+	_scissorTest = val;
 };

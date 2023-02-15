@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>clear()&#160;:&#160;<a class="el" href="classqiao_1_1_context.html#a5abc00861ad1485d2df9a0774afde73d">qiao::Context</a></li>
 <li>Color()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a9a742cbe9f9f4037f5d9f4e81a9b2428">qiao::Color</a></li>
+<li>ColorMask()&#160;:&#160;<a class="el" href="classqiao_1_1_color_mask.html#a874f184e3b9de8b62db760b91e492e5c">qiao::ColorMask</a></li>
 <li>Context()&#160;:&#160;<a class="el" href="classqiao_1_1_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">qiao::Context</a></li>
 <li>create()&#160;:&#160;<a class="el" href="classqiao_1_1_draw_auto_uniform_factory.html#a08449c7d9c424472f7f280be2f3113d8">qiao::DrawAutoUniformFactory</a>, <a class="el" href="classqiao_1_1_model_matrix_uniform_factory.html#a03dace32fefa6c4e913d7ea99bcb7f43">qiao::ModelMatrixUniformFactory</a></li>
 <li>createTexture2D()&#160;:&#160;<a class="el" href="classqiao_1_1_context.html#a3a74ad32b0aa0288cd93615b6a5dbfa3">qiao::Context</a></li>
@@ -119,12 +120,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>getAlpha()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a0bf6d153a0159181793281fd79e8b41b">qiao::Color</a></li>
-<li>getBlue()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#ab630ba48407d2a08640822b737495ddc">qiao::Color</a></li>
+<li>getAlpha()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a0bf6d153a0159181793281fd79e8b41b">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a48bb3360796e32e361d58abe3f17302b">qiao::ColorMask</a></li>
+<li>getBlue()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#ab630ba48407d2a08640822b737495ddc">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a0810e0f09d6012ac468aaf42db8c68a4">qiao::ColorMask</a></li>
+<li>getClearMask()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#a20a4eb6f4d9f9aec4d8be72d68a4120a">qiao::ClearState</a></li>
+<li>getColor()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#aca1081e0650542bf175d3dfd82a0ba5a">qiao::ClearState</a></li>
+<li>getColorMask()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#a4b77c9e05fe15502f579b18bf2ffcee6">qiao::ClearState</a></li>
 <li>getContext()&#160;:&#160;<a class="el" href="classqiao_1_1_window.html#ae218eec6fb42dad59b03c464bdf05125">qiao::Window</a></li>
-<li>getGreen()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a03430133f4da090790657175b2bddcd7">qiao::Color</a></li>
+<li>getDepth()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#ac739d5c12d1b45b0e342a690f85d065c">qiao::ClearState</a></li>
+<li>getGreen()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a03430133f4da090790657175b2bddcd7">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a72aef51e8a84a511b43ee00cd0398278">qiao::ColorMask</a></li>
 <li>getName()&#160;:&#160;<a class="el" href="classqiao_1_1_draw_auto_uniform_factory.html#a9cdb4c93c4de3490b4a416fa61d4d6ab">qiao::DrawAutoUniformFactory</a>, <a class="el" href="classqiao_1_1_model_matrix_uniform_factory.html#a83367492c2a8fdb8eed09fafd4b1522e">qiao::ModelMatrixUniformFactory</a></li>
-<li>getRed()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#ab44fa4806f3bdb34a8cff159a705d0ab">qiao::Color</a></li>
+<li>getRed()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#ab44fa4806f3bdb34a8cff159a705d0ab">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a26357e39040f44f37f1cb89a20627a62">qiao::ColorMask</a></li>
+<li>getStencil()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#aad0b0b7fe653588ccf5157811946430a">qiao::ClearState</a></li>
 </ul>
 
 
@@ -136,9 +142,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>operator!=()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#aec2a4b7e6085058b98e484a61615facc">qiao::Color</a></li>
+<li>operator!=()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#aec2a4b7e6085058b98e484a61615facc">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#ab3475991036d0de9eefe379ef0afb5e7">qiao::ColorMask</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="classqiao_1_1_matrix4_d.html#a34eac29051e4b9b428fd6971cdee835a">qiao::Matrix4D</a></li>
-<li>operator==()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#affcde1cdfe9fe34769d531f77a334230">qiao::Color</a></li>
+<li>operator==()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#affcde1cdfe9fe34769d531f77a334230">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a0c6391cb71e224db181cbab03e4b69d2">qiao::ColorMask</a></li>
 </ul>
 
 
@@ -156,10 +162,15 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>setAlpha()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a9f95c93a27c9dfe442940927110f0a0b">qiao::Color</a></li>
-<li>setBlue()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a24a0075a5df23d65ab2155582be5f9d8">qiao::Color</a></li>
-<li>setGreen()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a0aacb2489699d0b78ebdb24f7abdf4b7">qiao::Color</a></li>
-<li>setRed()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#aba9d1d898c9881e0ef0eb9f58a2c2f80">qiao::Color</a></li>
+<li>setAlpha()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a9f95c93a27c9dfe442940927110f0a0b">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a607fe02bae15d9cb5d0fe851dde4542e">qiao::ColorMask</a></li>
+<li>setBlue()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a24a0075a5df23d65ab2155582be5f9d8">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a1dc074664915686668d321898b0e2b5c">qiao::ColorMask</a></li>
+<li>setClearMask()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#a707fbe1e9efc3572b62086472edfd3c2">qiao::ClearState</a></li>
+<li>setColor()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#a05b04d5ff841b52baea539bbad4cfc6c">qiao::ClearState</a></li>
+<li>setColorMask()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#afd2a99439cbadd7a41442871f3a6cc04">qiao::ClearState</a></li>
+<li>setDepth()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#ab7815f0c87db54742c4e40636c9fe327">qiao::ClearState</a></li>
+<li>setGreen()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#a0aacb2489699d0b78ebdb24f7abdf4b7">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#aa427d53e742799cc5a2a1265f3ec369a">qiao::ColorMask</a></li>
+<li>setRed()&#160;:&#160;<a class="el" href="classqiao_1_1_color.html#aba9d1d898c9881e0ef0eb9f58a2c2f80">qiao::Color</a>, <a class="el" href="classqiao_1_1_color_mask.html#a1645600324300230e2f1f3642cbb7ea2">qiao::ColorMask</a></li>
+<li>setStencil()&#160;:&#160;<a class="el" href="classqiao_1_1_clear_state.html#a10ce309ea74859178cc80ca3856b07b9">qiao::ClearState</a></li>
 <li>ShaderObject()&#160;:&#160;<a class="el" href="classqiao_1_1_shader_object.html#afe67dce305d9ddf2eabb56e9fc9b629a">qiao::ShaderObject</a></li>
 <li>ShaderProgram()&#160;:&#160;<a class="el" href="classqiao_1_1_shader_program.html#a9f98c8503d708d35f0dad1b211ddebae">qiao::ShaderProgram</a></li>
 </ul>

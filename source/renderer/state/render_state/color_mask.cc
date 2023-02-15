@@ -1,66 +1,79 @@
+/**
+ * @file color_mask.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
 #include "./color_mask.h"
 
 using namespace qiao;
 
-ColorMask::ColorMask() {
-	this->red = true;
-	this->green = true;
-	this->blue = true;
-	this->alpha = true;
-}
+ColorMask::ColorMask() : ColorMask (true, true, true, true) {}
 
-ColorMask::ColorMask(bool red, bool green, bool blue, bool alpha) {
-	this->red = red;
-	this->green = green;
-	this->blue = blue;
-	this->alpha = alpha;
-};
+ColorMask::ColorMask(bool red, bool green, bool blue, bool alpha) 
+	: _red{ red }, _green{ green }, _blue{ blue }, _alpha {alpha} {};
 
 bool ColorMask::getRed() {
-	return red;
+	return _red;
 };
 
-void ColorMask::setRed(bool val) {
-	red = val;
+void ColorMask::setRed(bool red) {
+	_red = red;
 };
 
 bool ColorMask::getGreen() {
-	return green;
+	return _green;
 };
 
-void ColorMask::setGreen(bool val) {
-	green = val;
+void ColorMask::setGreen(bool green) {
+	_green = green;
 };
 
 bool ColorMask::getBlue() {
-	return blue;
+	return _blue;
 };
 
-void ColorMask::setBlue(bool val) {
-	blue = val;
+void ColorMask::setBlue(bool blue) {
+	_blue = blue;
 };
 
 bool ColorMask::getAlpha() {
-	return alpha;
+	return _alpha;
 };
 
-void ColorMask::setAlpha(bool val) {
-	alpha = val;
+void ColorMask::setAlpha(bool alpha) {
+	_alpha = alpha;
 };
 
-bool ColorMask::equals(ColorMask obj) {
-	if (red != obj.getRed()) {
+bool ColorMask::operator==(ColorMask& colorMask) const {
+	if (_red != colorMask._red) {
 		return false;
 	}
-	if (green != obj.getGreen()) {
+	if (_green != colorMask._green) {
 		return false;
 	}
-	if (blue != obj.getBlue()) {
+	if (_blue != colorMask._blue) {
 		return false;
 	}
-	if (alpha != obj.getAlpha()) {
+	if (_alpha != colorMask._alpha) {
 		return false;
 	}
 	return true;
+};
+
+bool ColorMask::operator!=(ColorMask& colorMask) const {
+	if (_red != colorMask._red) {
+		return true;
+	}
+	if (_green != colorMask._green) {
+		return true;
+	}
+	if (_blue != colorMask._blue) {
+		return true;
+	}
+	if (_alpha != colorMask._alpha) {
+		return true;
+	}
+	return false;
 };

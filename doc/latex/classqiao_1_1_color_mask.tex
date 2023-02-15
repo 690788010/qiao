@@ -1,41 +1,246 @@
 \hypertarget{classqiao_1_1_color_mask}{}\doxysection{qiao\+::Color\+Mask Class Reference}
 \label{classqiao_1_1_color_mask}\index{qiao::ColorMask@{qiao::ColorMask}}
+
+
+Color\+Mask类包含是否开启颜色缓冲颜色分量的写操作的控制信息.  
+
+
+
+
+{\ttfamily \#include $<$color\+\_\+mask.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_ac296f962107f72b4f96eebfdedb4cdd9}\label{classqiao_1_1_color_mask_ac296f962107f72b4f96eebfdedb4cdd9}} 
-{\bfseries Color\+Mask} (bool red, bool green, bool blue, bool alpha)
-\item 
+\mbox{\hyperlink{classqiao_1_1_color_mask_a874f184e3b9de8b62db760b91e492e5c}{Color\+Mask}} ()
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqiao_1_1_color_mask_ac296f962107f72b4f96eebfdedb4cdd9}{Color\+Mask}} (bool red, bool green, bool blue, bool alpha)
+\begin{DoxyCompactList}\small\item\em 有参构造函数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_a26357e39040f44f37f1cb89a20627a62}{get\+Red}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲红色分量的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_color_mask_a1645600324300230e2f1f3642cbb7ea2}{set\+Red}} (bool red)
+\begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲红色分量的写操作 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_a72aef51e8a84a511b43ee00cd0398278}{get\+Green}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲绿色分量的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_color_mask_aa427d53e742799cc5a2a1265f3ec369a}{set\+Green}} (bool green)
+\begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲绿色分量的写操作 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_a0810e0f09d6012ac468aaf42db8c68a4}{get\+Blue}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲蓝色分量的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_color_mask_a1dc074664915686668d321898b0e2b5c}{set\+Blue}} (bool blue)
+\begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲蓝色分量的写操作 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_a48bb3360796e32e361d58abe3f17302b}{get\+Alpha}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲透明度分量的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_color_mask_a607fe02bae15d9cb5d0fe851dde4542e}{set\+Alpha}} (bool alpha)
+\begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲透明度分量的写操作 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_a0c6391cb71e224db181cbab03e4b69d2}{operator==}} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \&color\+Mask) const
+\begin{DoxyCompactList}\small\item\em 重载==运算符 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_color_mask_ab3475991036d0de9eefe379ef0afb5e7}{operator!=}} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \&color\+Mask) const
+\begin{DoxyCompactList}\small\item\em 重载!=运算符 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Color\+Mask类包含是否开启颜色缓冲颜色分量的写操作的控制信息. 
+
+Open\+GL的gl\+Color\+Mask函数用于开启或关闭颜色缓冲各个颜色分量的写操作， Color\+Mask类用于存放gl\+Color\+Mask函数的参数信息。 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_a874f184e3b9de8b62db760b91e492e5c}\label{classqiao_1_1_color_mask_a874f184e3b9de8b62db760b91e492e5c}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!ColorMask@{ColorMask}}
+\index{ColorMask@{ColorMask}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{ColorMask()}{ColorMask()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Color\+Mask\+::\+Color\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+默认构造函数 
+
+默认情况下，\+Color\+Mask将指示\+Open\+GL开启颜色缓冲各个颜色分量的写操作 \mbox{\Hypertarget{classqiao_1_1_color_mask_ac296f962107f72b4f96eebfdedb4cdd9}\label{classqiao_1_1_color_mask_ac296f962107f72b4f96eebfdedb4cdd9}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!ColorMask@{ColorMask}}
+\index{ColorMask@{ColorMask}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{ColorMask()}{ColorMask()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Color\+Mask\+::\+Color\+Mask (\begin{DoxyParamCaption}\item[{bool}]{red,  }\item[{bool}]{green,  }\item[{bool}]{blue,  }\item[{bool}]{alpha }\end{DoxyParamCaption})}
+
+
+
+有参构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & 是否开启颜色缓冲红色分量的写操作 \\
+\hline
+{\em green} & 是否开启颜色缓冲绿色分量的写操作 \\
+\hline
+{\em blue} & 是否开启颜色缓冲蓝色分量的写操作 \\
+\hline
+{\em alpha} & 是否开启颜色缓冲透明度分量的写操作 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classqiao_1_1_color_mask_a26357e39040f44f37f1cb89a20627a62}\label{classqiao_1_1_color_mask_a26357e39040f44f37f1cb89a20627a62}} 
-bool {\bfseries get\+Red} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_a7f92ba58a8f2873953772b609d66d795}\label{classqiao_1_1_color_mask_a7f92ba58a8f2873953772b609d66d795}} 
-void {\bfseries set\+Red} (bool val)
-\item 
+\index{qiao::ColorMask@{qiao::ColorMask}!getRed@{getRed}}
+\index{getRed@{getRed}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{getRed()}{getRed()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::get\+Red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启颜色缓冲红色分量的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启颜色缓冲红色分量的写操作 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_a1645600324300230e2f1f3642cbb7ea2}\label{classqiao_1_1_color_mask_a1645600324300230e2f1f3642cbb7ea2}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!setRed@{setRed}}
+\index{setRed@{setRed}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{setRed()}{setRed()}}
+{\footnotesize\ttfamily void Color\+Mask\+::set\+Red (\begin{DoxyParamCaption}\item[{bool}]{red }\end{DoxyParamCaption})}
+
+
+
+设置是否开启颜色缓冲红色分量的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & 是否开启颜色缓冲红色分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_color_mask_a72aef51e8a84a511b43ee00cd0398278}\label{classqiao_1_1_color_mask_a72aef51e8a84a511b43ee00cd0398278}} 
-bool {\bfseries get\+Green} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_a708a0a1af0a5addbe50055d2c7c4a052}\label{classqiao_1_1_color_mask_a708a0a1af0a5addbe50055d2c7c4a052}} 
-void {\bfseries set\+Green} (bool val)
-\item 
+\index{qiao::ColorMask@{qiao::ColorMask}!getGreen@{getGreen}}
+\index{getGreen@{getGreen}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{getGreen()}{getGreen()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::get\+Green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启颜色缓冲绿色分量的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启颜色缓冲绿色分量的写操作 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_aa427d53e742799cc5a2a1265f3ec369a}\label{classqiao_1_1_color_mask_aa427d53e742799cc5a2a1265f3ec369a}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!setGreen@{setGreen}}
+\index{setGreen@{setGreen}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{setGreen()}{setGreen()}}
+{\footnotesize\ttfamily void Color\+Mask\+::set\+Green (\begin{DoxyParamCaption}\item[{bool}]{green }\end{DoxyParamCaption})}
+
+
+
+设置是否开启颜色缓冲绿色分量的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em green} & 是否开启颜色缓冲绿色分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_color_mask_a0810e0f09d6012ac468aaf42db8c68a4}\label{classqiao_1_1_color_mask_a0810e0f09d6012ac468aaf42db8c68a4}} 
-bool {\bfseries get\+Blue} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_a20c26a92b33b84853ce78678aa1381a3}\label{classqiao_1_1_color_mask_a20c26a92b33b84853ce78678aa1381a3}} 
-void {\bfseries set\+Blue} (bool val)
-\item 
+\index{qiao::ColorMask@{qiao::ColorMask}!getBlue@{getBlue}}
+\index{getBlue@{getBlue}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{getBlue()}{getBlue()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::get\+Blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启颜色缓冲蓝色分量的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启颜色缓冲蓝色分量的写操作 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_a1dc074664915686668d321898b0e2b5c}\label{classqiao_1_1_color_mask_a1dc074664915686668d321898b0e2b5c}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!setBlue@{setBlue}}
+\index{setBlue@{setBlue}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{setBlue()}{setBlue()}}
+{\footnotesize\ttfamily void Color\+Mask\+::set\+Blue (\begin{DoxyParamCaption}\item[{bool}]{blue }\end{DoxyParamCaption})}
+
+
+
+设置是否开启颜色缓冲蓝色分量的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em green} & 是否开启颜色缓冲蓝色分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_color_mask_a48bb3360796e32e361d58abe3f17302b}\label{classqiao_1_1_color_mask_a48bb3360796e32e361d58abe3f17302b}} 
-bool {\bfseries get\+Alpha} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_a20dd433c96a1ee57c43ea610f28f9f49}\label{classqiao_1_1_color_mask_a20dd433c96a1ee57c43ea610f28f9f49}} 
-void {\bfseries set\+Alpha} (bool val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_color_mask_a7d9325487098f6d70178bb434d1bd1c7}\label{classqiao_1_1_color_mask_a7d9325487098f6d70178bb434d1bd1c7}} 
-bool {\bfseries equals} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} obj)
-\end{DoxyCompactItemize}
+\index{qiao::ColorMask@{qiao::ColorMask}!getAlpha@{getAlpha}}
+\index{getAlpha@{getAlpha}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{getAlpha()}{getAlpha()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::get\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启颜色缓冲透明度分量的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启颜色缓冲透明度分量的写操作 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_a607fe02bae15d9cb5d0fe851dde4542e}\label{classqiao_1_1_color_mask_a607fe02bae15d9cb5d0fe851dde4542e}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!setAlpha@{setAlpha}}
+\index{setAlpha@{setAlpha}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{setAlpha()}{setAlpha()}}
+{\footnotesize\ttfamily void Color\+Mask\+::set\+Alpha (\begin{DoxyParamCaption}\item[{bool}]{alpha }\end{DoxyParamCaption})}
+
+
+
+设置是否开启颜色缓冲透明度分量的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em green} & 是否开启颜色缓冲透明度分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_a0c6391cb71e224db181cbab03e4b69d2}\label{classqiao_1_1_color_mask_a0c6391cb71e224db181cbab03e4b69d2}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!operator==@{operator==}}
+\index{operator==@{operator==}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \&}]{color\+Mask }\end{DoxyParamCaption}) const}
+
+
+
+重载==运算符 
+
+二者的所有变量都相等就返回true，否则返回false 
+\begin{DoxyParams}{Parameters}
+{\em color\+Mask} & Color\+Mask对象 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_color_mask_ab3475991036d0de9eefe379ef0afb5e7}\label{classqiao_1_1_color_mask_ab3475991036d0de9eefe379ef0afb5e7}} 
+\index{qiao::ColorMask@{qiao::ColorMask}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!qiao::ColorMask@{qiao::ColorMask}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Color\+Mask\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} \&}]{color\+Mask }\end{DoxyParamCaption}) const}
+
+
+
+重载!=运算符 
+
+二者的所有变量都相等就返回false，否则返回true 
+\begin{DoxyParams}{Parameters}
+{\em color\+Mask} & Color\+Mask对象 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/color\+\_\+mask.\+h\item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/color\+\_\+mask.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{color__mask_8h}{color\+\_\+mask.\+h}}\item 
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{color__mask_8cc}{color\+\_\+mask.\+cc}}\end{DoxyCompactItemize}
