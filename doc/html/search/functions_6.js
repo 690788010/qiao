@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['renderstate_0',['RenderState',['../classqiao_1_1_render_state.html#a0a130c0f2f45c4e0358cb62c09c595e9',1,'qiao::RenderState']]],
-  ['run_1',['run',['../classqiao_1_1_window.html#ae137ec42ddc87d666d49661484410091',1,'qiao::Window']]]
+  ['primitiverestart_0',['PrimitiveRestart',['../classqiao_1_1_primitive_restart.html#a5abfad52c761de799e0db5068f0ce190',1,'qiao::PrimitiveRestart']]]
 ];

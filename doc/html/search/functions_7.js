@@ -1,31 +1,5 @@
 var searchData=
 [
-  ['scissortest_0',['ScissorTest',['../classqiao_1_1_scissor_test.html#a47cbe61e32b27fd99ddabbdc9b1b144c',1,'qiao::ScissorTest']]],
-  ['setalpha_1',['setAlpha',['../classqiao_1_1_color.html#a9f95c93a27c9dfe442940927110f0a0b',1,'qiao::Color::setAlpha()'],['../classqiao_1_1_color_mask.html#a607fe02bae15d9cb5d0fe851dde4542e',1,'qiao::ColorMask::setAlpha()']]],
-  ['setalphaequation_2',['setAlphaEquation',['../classqiao_1_1_blending.html#a5c33ae1e97a5df8c4902fdd1158bd2b2',1,'qiao::Blending']]],
-  ['setblue_3',['setBlue',['../classqiao_1_1_color.html#a24a0075a5df23d65ab2155582be5f9d8',1,'qiao::Color::setBlue()'],['../classqiao_1_1_color_mask.html#a1dc074664915686668d321898b0e2b5c',1,'qiao::ColorMask::setBlue()']]],
-  ['setclearmask_4',['setClearMask',['../classqiao_1_1_clear_state.html#a707fbe1e9efc3572b62086472edfd3c2',1,'qiao::ClearState']]],
-  ['setcolor_5',['setColor',['../classqiao_1_1_clear_state.html#a05b04d5ff841b52baea539bbad4cfc6c',1,'qiao::ClearState']]],
-  ['setcolormask_6',['setColorMask',['../classqiao_1_1_clear_state.html#afd2a99439cbadd7a41442871f3a6cc04',1,'qiao::ClearState']]],
-  ['setdepth_7',['setDepth',['../classqiao_1_1_clear_state.html#ab7815f0c87db54742c4e40636c9fe327',1,'qiao::ClearState']]],
-  ['setdepthfunc_8',['setDepthFunc',['../classqiao_1_1_depth_test.html#a2592f788719b6b5586fea9d0468b6d64',1,'qiao::DepthTest']]],
-  ['setdepthmask_9',['setDepthMask',['../classqiao_1_1_depth_test.html#af1d571927af0fb960ff952cf0d31c272',1,'qiao::DepthTest']]],
-  ['setdstalpha_10',['setDstAlpha',['../classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4',1,'qiao::Blending']]],
-  ['setdstrgb_11',['setDstRGB',['../classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320',1,'qiao::Blending']]],
-  ['setenabled_12',['setEnabled',['../classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef',1,'qiao::Blending::setEnabled()'],['../classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036',1,'qiao::DepthTest::setEnabled()'],['../classqiao_1_1_scissor_test.html#a6b18fdd79bb5b1c9461c46afa2fa6ddb',1,'qiao::ScissorTest::setEnabled()'],['../classqiao_1_1_stencil_test.html#a4ec1ba36a4bf7ec3dd421dfb9e06912e',1,'qiao::StencilTest::setEnabled()']]],
-  ['setfar_13',['setFar',['../classqiao_1_1_depth_test.html#a1833db173bf8f77ccb48aadcffbe0502',1,'qiao::DepthTest']]],
-  ['setgreen_14',['setGreen',['../classqiao_1_1_color.html#a0aacb2489699d0b78ebdb24f7abdf4b7',1,'qiao::Color::setGreen()'],['../classqiao_1_1_color_mask.html#aa427d53e742799cc5a2a1265f3ec369a',1,'qiao::ColorMask::setGreen()']]],
-  ['setheight_15',['setHeight',['../classqiao_1_1_scissor_test.html#ac9f1b7dad4e863f7bffe23d9740dbdfd',1,'qiao::ScissorTest']]],
-  ['setnear_16',['setNear',['../classqiao_1_1_depth_test.html#a13fd90715e39c1a2954b7cd8d8ad0ad7',1,'qiao::DepthTest']]],
-  ['setred_17',['setRed',['../classqiao_1_1_color.html#aba9d1d898c9881e0ef0eb9f58a2c2f80',1,'qiao::Color::setRed()'],['../classqiao_1_1_color_mask.html#a1645600324300230e2f1f3642cbb7ea2',1,'qiao::ColorMask::setRed()']]],
-  ['setrgbequation_18',['setRgbEquation',['../classqiao_1_1_blending.html#a542fd2493d67d05ad643fd6ad53e1019',1,'qiao::Blending']]],
-  ['setsrcalpha_19',['setSrcAlpha',['../classqiao_1_1_blending.html#a5e069f70a65264121a4a7e7d025c0ef5',1,'qiao::Blending']]],
-  ['setsrcrgb_20',['setSrcRGB',['../classqiao_1_1_blending.html#a298d94a227da68e8c89cc1f980d1c3d0',1,'qiao::Blending']]],
-  ['setstencil_21',['setStencil',['../classqiao_1_1_clear_state.html#a10ce309ea74859178cc80ca3856b07b9',1,'qiao::ClearState']]],
-  ['setwidth_22',['setWidth',['../classqiao_1_1_scissor_test.html#aaa72d5bc896d776215b67b5b6805aec6',1,'qiao::ScissorTest']]],
-  ['setx_23',['setX',['../classqiao_1_1_scissor_test.html#ab32cf8795988c802857337e0c2d3b864',1,'qiao::ScissorTest']]],
-  ['sety_24',['setY',['../classqiao_1_1_scissor_test.html#a931999034471a6c70496938edd488abb',1,'qiao::ScissorTest']]],
-  ['shaderobject_25',['ShaderObject',['../classqiao_1_1_shader_object.html#afe67dce305d9ddf2eabb56e9fc9b629a',1,'qiao::ShaderObject']]],
-  ['shaderprogram_26',['ShaderProgram',['../classqiao_1_1_shader_program.html#a9f98c8503d708d35f0dad1b211ddebae',1,'qiao::ShaderProgram']]],
-  ['stenciltest_27',['StencilTest',['../classqiao_1_1_stencil_test.html#a242bd4947e7acb402b76d3fd8602befb',1,'qiao::StencilTest']]]
+  ['renderstate_0',['RenderState',['../classqiao_1_1_render_state.html#a0a130c0f2f45c4e0358cb62c09c595e9',1,'qiao::RenderState']]],
+  ['run_1',['run',['../classqiao_1_1_window.html#ae137ec42ddc87d666d49661484410091',1,'qiao::Window']]]
 ];

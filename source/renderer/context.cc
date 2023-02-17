@@ -289,12 +289,7 @@ void Context::_applyBeforeDraw(DrawState* drawState, SceneState* sceneState) {
 
 void Context::_applyRenderState(RenderState* renderState) {
 	// apply PrimitiveRestart
-	PrimitiveRestart primitiveRestart = renderState->getPrimitiveRestart();
-	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
-	if (primitiveRestart.getEnabled() != _primitiveRestart.getEnabled()) {
-		_enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
-		_primitiveRestart.setEnabled(primitiveRestart.getEnabled());
-	}
+	_applyPrimitiveRestart(renderState->getPrimitiveRestart());
 
 	// apply CullFace
 	_applyCullFace(renderState->getCullFace());
@@ -333,6 +328,20 @@ void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) 
 		_boundShaderProgram = shaderProgram;
 	}
 	_boundShaderProgram->clean(this, drawState, sceneState);
+};
+
+void Context::_applyPrimitiveRestart(PrimitiveRestart& primitiveRestart) {
+	PrimitiveRestart _primitiveRestart = _renderState->getPrimitiveRestart();
+	if (primitiveRestart.getEnabled() != _primitiveRestart.getEnabled()) {
+		_enable(GL_PRIMITIVE_RESTART, primitiveRestart.getEnabled());
+		_primitiveRestart.setEnabled(primitiveRestart.getEnabled());
+	}
+	if (primitiveRestart.getEnabled()) {
+		if (primitiveRestart.getIndex() != _primitiveRestart.getIndex()) {
+			glPrimitiveRestartIndex(primitiveRestart.getIndex());
+			_primitiveRestart.setIndex(primitiveRestart.getIndex());
+		}
+	}
 };
 
 void Context::_applyCullFace(CullFace& cullFace) {

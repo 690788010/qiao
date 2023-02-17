@@ -44,7 +44,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"model__matrix__uniform_8cc.html"
+"indices__unsigned__short_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

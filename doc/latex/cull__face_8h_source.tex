@@ -1,41 +1,34 @@
 \hypertarget{cull__face_8h_source}{}\doxysection{cull\+\_\+face.\+h}
 \label{cull__face_8h_source}\index{D:/cppRepos/qiao/source/renderer/state/render\_state/cull\_face.h@{D:/cppRepos/qiao/source/renderer/state/render\_state/cull\_face.h}}
-
+\mbox{\hyperlink{cull__face_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum}\ CullFaceMode\ \{}
-\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ FRONT\ =\ GL\_FRONT,}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ BACK\ =\ GL\_BACK,}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ FRONT\_AND\_BACK\ =\ GL\_FRONT\_AND\_BACK}
-\DoxyCodeLine{00010\ \ \ \ \ \};}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{enum}\ FrontFaceMode\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ CW\ =\ GL\_CW,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ CCW\ =\ GL\_CCW}
-\DoxyCodeLine{00015\ \ \ \ \ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}();}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getEnabled();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ val);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ CullFaceMode\ getCullFaceMode();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCullFaceMode(CullFaceMode\ val);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ FrontFaceMode\ getFrontFaceMode();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFrontFaceMode(FrontFaceMode\ val);}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_cull_face_ab78fa52a32bd4d6fffded723449ebbb7}{CullFace}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classqiao_1_1_cull_face_aac24f13b46d9b7d19013f517a874eadd}{getEnabled}}();}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ CullFaceMode\ \_cullFaceMode;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ FrontFaceMode\ \_frontFaceMode;}
-\DoxyCodeLine{00034\ \ \ \ \ \};}
-\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_cull_face_aa2b2941b857c0d8d74176656cb9aa28e}{setEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_cull_face_ada289ae2487400551c8f8b1aece34a95}{getCullFaceMode}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_cull_face_a7f0a6002bad20ebfc87c15248ffde0eb}{setCullFaceMode}}(GLenum\ mode);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_cull_face_a03a67552601747109c37c8dfbaaf0d5b}{getFrontFaceMode}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_cull_face_a638ac4f17100947269c845d2d3434aea}{setFrontFaceMode}}(GLenum\ mode);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启面剔除}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ GLenum\ \_cullFaceMode;\ \ \ \ \ \ \ \textcolor{comment}{//\ 剔除哪一面}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ GLenum\ \_frontFaceMode;\ \ \ \ \ \ \textcolor{comment}{//\ 定义哪一面是正面}}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ \}}
 
 \end{DoxyCode}

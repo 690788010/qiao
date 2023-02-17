@@ -1,29 +1,146 @@
 \hypertarget{classqiao_1_1_cull_face}{}\doxysection{qiao\+::Cull\+Face Class Reference}
 \label{classqiao_1_1_cull_face}\index{qiao::CullFace@{qiao::CullFace}}
+
+
+Cull\+Face类包含面剔除相关的状态信息.  
+
+
+
+
+{\ttfamily \#include $<$cull\+\_\+face.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classqiao_1_1_cull_face_ab78fa52a32bd4d6fffded723449ebbb7}{Cull\+Face}} ()
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_cull_face_aac24f13b46d9b7d19013f517a874eadd}{get\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启面剔除 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_cull_face_aa2b2941b857c0d8d74176656cb9aa28e}{set\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em 设置是否开启面剔除 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_cull_face_ada289ae2487400551c8f8b1aece34a95}{get\+Cull\+Face\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em 查询剔除哪一面 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_cull_face_a7f0a6002bad20ebfc87c15248ffde0eb}{set\+Cull\+Face\+Mode}} (GLenum mode)
+\begin{DoxyCompactList}\small\item\em 设置剔除哪一面 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_cull_face_a03a67552601747109c37c8dfbaaf0d5b}{get\+Front\+Face\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em 查询哪一面定义为正面 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_cull_face_a638ac4f17100947269c845d2d3434aea}{set\+Front\+Face\+Mode}} (GLenum mode)
+\begin{DoxyCompactList}\small\item\em 设置哪一面定义为正面 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cull\+Face类包含面剔除相关的状态信息. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_ab78fa52a32bd4d6fffded723449ebbb7}\label{classqiao_1_1_cull_face_ab78fa52a32bd4d6fffded723449ebbb7}} 
+\index{qiao::CullFace@{qiao::CullFace}!CullFace@{CullFace}}
+\index{CullFace@{CullFace}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{CullFace()}{CullFace()}}
+{\footnotesize\ttfamily Cull\+Face\+::\+Cull\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+默认构造函数 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classqiao_1_1_cull_face_aac24f13b46d9b7d19013f517a874eadd}\label{classqiao_1_1_cull_face_aac24f13b46d9b7d19013f517a874eadd}} 
-bool {\bfseries get\+Enabled} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_cull_face_a23d87ae407e21481659991d61724fd30}\label{classqiao_1_1_cull_face_a23d87ae407e21481659991d61724fd30}} 
-void {\bfseries set\+Enabled} (bool val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_cull_face_ab8a069e48a741faf29ff28c650dd11a2}\label{classqiao_1_1_cull_face_ab8a069e48a741faf29ff28c650dd11a2}} 
-Cull\+Face\+Mode {\bfseries get\+Cull\+Face\+Mode} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_cull_face_a6555ef59c58726fc9b4e404988066393}\label{classqiao_1_1_cull_face_a6555ef59c58726fc9b4e404988066393}} 
-void {\bfseries set\+Cull\+Face\+Mode} (Cull\+Face\+Mode val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_cull_face_a8ef28d7e36613fa0a2534e2bcddbdec8}\label{classqiao_1_1_cull_face_a8ef28d7e36613fa0a2534e2bcddbdec8}} 
-Front\+Face\+Mode {\bfseries get\+Front\+Face\+Mode} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_cull_face_a8b9468d6a763933981508f9b82b978a7}\label{classqiao_1_1_cull_face_a8b9468d6a763933981508f9b82b978a7}} 
-void {\bfseries set\+Front\+Face\+Mode} (Front\+Face\+Mode val)
-\end{DoxyCompactItemize}
+\index{qiao::CullFace@{qiao::CullFace}!getEnabled@{getEnabled}}
+\index{getEnabled@{getEnabled}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{getEnabled()}{getEnabled()}}
+{\footnotesize\ttfamily bool Cull\+Face\+::get\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启面剔除 
+
+\begin{DoxyReturn}{Returns}
+是否开启面剔除 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_aa2b2941b857c0d8d74176656cb9aa28e}\label{classqiao_1_1_cull_face_aa2b2941b857c0d8d74176656cb9aa28e}} 
+\index{qiao::CullFace@{qiao::CullFace}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily void Cull\+Face\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+设置是否开启面剔除 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & 是否开启面剔除 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_ada289ae2487400551c8f8b1aece34a95}\label{classqiao_1_1_cull_face_ada289ae2487400551c8f8b1aece34a95}} 
+\index{qiao::CullFace@{qiao::CullFace}!getCullFaceMode@{getCullFaceMode}}
+\index{getCullFaceMode@{getCullFaceMode}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{getCullFaceMode()}{getCullFaceMode()}}
+{\footnotesize\ttfamily GLenum Cull\+Face\+::get\+Cull\+Face\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询剔除哪一面 
+
+\begin{DoxyReturn}{Returns}
+剔除哪一面 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_a7f0a6002bad20ebfc87c15248ffde0eb}\label{classqiao_1_1_cull_face_a7f0a6002bad20ebfc87c15248ffde0eb}} 
+\index{qiao::CullFace@{qiao::CullFace}!setCullFaceMode@{setCullFaceMode}}
+\index{setCullFaceMode@{setCullFaceMode}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{setCullFaceMode()}{setCullFaceMode()}}
+{\footnotesize\ttfamily void Cull\+Face\+::set\+Cull\+Face\+Mode (\begin{DoxyParamCaption}\item[{GLenum}]{mode }\end{DoxyParamCaption})}
+
+
+
+设置剔除哪一面 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & 剔除哪一面,可选值详查：https\+://registry.khronos.\+org/\+Open\+GL-\/\+Refpages/gl4/html/gl\+Cull\+Face.xhtml \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_a03a67552601747109c37c8dfbaaf0d5b}\label{classqiao_1_1_cull_face_a03a67552601747109c37c8dfbaaf0d5b}} 
+\index{qiao::CullFace@{qiao::CullFace}!getFrontFaceMode@{getFrontFaceMode}}
+\index{getFrontFaceMode@{getFrontFaceMode}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{getFrontFaceMode()}{getFrontFaceMode()}}
+{\footnotesize\ttfamily GLenum Cull\+Face\+::get\+Front\+Face\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询哪一面定义为正面 
+
+\begin{DoxyReturn}{Returns}
+哪一面定义为正面 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_cull_face_a638ac4f17100947269c845d2d3434aea}\label{classqiao_1_1_cull_face_a638ac4f17100947269c845d2d3434aea}} 
+\index{qiao::CullFace@{qiao::CullFace}!setFrontFaceMode@{setFrontFaceMode}}
+\index{setFrontFaceMode@{setFrontFaceMode}!qiao::CullFace@{qiao::CullFace}}
+\doxysubsubsection{\texorpdfstring{setFrontFaceMode()}{setFrontFaceMode()}}
+{\footnotesize\ttfamily void Cull\+Face\+::set\+Front\+Face\+Mode (\begin{DoxyParamCaption}\item[{GLenum}]{mode }\end{DoxyParamCaption})}
+
+
+
+设置哪一面定义为正面 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & 哪一面定义为正面，可选值详查：https\+://registry.khronos.\+org/\+Open\+GL-\/\+Refpages/gl4/html/gl\+Front\+Face.xhtml \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/cull\+\_\+face.\+h\item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/cull\+\_\+face.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{cull__face_8h}{cull\+\_\+face.\+h}}\item 
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{cull__face_8cc}{cull\+\_\+face.\+cc}}\end{DoxyCompactItemize}

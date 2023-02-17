@@ -5,7 +5,6 @@
  * @date December 2022
  */
 
-#include <iostream>
 #include "render_state.h"
 
 using namespace qiao;
@@ -19,7 +18,7 @@ PrimitiveRestart& RenderState::getPrimitiveRestart() {
 	return _primitiveRestart;
 };
 
-void RenderState::setPrimitiveRestart(PrimitiveRestart& val) {
+void RenderState::setPrimitiveRestart(PrimitiveRestart val) {
 	_primitiveRestart = val;
 };
 

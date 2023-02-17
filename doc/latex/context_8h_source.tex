@@ -58,26 +58,41 @@
 \DoxyCodeLine{00114\ }
 \DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyShaderProgram(\mbox{\hyperlink{classqiao_1_1_draw_state}{DrawState}}*\ drawState,\ \mbox{\hyperlink{classqiao_1_1_scene_state}{SceneState}}*\ sceneState);}
 \DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL模板测试相关状态}}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyStencilTest(\mbox{\hyperlink{classqiao_1_1_stencil_test}{StencilTest}}\&\ stencilTest);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL图元重启相关状态}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyPrimitiveRestart(\mbox{\hyperlink{classqiao_1_1_primitive_restart}{PrimitiveRestart}}\&\ primitiveRestart);}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL深度测试相关状态}}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyDepthTest(\mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}\&\ depthTest);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL面剔除相关状态}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyCullFace(\mbox{\hyperlink{classqiao_1_1_cull_face}{CullFace}}\&\ cullFace);}
 \DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL混合相关的状态}}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyBlending(\mbox{\hyperlink{classqiao_1_1_blending}{Blending}}\&\ blending);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL是否可以通过着色器内置变量gl\_PointSize设置点图元大小}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyProgramPointSize(GLboolean\ programPointSize);}
 \DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL是否开启颜色缓冲各个颜色分量的写操作}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyColorMask(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ colorMask);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL光栅化模式}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyPolygonMode(GLenum\ polygonMode);}
 \DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用者传进来的ShaderProgram对象的指针，本类不负责回收该ShaderProgram对象的内存，}}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 而是让该ShaderProgram对象的创建者负责回收内存。}}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}*\ \_boundShaderProgram;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00136\ \ \ \ \ \};}
-\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL裁剪测试相关状态}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyScissorTest(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ scissorTest);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL模板测试相关状态}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyStencilTest(\mbox{\hyperlink{classqiao_1_1_stencil_test}{StencilTest}}\&\ stencilTest);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL深度测试相关状态}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyDepthTest(\mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}\&\ depthTest);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL混合相关的状态}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyBlending(\mbox{\hyperlink{classqiao_1_1_blending}{Blending}}\&\ blending);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL是否开启颜色缓冲各个颜色分量的写操作}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyColorMask(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ colorMask);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用者传进来的ShaderProgram对象的指针，本类不负责回收该ShaderProgram对象的内存，}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 而是让该ShaderProgram对象的创建者负责回收内存。}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}*\ \_boundShaderProgram;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \};}
+\DoxyCodeLine{00152\ \}}
 
 \end{DoxyCode}

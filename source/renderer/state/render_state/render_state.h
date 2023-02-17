@@ -30,7 +30,7 @@ namespace qiao {
 		RenderState();
 
 		PrimitiveRestart& getPrimitiveRestart();
-		void setPrimitiveRestart(PrimitiveRestart& val);
+		void setPrimitiveRestart(PrimitiveRestart val);
 
 		CullFace& getCullFace();
 		void setCullFace(CullFace& val);
@@ -57,7 +57,7 @@ namespace qiao {
 		void setColorMask(ColorMask val);
 
 	private:
-		PrimitiveRestart _primitiveRestart;
+		PrimitiveRestart _primitiveRestart;		// 包含图元重启相关的状态信息
 		CullFace _cullFace;						// 包含面剔除相关的状态信息
 		GLboolean _programPointSize;			// 是否可以通过着色器内置变量gl_PointSize设置点图元大小
 		GLenum _polygonMode;					// 多边形光栅化模式，可选值：GL_POINT, GL_LINE, GL_FILL.

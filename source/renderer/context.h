@@ -114,6 +114,9 @@ namespace qiao {
 
 		void _applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
+		// 同步设置OpenGL图元重启相关状态
+		void _applyPrimitiveRestart(PrimitiveRestart& primitiveRestart);
+
 		// 同步设置OpenGL面剔除相关状态
 		void _applyCullFace(CullFace& cullFace);
 
