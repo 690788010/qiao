@@ -48,12 +48,12 @@ void RenderState::setScissorTest(ScissorTest& val) {
 	_scissorTest = val;
 };
 
-PolygonMode& RenderState::getPolygonMode() {
+GLenum RenderState::getPolygonMode() {
 	return _polygonMode;
 };
 
-void RenderState::setPolygonMode(PolygonMode val) {
-	_polygonMode = val;
+void RenderState::setPolygonMode(GLenum mode) {
+	_polygonMode = mode;
 };
 
 StencilTest& RenderState::getStencilTest() {
