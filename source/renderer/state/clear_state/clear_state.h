@@ -39,7 +39,7 @@ namespace qiao {
 		 *
 		 * @return 颜色缓存的颜色值
 		 */
-		const Color& getColor();
+		Color& getColor();
 
 		/**
 		 * @brief 设置颜色缓存的颜色值
@@ -86,7 +86,7 @@ namespace qiao {
 		 * @brief 查询是否开启颜色缓冲各个颜色分量的写操作
 		 * @return ColorMask对象的引用
 		 */
-		const ColorMask& getColorMask();
+		ColorMask& getColorMask();
 
 		/**
 		 * @brief 设置是否开启颜色缓冲各个颜色分量的写操作
@@ -98,7 +98,7 @@ namespace qiao {
 		GLboolean getDepthMask();
 		void setDepthMask(GLboolean flag);
 
-		const ScissorTest& getScissorTest();
+		ScissorTest& getScissorTest();
 		void setScissorTest(ScissorTest val);
 
 	private:

@@ -65,38 +65,10 @@ void Context::clear(ClearState& clearState) {
 	glClear(clearState.getClearMask());
 
 	// apply ScissorTest
-	ScissorTest scissorTest = clearState.getScissorTest();
-	ScissorTest _scissorTest = _renderState->getScissorTest();
-	if (scissorTest.getWidth() < 0) {
-		throw std::invalid_argument("renderState->ScissorTest.Width must be greater than or equal to zero!");
-	}
-	if (scissorTest.getHeight() < 0) {
-		throw std::invalid_argument("renderState->ScissorTest.Height must be greater than or equal to zero!");
-	}
-	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
-		_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
-		_scissorTest.setEnabled(scissorTest.getEnabled());
-	}
-	if (scissorTest.getEnabled()) {
-		if (scissorTest.getX() != _scissorTest.getX() ||
-			scissorTest.getY() != _scissorTest.getY() ||
-			scissorTest.getWidth() != _scissorTest.getWidth() ||
-			scissorTest.getHeight() != _scissorTest.getHeight()) {
-			glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
-			_scissorTest.setX(scissorTest.getX());
-			_scissorTest.setY(scissorTest.getY());
-			_scissorTest.setWidth(scissorTest.getWidth());
-			_scissorTest.setHeight(scissorTest.getHeight());
-		}
-	}
+	_applyScissorTest(clearState.getScissorTest());
 
 	// apply ColorMask
-	ColorMask colorMask = clearState.getColorMask();
-	ColorMask _colorMask = _renderState->getColorMask();
-	if (colorMask != _colorMask) {
-		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
-		_renderState->setColorMask(colorMask);
-	}
+	_applyColorMask(clearState.getColorMask());
 
 	// apply DepthMask
 	if (clearState.getDepthMask() != _renderState->getDepthTest().getDepthMask()) {

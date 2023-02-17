@@ -28,7 +28,7 @@ void ClearState::setClearMask(GLbitfield val) {
 	_clearMask = val;
 };
 
-const Color& ClearState::getColor() {
+Color& ClearState::getColor() {
 	return _color;
 };
 
@@ -52,7 +52,7 @@ void ClearState::setStencil(int val) {
 	_stencil = val;
 };
 
-const ColorMask& ClearState::getColorMask() {
+ColorMask& ClearState::getColorMask() {
 	return _colorMask;
 };
 
@@ -68,7 +68,7 @@ void ClearState::setDepthMask(GLboolean flag) {
 	_depthMask = flag;
 };
 
-const ScissorTest& ClearState::getScissorTest() {
+ScissorTest& ClearState::getScissorTest() {
 	return _scissorTest;
 };
 

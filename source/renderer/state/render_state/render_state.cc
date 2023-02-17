@@ -18,32 +18,32 @@ PrimitiveRestart& RenderState::getPrimitiveRestart() {
 	return _primitiveRestart;
 };
 
-void RenderState::setPrimitiveRestart(PrimitiveRestart val) {
-	_primitiveRestart = val;
+void RenderState::setPrimitiveRestart(PrimitiveRestart primitiveRestart) {
+	_primitiveRestart = primitiveRestart;
 };
 
 CullFace& RenderState::getCullFace() {
 	return _cullFace;
 };
 
-void RenderState::setCullFace(CullFace& val) {
-	_cullFace = val;
+void RenderState::setCullFace(CullFace cullFace) {
+	_cullFace = cullFace;
 };
 
 GLboolean RenderState::getProgramPointSize() {
 	return _programPointSize;
 };
 
-void RenderState::setProgramPointSize(GLboolean val) {
-	_programPointSize = val;
+void RenderState::setProgramPointSize(GLboolean programPointSize) {
+	_programPointSize = programPointSize;
 };
 
 ScissorTest& RenderState::getScissorTest() {
 	return _scissorTest;
 };
 
-void RenderState::setScissorTest(ScissorTest& val) {
-	_scissorTest = val;
+void RenderState::setScissorTest(ScissorTest scissorTest) {
+	_scissorTest = scissorTest;
 };
 
 GLenum RenderState::getPolygonMode() {
@@ -58,30 +58,30 @@ StencilTest& RenderState::getStencilTest() {
 	return _stencilTest;
 };
 
-void RenderState::setStencilTest(StencilTest& val) {
-	_stencilTest = val;
+void RenderState::setStencilTest(StencilTest stencilTest) {
+	_stencilTest = stencilTest;
 };
 
 DepthTest& RenderState::getDepthTest() {
 	return _depthTest;
 };
 
-void RenderState::setDepthTest(DepthTest& val) {
-	_depthTest = val;
+void RenderState::setDepthTest(DepthTest depthTest) {
+	_depthTest = depthTest;
 };
 
 Blending& RenderState::getBlending() {
 	return _blending;
 };
 
-void RenderState::setBlending(Blending& val) {
-	_blending = val;
+void RenderState::setBlending(Blending blending) {
+	_blending = blending;
 };
 
 ColorMask& RenderState::getColorMask() {
 	return _colorMask;
 };
 
-void RenderState::setColorMask(ColorMask val) {
-	_colorMask = val;
+void RenderState::setColorMask(ColorMask colorMask) {
+	_colorMask = colorMask;
 };
