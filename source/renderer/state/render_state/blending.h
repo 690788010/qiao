@@ -1,65 +1,147 @@
+/**
+ * @file blending.h
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
+
 #pragma once
 
 #include "../../../../third_party/glad/include/glad.h"
 
 namespace qiao {
-	enum BlendingFactor {
-        ZERO = GL_ZERO,
-        ONE = GL_ONE,
-        SRC_COLOR = GL_COLOR,
-        ONE_MINUS_SRC_COLOR = GL_ONE_MINUS_SRC_COLOR,
-        DST_COLOR = GL_DST_COLOR,
-        ONE_MINUS_DST_COLOR = GL_ONE_MINUS_DST_COLOR,
-        SRC_ALPHA = GL_SRC_ALPHA,
-        ONE_MINUS_SRC_ALPHA = GL_ONE_MINUS_SRC_ALPHA,
-        DST_ALPHA = GL_DST_ALPHA,
-        ONE_MINUS_DST_ALPHA = GL_ONE_MINUS_DST_ALPHA,
-        CONSTANT_COLOR = GL_CONSTANT_COLOR,
-        ONE_MINUS_CONSTANT_COLOR = GL_ONE_MINUS_CONSTANT_COLOR,
-        CONSTANT_ALPHA = GL_CONSTANT_ALPHA,
-        ONE_MINUS_CONSTANT_ALPHA = GL_ONE_MINUS_CONSTANT_ALPHA
-	};
-
-    enum BlendEquation {
-        FUNC_ADD = GL_FUNC_ADD,
-        FUNC_SUBTRACT = GL_FUNC_SUBTRACT,
-        FUNC_REVERSE_SUBTRACT = GL_FUNC_REVERSE_SUBTRACT,
-        MIN = GL_MIN,
-        MAX = GL_MAX
-    };
-
+    /**
+     * @brief Blending用于包含混合相关的状态信息
+     */
 	class Blending {
 	public:
+        /**
+         * @brief 默认构造函数
+         * 
+         */
 		Blending();
 
+        /**
+         * @brief 查询是否开启混合
+         * 
+         * @return 是否开启混合
+         */
         bool getEnabled();
-        void setEnabled(bool val);
 
-        BlendingFactor getSrcRGB();
-        void setSrcRGB(BlendingFactor val);
+        /**
+         * @brief 设置是否开启混合
+         * 
+         * @param enabled  是否开启混合
+         * 
+         * @return void
+         */
+        void setEnabled(bool enabled);
 
-        BlendingFactor getDstRGB();
-        void setDstRGB(BlendingFactor val);
+        /**
+         * @brief 查询源颜色RGB分量的混合因子
+         *
+         * @return 源颜色RGB分量的混合因子
+         */
+        GLenum getSrcRGB();
 
-        BlendingFactor getSrcAlpha();
-        void setSrcAlpha(BlendingFactor val);
+        /**
+         * @brief 设置源颜色RGB分量的混合因子
+         *
+         * @param srcRGB  源颜色RGB分量的混合因子
+         *
+         * @return void
+         */
+        void setSrcRGB(GLenum srcRGB);
 
-        BlendingFactor getDstAlpha();
-        void setDstApha(BlendingFactor val);
+        /**
+         * @brief 查询目标颜色RGB分量的混合因子
+         *
+         * @return 目标颜色RGB分量的混合因子
+         */
+        GLenum getDstRGB();
 
-        BlendEquation getRgbEquation();
-        void setRgbEquation(BlendEquation val);
+        /**
+         * @brief 设置目标颜色RGB分量的混合因子
+         *
+         * @param dstRGB  目标颜色RGB分量的混合因子
+         *
+         * @return void
+         */
+        void setDstRGB(GLenum dstRGB);
 
-        BlendEquation getAlphaEquation();
-        void setAlphaEquation(BlendEquation val);
+        /**
+         * @brief 查询源颜色alpha分量的混合因子
+         *
+         * @return 源颜色alpha分量的混合因子
+         */
+        GLenum getSrcAlpha();
+
+        /**
+         * @brief 设置源颜色alpha分量的混合因子
+         *
+         * @param srcAlpha  源颜色alpha分量的混合因子
+         *
+         * @return void
+         */
+        void setSrcAlpha(GLenum srcAlpha);
+
+        /**
+         * @brief 查询目标颜色alpha分量的混合因子
+         *
+         * @return 目标颜色alpha分量的混合因子
+         */
+        GLenum getDstAlpha();
+
+        /**
+         * @brief 设置目标颜色alpha分量的混合因子
+         *
+         * @param dstAlpha  目标颜色alpha分量的混合因子
+         *
+         * @return void
+         */
+        void setDstAlpha(GLenum dstAlpha);
+
+        /**
+         * @brief 查询颜色RGB分量的混合方程
+         *
+         * @return 颜色RGB分量的混合方程
+         */
+        GLenum getRgbEquation();
+
+        /**
+         * @brief 设置颜色RGB分量的混合方程
+         *
+         * @param rgbEquation  颜色RGB分量的混合方程
+         *
+         * @return void
+         */
+        void setRgbEquation(GLenum rgbEquation);
+
+        /**
+         * @brief 查询颜色alpha分量的混合方程
+         *
+         * @return 颜色alpha分量的混合方程
+         */
+        GLenum getAlphaEquation();
+
+        /**
+         * @brief 设置颜色alpha分量的混合方程
+         *
+         * @param alphaEquation  颜色alpha分量的混合方程
+         *
+         * @return void
+         */
+        void setAlphaEquation(GLenum alphaEquation);
 
 	private:
-		bool _enabled;
-        BlendingFactor _srcRGB;
-        BlendingFactor _dstRGB;
-        BlendingFactor _srcAlpha;
-        BlendingFactor _dstAlpha;
-        BlendEquation _rgbEquation;
-        BlendEquation _alphaEquation;
+		bool _enabled;                  // 是否开启混合
+        // 以下变量的可选值详查：https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFuncSeparate.xhtml
+        GLenum _srcRGB;                 // 源颜色RGB分量的混合因子
+        GLenum _dstRGB;                 // 目标颜色RGB分量的混合因子
+        GLenum _srcAlpha;               // 源颜色alpha分量的混合因子
+        GLenum _dstAlpha;               // 目标颜色alpha分量的混合因子
+        // 以下变量的可选值详查：https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendEquationSeparate.xhtml
+        GLenum _rgbEquation;     // 颜色RGB分量的混合方程
+        GLenum _alphaEquation;   // 颜色alpha分量的混合方程
 	};
 }

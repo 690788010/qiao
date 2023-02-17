@@ -1,53 +1,286 @@
 \hypertarget{classqiao_1_1_blending}{}\doxysection{qiao\+::Blending Class Reference}
 \label{classqiao_1_1_blending}\index{qiao::Blending@{qiao::Blending}}
+
+
+Blending用于包含混合相关的状态信息  
+
+
+
+
+{\ttfamily \#include $<$blending.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classqiao_1_1_blending_ac691aaf923fe793087db79144d6681e8}{Blending}} ()
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqiao_1_1_blending_aed652407f6d9e3b2b001b9882090e9b8}{get\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启混合 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a8210563fb4368f3dea8c5c0bf62083ef}{set\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em 设置是否开启混合 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_af68404f6cae282ae7d29e533d9dbe2b4}{get\+Src\+RGB}} ()
+\begin{DoxyCompactList}\small\item\em 查询源颜色\+RGB分量的混合因子 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a298d94a227da68e8c89cc1f980d1c3d0}{set\+Src\+RGB}} (GLenum src\+RGB)
+\begin{DoxyCompactList}\small\item\em 设置源颜色\+RGB分量的混合因子 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_aaf8f8b28b28cf6313d1035e0b8448415}{get\+Dst\+RGB}} ()
+\begin{DoxyCompactList}\small\item\em 查询目标颜色\+RGB分量的混合因子 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a918949776e50f0e20f5e7422697d1320}{set\+Dst\+RGB}} (GLenum dst\+RGB)
+\begin{DoxyCompactList}\small\item\em 设置目标颜色\+RGB分量的混合因子 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_a1a33a141483b2452fd9ff31461fac871}{get\+Src\+Alpha}} ()
+\begin{DoxyCompactList}\small\item\em 查询源颜色alpha分量的混合因子 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a5e069f70a65264121a4a7e7d025c0ef5}{set\+Src\+Alpha}} (GLenum src\+Alpha)
+\begin{DoxyCompactList}\small\item\em 设置源颜色alpha分量的混合因子 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_ab2adbf4b0cbe45ef8901df6a870478ac}{get\+Dst\+Alpha}} ()
+\begin{DoxyCompactList}\small\item\em 查询目标颜色alpha分量的混合因子 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a4fe56d12f68794c3de19037c196e84f4}{set\+Dst\+Alpha}} (GLenum dst\+Alpha)
+\begin{DoxyCompactList}\small\item\em 设置目标颜色alpha分量的混合因子 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_a581fb75edfd1755c57debd9401720f41}{get\+Rgb\+Equation}} ()
+\begin{DoxyCompactList}\small\item\em 查询颜色\+RGB分量的混合方程 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a542fd2493d67d05ad643fd6ad53e1019}{set\+Rgb\+Equation}} (GLenum rgb\+Equation)
+\begin{DoxyCompactList}\small\item\em 设置颜色\+RGB分量的混合方程 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_blending_a5d9d63bfc27e22a39b9a98dfbc7bd600}{get\+Alpha\+Equation}} ()
+\begin{DoxyCompactList}\small\item\em 查询颜色alpha分量的混合方程 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_blending_a5c33ae1e97a5df8c4902fdd1158bd2b2}{set\+Alpha\+Equation}} (GLenum alpha\+Equation)
+\begin{DoxyCompactList}\small\item\em 设置颜色alpha分量的混合方程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blending用于包含混合相关的状态信息 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqiao_1_1_blending_ac691aaf923fe793087db79144d6681e8}\label{classqiao_1_1_blending_ac691aaf923fe793087db79144d6681e8}} 
+\index{qiao::Blending@{qiao::Blending}!Blending@{Blending}}
+\index{Blending@{Blending}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{Blending()}{Blending()}}
+{\footnotesize\ttfamily Blending\+::\+Blending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+默认构造函数 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classqiao_1_1_blending_aed652407f6d9e3b2b001b9882090e9b8}\label{classqiao_1_1_blending_aed652407f6d9e3b2b001b9882090e9b8}} 
-bool {\bfseries get\+Enabled} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a18bbc270b5c62faf27685ea2e2ada652}\label{classqiao_1_1_blending_a18bbc270b5c62faf27685ea2e2ada652}} 
-void {\bfseries set\+Enabled} (bool val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a6c46eb19e9236c5a13b024c4990902f4}\label{classqiao_1_1_blending_a6c46eb19e9236c5a13b024c4990902f4}} 
-Blending\+Factor {\bfseries get\+Src\+RGB} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_ab9c5d0ce4d22ae893c997e5334c4c65d}\label{classqiao_1_1_blending_ab9c5d0ce4d22ae893c997e5334c4c65d}} 
-void {\bfseries set\+Src\+RGB} (Blending\+Factor val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_aa1e20d78ecc63256d8a8fdd955bff446}\label{classqiao_1_1_blending_aa1e20d78ecc63256d8a8fdd955bff446}} 
-Blending\+Factor {\bfseries get\+Dst\+RGB} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a3292f1908ddf98c08494d8320c99f966}\label{classqiao_1_1_blending_a3292f1908ddf98c08494d8320c99f966}} 
-void {\bfseries set\+Dst\+RGB} (Blending\+Factor val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a540dcbaf55263594c1e70711ded5dce0}\label{classqiao_1_1_blending_a540dcbaf55263594c1e70711ded5dce0}} 
-Blending\+Factor {\bfseries get\+Src\+Alpha} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a8d86ff8e83fe3a704943127ba7346628}\label{classqiao_1_1_blending_a8d86ff8e83fe3a704943127ba7346628}} 
-void {\bfseries set\+Src\+Alpha} (Blending\+Factor val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_adb2c7f0740e44bfc873731ecfde8da70}\label{classqiao_1_1_blending_adb2c7f0740e44bfc873731ecfde8da70}} 
-Blending\+Factor {\bfseries get\+Dst\+Alpha} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a35cd0477d2cddcecc4fd3a48b04c1a32}\label{classqiao_1_1_blending_a35cd0477d2cddcecc4fd3a48b04c1a32}} 
-void {\bfseries set\+Dst\+Apha} (Blending\+Factor val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a7ffcdfc057d6b68f9295a78b7a9f772b}\label{classqiao_1_1_blending_a7ffcdfc057d6b68f9295a78b7a9f772b}} 
-Blend\+Equation {\bfseries get\+Rgb\+Equation} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_adc2fa40ce2029db5fcad21b897c6e861}\label{classqiao_1_1_blending_adc2fa40ce2029db5fcad21b897c6e861}} 
-void {\bfseries set\+Rgb\+Equation} (Blend\+Equation val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_af1215277f995357a138ae9a51e4d4cd0}\label{classqiao_1_1_blending_af1215277f995357a138ae9a51e4d4cd0}} 
-Blend\+Equation {\bfseries get\+Alpha\+Equation} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_blending_a4218cd908acd79386202bd3dfcd42285}\label{classqiao_1_1_blending_a4218cd908acd79386202bd3dfcd42285}} 
-void {\bfseries set\+Alpha\+Equation} (Blend\+Equation val)
-\end{DoxyCompactItemize}
+\index{qiao::Blending@{qiao::Blending}!getEnabled@{getEnabled}}
+\index{getEnabled@{getEnabled}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getEnabled()}{getEnabled()}}
+{\footnotesize\ttfamily bool Blending\+::get\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启混合 
+
+\begin{DoxyReturn}{Returns}
+是否开启混合 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a8210563fb4368f3dea8c5c0bf62083ef}\label{classqiao_1_1_blending_a8210563fb4368f3dea8c5c0bf62083ef}} 
+\index{qiao::Blending@{qiao::Blending}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily void Blending\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+设置是否开启混合 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & 是否开启混合\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_af68404f6cae282ae7d29e533d9dbe2b4}\label{classqiao_1_1_blending_af68404f6cae282ae7d29e533d9dbe2b4}} 
+\index{qiao::Blending@{qiao::Blending}!getSrcRGB@{getSrcRGB}}
+\index{getSrcRGB@{getSrcRGB}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getSrcRGB()}{getSrcRGB()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Src\+RGB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询源颜色\+RGB分量的混合因子 
+
+\begin{DoxyReturn}{Returns}
+源颜色\+RGB分量的混合因子 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a298d94a227da68e8c89cc1f980d1c3d0}\label{classqiao_1_1_blending_a298d94a227da68e8c89cc1f980d1c3d0}} 
+\index{qiao::Blending@{qiao::Blending}!setSrcRGB@{setSrcRGB}}
+\index{setSrcRGB@{setSrcRGB}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setSrcRGB()}{setSrcRGB()}}
+{\footnotesize\ttfamily void Blending\+::set\+Src\+RGB (\begin{DoxyParamCaption}\item[{GLenum}]{src\+RGB }\end{DoxyParamCaption})}
+
+
+
+设置源颜色\+RGB分量的混合因子 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+RGB} & 源颜色\+RGB分量的混合因子\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_aaf8f8b28b28cf6313d1035e0b8448415}\label{classqiao_1_1_blending_aaf8f8b28b28cf6313d1035e0b8448415}} 
+\index{qiao::Blending@{qiao::Blending}!getDstRGB@{getDstRGB}}
+\index{getDstRGB@{getDstRGB}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getDstRGB()}{getDstRGB()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Dst\+RGB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询目标颜色\+RGB分量的混合因子 
+
+\begin{DoxyReturn}{Returns}
+目标颜色\+RGB分量的混合因子 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a918949776e50f0e20f5e7422697d1320}\label{classqiao_1_1_blending_a918949776e50f0e20f5e7422697d1320}} 
+\index{qiao::Blending@{qiao::Blending}!setDstRGB@{setDstRGB}}
+\index{setDstRGB@{setDstRGB}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setDstRGB()}{setDstRGB()}}
+{\footnotesize\ttfamily void Blending\+::set\+Dst\+RGB (\begin{DoxyParamCaption}\item[{GLenum}]{dst\+RGB }\end{DoxyParamCaption})}
+
+
+
+设置目标颜色\+RGB分量的混合因子 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst\+RGB} & 目标颜色\+RGB分量的混合因子\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a1a33a141483b2452fd9ff31461fac871}\label{classqiao_1_1_blending_a1a33a141483b2452fd9ff31461fac871}} 
+\index{qiao::Blending@{qiao::Blending}!getSrcAlpha@{getSrcAlpha}}
+\index{getSrcAlpha@{getSrcAlpha}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getSrcAlpha()}{getSrcAlpha()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Src\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询源颜色alpha分量的混合因子 
+
+\begin{DoxyReturn}{Returns}
+源颜色alpha分量的混合因子 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a5e069f70a65264121a4a7e7d025c0ef5}\label{classqiao_1_1_blending_a5e069f70a65264121a4a7e7d025c0ef5}} 
+\index{qiao::Blending@{qiao::Blending}!setSrcAlpha@{setSrcAlpha}}
+\index{setSrcAlpha@{setSrcAlpha}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setSrcAlpha()}{setSrcAlpha()}}
+{\footnotesize\ttfamily void Blending\+::set\+Src\+Alpha (\begin{DoxyParamCaption}\item[{GLenum}]{src\+Alpha }\end{DoxyParamCaption})}
+
+
+
+设置源颜色alpha分量的混合因子 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+Alpha} & 源颜色alpha分量的混合因子\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_ab2adbf4b0cbe45ef8901df6a870478ac}\label{classqiao_1_1_blending_ab2adbf4b0cbe45ef8901df6a870478ac}} 
+\index{qiao::Blending@{qiao::Blending}!getDstAlpha@{getDstAlpha}}
+\index{getDstAlpha@{getDstAlpha}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getDstAlpha()}{getDstAlpha()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Dst\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询目标颜色alpha分量的混合因子 
+
+\begin{DoxyReturn}{Returns}
+目标颜色alpha分量的混合因子 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a4fe56d12f68794c3de19037c196e84f4}\label{classqiao_1_1_blending_a4fe56d12f68794c3de19037c196e84f4}} 
+\index{qiao::Blending@{qiao::Blending}!setDstAlpha@{setDstAlpha}}
+\index{setDstAlpha@{setDstAlpha}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setDstAlpha()}{setDstAlpha()}}
+{\footnotesize\ttfamily void Blending\+::set\+Dst\+Alpha (\begin{DoxyParamCaption}\item[{GLenum}]{dst\+Alpha }\end{DoxyParamCaption})}
+
+
+
+设置目标颜色alpha分量的混合因子 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst\+Alpha} & 目标颜色alpha分量的混合因子\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a581fb75edfd1755c57debd9401720f41}\label{classqiao_1_1_blending_a581fb75edfd1755c57debd9401720f41}} 
+\index{qiao::Blending@{qiao::Blending}!getRgbEquation@{getRgbEquation}}
+\index{getRgbEquation@{getRgbEquation}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getRgbEquation()}{getRgbEquation()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Rgb\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询颜色\+RGB分量的混合方程 
+
+\begin{DoxyReturn}{Returns}
+颜色\+RGB分量的混合方程 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a542fd2493d67d05ad643fd6ad53e1019}\label{classqiao_1_1_blending_a542fd2493d67d05ad643fd6ad53e1019}} 
+\index{qiao::Blending@{qiao::Blending}!setRgbEquation@{setRgbEquation}}
+\index{setRgbEquation@{setRgbEquation}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setRgbEquation()}{setRgbEquation()}}
+{\footnotesize\ttfamily void Blending\+::set\+Rgb\+Equation (\begin{DoxyParamCaption}\item[{GLenum}]{rgb\+Equation }\end{DoxyParamCaption})}
+
+
+
+设置颜色\+RGB分量的混合方程 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb\+Equation} & 颜色\+RGB分量的混合方程\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a5d9d63bfc27e22a39b9a98dfbc7bd600}\label{classqiao_1_1_blending_a5d9d63bfc27e22a39b9a98dfbc7bd600}} 
+\index{qiao::Blending@{qiao::Blending}!getAlphaEquation@{getAlphaEquation}}
+\index{getAlphaEquation@{getAlphaEquation}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{getAlphaEquation()}{getAlphaEquation()}}
+{\footnotesize\ttfamily GLenum Blending\+::get\+Alpha\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询颜色alpha分量的混合方程 
+
+\begin{DoxyReturn}{Returns}
+颜色alpha分量的混合方程 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_blending_a5c33ae1e97a5df8c4902fdd1158bd2b2}\label{classqiao_1_1_blending_a5c33ae1e97a5df8c4902fdd1158bd2b2}} 
+\index{qiao::Blending@{qiao::Blending}!setAlphaEquation@{setAlphaEquation}}
+\index{setAlphaEquation@{setAlphaEquation}!qiao::Blending@{qiao::Blending}}
+\doxysubsubsection{\texorpdfstring{setAlphaEquation()}{setAlphaEquation()}}
+{\footnotesize\ttfamily void Blending\+::set\+Alpha\+Equation (\begin{DoxyParamCaption}\item[{GLenum}]{alpha\+Equation }\end{DoxyParamCaption})}
+
+
+
+设置颜色alpha分量的混合方程 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Equation} & 颜色alpha分量的混合方程\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/blending.\+h\item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/blending.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{blending_8h}{blending.\+h}}\item 
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{blending_8cc}{blending.\+cc}}\end{DoxyCompactItemize}

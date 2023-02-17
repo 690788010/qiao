@@ -1,3 +1,10 @@
+/**
+ * @file render_state.h
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
+
 #pragma once
 
 #include "primitive_restart.h"
@@ -9,15 +16,22 @@
 #include "color_mask.h"
 
 namespace qiao {
-
 	enum PolygonMode {
 		POINT = GL_POINT,
 		LINE = GL_LINE,
 		FILL = GL_FILL
 	};
-
+	/**
+	 * @brief RenderState类用于包含各种渲染状态。
+	 * 
+	 * @details DrawState类包含RenderState的状态信息一起传入Context类的draw方法，以设置渲染状态
+	 */
 	class RenderState {
 	public:
+		/**
+		 * @brief 默认构造函数
+		 * 
+		 */
 		RenderState();
 
 		PrimitiveRestart& getPrimitiveRestart();
@@ -55,7 +69,7 @@ namespace qiao {
 		ScissorTest _scissorTest;
 		StencilTest _stencilTest;
 		DepthTest _depthTest;
-		Blending _blending;
-		ColorMask _colorMask;
+		Blending _blending;			
+		ColorMask _colorMask;		// 是否开启颜色缓冲各个颜色分量的写操作
 	};
 }

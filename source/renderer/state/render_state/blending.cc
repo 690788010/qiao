@@ -1,71 +1,70 @@
+/**
+ * @file blending.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
 #include "blending.h"
 
 using namespace qiao;
 
-Blending::Blending() {
-    _enabled = false;
-    _srcRGB = BlendingFactor::ONE;
-    _dstRGB = BlendingFactor::ZERO;
-    _srcAlpha = BlendingFactor::ONE;
-    _dstAlpha = BlendingFactor::ZERO;
-    _rgbEquation = BlendEquation::FUNC_ADD;
-    _alphaEquation = BlendEquation::FUNC_ADD;
-};
+Blending::Blending() : _enabled{ false }, _srcRGB{ GL_ONE }, _dstRGB{ GL_ZERO }, 
+    _srcAlpha{ GL_ONE }, _dstAlpha{ GL_ZERO }, _rgbEquation{ GL_FUNC_ADD }, _alphaEquation{ GL_FUNC_ADD }{};
 
 bool Blending::getEnabled() {
     return _enabled;
 };
 
-void Blending::setEnabled(bool val) {
-    _enabled = val;
+void Blending::setEnabled(bool enabled) {
+    _enabled = enabled;
 };
 
-BlendingFactor Blending::getSrcRGB() {
+GLenum Blending::getSrcRGB() {
     return _srcRGB;
 };
 
-void Blending::setSrcRGB(BlendingFactor val) {
-    _srcRGB = val;
+void Blending::setSrcRGB(GLenum srcRGB) {
+    _srcRGB = srcRGB;
 };
 
-BlendingFactor Blending::getDstRGB() {
+GLenum Blending::getDstRGB() {
     return _dstRGB;
 };
 
-void Blending::setDstRGB(BlendingFactor val) {
-    _dstRGB = val;
+void Blending::setDstRGB(GLenum dstRGB) {
+    _dstRGB = dstRGB;
 };
 
-BlendingFactor Blending::getSrcAlpha() {
+GLenum Blending::getSrcAlpha() {
     return _srcAlpha;
 };
 
-void Blending::setSrcAlpha(BlendingFactor val) {
-    _srcAlpha = val;
+void Blending::setSrcAlpha(GLenum srcAlpha) {
+    _srcAlpha = srcAlpha;
 };
 
-BlendingFactor Blending::getDstAlpha() {
+GLenum Blending::getDstAlpha() {
     return _dstAlpha;
 };
 
-void Blending::setDstApha(BlendingFactor val) {
-    _dstAlpha = val;
+void Blending::setDstAlpha(GLenum dstAlpha) {
+    _dstAlpha = dstAlpha;
 };
 
-BlendEquation Blending::getRgbEquation() {
+GLenum Blending::getRgbEquation() {
     return _rgbEquation;
 };
 
-void Blending::setRgbEquation(BlendEquation val) {
-    _rgbEquation = val;
+void Blending::setRgbEquation(GLenum rgbEquation) {
+    _rgbEquation = rgbEquation;
 };
 
-BlendEquation Blending::getAlphaEquation() {
+GLenum Blending::getAlphaEquation() {
     return _alphaEquation;
 };
 
-void Blending::setAlphaEquation(BlendEquation val) {
-    _alphaEquation = val;
+void Blending::setAlphaEquation(GLenum alphaEquation) {
+    _alphaEquation = alphaEquation;
 };
 

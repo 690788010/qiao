@@ -98,78 +98,102 @@ $(document).ready(function(){initNavTree('blending_8h_source.html',''); initResi
   <div class="headertitle"><div class="title">blending.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../../../../third_party/glad/include/glad.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>qiao {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">enum</span> BlendingFactor {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        ZERO = GL_ZERO,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        ONE = GL_ONE,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        SRC_COLOR = GL_COLOR,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        ONE_MINUS_SRC_COLOR = GL_ONE_MINUS_SRC_COLOR,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        DST_COLOR = GL_DST_COLOR,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        ONE_MINUS_DST_COLOR = GL_ONE_MINUS_DST_COLOR,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        SRC_ALPHA = GL_SRC_ALPHA,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        ONE_MINUS_SRC_ALPHA = GL_ONE_MINUS_SRC_ALPHA,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        DST_ALPHA = GL_DST_ALPHA,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        ONE_MINUS_DST_ALPHA = GL_ONE_MINUS_DST_ALPHA,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        CONSTANT_COLOR = GL_CONSTANT_COLOR,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        ONE_MINUS_CONSTANT_COLOR = GL_ONE_MINUS_CONSTANT_COLOR,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        CONSTANT_ALPHA = GL_CONSTANT_ALPHA,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ONE_MINUS_CONSTANT_ALPHA = GL_ONE_MINUS_CONSTANT_ALPHA</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">enum</span> BlendEquation {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        FUNC_ADD = GL_FUNC_ADD,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        FUNC_SUBTRACT = GL_FUNC_SUBTRACT,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        FUNC_REVERSE_SUBTRACT = GL_FUNC_REVERSE_SUBTRACT,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        MIN = GL_MIN,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        MAX = GL_MAX</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classqiao_1_1_blending.html">   31</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classqiao_1_1_blending.html">Blending</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_class" href="classqiao_1_1_blending.html">Blending</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">bool</span> getEnabled();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> setEnabled(<span class="keywordtype">bool</span> val);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        BlendingFactor getSrcRGB();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> setSrcRGB(BlendingFactor val);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        BlendingFactor getDstRGB();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> setDstRGB(BlendingFactor val);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        BlendingFactor getSrcAlpha();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> setSrcAlpha(BlendingFactor val);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        BlendingFactor getDstAlpha();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">void</span> setDstApha(BlendingFactor val);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        BlendEquation getRgbEquation();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> setRgbEquation(BlendEquation val);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        BlendEquation getAlphaEquation();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">void</span> setAlphaEquation(BlendEquation val);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">bool</span> _enabled;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        BlendingFactor _srcRGB;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        BlendingFactor _dstRGB;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        BlendingFactor _srcAlpha;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        BlendingFactor _dstAlpha;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        BlendEquation _rgbEquation;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        BlendEquation _alphaEquation;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    };</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
-<div class="ttc" id="aclassqiao_1_1_blending_html"><div class="ttname"><a href="classqiao_1_1_blending.html">qiao::Blending</a></div><div class="ttdef"><b>Definition:</b> blending.h:31</div></div>
+<a href="blending_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../../../../third_party/glad/include/glad.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>qiao {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">enum</span> BlendingFactor {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        ZERO = GL_ZERO,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        ONE = GL_ONE,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        SRC_COLOR = GL_COLOR,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        ONE_MINUS_SRC_COLOR = GL_ONE_MINUS_SRC_COLOR,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        DST_COLOR = GL_DST_COLOR,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        ONE_MINUS_DST_COLOR = GL_ONE_MINUS_DST_COLOR,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        SRC_ALPHA = GL_SRC_ALPHA,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        ONE_MINUS_SRC_ALPHA = GL_ONE_MINUS_SRC_ALPHA,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        DST_ALPHA = GL_DST_ALPHA,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        ONE_MINUS_DST_ALPHA = GL_ONE_MINUS_DST_ALPHA,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        CONSTANT_COLOR = GL_CONSTANT_COLOR,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        ONE_MINUS_CONSTANT_COLOR = GL_ONE_MINUS_CONSTANT_COLOR,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        CONSTANT_ALPHA = GL_CONSTANT_ALPHA,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        ONE_MINUS_CONSTANT_ALPHA = GL_ONE_MINUS_CONSTANT_ALPHA</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">enum</span> BlendEquation {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        FUNC_ADD = GL_FUNC_ADD,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        FUNC_SUBTRACT = GL_FUNC_SUBTRACT,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        FUNC_REVERSE_SUBTRACT = GL_FUNC_REVERSE_SUBTRACT,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        MIN = GL_MIN,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        MAX = GL_MAX</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classqiao_1_1_blending.html">   40</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classqiao_1_1_blending.html">Blending</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="classqiao_1_1_blending.html#ac691aaf923fe793087db79144d6681e8">Blending</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classqiao_1_1_blending.html#aed652407f6d9e3b2b001b9882090e9b8">getEnabled</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef">setEnabled</a>(<span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#af68404f6cae282ae7d29e533d9dbe2b4">getSrcRGB</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a298d94a227da68e8c89cc1f980d1c3d0">setSrcRGB</a>(GLenum srcRGB);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#aaf8f8b28b28cf6313d1035e0b8448415">getDstRGB</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320">setDstRGB</a>(GLenum dstRGB);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#a1a33a141483b2452fd9ff31461fac871">getSrcAlpha</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a5e069f70a65264121a4a7e7d025c0ef5">setSrcAlpha</a>(GLenum srcAlpha);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#ab2adbf4b0cbe45ef8901df6a870478ac">getDstAlpha</a>();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4">setDstAlpha</a>(GLenum dstAlpha);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#a581fb75edfd1755c57debd9401720f41">getRgbEquation</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a542fd2493d67d05ad643fd6ad53e1019">setRgbEquation</a>(GLenum rgbEquation);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        GLenum <a class="code hl_function" href="classqiao_1_1_blending.html#a5d9d63bfc27e22a39b9a98dfbc7bd600">getAlphaEquation</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classqiao_1_1_blending.html#a5c33ae1e97a5df8c4902fdd1158bd2b2">setAlphaEquation</a>(GLenum alphaEquation);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">bool</span> _enabled;                  <span class="comment">// 是否开启混合</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="comment">// 以下变量的可选值详查：https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFuncSeparate.xhtml</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        GLenum _srcRGB;                 <span class="comment">// 源颜色RGB分量的混合因子</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        GLenum _dstRGB;                 <span class="comment">// 目标颜色RGB分量的混合因子</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        GLenum _srcAlpha;               <span class="comment">// 源颜色alpha分量的混合因子</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        GLenum _dstAlpha;               <span class="comment">// 目标颜色alpha分量的混合因子</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="comment">// 以下变量的可选值详查：https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendEquationSeparate.xhtml</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        GLenum _rgbEquation;     <span class="comment">// 颜色RGB分量的混合方程</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        GLenum _alphaEquation;   <span class="comment">// 颜色alpha分量的混合方程</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    };</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
+<div class="ttc" id="aclassqiao_1_1_blending_html"><div class="ttname"><a href="classqiao_1_1_blending.html">qiao::Blending</a></div><div class="ttdoc">Blending用于包含混合相关的状态信息</div><div class="ttdef"><b>Definition:</b> blending.h:40</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a1a33a141483b2452fd9ff31461fac871"><div class="ttname"><a href="classqiao_1_1_blending.html#a1a33a141483b2452fd9ff31461fac871">qiao::Blending::getSrcAlpha</a></div><div class="ttdeci">GLenum getSrcAlpha()</div><div class="ttdoc">查询源颜色alpha分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:39</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a298d94a227da68e8c89cc1f980d1c3d0"><div class="ttname"><a href="classqiao_1_1_blending.html#a298d94a227da68e8c89cc1f980d1c3d0">qiao::Blending::setSrcRGB</a></div><div class="ttdeci">void setSrcRGB(GLenum srcRGB)</div><div class="ttdoc">设置源颜色RGB分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:27</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a4fe56d12f68794c3de19037c196e84f4"><div class="ttname"><a href="classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4">qiao::Blending::setDstAlpha</a></div><div class="ttdeci">void setDstAlpha(GLenum dstAlpha)</div><div class="ttdoc">设置目标颜色alpha分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:51</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a542fd2493d67d05ad643fd6ad53e1019"><div class="ttname"><a href="classqiao_1_1_blending.html#a542fd2493d67d05ad643fd6ad53e1019">qiao::Blending::setRgbEquation</a></div><div class="ttdeci">void setRgbEquation(GLenum rgbEquation)</div><div class="ttdoc">设置颜色RGB分量的混合方程</div><div class="ttdef"><b>Definition:</b> blending.cc:59</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a581fb75edfd1755c57debd9401720f41"><div class="ttname"><a href="classqiao_1_1_blending.html#a581fb75edfd1755c57debd9401720f41">qiao::Blending::getRgbEquation</a></div><div class="ttdeci">GLenum getRgbEquation()</div><div class="ttdoc">查询颜色RGB分量的混合方程</div><div class="ttdef"><b>Definition:</b> blending.cc:55</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a5c33ae1e97a5df8c4902fdd1158bd2b2"><div class="ttname"><a href="classqiao_1_1_blending.html#a5c33ae1e97a5df8c4902fdd1158bd2b2">qiao::Blending::setAlphaEquation</a></div><div class="ttdeci">void setAlphaEquation(GLenum alphaEquation)</div><div class="ttdoc">设置颜色alpha分量的混合方程</div><div class="ttdef"><b>Definition:</b> blending.cc:67</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a5d9d63bfc27e22a39b9a98dfbc7bd600"><div class="ttname"><a href="classqiao_1_1_blending.html#a5d9d63bfc27e22a39b9a98dfbc7bd600">qiao::Blending::getAlphaEquation</a></div><div class="ttdeci">GLenum getAlphaEquation()</div><div class="ttdoc">查询颜色alpha分量的混合方程</div><div class="ttdef"><b>Definition:</b> blending.cc:63</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a5e069f70a65264121a4a7e7d025c0ef5"><div class="ttname"><a href="classqiao_1_1_blending.html#a5e069f70a65264121a4a7e7d025c0ef5">qiao::Blending::setSrcAlpha</a></div><div class="ttdeci">void setSrcAlpha(GLenum srcAlpha)</div><div class="ttdoc">设置源颜色alpha分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:43</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a8210563fb4368f3dea8c5c0bf62083ef"><div class="ttname"><a href="classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef">qiao::Blending::setEnabled</a></div><div class="ttdeci">void setEnabled(bool enabled)</div><div class="ttdoc">设置是否开启混合</div><div class="ttdef"><b>Definition:</b> blending.cc:19</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_a918949776e50f0e20f5e7422697d1320"><div class="ttname"><a href="classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320">qiao::Blending::setDstRGB</a></div><div class="ttdeci">void setDstRGB(GLenum dstRGB)</div><div class="ttdoc">设置目标颜色RGB分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:35</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_aaf8f8b28b28cf6313d1035e0b8448415"><div class="ttname"><a href="classqiao_1_1_blending.html#aaf8f8b28b28cf6313d1035e0b8448415">qiao::Blending::getDstRGB</a></div><div class="ttdeci">GLenum getDstRGB()</div><div class="ttdoc">查询目标颜色RGB分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:31</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_ab2adbf4b0cbe45ef8901df6a870478ac"><div class="ttname"><a href="classqiao_1_1_blending.html#ab2adbf4b0cbe45ef8901df6a870478ac">qiao::Blending::getDstAlpha</a></div><div class="ttdeci">GLenum getDstAlpha()</div><div class="ttdoc">查询目标颜色alpha分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:47</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_ac691aaf923fe793087db79144d6681e8"><div class="ttname"><a href="classqiao_1_1_blending.html#ac691aaf923fe793087db79144d6681e8">qiao::Blending::Blending</a></div><div class="ttdeci">Blending()</div><div class="ttdoc">默认构造函数</div><div class="ttdef"><b>Definition:</b> blending.cc:12</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_aed652407f6d9e3b2b001b9882090e9b8"><div class="ttname"><a href="classqiao_1_1_blending.html#aed652407f6d9e3b2b001b9882090e9b8">qiao::Blending::getEnabled</a></div><div class="ttdeci">bool getEnabled()</div><div class="ttdoc">查询是否开启混合</div><div class="ttdef"><b>Definition:</b> blending.cc:15</div></div>
+<div class="ttc" id="aclassqiao_1_1_blending_html_af68404f6cae282ae7d29e533d9dbe2b4"><div class="ttname"><a href="classqiao_1_1_blending.html#af68404f6cae282ae7d29e533d9dbe2b4">qiao::Blending::getSrcRGB</a></div><div class="ttdeci">GLenum getSrcRGB()</div><div class="ttdoc">查询源颜色RGB分量的混合因子</div><div class="ttdef"><b>Definition:</b> blending.cc:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_cfe299f2c045a102dc7069561a29caaa.html">renderer</a></li><li class="navelem"><a class="el" href="dir_b319d00b388d78c0e626141ca4f78cc4.html">state</a></li><li class="navelem"><a class="el" href="dir_3e66d8da5d0ec085114f715deeb35d99.html">render_state</a></li><li class="navelem"><b>blending.h</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_cfe299f2c045a102dc7069561a29caaa.html">renderer</a></li><li class="navelem"><a class="el" href="dir_b319d00b388d78c0e626141ca4f78cc4.html">state</a></li><li class="navelem"><a class="el" href="dir_3e66d8da5d0ec085114f715deeb35d99.html">render_state</a></li><li class="navelem"><a class="el" href="blending_8h.html">blending.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

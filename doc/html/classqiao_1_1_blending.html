@@ -101,55 +101,415 @@ $(document).ready(function(){initNavTree('classqiao_1_1_blending.html',''); init
   <div class="headertitle"><div class="title">qiao::Blending Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Blending用于包含混合相关的状态信息  
+ <a href="classqiao_1_1_blending.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="blending_8h_source.html">blending.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aed652407f6d9e3b2b001b9882090e9b8"><td class="memItemLeft" align="right" valign="top"><a id="aed652407f6d9e3b2b001b9882090e9b8" name="aed652407f6d9e3b2b001b9882090e9b8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getEnabled</b> ()</td></tr>
+<tr class="memitem:ac691aaf923fe793087db79144d6681e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#ac691aaf923fe793087db79144d6681e8">Blending</a> ()</td></tr>
+<tr class="memdesc:ac691aaf923fe793087db79144d6681e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数  <br /></td></tr>
+<tr class="separator:ac691aaf923fe793087db79144d6681e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed652407f6d9e3b2b001b9882090e9b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#aed652407f6d9e3b2b001b9882090e9b8">getEnabled</a> ()</td></tr>
+<tr class="memdesc:aed652407f6d9e3b2b001b9882090e9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询是否开启混合  <br /></td></tr>
 <tr class="separator:aed652407f6d9e3b2b001b9882090e9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18bbc270b5c62faf27685ea2e2ada652"><td class="memItemLeft" align="right" valign="top"><a id="a18bbc270b5c62faf27685ea2e2ada652" name="a18bbc270b5c62faf27685ea2e2ada652"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnabled</b> (bool val)</td></tr>
-<tr class="separator:a18bbc270b5c62faf27685ea2e2ada652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c46eb19e9236c5a13b024c4990902f4"><td class="memItemLeft" align="right" valign="top"><a id="a6c46eb19e9236c5a13b024c4990902f4" name="a6c46eb19e9236c5a13b024c4990902f4"></a>
-BlendingFactor&#160;</td><td class="memItemRight" valign="bottom"><b>getSrcRGB</b> ()</td></tr>
-<tr class="separator:a6c46eb19e9236c5a13b024c4990902f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c5d0ce4d22ae893c997e5334c4c65d"><td class="memItemLeft" align="right" valign="top"><a id="ab9c5d0ce4d22ae893c997e5334c4c65d" name="ab9c5d0ce4d22ae893c997e5334c4c65d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSrcRGB</b> (BlendingFactor val)</td></tr>
-<tr class="separator:ab9c5d0ce4d22ae893c997e5334c4c65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e20d78ecc63256d8a8fdd955bff446"><td class="memItemLeft" align="right" valign="top"><a id="aa1e20d78ecc63256d8a8fdd955bff446" name="aa1e20d78ecc63256d8a8fdd955bff446"></a>
-BlendingFactor&#160;</td><td class="memItemRight" valign="bottom"><b>getDstRGB</b> ()</td></tr>
-<tr class="separator:aa1e20d78ecc63256d8a8fdd955bff446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3292f1908ddf98c08494d8320c99f966"><td class="memItemLeft" align="right" valign="top"><a id="a3292f1908ddf98c08494d8320c99f966" name="a3292f1908ddf98c08494d8320c99f966"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDstRGB</b> (BlendingFactor val)</td></tr>
-<tr class="separator:a3292f1908ddf98c08494d8320c99f966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a540dcbaf55263594c1e70711ded5dce0"><td class="memItemLeft" align="right" valign="top"><a id="a540dcbaf55263594c1e70711ded5dce0" name="a540dcbaf55263594c1e70711ded5dce0"></a>
-BlendingFactor&#160;</td><td class="memItemRight" valign="bottom"><b>getSrcAlpha</b> ()</td></tr>
-<tr class="separator:a540dcbaf55263594c1e70711ded5dce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d86ff8e83fe3a704943127ba7346628"><td class="memItemLeft" align="right" valign="top"><a id="a8d86ff8e83fe3a704943127ba7346628" name="a8d86ff8e83fe3a704943127ba7346628"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSrcAlpha</b> (BlendingFactor val)</td></tr>
-<tr class="separator:a8d86ff8e83fe3a704943127ba7346628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb2c7f0740e44bfc873731ecfde8da70"><td class="memItemLeft" align="right" valign="top"><a id="adb2c7f0740e44bfc873731ecfde8da70" name="adb2c7f0740e44bfc873731ecfde8da70"></a>
-BlendingFactor&#160;</td><td class="memItemRight" valign="bottom"><b>getDstAlpha</b> ()</td></tr>
-<tr class="separator:adb2c7f0740e44bfc873731ecfde8da70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35cd0477d2cddcecc4fd3a48b04c1a32"><td class="memItemLeft" align="right" valign="top"><a id="a35cd0477d2cddcecc4fd3a48b04c1a32" name="a35cd0477d2cddcecc4fd3a48b04c1a32"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDstApha</b> (BlendingFactor val)</td></tr>
-<tr class="separator:a35cd0477d2cddcecc4fd3a48b04c1a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ffcdfc057d6b68f9295a78b7a9f772b"><td class="memItemLeft" align="right" valign="top"><a id="a7ffcdfc057d6b68f9295a78b7a9f772b" name="a7ffcdfc057d6b68f9295a78b7a9f772b"></a>
-BlendEquation&#160;</td><td class="memItemRight" valign="bottom"><b>getRgbEquation</b> ()</td></tr>
-<tr class="separator:a7ffcdfc057d6b68f9295a78b7a9f772b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc2fa40ce2029db5fcad21b897c6e861"><td class="memItemLeft" align="right" valign="top"><a id="adc2fa40ce2029db5fcad21b897c6e861" name="adc2fa40ce2029db5fcad21b897c6e861"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setRgbEquation</b> (BlendEquation val)</td></tr>
-<tr class="separator:adc2fa40ce2029db5fcad21b897c6e861"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1215277f995357a138ae9a51e4d4cd0"><td class="memItemLeft" align="right" valign="top"><a id="af1215277f995357a138ae9a51e4d4cd0" name="af1215277f995357a138ae9a51e4d4cd0"></a>
-BlendEquation&#160;</td><td class="memItemRight" valign="bottom"><b>getAlphaEquation</b> ()</td></tr>
-<tr class="separator:af1215277f995357a138ae9a51e4d4cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4218cd908acd79386202bd3dfcd42285"><td class="memItemLeft" align="right" valign="top"><a id="a4218cd908acd79386202bd3dfcd42285" name="a4218cd908acd79386202bd3dfcd42285"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAlphaEquation</b> (BlendEquation val)</td></tr>
-<tr class="separator:a4218cd908acd79386202bd3dfcd42285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8210563fb4368f3dea8c5c0bf62083ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef">setEnabled</a> (bool enabled)</td></tr>
+<tr class="memdesc:a8210563fb4368f3dea8c5c0bf62083ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否开启混合  <br /></td></tr>
+<tr class="separator:a8210563fb4368f3dea8c5c0bf62083ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68404f6cae282ae7d29e533d9dbe2b4"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#af68404f6cae282ae7d29e533d9dbe2b4">getSrcRGB</a> ()</td></tr>
+<tr class="memdesc:af68404f6cae282ae7d29e533d9dbe2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询源颜色RGB分量的混合因子  <br /></td></tr>
+<tr class="separator:af68404f6cae282ae7d29e533d9dbe2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298d94a227da68e8c89cc1f980d1c3d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a298d94a227da68e8c89cc1f980d1c3d0">setSrcRGB</a> (GLenum srcRGB)</td></tr>
+<tr class="memdesc:a298d94a227da68e8c89cc1f980d1c3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源颜色RGB分量的混合因子  <br /></td></tr>
+<tr class="separator:a298d94a227da68e8c89cc1f980d1c3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8f8b28b28cf6313d1035e0b8448415"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#aaf8f8b28b28cf6313d1035e0b8448415">getDstRGB</a> ()</td></tr>
+<tr class="memdesc:aaf8f8b28b28cf6313d1035e0b8448415"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询目标颜色RGB分量的混合因子  <br /></td></tr>
+<tr class="separator:aaf8f8b28b28cf6313d1035e0b8448415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918949776e50f0e20f5e7422697d1320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320">setDstRGB</a> (GLenum dstRGB)</td></tr>
+<tr class="memdesc:a918949776e50f0e20f5e7422697d1320"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标颜色RGB分量的混合因子  <br /></td></tr>
+<tr class="separator:a918949776e50f0e20f5e7422697d1320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a33a141483b2452fd9ff31461fac871"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a1a33a141483b2452fd9ff31461fac871">getSrcAlpha</a> ()</td></tr>
+<tr class="memdesc:a1a33a141483b2452fd9ff31461fac871"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询源颜色alpha分量的混合因子  <br /></td></tr>
+<tr class="separator:a1a33a141483b2452fd9ff31461fac871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e069f70a65264121a4a7e7d025c0ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a5e069f70a65264121a4a7e7d025c0ef5">setSrcAlpha</a> (GLenum srcAlpha)</td></tr>
+<tr class="memdesc:a5e069f70a65264121a4a7e7d025c0ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源颜色alpha分量的混合因子  <br /></td></tr>
+<tr class="separator:a5e069f70a65264121a4a7e7d025c0ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2adbf4b0cbe45ef8901df6a870478ac"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#ab2adbf4b0cbe45ef8901df6a870478ac">getDstAlpha</a> ()</td></tr>
+<tr class="memdesc:ab2adbf4b0cbe45ef8901df6a870478ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询目标颜色alpha分量的混合因子  <br /></td></tr>
+<tr class="separator:ab2adbf4b0cbe45ef8901df6a870478ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe56d12f68794c3de19037c196e84f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4">setDstAlpha</a> (GLenum dstAlpha)</td></tr>
+<tr class="memdesc:a4fe56d12f68794c3de19037c196e84f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标颜色alpha分量的混合因子  <br /></td></tr>
+<tr class="separator:a4fe56d12f68794c3de19037c196e84f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581fb75edfd1755c57debd9401720f41"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a581fb75edfd1755c57debd9401720f41">getRgbEquation</a> ()</td></tr>
+<tr class="memdesc:a581fb75edfd1755c57debd9401720f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询颜色RGB分量的混合方程  <br /></td></tr>
+<tr class="separator:a581fb75edfd1755c57debd9401720f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542fd2493d67d05ad643fd6ad53e1019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a542fd2493d67d05ad643fd6ad53e1019">setRgbEquation</a> (GLenum rgbEquation)</td></tr>
+<tr class="memdesc:a542fd2493d67d05ad643fd6ad53e1019"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置颜色RGB分量的混合方程  <br /></td></tr>
+<tr class="separator:a542fd2493d67d05ad643fd6ad53e1019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9d63bfc27e22a39b9a98dfbc7bd600"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a5d9d63bfc27e22a39b9a98dfbc7bd600">getAlphaEquation</a> ()</td></tr>
+<tr class="memdesc:a5d9d63bfc27e22a39b9a98dfbc7bd600"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询颜色alpha分量的混合方程  <br /></td></tr>
+<tr class="separator:a5d9d63bfc27e22a39b9a98dfbc7bd600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c33ae1e97a5df8c4902fdd1158bd2b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_blending.html#a5c33ae1e97a5df8c4902fdd1158bd2b2">setAlphaEquation</a> (GLenum alphaEquation)</td></tr>
+<tr class="memdesc:a5c33ae1e97a5df8c4902fdd1158bd2b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置颜色alpha分量的混合方程  <br /></td></tr>
+<tr class="separator:a5c33ae1e97a5df8c4902fdd1158bd2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Blending用于包含混合相关的状态信息 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac691aaf923fe793087db79144d6681e8" name="ac691aaf923fe793087db79144d6681e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac691aaf923fe793087db79144d6681e8">&#9670;&#160;</a></span>Blending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Blending::Blending </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>默认构造函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aed652407f6d9e3b2b001b9882090e9b8" name="aed652407f6d9e3b2b001b9882090e9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed652407f6d9e3b2b001b9882090e9b8">&#9670;&#160;</a></span>getEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Blending::getEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询是否开启混合 </p>
+<dl class="section return"><dt>Returns</dt><dd>是否开启混合 </dd></dl>
+
+</div>
+</div>
+<a id="a8210563fb4368f3dea8c5c0bf62083ef" name="a8210563fb4368f3dea8c5c0bf62083ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8210563fb4368f3dea8c5c0bf62083ef">&#9670;&#160;</a></span>setEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否开启混合 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>是否开启混合</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="af68404f6cae282ae7d29e533d9dbe2b4" name="af68404f6cae282ae7d29e533d9dbe2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af68404f6cae282ae7d29e533d9dbe2b4">&#9670;&#160;</a></span>getSrcRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getSrcRGB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询源颜色RGB分量的混合因子 </p>
+<dl class="section return"><dt>Returns</dt><dd>源颜色RGB分量的混合因子 </dd></dl>
+
+</div>
+</div>
+<a id="a298d94a227da68e8c89cc1f980d1c3d0" name="a298d94a227da68e8c89cc1f980d1c3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298d94a227da68e8c89cc1f980d1c3d0">&#9670;&#160;</a></span>setSrcRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setSrcRGB </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>srcRGB</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置源颜色RGB分量的混合因子 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcRGB</td><td>源颜色RGB分量的混合因子</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="aaf8f8b28b28cf6313d1035e0b8448415" name="aaf8f8b28b28cf6313d1035e0b8448415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8f8b28b28cf6313d1035e0b8448415">&#9670;&#160;</a></span>getDstRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getDstRGB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询目标颜色RGB分量的混合因子 </p>
+<dl class="section return"><dt>Returns</dt><dd>目标颜色RGB分量的混合因子 </dd></dl>
+
+</div>
+</div>
+<a id="a918949776e50f0e20f5e7422697d1320" name="a918949776e50f0e20f5e7422697d1320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918949776e50f0e20f5e7422697d1320">&#9670;&#160;</a></span>setDstRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setDstRGB </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>dstRGB</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置目标颜色RGB分量的混合因子 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dstRGB</td><td>目标颜色RGB分量的混合因子</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1a33a141483b2452fd9ff31461fac871" name="a1a33a141483b2452fd9ff31461fac871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a33a141483b2452fd9ff31461fac871">&#9670;&#160;</a></span>getSrcAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getSrcAlpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询源颜色alpha分量的混合因子 </p>
+<dl class="section return"><dt>Returns</dt><dd>源颜色alpha分量的混合因子 </dd></dl>
+
+</div>
+</div>
+<a id="a5e069f70a65264121a4a7e7d025c0ef5" name="a5e069f70a65264121a4a7e7d025c0ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e069f70a65264121a4a7e7d025c0ef5">&#9670;&#160;</a></span>setSrcAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setSrcAlpha </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>srcAlpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置源颜色alpha分量的混合因子 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcAlpha</td><td>源颜色alpha分量的混合因子</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ab2adbf4b0cbe45ef8901df6a870478ac" name="ab2adbf4b0cbe45ef8901df6a870478ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2adbf4b0cbe45ef8901df6a870478ac">&#9670;&#160;</a></span>getDstAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getDstAlpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询目标颜色alpha分量的混合因子 </p>
+<dl class="section return"><dt>Returns</dt><dd>目标颜色alpha分量的混合因子 </dd></dl>
+
+</div>
+</div>
+<a id="a4fe56d12f68794c3de19037c196e84f4" name="a4fe56d12f68794c3de19037c196e84f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe56d12f68794c3de19037c196e84f4">&#9670;&#160;</a></span>setDstAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setDstAlpha </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>dstAlpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置目标颜色alpha分量的混合因子 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dstAlpha</td><td>目标颜色alpha分量的混合因子</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a581fb75edfd1755c57debd9401720f41" name="a581fb75edfd1755c57debd9401720f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a581fb75edfd1755c57debd9401720f41">&#9670;&#160;</a></span>getRgbEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getRgbEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询颜色RGB分量的混合方程 </p>
+<dl class="section return"><dt>Returns</dt><dd>颜色RGB分量的混合方程 </dd></dl>
+
+</div>
+</div>
+<a id="a542fd2493d67d05ad643fd6ad53e1019" name="a542fd2493d67d05ad643fd6ad53e1019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a542fd2493d67d05ad643fd6ad53e1019">&#9670;&#160;</a></span>setRgbEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setRgbEquation </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>rgbEquation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置颜色RGB分量的混合方程 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgbEquation</td><td>颜色RGB分量的混合方程</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a5d9d63bfc27e22a39b9a98dfbc7bd600" name="a5d9d63bfc27e22a39b9a98dfbc7bd600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d9d63bfc27e22a39b9a98dfbc7bd600">&#9670;&#160;</a></span>getAlphaEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Blending::getAlphaEquation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询颜色alpha分量的混合方程 </p>
+<dl class="section return"><dt>Returns</dt><dd>颜色alpha分量的混合方程 </dd></dl>
+
+</div>
+</div>
+<a id="a5c33ae1e97a5df8c4902fdd1158bd2b2" name="a5c33ae1e97a5df8c4902fdd1158bd2b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c33ae1e97a5df8c4902fdd1158bd2b2">&#9670;&#160;</a></span>setAlphaEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Blending::setAlphaEquation </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>alphaEquation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置颜色alpha分量的混合方程 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alphaEquation</td><td>颜色alpha分量的混合方程</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/cppRepos/qiao/source/renderer/state/render_state/<a class="el" href="blending_8h_source.html">blending.h</a></li>
-<li>D:/cppRepos/qiao/source/renderer/state/render_state/blending.cc</li>
+<li>D:/cppRepos/qiao/source/renderer/state/render_state/<a class="el" href="blending_8cc.html">blending.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

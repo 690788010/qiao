@@ -24,7 +24,6 @@ Context::~Context() {
 		delete _renderState;
 		_renderState = nullptr;
 	}
-
 };
 
 void Context::draw(GLenum primitiveType, DrawState* drawState, SceneState* sceneState) {

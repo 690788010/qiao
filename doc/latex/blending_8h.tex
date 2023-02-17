@@ -1,0 +1,51 @@
+\hypertarget{blending_8h}{}\doxysection{D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/blending.h File Reference}
+\label{blending_8h}\index{D:/cppRepos/qiao/source/renderer/state/render\_state/blending.h@{D:/cppRepos/qiao/source/renderer/state/render\_state/blending.h}}
+{\ttfamily \#include \char`\"{}../../../../third\+\_\+party/glad/include/glad.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqiao_1_1_blending}{qiao\+::\+Blending}}
+\begin{DoxyCompactList}\small\item\em Blending用于包含混合相关的状态信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{blending_8h_aa572e75b2c077b80c0fb992e5210d564}\label{blending_8h_aa572e75b2c077b80c0fb992e5210d564}} 
+enum {\bfseries Blending\+Factor} \{ \newline
+{\bfseries ZERO} = GL\+\_\+\+ZERO
+, {\bfseries ONE} = GL\+\_\+\+ONE
+, {\bfseries SRC\+\_\+\+COLOR} = GL\+\_\+\+COLOR
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+COLOR} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+COLOR
+, \newline
+{\bfseries DST\+\_\+\+COLOR} = GL\+\_\+\+DST\+\_\+\+COLOR
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+COLOR} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+COLOR
+, {\bfseries SRC\+\_\+\+ALPHA} = GL\+\_\+\+SRC\+\_\+\+ALPHA
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA
+, \newline
+{\bfseries DST\+\_\+\+ALPHA} = GL\+\_\+\+DST\+\_\+\+ALPHA
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+ALPHA} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+ALPHA
+, {\bfseries CONSTANT\+\_\+\+COLOR} = GL\+\_\+\+CONSTANT\+\_\+\+COLOR
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+CONSTANT\+\_\+\+COLOR} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+CONSTANT\+\_\+\+COLOR
+, \newline
+{\bfseries CONSTANT\+\_\+\+ALPHA} = GL\+\_\+\+CONSTANT\+\_\+\+ALPHA
+, {\bfseries ONE\+\_\+\+MINUS\+\_\+\+CONSTANT\+\_\+\+ALPHA} = GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+CONSTANT\+\_\+\+ALPHA
+ \}
+\item 
+\mbox{\Hypertarget{blending_8h_a1007410f930d9373d9f97a4aea90f972}\label{blending_8h_a1007410f930d9373d9f97a4aea90f972}} 
+enum {\bfseries Blend\+Equation} \{ \newline
+{\bfseries FUNC\+\_\+\+ADD} = GL\+\_\+\+FUNC\+\_\+\+ADD
+, {\bfseries FUNC\+\_\+\+SUBTRACT} = GL\+\_\+\+FUNC\+\_\+\+SUBTRACT
+, {\bfseries FUNC\+\_\+\+REVERSE\+\_\+\+SUBTRACT} = GL\+\_\+\+FUNC\+\_\+\+REVERSE\+\_\+\+SUBTRACT
+, {\bfseries MIN} = GL\+\_\+\+MIN
+, \newline
+{\bfseries MAX} = GL\+\_\+\+MAX
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+yangqiao 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 2022 
+\end{DoxyDate}

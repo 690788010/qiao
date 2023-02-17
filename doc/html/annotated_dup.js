@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "qiao", null, [
-      [ "Blending", "classqiao_1_1_blending.html", null ],
+      [ "Blending", "classqiao_1_1_blending.html", "classqiao_1_1_blending" ],
       [ "Buffer", "classqiao_1_1_buffer.html", "classqiao_1_1_buffer" ],
       [ "Camera", "classqiao_1_1_camera.html", null ],
       [ "ClearState", "classqiao_1_1_clear_state.html", "classqiao_1_1_clear_state" ],
@@ -29,7 +29,7 @@ var annotated_dup =
       [ "ModelMatrixUniform", "classqiao_1_1_model_matrix_uniform.html", "classqiao_1_1_model_matrix_uniform" ],
       [ "ModelMatrixUniformFactory", "classqiao_1_1_model_matrix_uniform_factory.html", "classqiao_1_1_model_matrix_uniform_factory" ],
       [ "PrimitiveRestart", "classqiao_1_1_primitive_restart.html", null ],
-      [ "RenderState", "classqiao_1_1_render_state.html", null ],
+      [ "RenderState", "classqiao_1_1_render_state.html", "classqiao_1_1_render_state" ],
       [ "SceneState", "classqiao_1_1_scene_state.html", null ],
       [ "ScissorTest", "classqiao_1_1_scissor_test.html", null ],
       [ "ShaderObject", "classqiao_1_1_shader_object.html", "classqiao_1_1_shader_object" ],
