@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('render__state_8h_source.html',''); ini
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;primitive_restart.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;cull_face.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;scissor_test.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;stencil_test.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="stencil__test_8h.html">stencil_test.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="depth__test_8h.html">depth_test.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="blending_8h.html">blending.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="color__mask_8h.html">color_mask.h</a>&quot;</span></div>
@@ -152,8 +152,8 @@ $(document).ready(function(){initNavTree('render__state_8h_source.html',''); ini
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        GLboolean _programPointSize;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        PolygonMode _polygonMode;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_class" href="classqiao_1_1_scissor_test.html">ScissorTest</a> _scissorTest;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_class" href="classqiao_1_1_stencil_test.html">StencilTest</a> _stencilTest;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_class" href="classqiao_1_1_depth_test.html">DepthTest</a> _depthTest;       </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_class" href="classqiao_1_1_stencil_test.html">StencilTest</a> _stencilTest;   <span class="comment">// 包含模板测试相关的状态信息</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_class" href="classqiao_1_1_depth_test.html">DepthTest</a> _depthTest;       <span class="comment">// 包含深度测试相关的状态信息</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_class" href="classqiao_1_1_blending.html">Blending</a> _blending;         <span class="comment">// 包含混合相关的状态信息</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_class" href="classqiao_1_1_color_mask.html">ColorMask</a> _colorMask;       <span class="comment">// 是否开启颜色缓冲各个颜色分量的写操作</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    };</div>
@@ -167,9 +167,10 @@ $(document).ready(function(){initNavTree('render__state_8h_source.html',''); ini
 <div class="ttc" id="aclassqiao_1_1_render_state_html"><div class="ttname"><a href="classqiao_1_1_render_state.html">qiao::RenderState</a></div><div class="ttdoc">RenderState类用于包含各种渲染状态。</div><div class="ttdef"><b>Definition:</b> render_state.h:29</div></div>
 <div class="ttc" id="aclassqiao_1_1_render_state_html_a0a130c0f2f45c4e0358cb62c09c595e9"><div class="ttname"><a href="classqiao_1_1_render_state.html#a0a130c0f2f45c4e0358cb62c09c595e9">qiao::RenderState::RenderState</a></div><div class="ttdeci">RenderState()</div><div class="ttdoc">默认构造函数</div><div class="ttdef"><b>Definition:</b> render_state.cc:7</div></div>
 <div class="ttc" id="aclassqiao_1_1_scissor_test_html"><div class="ttname"><a href="classqiao_1_1_scissor_test.html">qiao::ScissorTest</a></div><div class="ttdef"><b>Definition:</b> scissor_test.h:5</div></div>
-<div class="ttc" id="aclassqiao_1_1_stencil_test_html"><div class="ttname"><a href="classqiao_1_1_stencil_test.html">qiao::StencilTest</a></div><div class="ttdef"><b>Definition:</b> stencil_test.h:5</div></div>
+<div class="ttc" id="aclassqiao_1_1_stencil_test_html"><div class="ttname"><a href="classqiao_1_1_stencil_test.html">qiao::StencilTest</a></div><div class="ttdoc">StencilTest类用于包含模板测试相关的状态信息</div><div class="ttdef"><b>Definition:</b> stencil_test.h:14</div></div>
 <div class="ttc" id="acolor__mask_8h_html"><div class="ttname"><a href="color__mask_8h.html">color_mask.h</a></div></div>
 <div class="ttc" id="adepth__test_8h_html"><div class="ttname"><a href="depth__test_8h.html">depth_test.h</a></div></div>
+<div class="ttc" id="astencil__test_8h_html"><div class="ttname"><a href="stencil__test_8h.html">stencil_test.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

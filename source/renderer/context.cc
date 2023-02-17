@@ -354,11 +354,7 @@ void Context::_applyRenderState(RenderState* renderState) {
 
 	// apply StencilTest
 	StencilTest stencilTest = renderState->getStencilTest();
-	StencilTest _stencilTest = _renderState->getStencilTest();
-	if (stencilTest.getEnabled() != _stencilTest.getEnabled()) {
-		_enable(GL_STENCIL_TEST, stencilTest.getEnabled());
-		_stencilTest.setEnabled(stencilTest.getEnabled());
-	}
+	_applyStencilTest(stencilTest);
 
 	// apply DepthTest
 	DepthTest depthTest = renderState->getDepthTest();
@@ -385,6 +381,14 @@ void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) 
 		_boundShaderProgram = shaderProgram;
 	}
 	_boundShaderProgram->clean(this, drawState, sceneState);
+};
+
+void Context::_applyStencilTest(StencilTest& stencilTest) {
+	StencilTest _stencilTest = _renderState->getStencilTest();
+	if (stencilTest.getEnabled() != _stencilTest.getEnabled()) {
+		_enable(GL_STENCIL_TEST, stencilTest.getEnabled());
+		_stencilTest.setEnabled(stencilTest.getEnabled());
+	}
 };
 
 void Context::_applyDepthTest(DepthTest& depthTest) {

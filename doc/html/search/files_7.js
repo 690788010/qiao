@@ -6,5 +6,7 @@ var searchData=
   ['shader_5fprogram_2eh_3',['shader_program.h',['../shader__program_8h.html',1,'']]],
   ['shader_5fvertex_5fattribute_2ecc_4',['shader_vertex_attribute.cc',['../shader__vertex__attribute_8cc.html',1,'']]],
   ['shader_5fvertex_5fattribute_2eh_5',['shader_vertex_attribute.h',['../shader__vertex__attribute_8h.html',1,'']]],
-  ['shader_5fvertex_5fattribute_5fcollection_2eh_6',['shader_vertex_attribute_collection.h',['../shader__vertex__attribute__collection_8h.html',1,'']]]
+  ['shader_5fvertex_5fattribute_5fcollection_2eh_6',['shader_vertex_attribute_collection.h',['../shader__vertex__attribute__collection_8h.html',1,'']]],
+  ['stencil_5ftest_2ecc_7',['stencil_test.cc',['../stencil__test_8cc.html',1,'']]],
+  ['stencil_5ftest_2eh_8',['stencil_test.h',['../stencil__test_8h.html',1,'']]]
 ];

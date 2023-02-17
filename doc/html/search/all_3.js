@@ -12,7 +12,7 @@ var searchData=
   ['getdepthmask_9',['getDepthMask',['../classqiao_1_1_depth_test.html#a1a39acdd9af78e36b8d00662d6219dba',1,'qiao::DepthTest']]],
   ['getdstalpha_10',['getDstAlpha',['../classqiao_1_1_blending.html#ab2adbf4b0cbe45ef8901df6a870478ac',1,'qiao::Blending']]],
   ['getdstrgb_11',['getDstRGB',['../classqiao_1_1_blending.html#aaf8f8b28b28cf6313d1035e0b8448415',1,'qiao::Blending']]],
-  ['getenabled_12',['getEnabled',['../classqiao_1_1_blending.html#aed652407f6d9e3b2b001b9882090e9b8',1,'qiao::Blending::getEnabled()'],['../classqiao_1_1_depth_test.html#ab4def3e818eaf59305e619d09d4be24b',1,'qiao::DepthTest::getEnabled()']]],
+  ['getenabled_12',['getEnabled',['../classqiao_1_1_blending.html#aed652407f6d9e3b2b001b9882090e9b8',1,'qiao::Blending::getEnabled()'],['../classqiao_1_1_depth_test.html#ab4def3e818eaf59305e619d09d4be24b',1,'qiao::DepthTest::getEnabled()'],['../classqiao_1_1_stencil_test.html#a1e9a86b17b9515995056dbd70a72b40a',1,'qiao::StencilTest::getEnabled()']]],
   ['getfar_13',['getFar',['../classqiao_1_1_depth_test.html#aea8ba450416e28c003ddabee5e57672f',1,'qiao::DepthTest']]],
   ['getgreen_14',['getGreen',['../classqiao_1_1_color.html#a03430133f4da090790657175b2bddcd7',1,'qiao::Color::getGreen()'],['../classqiao_1_1_color_mask.html#a72aef51e8a84a511b43ee00cd0398278',1,'qiao::ColorMask::getGreen()']]],
   ['getname_15',['getName',['../classqiao_1_1_draw_auto_uniform_factory.html#a9cdb4c93c4de3490b4a416fa61d4d6ab',1,'qiao::DrawAutoUniformFactory::getName()'],['../classqiao_1_1_model_matrix_uniform_factory.html#a83367492c2a8fdb8eed09fafd4b1522e',1,'qiao::ModelMatrixUniformFactory::getName()']]],

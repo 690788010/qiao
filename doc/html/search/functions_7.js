@@ -11,7 +11,7 @@ var searchData=
   ['setdepthmask_8',['setDepthMask',['../classqiao_1_1_depth_test.html#af1d571927af0fb960ff952cf0d31c272',1,'qiao::DepthTest']]],
   ['setdstalpha_9',['setDstAlpha',['../classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4',1,'qiao::Blending']]],
   ['setdstrgb_10',['setDstRGB',['../classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320',1,'qiao::Blending']]],
-  ['setenabled_11',['setEnabled',['../classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef',1,'qiao::Blending::setEnabled()'],['../classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036',1,'qiao::DepthTest::setEnabled(bool enabled)']]],
+  ['setenabled_11',['setEnabled',['../classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef',1,'qiao::Blending::setEnabled()'],['../classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036',1,'qiao::DepthTest::setEnabled()'],['../classqiao_1_1_stencil_test.html#a4ec1ba36a4bf7ec3dd421dfb9e06912e',1,'qiao::StencilTest::setEnabled()']]],
   ['setfar_12',['setFar',['../classqiao_1_1_depth_test.html#a1833db173bf8f77ccb48aadcffbe0502',1,'qiao::DepthTest']]],
   ['setgreen_13',['setGreen',['../classqiao_1_1_color.html#a0aacb2489699d0b78ebdb24f7abdf4b7',1,'qiao::Color::setGreen()'],['../classqiao_1_1_color_mask.html#aa427d53e742799cc5a2a1265f3ec369a',1,'qiao::ColorMask::setGreen()']]],
   ['setnear_14',['setNear',['../classqiao_1_1_depth_test.html#a13fd90715e39c1a2954b7cd8d8ad0ad7',1,'qiao::DepthTest']]],
@@ -21,5 +21,6 @@ var searchData=
   ['setsrcrgb_18',['setSrcRGB',['../classqiao_1_1_blending.html#a298d94a227da68e8c89cc1f980d1c3d0',1,'qiao::Blending']]],
   ['setstencil_19',['setStencil',['../classqiao_1_1_clear_state.html#a10ce309ea74859178cc80ca3856b07b9',1,'qiao::ClearState']]],
   ['shaderobject_20',['ShaderObject',['../classqiao_1_1_shader_object.html#afe67dce305d9ddf2eabb56e9fc9b629a',1,'qiao::ShaderObject']]],
-  ['shaderprogram_21',['ShaderProgram',['../classqiao_1_1_shader_program.html#a9f98c8503d708d35f0dad1b211ddebae',1,'qiao::ShaderProgram']]]
+  ['shaderprogram_21',['ShaderProgram',['../classqiao_1_1_shader_program.html#a9f98c8503d708d35f0dad1b211ddebae',1,'qiao::ShaderProgram']]],
+  ['stenciltest_22',['StencilTest',['../classqiao_1_1_stencil_test.html#a242bd4947e7acb402b76d3fd8602befb',1,'qiao::StencilTest']]]
 ];

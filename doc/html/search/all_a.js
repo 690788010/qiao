@@ -13,7 +13,7 @@ var searchData=
   ['setdepthmask_10',['setDepthMask',['../classqiao_1_1_depth_test.html#af1d571927af0fb960ff952cf0d31c272',1,'qiao::DepthTest']]],
   ['setdstalpha_11',['setDstAlpha',['../classqiao_1_1_blending.html#a4fe56d12f68794c3de19037c196e84f4',1,'qiao::Blending']]],
   ['setdstrgb_12',['setDstRGB',['../classqiao_1_1_blending.html#a918949776e50f0e20f5e7422697d1320',1,'qiao::Blending']]],
-  ['setenabled_13',['setEnabled',['../classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036',1,'qiao::DepthTest::setEnabled()'],['../classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef',1,'qiao::Blending::setEnabled()']]],
+  ['setenabled_13',['setEnabled',['../classqiao_1_1_stencil_test.html#a4ec1ba36a4bf7ec3dd421dfb9e06912e',1,'qiao::StencilTest::setEnabled()'],['../classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036',1,'qiao::DepthTest::setEnabled()'],['../classqiao_1_1_blending.html#a8210563fb4368f3dea8c5c0bf62083ef',1,'qiao::Blending::setEnabled()']]],
   ['setfar_14',['setFar',['../classqiao_1_1_depth_test.html#a1833db173bf8f77ccb48aadcffbe0502',1,'qiao::DepthTest']]],
   ['setgreen_15',['setGreen',['../classqiao_1_1_color_mask.html#aa427d53e742799cc5a2a1265f3ec369a',1,'qiao::ColorMask::setGreen()'],['../classqiao_1_1_color.html#a0aacb2489699d0b78ebdb24f7abdf4b7',1,'qiao::Color::setGreen()']]],
   ['setnear_16',['setNear',['../classqiao_1_1_depth_test.html#a13fd90715e39c1a2954b7cd8d8ad0ad7',1,'qiao::DepthTest']]],
@@ -34,5 +34,7 @@ var searchData=
   ['shadertype_31',['ShaderType',['../shader__object_8h.html#a85c0517e07e6d38756648ff37f1bca6a',1,'qiao']]],
   ['shadervertexattribute_32',['ShaderVertexAttribute',['../classqiao_1_1_shader_vertex_attribute.html',1,'qiao']]],
   ['shadervertexattributecollection_33',['ShaderVertexAttributeCollection',['../classqiao_1_1_shader_vertex_attribute_collection.html',1,'qiao']]],
-  ['stenciltest_34',['StencilTest',['../classqiao_1_1_stencil_test.html',1,'qiao']]]
+  ['stencil_5ftest_2ecc_34',['stencil_test.cc',['../stencil__test_8cc.html',1,'']]],
+  ['stencil_5ftest_2eh_35',['stencil_test.h',['../stencil__test_8h.html',1,'']]],
+  ['stenciltest_36',['StencilTest',['../classqiao_1_1_stencil_test.html',1,'qiao::StencilTest'],['../classqiao_1_1_stencil_test.html#a242bd4947e7acb402b76d3fd8602befb',1,'qiao::StencilTest::StencilTest()']]]
 ];

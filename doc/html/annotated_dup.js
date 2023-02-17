@@ -36,7 +36,7 @@ var annotated_dup =
       [ "ShaderProgram", "classqiao_1_1_shader_program.html", "classqiao_1_1_shader_program" ],
       [ "ShaderVertexAttribute", "classqiao_1_1_shader_vertex_attribute.html", null ],
       [ "ShaderVertexAttributeCollection", "classqiao_1_1_shader_vertex_attribute_collection.html", null ],
-      [ "StencilTest", "classqiao_1_1_stencil_test.html", null ],
+      [ "StencilTest", "classqiao_1_1_stencil_test.html", "classqiao_1_1_stencil_test" ],
       [ "Texture2D", "classqiao_1_1_texture2_d.html", null ],
       [ "TextureUniform", "classqiao_1_1_texture_uniform.html", "classqiao_1_1_texture_uniform" ],
       [ "Uniform", "classqiao_1_1_uniform.html", null ],
