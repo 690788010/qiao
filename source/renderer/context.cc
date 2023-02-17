@@ -328,29 +328,7 @@ void Context::_applyRenderState(RenderState* renderState) {
 
 	// apply ScissorTest
 	ScissorTest scissorTest = renderState->getScissorTest();
-	ScissorTest _scissorTest = _renderState->getScissorTest();
-	if (scissorTest.getWidth() < 0) {
-		throw std::invalid_argument("renderState->ScissorTest.Width must be greater than or equal to zero!");
-	}
-	if (scissorTest.getHeight() < 0) {
-		throw std::invalid_argument("renderState->ScissorTest.Height must be greater than or equal to zero!");
-	}
-	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
-		_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
-		_scissorTest.setEnabled(scissorTest.getEnabled());
-	}
-	if (scissorTest.getEnabled()) {
-		if (scissorTest.getX() != _scissorTest.getX() ||
-			scissorTest.getY() != _scissorTest.getY() ||
-			scissorTest.getWidth() != _scissorTest.getWidth() ||
-			scissorTest.getHeight() != _scissorTest.getHeight()) {
-			glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
-			_scissorTest.setX(scissorTest.getX());
-			_scissorTest.setY(scissorTest.getY());
-			_scissorTest.setWidth(scissorTest.getWidth());
-			_scissorTest.setHeight(scissorTest.getHeight());
-		}
-	}
+	_applyScissorTest(scissorTest);
 
 	// apply StencilTest
 	StencilTest stencilTest = renderState->getStencilTest();
@@ -381,6 +359,27 @@ void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) 
 		_boundShaderProgram = shaderProgram;
 	}
 	_boundShaderProgram->clean(this, drawState, sceneState);
+};
+
+void Context::_applyScissorTest(ScissorTest& scissorTest) {
+	ScissorTest _scissorTest = _renderState->getScissorTest();
+	if (scissorTest.getEnabled() != _scissorTest.getEnabled()) {
+		_enable(GL_SCISSOR_TEST, scissorTest.getEnabled());
+		_scissorTest.setEnabled(scissorTest.getEnabled());
+	}
+	if (scissorTest.getEnabled()) {
+		if (scissorTest.getX() != _scissorTest.getX() ||
+			scissorTest.getY() != _scissorTest.getY() ||
+			scissorTest.getWidth() != _scissorTest.getWidth() ||
+			scissorTest.getHeight() != _scissorTest.getHeight()) 
+		{
+			glScissor(scissorTest.getX(), scissorTest.getY(), scissorTest.getWidth(), scissorTest.getHeight());
+			_scissorTest.setX(scissorTest.getX());
+			_scissorTest.setY(scissorTest.getY());
+			_scissorTest.setWidth(scissorTest.getWidth());
+			_scissorTest.setHeight(scissorTest.getHeight());
+		}
+	}
 };
 
 void Context::_applyStencilTest(StencilTest& stencilTest) {

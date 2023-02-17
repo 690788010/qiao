@@ -66,7 +66,7 @@ namespace qiao {
 		CullFace _cullFace;
 		GLboolean _programPointSize;
 		PolygonMode _polygonMode;
-		ScissorTest _scissorTest;
+		ScissorTest _scissorTest;	// 包含裁剪测试相关的状态信息
 		StencilTest _stencilTest;	// 包含模板测试相关的状态信息
 		DepthTest _depthTest;       // 包含深度测试相关的状态信息
 		Blending _blending;			// 包含混合相关的状态信息

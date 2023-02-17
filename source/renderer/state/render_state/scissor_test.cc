@@ -1,45 +1,52 @@
+/**
+ * @file scissor_test.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
 #include "scissor_test.h"
 
 using namespace qiao;
 
-ScissorTest::ScissorTest() : enabled{ false }, x{ 0 }, y{ 0 }, width{ x }, height{ 0 } {};
+ScissorTest::ScissorTest() : _enabled{ false }, _x{ 0 }, _y{ 0 }, _width{ 0 }, _height{ 0 } {};
 
 bool ScissorTest::getEnabled() {
-	return enabled;
+	return _enabled;
 };
-void ScissorTest::setEnabled(bool val) {
-	enabled = val;
+
+void ScissorTest::setEnabled(bool enabled) {
+	_enabled = enabled;
 };
 
 int ScissorTest::getX() {
-	return x;
+	return _x;
 };
 
-void ScissorTest::setX(int val) {
-	x = val;
+void ScissorTest::setX(int x) {
+	_x = x;
 };
 
 int ScissorTest::getY() {
-	return y;
+	return _y;
 };
 
-void ScissorTest::setY(int val) {
-	y = val;
+void ScissorTest::setY(int y) {
+	_y = y;
 };
 
 int ScissorTest::getWidth() {
-	return width;
+	return _width;
 };
 
-void ScissorTest::setWidth(int val) {
-	width = val;
+void ScissorTest::setWidth(int width) {
+	_width = width;
 };
 
 int ScissorTest::getHeight() {
-	return height;
+	return _height;
 };
 
-void ScissorTest::setHeight(int val) {
-	height = val;
+void ScissorTest::setHeight(int height) {
+	_height = height;
 };

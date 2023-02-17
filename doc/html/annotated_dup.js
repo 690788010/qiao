@@ -31,7 +31,7 @@ var annotated_dup =
       [ "PrimitiveRestart", "classqiao_1_1_primitive_restart.html", null ],
       [ "RenderState", "classqiao_1_1_render_state.html", "classqiao_1_1_render_state" ],
       [ "SceneState", "classqiao_1_1_scene_state.html", null ],
-      [ "ScissorTest", "classqiao_1_1_scissor_test.html", null ],
+      [ "ScissorTest", "classqiao_1_1_scissor_test.html", "classqiao_1_1_scissor_test" ],
       [ "ShaderObject", "classqiao_1_1_shader_object.html", "classqiao_1_1_shader_object" ],
       [ "ShaderProgram", "classqiao_1_1_shader_program.html", "classqiao_1_1_shader_program" ],
       [ "ShaderVertexAttribute", "classqiao_1_1_shader_vertex_attribute.html", null ],

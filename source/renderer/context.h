@@ -114,6 +114,9 @@ namespace qiao {
 
 		void _applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
+		// 同步设置OpenGL裁剪测试相关状态
+		void _applyScissorTest(ScissorTest& scissorTest);
+
 		// 同步设置OpenGL模板测试相关状态
 		void _applyStencilTest(StencilTest& stencilTest);
 
