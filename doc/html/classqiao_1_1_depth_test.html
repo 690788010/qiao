@@ -101,43 +101,285 @@ $(document).ready(function(){initNavTree('classqiao_1_1_depth_test.html',''); in
   <div class="headertitle"><div class="title">qiao::DepthTest Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>DepthTest用于包含深度测试相关的状态信息  
+ <a href="classqiao_1_1_depth_test.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="depth__test_8h_source.html">depth_test.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab4def3e818eaf59305e619d09d4be24b"><td class="memItemLeft" align="right" valign="top"><a id="ab4def3e818eaf59305e619d09d4be24b" name="ab4def3e818eaf59305e619d09d4be24b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getEnabled</b> ()</td></tr>
+<tr class="memitem:ab4def3e818eaf59305e619d09d4be24b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#ab4def3e818eaf59305e619d09d4be24b">getEnabled</a> ()</td></tr>
+<tr class="memdesc:ab4def3e818eaf59305e619d09d4be24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询是否开启深度测试  <br /></td></tr>
 <tr class="separator:ab4def3e818eaf59305e619d09d4be24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a179db4fc4dac7767efad0714b0000c8d"><td class="memItemLeft" align="right" valign="top"><a id="a179db4fc4dac7767efad0714b0000c8d" name="a179db4fc4dac7767efad0714b0000c8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnabled</b> (bool val)</td></tr>
-<tr class="separator:a179db4fc4dac7767efad0714b0000c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f1a0a80c1b32958534933ec8a2b6e7"><td class="memItemLeft" align="right" valign="top"><a id="a69f1a0a80c1b32958534933ec8a2b6e7" name="a69f1a0a80c1b32958534933ec8a2b6e7"></a>
-DepthFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getDepthFunc</b> ()</td></tr>
-<tr class="separator:a69f1a0a80c1b32958534933ec8a2b6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc767f7780e73f2548c4ffd8208cf66b"><td class="memItemLeft" align="right" valign="top"><a id="adc767f7780e73f2548c4ffd8208cf66b" name="adc767f7780e73f2548c4ffd8208cf66b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDepthFunc</b> (DepthFunc val)</td></tr>
-<tr class="separator:adc767f7780e73f2548c4ffd8208cf66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a39acdd9af78e36b8d00662d6219dba"><td class="memItemLeft" align="right" valign="top"><a id="a1a39acdd9af78e36b8d00662d6219dba" name="a1a39acdd9af78e36b8d00662d6219dba"></a>
-GLboolean&#160;</td><td class="memItemRight" valign="bottom"><b>getDepthMask</b> ()</td></tr>
+<tr class="memitem:a0ff9f93190a27d72fff55e659a4e7036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a0ff9f93190a27d72fff55e659a4e7036">setEnabled</a> (bool enabled)</td></tr>
+<tr class="memdesc:a0ff9f93190a27d72fff55e659a4e7036"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否开启深度测试  <br /></td></tr>
+<tr class="separator:a0ff9f93190a27d72fff55e659a4e7036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625f870d8a243928f9f0bb3b1c586a9f"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a625f870d8a243928f9f0bb3b1c586a9f">getDepthFunc</a> ()</td></tr>
+<tr class="memdesc:a625f870d8a243928f9f0bb3b1c586a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询深度值比较函数  <br /></td></tr>
+<tr class="separator:a625f870d8a243928f9f0bb3b1c586a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2592f788719b6b5586fea9d0468b6d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a2592f788719b6b5586fea9d0468b6d64">setDepthFunc</a> (GLenum func)</td></tr>
+<tr class="memdesc:a2592f788719b6b5586fea9d0468b6d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置深度值比较函数  <br /></td></tr>
+<tr class="separator:a2592f788719b6b5586fea9d0468b6d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a39acdd9af78e36b8d00662d6219dba"><td class="memItemLeft" align="right" valign="top">GLboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a1a39acdd9af78e36b8d00662d6219dba">getDepthMask</a> ()</td></tr>
+<tr class="memdesc:a1a39acdd9af78e36b8d00662d6219dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询是否开启对深度缓冲的写操作  <br /></td></tr>
 <tr class="separator:a1a39acdd9af78e36b8d00662d6219dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1d571927af0fb960ff952cf0d31c272"><td class="memItemLeft" align="right" valign="top"><a id="af1d571927af0fb960ff952cf0d31c272" name="af1d571927af0fb960ff952cf0d31c272"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDepthMask</b> (GLboolean flag)</td></tr>
+<tr class="memitem:af1d571927af0fb960ff952cf0d31c272"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#af1d571927af0fb960ff952cf0d31c272">setDepthMask</a> (GLboolean flag)</td></tr>
+<tr class="memdesc:af1d571927af0fb960ff952cf0d31c272"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否开启对深度缓冲的写操作  <br /></td></tr>
 <tr class="separator:af1d571927af0fb960ff952cf0d31c272"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903f2b22615810779561be6ddcb46907"><td class="memItemLeft" align="right" valign="top"><a id="a903f2b22615810779561be6ddcb46907" name="a903f2b22615810779561be6ddcb46907"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getNear</b> ()</td></tr>
+<tr class="memitem:a903f2b22615810779561be6ddcb46907"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a903f2b22615810779561be6ddcb46907">getNear</a> ()</td></tr>
+<tr class="memdesc:a903f2b22615810779561be6ddcb46907"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询深度范围的最小值  <br /></td></tr>
 <tr class="separator:a903f2b22615810779561be6ddcb46907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa84eb15d7eef01931e0fd820e838ea6"><td class="memItemLeft" align="right" valign="top"><a id="aaa84eb15d7eef01931e0fd820e838ea6" name="aaa84eb15d7eef01931e0fd820e838ea6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setNear</b> (double val)</td></tr>
-<tr class="separator:aaa84eb15d7eef01931e0fd820e838ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8ba450416e28c003ddabee5e57672f"><td class="memItemLeft" align="right" valign="top"><a id="aea8ba450416e28c003ddabee5e57672f" name="aea8ba450416e28c003ddabee5e57672f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getFar</b> ()</td></tr>
+<tr class="memitem:a13fd90715e39c1a2954b7cd8d8ad0ad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a13fd90715e39c1a2954b7cd8d8ad0ad7">setNear</a> (double near)</td></tr>
+<tr class="memdesc:a13fd90715e39c1a2954b7cd8d8ad0ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置深度范围的最小值  <br /></td></tr>
+<tr class="separator:a13fd90715e39c1a2954b7cd8d8ad0ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8ba450416e28c003ddabee5e57672f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#aea8ba450416e28c003ddabee5e57672f">getFar</a> ()</td></tr>
+<tr class="memdesc:aea8ba450416e28c003ddabee5e57672f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置深度范围的最大值  <br /></td></tr>
 <tr class="separator:aea8ba450416e28c003ddabee5e57672f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addecaa9bdb3f6797965c8f1da68b7f2d"><td class="memItemLeft" align="right" valign="top"><a id="addecaa9bdb3f6797965c8f1da68b7f2d" name="addecaa9bdb3f6797965c8f1da68b7f2d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFar</b> (double val)</td></tr>
-<tr class="separator:addecaa9bdb3f6797965c8f1da68b7f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1833db173bf8f77ccb48aadcffbe0502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqiao_1_1_depth_test.html#a1833db173bf8f77ccb48aadcffbe0502">setFar</a> (double far)</td></tr>
+<tr class="memdesc:a1833db173bf8f77ccb48aadcffbe0502"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置深度范围的最大值  <br /></td></tr>
+<tr class="separator:a1833db173bf8f77ccb48aadcffbe0502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>DepthTest用于包含深度测试相关的状态信息 </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab4def3e818eaf59305e619d09d4be24b" name="ab4def3e818eaf59305e619d09d4be24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4def3e818eaf59305e619d09d4be24b">&#9670;&#160;</a></span>getEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DepthTest::getEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询是否开启深度测试 </p>
+<dl class="section return"><dt>Returns</dt><dd>是否开启深度测试 </dd></dl>
+
+</div>
+</div>
+<a id="a0ff9f93190a27d72fff55e659a4e7036" name="a0ff9f93190a27d72fff55e659a4e7036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff9f93190a27d72fff55e659a4e7036">&#9670;&#160;</a></span>setEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthTest::setEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否开启深度测试 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a625f870d8a243928f9f0bb3b1c586a9f" name="a625f870d8a243928f9f0bb3b1c586a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625f870d8a243928f9f0bb3b1c586a9f">&#9670;&#160;</a></span>getDepthFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum DepthTest::getDepthFunc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询深度值比较函数 </p>
+<dl class="section return"><dt>Returns</dt><dd>深度值比较函数 </dd></dl>
+
+</div>
+</div>
+<a id="a2592f788719b6b5586fea9d0468b6d64" name="a2592f788719b6b5586fea9d0468b6d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2592f788719b6b5586fea9d0468b6d64">&#9670;&#160;</a></span>setDepthFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthTest::setDepthFunc </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置深度值比较函数 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>深度值比较函数，可选值详查：https://registry.khronos.org/OpenGL-Refpages/gl4/html/glDepthFunc.xhtml</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1a39acdd9af78e36b8d00662d6219dba" name="a1a39acdd9af78e36b8d00662d6219dba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a39acdd9af78e36b8d00662d6219dba">&#9670;&#160;</a></span>getDepthMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLboolean DepthTest::getDepthMask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询是否开启对深度缓冲的写操作 </p>
+<dl class="section return"><dt>Returns</dt><dd>是否开启对深度缓冲的写操作 </dd></dl>
+
+</div>
+</div>
+<a id="af1d571927af0fb960ff952cf0d31c272" name="af1d571927af0fb960ff952cf0d31c272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d571927af0fb960ff952cf0d31c272">&#9670;&#160;</a></span>setDepthMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthTest::setDepthMask </td>
+          <td>(</td>
+          <td class="paramtype">GLboolean&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否开启对深度缓冲的写操作 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否开启对深度缓冲的写操作</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a903f2b22615810779561be6ddcb46907" name="a903f2b22615810779561be6ddcb46907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903f2b22615810779561be6ddcb46907">&#9670;&#160;</a></span>getNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DepthTest::getNear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查询深度范围的最小值 </p>
+<dl class="section return"><dt>Returns</dt><dd>深度范围的最小值 </dd></dl>
+
+</div>
+</div>
+<a id="a13fd90715e39c1a2954b7cd8d8ad0ad7" name="a13fd90715e39c1a2954b7cd8d8ad0ad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13fd90715e39c1a2954b7cd8d8ad0ad7">&#9670;&#160;</a></span>setNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthTest::setNear </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>near</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置深度范围的最小值 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">near</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="aea8ba450416e28c003ddabee5e57672f" name="aea8ba450416e28c003ddabee5e57672f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8ba450416e28c003ddabee5e57672f">&#9670;&#160;</a></span>getFar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DepthTest::getFar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置深度范围的最大值 </p>
+<dl class="section return"><dt>Returns</dt><dd>深度范围的最大值 </dd></dl>
+
+</div>
+</div>
+<a id="a1833db173bf8f77ccb48aadcffbe0502" name="a1833db173bf8f77ccb48aadcffbe0502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1833db173bf8f77ccb48aadcffbe0502">&#9670;&#160;</a></span>setFar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepthTest::setFar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>far</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置深度范围的最大值 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">far</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/cppRepos/qiao/source/renderer/state/render_state/<a class="el" href="depth__test_8h_source.html">depth_test.h</a></li>
-<li>D:/cppRepos/qiao/source/renderer/state/render_state/depth_test.cc</li>
+<li>D:/cppRepos/qiao/source/renderer/state/render_state/<a class="el" href="depth__test_8cc.html">depth_test.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

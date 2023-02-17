@@ -1,49 +1,44 @@
 \hypertarget{depth__test_8h_source}{}\doxysection{depth\+\_\+test.\+h}
 \label{depth__test_8h_source}\index{D:/cppRepos/qiao/source/renderer/state/render\_state/depth\_test.h@{D:/cppRepos/qiao/source/renderer/state/render\_state/depth\_test.h}}
-
+\mbox{\hyperlink{depth__test_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }qiao\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum}\ DepthFunc\ \{}
-\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ NEVER\ =\ GL\_NEVER,}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ LESS\ =\ GL\_LESS,}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ EQUAL\ =\ GL\_EQUAL,}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ LEQUAL\ =\ GL\_LEQUAL,}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ GREATER\ =\ GL\_GREATER,}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ NOTEQUAL\ =\ GL\_NOTEQUAL,}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ GEQUAL\ =\ GL\_GEQUAL,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ALWAYS\ =\ GL\_ALWAYS}
-\DoxyCodeLine{00015\ \ \ \ \ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}();}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getEnabled();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ val);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ DepthFunc\ getDepthFunc();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthFunc(DepthFunc\ val);}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }qiao\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_depth_test}{DepthTest}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classqiao_1_1_depth_test_ab4def3e818eaf59305e619d09d4be24b}{getEnabled}}();}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ GLboolean\ getDepthMask();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthMask(GLboolean\ flag);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getNear();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setNear(\textcolor{keywordtype}{double}\ val);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getFar();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFar(\textcolor{keywordtype}{double}\ val);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ DepthFunc\ \_depthFunc;}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启对深度缓冲的写操作}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_near;}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_far;}
-\DoxyCodeLine{00042\ \ \ \ \ \};}
-\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_depth_test_a0ff9f93190a27d72fff55e659a4e7036}{setEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_depth_test_a625f870d8a243928f9f0bb3b1c586a9f}{getDepthFunc}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_depth_test_a2592f788719b6b5586fea9d0468b6d64}{setDepthFunc}}(GLenum\ func);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ GLboolean\ \mbox{\hyperlink{classqiao_1_1_depth_test_a1a39acdd9af78e36b8d00662d6219dba}{getDepthMask}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_depth_test_af1d571927af0fb960ff952cf0d31c272}{setDepthMask}}(GLboolean\ flag);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classqiao_1_1_depth_test_a903f2b22615810779561be6ddcb46907}{getNear}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_depth_test_a13fd90715e39c1a2954b7cd8d8ad0ad7}{setNear}}(\textcolor{keywordtype}{double}\ near);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classqiao_1_1_depth_test_aea8ba450416e28c003ddabee5e57672f}{getFar}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_depth_test_a1833db173bf8f77ccb48aadcffbe0502}{setFar}}(\textcolor{keywordtype}{double}\ far);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启深度测试}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ GLenum\ \_depthFunc;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度值比较函数，可选值详查：https://registry.khronos.org/OpenGL-\/Refpages/gl4/html/glDepthFunc.xhtml}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启对深度缓冲的写操作}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_near;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度范围的最小值}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_far;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度范围的最大值}}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ \}}
 
 \end{DoxyCode}

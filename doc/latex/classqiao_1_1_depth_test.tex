@@ -1,41 +1,198 @@
 \hypertarget{classqiao_1_1_depth_test}{}\doxysection{qiao\+::Depth\+Test Class Reference}
 \label{classqiao_1_1_depth_test}\index{qiao::DepthTest@{qiao::DepthTest}}
+
+
+Depth\+Test用于包含深度测试相关的状态信息  
+
+
+
+
+{\ttfamily \#include $<$depth\+\_\+test.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{classqiao_1_1_depth_test_ab4def3e818eaf59305e619d09d4be24b}{get\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启深度测试 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_depth_test_a0ff9f93190a27d72fff55e659a4e7036}{set\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em 设置是否开启深度测试 \end{DoxyCompactList}\item 
+GLenum \mbox{\hyperlink{classqiao_1_1_depth_test_a625f870d8a243928f9f0bb3b1c586a9f}{get\+Depth\+Func}} ()
+\begin{DoxyCompactList}\small\item\em 查询深度值比较函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_depth_test_a2592f788719b6b5586fea9d0468b6d64}{set\+Depth\+Func}} (GLenum func)
+\begin{DoxyCompactList}\small\item\em 设置深度值比较函数 \end{DoxyCompactList}\item 
+GLboolean \mbox{\hyperlink{classqiao_1_1_depth_test_a1a39acdd9af78e36b8d00662d6219dba}{get\+Depth\+Mask}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启对深度缓冲的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_depth_test_af1d571927af0fb960ff952cf0d31c272}{set\+Depth\+Mask}} (GLboolean flag)
+\begin{DoxyCompactList}\small\item\em 设置是否开启对深度缓冲的写操作 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classqiao_1_1_depth_test_a903f2b22615810779561be6ddcb46907}{get\+Near}} ()
+\begin{DoxyCompactList}\small\item\em 查询深度范围的最小值 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_depth_test_a13fd90715e39c1a2954b7cd8d8ad0ad7}{set\+Near}} (double near)
+\begin{DoxyCompactList}\small\item\em 设置深度范围的最小值 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classqiao_1_1_depth_test_aea8ba450416e28c003ddabee5e57672f}{get\+Far}} ()
+\begin{DoxyCompactList}\small\item\em 设置深度范围的最大值 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_depth_test_a1833db173bf8f77ccb48aadcffbe0502}{set\+Far}} (double far)
+\begin{DoxyCompactList}\small\item\em 设置深度范围的最大值 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Depth\+Test用于包含深度测试相关的状态信息 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classqiao_1_1_depth_test_ab4def3e818eaf59305e619d09d4be24b}\label{classqiao_1_1_depth_test_ab4def3e818eaf59305e619d09d4be24b}} 
-bool {\bfseries get\+Enabled} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_depth_test_a179db4fc4dac7767efad0714b0000c8d}\label{classqiao_1_1_depth_test_a179db4fc4dac7767efad0714b0000c8d}} 
-void {\bfseries set\+Enabled} (bool val)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_depth_test_a69f1a0a80c1b32958534933ec8a2b6e7}\label{classqiao_1_1_depth_test_a69f1a0a80c1b32958534933ec8a2b6e7}} 
-Depth\+Func {\bfseries get\+Depth\+Func} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_depth_test_adc767f7780e73f2548c4ffd8208cf66b}\label{classqiao_1_1_depth_test_adc767f7780e73f2548c4ffd8208cf66b}} 
-void {\bfseries set\+Depth\+Func} (Depth\+Func val)
-\item 
+\index{qiao::DepthTest@{qiao::DepthTest}!getEnabled@{getEnabled}}
+\index{getEnabled@{getEnabled}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{getEnabled()}{getEnabled()}}
+{\footnotesize\ttfamily bool Depth\+Test\+::get\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启深度测试 
+
+\begin{DoxyReturn}{Returns}
+是否开启深度测试 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_depth_test_a0ff9f93190a27d72fff55e659a4e7036}\label{classqiao_1_1_depth_test_a0ff9f93190a27d72fff55e659a4e7036}} 
+\index{qiao::DepthTest@{qiao::DepthTest}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily void Depth\+Test\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+设置是否开启深度测试 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqiao_1_1_depth_test_a625f870d8a243928f9f0bb3b1c586a9f}\label{classqiao_1_1_depth_test_a625f870d8a243928f9f0bb3b1c586a9f}} 
+\index{qiao::DepthTest@{qiao::DepthTest}!getDepthFunc@{getDepthFunc}}
+\index{getDepthFunc@{getDepthFunc}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{getDepthFunc()}{getDepthFunc()}}
+{\footnotesize\ttfamily GLenum Depth\+Test\+::get\+Depth\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询深度值比较函数 
+
+\begin{DoxyReturn}{Returns}
+深度值比较函数 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_depth_test_a2592f788719b6b5586fea9d0468b6d64}\label{classqiao_1_1_depth_test_a2592f788719b6b5586fea9d0468b6d64}} 
+\index{qiao::DepthTest@{qiao::DepthTest}!setDepthFunc@{setDepthFunc}}
+\index{setDepthFunc@{setDepthFunc}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{setDepthFunc()}{setDepthFunc()}}
+{\footnotesize\ttfamily void Depth\+Test\+::set\+Depth\+Func (\begin{DoxyParamCaption}\item[{GLenum}]{func }\end{DoxyParamCaption})}
+
+
+
+设置深度值比较函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & 深度值比较函数，可选值详查：https\+://registry.khronos.\+org/\+Open\+GL-\/\+Refpages/gl4/html/gl\+Depth\+Func.xhtml\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_depth_test_a1a39acdd9af78e36b8d00662d6219dba}\label{classqiao_1_1_depth_test_a1a39acdd9af78e36b8d00662d6219dba}} 
-GLboolean {\bfseries get\+Depth\+Mask} ()
-\item 
+\index{qiao::DepthTest@{qiao::DepthTest}!getDepthMask@{getDepthMask}}
+\index{getDepthMask@{getDepthMask}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{getDepthMask()}{getDepthMask()}}
+{\footnotesize\ttfamily GLboolean Depth\+Test\+::get\+Depth\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启对深度缓冲的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启对深度缓冲的写操作 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_depth_test_af1d571927af0fb960ff952cf0d31c272}\label{classqiao_1_1_depth_test_af1d571927af0fb960ff952cf0d31c272}} 
-void {\bfseries set\+Depth\+Mask} (GLboolean flag)
-\item 
+\index{qiao::DepthTest@{qiao::DepthTest}!setDepthMask@{setDepthMask}}
+\index{setDepthMask@{setDepthMask}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{setDepthMask()}{setDepthMask()}}
+{\footnotesize\ttfamily void Depth\+Test\+::set\+Depth\+Mask (\begin{DoxyParamCaption}\item[{GLboolean}]{flag }\end{DoxyParamCaption})}
+
+
+
+设置是否开启对深度缓冲的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & 是否开启对深度缓冲的写操作\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_depth_test_a903f2b22615810779561be6ddcb46907}\label{classqiao_1_1_depth_test_a903f2b22615810779561be6ddcb46907}} 
-double {\bfseries get\+Near} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_depth_test_aaa84eb15d7eef01931e0fd820e838ea6}\label{classqiao_1_1_depth_test_aaa84eb15d7eef01931e0fd820e838ea6}} 
-void {\bfseries set\+Near} (double val)
-\item 
+\index{qiao::DepthTest@{qiao::DepthTest}!getNear@{getNear}}
+\index{getNear@{getNear}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{getNear()}{getNear()}}
+{\footnotesize\ttfamily double Depth\+Test\+::get\+Near (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询深度范围的最小值 
+
+\begin{DoxyReturn}{Returns}
+深度范围的最小值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_depth_test_a13fd90715e39c1a2954b7cd8d8ad0ad7}\label{classqiao_1_1_depth_test_a13fd90715e39c1a2954b7cd8d8ad0ad7}} 
+\index{qiao::DepthTest@{qiao::DepthTest}!setNear@{setNear}}
+\index{setNear@{setNear}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{setNear()}{setNear()}}
+{\footnotesize\ttfamily void Depth\+Test\+::set\+Near (\begin{DoxyParamCaption}\item[{double}]{near }\end{DoxyParamCaption})}
+
+
+
+设置深度范围的最小值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em near} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classqiao_1_1_depth_test_aea8ba450416e28c003ddabee5e57672f}\label{classqiao_1_1_depth_test_aea8ba450416e28c003ddabee5e57672f}} 
-double {\bfseries get\+Far} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_depth_test_addecaa9bdb3f6797965c8f1da68b7f2d}\label{classqiao_1_1_depth_test_addecaa9bdb3f6797965c8f1da68b7f2d}} 
-void {\bfseries set\+Far} (double val)
-\end{DoxyCompactItemize}
+\index{qiao::DepthTest@{qiao::DepthTest}!getFar@{getFar}}
+\index{getFar@{getFar}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{getFar()}{getFar()}}
+{\footnotesize\ttfamily double Depth\+Test\+::get\+Far (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+设置深度范围的最大值 
+
+\begin{DoxyReturn}{Returns}
+深度范围的最大值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_depth_test_a1833db173bf8f77ccb48aadcffbe0502}\label{classqiao_1_1_depth_test_a1833db173bf8f77ccb48aadcffbe0502}} 
+\index{qiao::DepthTest@{qiao::DepthTest}!setFar@{setFar}}
+\index{setFar@{setFar}!qiao::DepthTest@{qiao::DepthTest}}
+\doxysubsubsection{\texorpdfstring{setFar()}{setFar()}}
+{\footnotesize\ttfamily void Depth\+Test\+::set\+Far (\begin{DoxyParamCaption}\item[{double}]{far }\end{DoxyParamCaption})}
+
+
+
+设置深度范围的最大值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em far} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/depth\+\_\+test.\+h\item 
-D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/depth\+\_\+test.\+cc\end{DoxyCompactItemize}
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{depth__test_8h}{depth\+\_\+test.\+h}}\item 
+D\+:/cpp\+Repos/qiao/source/renderer/state/render\+\_\+state/\mbox{\hyperlink{depth__test_8cc}{depth\+\_\+test.\+cc}}\end{DoxyCompactItemize}

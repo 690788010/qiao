@@ -59,7 +59,7 @@ namespace qiao {
 		void setBlending(Blending& val);
 
 		ColorMask& getColorMask();
-		void setColorMask(ColorMask& val);
+		void setColorMask(ColorMask val);
 
 	private:
 		PrimitiveRestart _primitiveRestart;
@@ -68,8 +68,8 @@ namespace qiao {
 		PolygonMode _polygonMode;
 		ScissorTest _scissorTest;
 		StencilTest _stencilTest;
-		DepthTest _depthTest;
-		Blending _blending;			
+		DepthTest _depthTest;       
+		Blending _blending;			// 包含混合相关的状态信息
 		ColorMask _colorMask;		// 是否开启颜色缓冲各个颜色分量的写操作
 	};
 }

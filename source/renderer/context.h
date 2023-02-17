@@ -114,6 +114,15 @@ namespace qiao {
 
 		void _applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
+		// 同步设置OpenGL深度测试相关状态
+		void _applyDepthTest(DepthTest& depthTest);
+
+		// 同步设置OpenGL混合相关的状态
+		void _applyBlending(Blending& blending);
+
+		// 同步设置OpenGL是否开启颜色缓冲各个颜色分量的写操作
+		void _applyColorMask(ColorMask& colorMask);
+
 		Color _clearColor;
 		double _clearDepth;
 		int _clearStencil;

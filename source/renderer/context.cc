@@ -362,6 +362,32 @@ void Context::_applyRenderState(RenderState* renderState) {
 
 	// apply DepthTest
 	DepthTest depthTest = renderState->getDepthTest();
+	_applyDepthTest(depthTest);
+
+	// apply Blending
+	Blending blending = renderState->getBlending();
+	_applyBlending(blending);
+
+	// apply ColorMask
+	ColorMask colorMask = renderState->getColorMask();
+	_applyColorMask(colorMask);
+};
+
+void Context::_applyVertexArray(VertexArray* vertexArray) {
+	vertexArray->bind();
+	vertexArray->clean();
+};
+
+void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
+	ShaderProgram* shaderProgram = drawState->getShaderProgram();
+	if (shaderProgram != _boundShaderProgram) {
+		shaderProgram->use();
+		_boundShaderProgram = shaderProgram;
+	}
+	_boundShaderProgram->clean(this, drawState, sceneState);
+};
+
+void Context::_applyDepthTest(DepthTest& depthTest) {
 	DepthTest _depthTest = _renderState->getDepthTest();
 	if (depthTest.getEnabled() != _depthTest.getEnabled()) {
 		_enable(GL_DEPTH_TEST, depthTest.getEnabled());
@@ -388,9 +414,9 @@ void Context::_applyRenderState(RenderState* renderState) {
 			_depthTest.setFar(depthTest.getFar());
 		}
 	}
+};
 
-	// apply Blending
-	Blending blending = renderState->getBlending();
+void Context::_applyBlending(Blending& blending) {
 	Blending _blending = _renderState->getBlending();
 	if (blending.getEnabled() != _blending.getEnabled()) {
 		_enable(GL_BLEND, blending.getEnabled());
@@ -400,34 +426,28 @@ void Context::_applyRenderState(RenderState* renderState) {
 		if ((blending.getSrcRGB() != _blending.getSrcRGB()) ||
 			(blending.getDstRGB() != _blending.getDstRGB()) ||
 			(blending.getSrcAlpha() != _blending.getSrcAlpha()) ||
-			(blending.getDstAlpha() != _blending.getDstAlpha())) {
+			(blending.getDstAlpha() != _blending.getDstAlpha()))
+		{
 			glBlendFuncSeparate(blending.getSrcRGB(), blending.getDstRGB(), blending.getSrcAlpha(), blending.getDstAlpha());
+			_blending.setSrcRGB(blending.getSrcRGB());
+			_blending.setDstRGB(blending.getDstRGB());
+			_blending.setSrcAlpha(blending.getSrcAlpha());
+			_blending.setDstAlpha(blending.getDstAlpha());
 		}
 		if ((blending.getRgbEquation() != _blending.getRgbEquation()) ||
-			(blending.getAlphaEquation() != _blending.getAlphaEquation())) {
+			(blending.getAlphaEquation() != _blending.getAlphaEquation()))
+		{
 			glBlendEquationSeparate(blending.getRgbEquation(), blending.getAlphaEquation());
+			_blending.setRgbEquation(blending.getRgbEquation());
+			_blending.setAlphaEquation(blending.getAlphaEquation());
 		}
 	}
+};
 
-	// apply ColorMask
-	ColorMask colorMask = renderState->getColorMask();
+void Context::_applyColorMask(ColorMask& colorMask) {
 	ColorMask _colorMask = _renderState->getColorMask();
 	if (colorMask != _colorMask) {
 		glColorMask(colorMask.getRed(), colorMask.getGreen(), colorMask.getBlue(), colorMask.getAlpha());
 		_renderState->setColorMask(colorMask);
 	}
-};
-
-void Context::_applyVertexArray(VertexArray* vertexArray) {
-	vertexArray->bind();
-	vertexArray->clean();
-};
-
-void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) {
-	ShaderProgram* shaderProgram = drawState->getShaderProgram();
-	if (shaderProgram != _boundShaderProgram) {
-		shaderProgram->use();
-		_boundShaderProgram = shaderProgram;
-	}
-	_boundShaderProgram->clean(this, drawState, sceneState);
 };

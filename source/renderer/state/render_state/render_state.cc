@@ -77,6 +77,6 @@ ColorMask& RenderState::getColorMask() {
 	return _colorMask;
 };
 
-void RenderState::setColorMask(ColorMask& val) {
+void RenderState::setColorMask(ColorMask val) {
 	_colorMask = val;
 };

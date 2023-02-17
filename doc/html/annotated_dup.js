@@ -9,7 +9,7 @@ var annotated_dup =
       [ "ColorMask", "classqiao_1_1_color_mask.html", "classqiao_1_1_color_mask" ],
       [ "Context", "classqiao_1_1_context.html", "classqiao_1_1_context" ],
       [ "CullFace", "classqiao_1_1_cull_face.html", null ],
-      [ "DepthTest", "classqiao_1_1_depth_test.html", null ],
+      [ "DepthTest", "classqiao_1_1_depth_test.html", "classqiao_1_1_depth_test" ],
       [ "DrawAutoUniform", "classqiao_1_1_draw_auto_uniform.html", null ],
       [ "DrawAutoUniformCollection", "classqiao_1_1_draw_auto_uniform_collection.html", null ],
       [ "DrawAutoUniformFactory", "classqiao_1_1_draw_auto_uniform_factory.html", "classqiao_1_1_draw_auto_uniform_factory" ],

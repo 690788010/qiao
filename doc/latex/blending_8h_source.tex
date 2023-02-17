@@ -8,73 +8,49 @@
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/glad/include/glad.h"{}}}
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }qiao\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum}\ BlendingFactor\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ZERO\ =\ GL\_ZERO,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ ONE\ =\ GL\_ONE,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ SRC\_COLOR\ =\ GL\_COLOR,}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ ONE\_MINUS\_SRC\_COLOR\ =\ GL\_ONE\_MINUS\_SRC\_COLOR,}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ DST\_COLOR\ =\ GL\_DST\_COLOR,}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ ONE\_MINUS\_DST\_COLOR\ =\ GL\_ONE\_MINUS\_DST\_COLOR,}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ SRC\_ALPHA\ =\ GL\_SRC\_ALPHA,}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ONE\_MINUS\_SRC\_ALPHA\ =\ GL\_ONE\_MINUS\_SRC\_ALPHA,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ DST\_ALPHA\ =\ GL\_DST\_ALPHA,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ONE\_MINUS\_DST\_ALPHA\ =\ GL\_ONE\_MINUS\_DST\_ALPHA,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ CONSTANT\_COLOR\ =\ GL\_CONSTANT\_COLOR,}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ONE\_MINUS\_CONSTANT\_COLOR\ =\ GL\_ONE\_MINUS\_CONSTANT\_COLOR,}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ CONSTANT\_ALPHA\ =\ GL\_CONSTANT\_ALPHA,}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ ONE\_MINUS\_CONSTANT\_ALPHA\ =\ GL\_ONE\_MINUS\_CONSTANT\_ALPHA}
-\DoxyCodeLine{00028\ \ \ \ \ \};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{enum}\ BlendEquation\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ FUNC\_ADD\ =\ GL\_FUNC\_ADD,}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ FUNC\_SUBTRACT\ =\ GL\_FUNC\_SUBTRACT,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ FUNC\_REVERSE\_SUBTRACT\ =\ GL\_FUNC\_REVERSE\_SUBTRACT,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ MIN\ =\ GL\_MIN,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ MAX\ =\ GL\_MAX}
-\DoxyCodeLine{00036\ \ \ \ \ \};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_blending}{Blending}}\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_blending_ac691aaf923fe793087db79144d6681e8}{Blending}}();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classqiao_1_1_blending_aed652407f6d9e3b2b001b9882090e9b8}{getEnabled}}();}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a8210563fb4368f3dea8c5c0bf62083ef}{setEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_af68404f6cae282ae7d29e533d9dbe2b4}{getSrcRGB}}();}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a298d94a227da68e8c89cc1f980d1c3d0}{setSrcRGB}}(GLenum\ srcRGB);}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_aaf8f8b28b28cf6313d1035e0b8448415}{getDstRGB}}();}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a918949776e50f0e20f5e7422697d1320}{setDstRGB}}(GLenum\ dstRGB);}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a1a33a141483b2452fd9ff31461fac871}{getSrcAlpha}}();}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a5e069f70a65264121a4a7e7d025c0ef5}{setSrcAlpha}}(GLenum\ srcAlpha);}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_ab2adbf4b0cbe45ef8901df6a870478ac}{getDstAlpha}}();}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a4fe56d12f68794c3de19037c196e84f4}{setDstAlpha}}(GLenum\ dstAlpha);}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a581fb75edfd1755c57debd9401720f41}{getRgbEquation}}();}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a542fd2493d67d05ad643fd6ad53e1019}{setRgbEquation}}(GLenum\ rgbEquation);}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a5d9d63bfc27e22a39b9a98dfbc7bd600}{getAlphaEquation}}();}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a5c33ae1e97a5df8c4902fdd1158bd2b2}{setAlphaEquation}}(GLenum\ alphaEquation);}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启混合}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 以下变量的可选值详查：https://registry.khronos.org/OpenGL-\/Refpages/gl4/html/glBlendFuncSeparate.xhtml}}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ GLenum\ \_srcRGB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 源颜色RGB分量的混合因子}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ GLenum\ \_dstRGB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 目标颜色RGB分量的混合因子}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ GLenum\ \_srcAlpha;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 源颜色alpha分量的混合因子}}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ GLenum\ \_dstAlpha;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 目标颜色alpha分量的混合因子}}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 以下变量的可选值详查：https://registry.khronos.org/OpenGL-\/Refpages/gl4/html/glBlendEquationSeparate.xhtml}}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ GLenum\ \_rgbEquation;\ \ \ \ \ \textcolor{comment}{//\ 颜色RGB分量的混合方程}}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ GLenum\ \_alphaEquation;\ \ \ \textcolor{comment}{//\ 颜色alpha分量的混合方程}}
-\DoxyCodeLine{00170\ \ \ \ \ \};}
-\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqiao_1_1_blending}{Blending}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_blending_ac691aaf923fe793087db79144d6681e8}{Blending}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classqiao_1_1_blending_aed652407f6d9e3b2b001b9882090e9b8}{getEnabled}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a8210563fb4368f3dea8c5c0bf62083ef}{setEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_af68404f6cae282ae7d29e533d9dbe2b4}{getSrcRGB}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a298d94a227da68e8c89cc1f980d1c3d0}{setSrcRGB}}(GLenum\ srcRGB);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_aaf8f8b28b28cf6313d1035e0b8448415}{getDstRGB}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a918949776e50f0e20f5e7422697d1320}{setDstRGB}}(GLenum\ dstRGB);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a1a33a141483b2452fd9ff31461fac871}{getSrcAlpha}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a5e069f70a65264121a4a7e7d025c0ef5}{setSrcAlpha}}(GLenum\ srcAlpha);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_ab2adbf4b0cbe45ef8901df6a870478ac}{getDstAlpha}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a4fe56d12f68794c3de19037c196e84f4}{setDstAlpha}}(GLenum\ dstAlpha);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a581fb75edfd1755c57debd9401720f41}{getRgbEquation}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a542fd2493d67d05ad643fd6ad53e1019}{setRgbEquation}}(GLenum\ rgbEquation);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ GLenum\ \mbox{\hyperlink{classqiao_1_1_blending_a5d9d63bfc27e22a39b9a98dfbc7bd600}{getAlphaEquation}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_blending_a5c33ae1e97a5df8c4902fdd1158bd2b2}{setAlphaEquation}}(GLenum\ alphaEquation);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_enabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启混合}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 以下变量的可选值详查：https://registry.khronos.org/OpenGL-\/Refpages/gl4/html/glBlendFuncSeparate.xhtml}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ GLenum\ \_srcRGB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 源颜色RGB分量的混合因子}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ GLenum\ \_dstRGB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 目标颜色RGB分量的混合因子}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ GLenum\ \_srcAlpha;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 源颜色alpha分量的混合因子}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ GLenum\ \_dstAlpha;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 目标颜色alpha分量的混合因子}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 以下变量的可选值详查：https://registry.khronos.org/OpenGL-\/Refpages/gl4/html/glBlendEquationSeparate.xhtml}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ GLenum\ \_rgbEquation;\ \ \ \ \ \textcolor{comment}{//\ 颜色RGB分量的混合方程}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ GLenum\ \_alphaEquation;\ \ \ \textcolor{comment}{//\ 颜色alpha分量的混合方程}}
+\DoxyCodeLine{00146\ \ \ \ \ \};}
+\DoxyCodeLine{00147\ \}}
 
 \end{DoxyCode}
