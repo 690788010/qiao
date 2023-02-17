@@ -114,6 +114,9 @@ namespace qiao {
 
 		void _applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
+		// 同步设置OpenGL光栅化模式
+		void applyPolygonMode(GLenum polygonMode);
+
 		// 同步设置OpenGL裁剪测试相关状态
 		void _applyScissorTest(ScissorTest& scissorTest);
 

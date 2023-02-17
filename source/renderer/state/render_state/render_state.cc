@@ -13,7 +13,7 @@ using namespace qiao;
 
 RenderState::RenderState() {
 	_programPointSize = GL_FALSE;
-	_polygonMode = PolygonMode::FILL;
+	_polygonMode = GL_FILL;
 }
 
 PrimitiveRestart& RenderState::getPrimitiveRestart() {

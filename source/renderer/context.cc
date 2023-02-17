@@ -321,10 +321,7 @@ void Context::_applyRenderState(RenderState* renderState) {
 	}
 
 	// apply PolygonMode
-	if (renderState->getPolygonMode() != _renderState->getPolygonMode()) {
-		glPolygonMode(GL_FRONT_AND_BACK, renderState->getPolygonMode());
-		_renderState->setPolygonMode(renderState->getPolygonMode());
-	}
+	applyPolygonMode(renderState->getPolygonMode());
 
 	// apply ScissorTest
 	ScissorTest scissorTest = renderState->getScissorTest();
@@ -359,6 +356,13 @@ void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) 
 		_boundShaderProgram = shaderProgram;
 	}
 	_boundShaderProgram->clean(this, drawState, sceneState);
+};
+
+void Context::applyPolygonMode(GLenum polygonMode) {
+	if (polygonMode != _renderState->getPolygonMode()) {
+		glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
+		_renderState->setPolygonMode(polygonMode);
+	}
 };
 
 void Context::_applyScissorTest(ScissorTest& scissorTest) {

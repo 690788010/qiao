@@ -16,11 +16,6 @@
 #include "color_mask.h"
 
 namespace qiao {
-	enum PolygonMode {
-		POINT = GL_POINT,
-		LINE = GL_LINE,
-		FILL = GL_FILL
-	};
 	/**
 	 * @brief RenderState类用于包含各种渲染状态。
 	 * 
@@ -43,8 +38,8 @@ namespace qiao {
 		GLboolean getProgramPointSize();
 		void setProgramPointSize(GLboolean val);
 
-		PolygonMode& getPolygonMode();
-		void setPolygonMode(PolygonMode val);
+		GLenum getPolygonMode();
+		void setPolygonMode(GLenum mode);
 
 		ScissorTest& getScissorTest();
 		void setScissorTest(ScissorTest& val);
@@ -65,7 +60,7 @@ namespace qiao {
 		PrimitiveRestart _primitiveRestart;
 		CullFace _cullFace;
 		GLboolean _programPointSize;
-		PolygonMode _polygonMode;
+		GLenum _polygonMode;		// 多边形光栅化模式，可选值：GL_POINT, GL_LINE, GL_FILL.
 		ScissorTest _scissorTest;	// 包含裁剪测试相关的状态信息
 		StencilTest _stencilTest;	// 包含模板测试相关的状态信息
 		DepthTest _depthTest;       // 包含深度测试相关的状态信息
