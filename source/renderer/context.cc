@@ -297,51 +297,28 @@ void Context::_applyRenderState(RenderState* renderState) {
 	}
 
 	// apply CullFace
-	CullFace cullFace = renderState->getCullFace();
-	CullFace _cullFace = _renderState->getCullFace();
-	if (cullFace.getEnabled() != _cullFace.getEnabled()) {
-		_enable(GL_CULL_FACE, cullFace.getEnabled());
-		_cullFace.setEnabled(cullFace.getEnabled());
-	}
-	if (cullFace.getEnabled()) {
-		if (cullFace.getCullFaceMode() != _cullFace.getCullFaceMode()) {
-			glCullFace(cullFace.getCullFaceMode());
-			_cullFace.setCullFaceMode(cullFace.getCullFaceMode());
-		}
-		if (cullFace.getFrontFaceMode() != _cullFace.getFrontFaceMode()) {
-			glFrontFace(cullFace.getFrontFaceMode());
-			_cullFace.setFrontFaceMode(cullFace.getFrontFaceMode());
-		}
-	}
+	_applyCullFace(renderState->getCullFace());
 
 	// apply ProgramPointSize
-	if (renderState->getProgramPointSize() != _renderState->getProgramPointSize()) {
-		_enable(GL_PROGRAM_POINT_SIZE, renderState->getProgramPointSize());
-		_renderState->setProgramPointSize(renderState->getProgramPointSize());
-	}
+	_applyProgramPointSize(renderState->getProgramPointSize());
 
 	// apply PolygonMode
-	applyPolygonMode(renderState->getPolygonMode());
+	_applyPolygonMode(renderState->getPolygonMode());
 
 	// apply ScissorTest
-	ScissorTest scissorTest = renderState->getScissorTest();
-	_applyScissorTest(scissorTest);
+	_applyScissorTest(renderState->getScissorTest());
 
 	// apply StencilTest
-	StencilTest stencilTest = renderState->getStencilTest();
-	_applyStencilTest(stencilTest);
+	_applyStencilTest(renderState->getStencilTest());
 
 	// apply DepthTest
-	DepthTest depthTest = renderState->getDepthTest();
-	_applyDepthTest(depthTest);
+	_applyDepthTest(renderState->getDepthTest());
 
 	// apply Blending
-	Blending blending = renderState->getBlending();
-	_applyBlending(blending);
+	_applyBlending(renderState->getBlending());
 
 	// apply ColorMask
-	ColorMask colorMask = renderState->getColorMask();
-	_applyColorMask(colorMask);
+	_applyColorMask(renderState->getColorMask());
 };
 
 void Context::_applyVertexArray(VertexArray* vertexArray) {
@@ -358,7 +335,32 @@ void Context::_applyShaderProgram(DrawState* drawState, SceneState* sceneState) 
 	_boundShaderProgram->clean(this, drawState, sceneState);
 };
 
-void Context::applyPolygonMode(GLenum polygonMode) {
+void Context::_applyCullFace(CullFace& cullFace) {
+	CullFace _cullFace = _renderState->getCullFace();
+	if (cullFace.getEnabled() != _cullFace.getEnabled()) {
+		_enable(GL_CULL_FACE, cullFace.getEnabled());
+		_cullFace.setEnabled(cullFace.getEnabled());
+	}
+	if (cullFace.getEnabled()) {
+		if (cullFace.getCullFaceMode() != _cullFace.getCullFaceMode()) {
+			glCullFace(cullFace.getCullFaceMode());
+			_cullFace.setCullFaceMode(cullFace.getCullFaceMode());
+		}
+		if (cullFace.getFrontFaceMode() != _cullFace.getFrontFaceMode()) {
+			glFrontFace(cullFace.getFrontFaceMode());
+			_cullFace.setFrontFaceMode(cullFace.getFrontFaceMode());
+		}
+	}
+};
+
+void Context::_applyProgramPointSize(GLboolean programPointSize) {
+	if (programPointSize != _renderState->getProgramPointSize()) {
+		_enable(GL_PROGRAM_POINT_SIZE, programPointSize);
+		_renderState->setProgramPointSize(programPointSize);
+	}
+};
+
+void Context::_applyPolygonMode(GLenum polygonMode) {
 	if (polygonMode != _renderState->getPolygonMode()) {
 		glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
 		_renderState->setPolygonMode(polygonMode);

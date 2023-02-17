@@ -58,13 +58,13 @@ namespace qiao {
 
 	private:
 		PrimitiveRestart _primitiveRestart;
-		CullFace _cullFace;
-		GLboolean _programPointSize;
-		GLenum _polygonMode;		// 多边形光栅化模式，可选值：GL_POINT, GL_LINE, GL_FILL.
-		ScissorTest _scissorTest;	// 包含裁剪测试相关的状态信息
-		StencilTest _stencilTest;	// 包含模板测试相关的状态信息
-		DepthTest _depthTest;       // 包含深度测试相关的状态信息
-		Blending _blending;			// 包含混合相关的状态信息
-		ColorMask _colorMask;		// 是否开启颜色缓冲各个颜色分量的写操作
+		CullFace _cullFace;						// 包含面剔除相关的状态信息
+		GLboolean _programPointSize;			// 是否可以通过着色器内置变量gl_PointSize设置点图元大小
+		GLenum _polygonMode;					// 多边形光栅化模式，可选值：GL_POINT, GL_LINE, GL_FILL.
+		ScissorTest _scissorTest;				// 包含裁剪测试相关的状态信息
+		StencilTest _stencilTest;				// 包含模板测试相关的状态信息
+		DepthTest _depthTest;					// 包含深度测试相关的状态信息
+		Blending _blending;						// 包含混合相关的状态信息
+		ColorMask _colorMask;					// 是否开启颜色缓冲各个颜色分量的写操作
 	};
 }

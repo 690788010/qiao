@@ -1,3 +1,9 @@
+/**
+ * @file cull_face.cc
+ * @brief
+ * @author yangqiao
+ * @date December 2022
+ */
 
 #include "cull_face.h"
 
@@ -5,29 +11,30 @@ using namespace qiao;
 
 CullFace::CullFace() {
 	_enabled = true;
-	_cullFaceMode = CullFaceMode::BACK;
-	_frontFaceMode = FrontFaceMode::CCW;
+	_cullFaceMode = GL_BACK;
+	_frontFaceMode = GL_CCW;
 };
 
 bool CullFace::getEnabled() {
 	return _enabled;
 };
-void CullFace::setEnabled(bool val) {
-	_enabled = val;
+
+void CullFace::setEnabled(bool enabled) {
+	_enabled = enabled;
 };
 
-CullFaceMode CullFace::getCullFaceMode() {
+GLenum CullFace::getCullFaceMode() {
 	return _cullFaceMode;
 };
 
-void CullFace::setCullFaceMode(CullFaceMode val) {
-	_cullFaceMode = val;
+void CullFace::setCullFaceMode(GLenum mode) {
+	_cullFaceMode = mode;
 };
 
-FrontFaceMode CullFace::getFrontFaceMode() {
+GLenum CullFace::getFrontFaceMode() {
 	return _frontFaceMode;
 };
 
-void CullFace::setFrontFaceMode(FrontFaceMode val) {
-	_frontFaceMode = val;
+void CullFace::setFrontFaceMode(GLenum mode) {
+	_frontFaceMode = mode;
 };

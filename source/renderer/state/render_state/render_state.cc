@@ -5,7 +5,6 @@
  * @date December 2022
  */
 
-
 #include <iostream>
 #include "render_state.h"
 

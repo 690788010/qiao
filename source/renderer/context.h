@@ -114,8 +114,14 @@ namespace qiao {
 
 		void _applyShaderProgram(DrawState* drawState, SceneState* sceneState);
 
+		// 同步设置OpenGL面剔除相关状态
+		void _applyCullFace(CullFace& cullFace);
+
+		// 同步设置OpenGL是否可以通过着色器内置变量gl_PointSize设置点图元大小
+		void _applyProgramPointSize(GLboolean programPointSize);
+
 		// 同步设置OpenGL光栅化模式
-		void applyPolygonMode(GLenum polygonMode);
+		void _applyPolygonMode(GLenum polygonMode);
 
 		// 同步设置OpenGL裁剪测试相关状态
 		void _applyScissorTest(ScissorTest& scissorTest);
