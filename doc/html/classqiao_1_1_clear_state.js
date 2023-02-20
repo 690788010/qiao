@@ -9,5 +9,9 @@ var classqiao_1_1_clear_state =
     [ "getStencil", "classqiao_1_1_clear_state.html#aad0b0b7fe653588ccf5157811946430a", null ],
     [ "setStencil", "classqiao_1_1_clear_state.html#a10ce309ea74859178cc80ca3856b07b9", null ],
     [ "getColorMask", "classqiao_1_1_clear_state.html#ab3fe1859a8ef87652a4cefc63907ba2d", null ],
-    [ "setColorMask", "classqiao_1_1_clear_state.html#afd2a99439cbadd7a41442871f3a6cc04", null ]
+    [ "setColorMask", "classqiao_1_1_clear_state.html#afd2a99439cbadd7a41442871f3a6cc04", null ],
+    [ "getDepthMask", "classqiao_1_1_clear_state.html#aea31c87ac1646a0e08c09948da445d06", null ],
+    [ "setDepthMask", "classqiao_1_1_clear_state.html#a36e1ab075c2f13cba9e0b721eb6c11ab", null ],
+    [ "getScissorTest", "classqiao_1_1_clear_state.html#a36710f245c9ba963238b8a607bc66fa8", null ],
+    [ "setScissorTest", "classqiao_1_1_clear_state.html#a69b409b4b70be64c43a5f63db18b72d3", null ]
 ];

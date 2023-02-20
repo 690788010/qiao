@@ -24,18 +24,14 @@ void \mbox{\hyperlink{classqiao_1_1_clear_state_a10ce309ea74859178cc80ca3856b07b
 \begin{DoxyCompactList}\small\item\em 查询是否开启颜色缓冲各个颜色分量的写操作 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}{set\+Color\+Mask}} (\mbox{\hyperlink{classqiao_1_1_color_mask}{Color\+Mask}} color\+Mask)
 \begin{DoxyCompactList}\small\item\em 设置是否开启颜色缓冲各个颜色分量的写操作 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}\label{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}} 
-GLboolean {\bfseries get\+Depth\+Mask} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}\label{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}} 
-void {\bfseries set\+Depth\+Mask} (GLboolean flag)
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}\label{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}} 
-\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} \& {\bfseries get\+Scissor\+Test} ()
-\item 
-\mbox{\Hypertarget{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}\label{classqiao_1_1_clear_state_a3219ef6092c9177363c7e8e2dad4a5c5}} 
-void {\bfseries set\+Scissor\+Test} (\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} val)
-\end{DoxyCompactItemize}
+GLboolean \mbox{\hyperlink{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}{get\+Depth\+Mask}} ()
+\begin{DoxyCompactList}\small\item\em 查询是否开启深度缓冲的写操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}{set\+Depth\+Mask}} (GLboolean flag)
+\begin{DoxyCompactList}\small\item\em 设置是否开启深度缓冲的写操作 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} \& \mbox{\hyperlink{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}{get\+Scissor\+Test}} ()
+\begin{DoxyCompactList}\small\item\em 查询裁剪测试相关配置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqiao_1_1_clear_state_a69b409b4b70be64c43a5f63db18b72d3}{set\+Scissor\+Test}} (\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} scissor\+Test)
+\begin{DoxyCompactList}\small\item\em 设置裁剪测试相关的配置 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -190,6 +186,68 @@ Color\+Mask对象的引用
 
 \begin{DoxyParams}{Parameters}
 {\em color\+Mask} & 是否开启颜色缓冲各个颜色分量的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}\label{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}} 
+\index{qiao::ClearState@{qiao::ClearState}!getDepthMask@{getDepthMask}}
+\index{getDepthMask@{getDepthMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getDepthMask()}{getDepthMask()}}
+{\footnotesize\ttfamily GLboolean Clear\+State\+::get\+Depth\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询是否开启深度缓冲的写操作 
+
+\begin{DoxyReturn}{Returns}
+是否开启深度缓冲的写操作 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}\label{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}} 
+\index{qiao::ClearState@{qiao::ClearState}!setDepthMask@{setDepthMask}}
+\index{setDepthMask@{setDepthMask}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setDepthMask()}{setDepthMask()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Depth\+Mask (\begin{DoxyParamCaption}\item[{GLboolean}]{flag }\end{DoxyParamCaption})}
+
+
+
+设置是否开启深度缓冲的写操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & 是否开启深度缓冲的写操作 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}\label{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}} 
+\index{qiao::ClearState@{qiao::ClearState}!getScissorTest@{getScissorTest}}
+\index{getScissorTest@{getScissorTest}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{getScissorTest()}{getScissorTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}} \& Clear\+State\+::get\+Scissor\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+查询裁剪测试相关配置 
+
+\begin{DoxyReturn}{Returns}
+Scissor\+Test对象的引用，包含裁剪测试相关的配置 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqiao_1_1_clear_state_a69b409b4b70be64c43a5f63db18b72d3}\label{classqiao_1_1_clear_state_a69b409b4b70be64c43a5f63db18b72d3}} 
+\index{qiao::ClearState@{qiao::ClearState}!setScissorTest@{setScissorTest}}
+\index{setScissorTest@{setScissorTest}!qiao::ClearState@{qiao::ClearState}}
+\doxysubsubsection{\texorpdfstring{setScissorTest()}{setScissorTest()}}
+{\footnotesize\ttfamily void Clear\+State\+::set\+Scissor\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqiao_1_1_scissor_test}{Scissor\+Test}}}]{scissor\+Test }\end{DoxyParamCaption})}
+
+
+
+设置裁剪测试相关的配置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scissor\+Test} & Scissor\+Test对象，包含裁剪测试相关的配置 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

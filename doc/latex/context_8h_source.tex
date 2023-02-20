@@ -85,10 +85,10 @@
 \DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 同步设置OpenGL是否开启颜色缓冲各个颜色分量的写操作}}
 \DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyColorMask(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\&\ colorMask);}
 \DoxyCodeLine{00143\ }
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_clearColor;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_clearDepth;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度缓存的深度值\ \ \ \ \ }}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_clearStencil;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 模板缓存的模板值}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_render_state}{RenderState}}*\ \_renderState;\ \ \ \ \ \ \ \textcolor{comment}{//\ RenderState副本}}
 \DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用者传进来的ShaderProgram对象的指针，本类不负责回收该ShaderProgram对象的内存，}}
 \DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 而是让该ShaderProgram对象的创建者负责回收内存。}}
 \DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_shader_program}{ShaderProgram}}*\ \_boundShaderProgram;\ \ \ \ \ \ \ \ }

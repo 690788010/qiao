@@ -141,10 +141,10 @@ namespace qiao {
 		// 同步设置OpenGL是否开启颜色缓冲各个颜色分量的写操作
 		void _applyColorMask(ColorMask& colorMask);
 
-		Color _clearColor;
-		double _clearDepth;
-		int _clearStencil;
-		RenderState* _renderState;
+		Color _clearColor;				// 颜色缓存的颜色
+		double _clearDepth;				// 深度缓存的深度值		
+		int _clearStencil;				// 模板缓存的模板值
+		RenderState* _renderState;		// RenderState副本
 		// 使用者传进来的ShaderProgram对象的指针，本类不负责回收该ShaderProgram对象的内存，
 		// 而是让该ShaderProgram对象的创建者负责回收内存。
 		ShaderProgram* _boundShaderProgram;		

@@ -36,22 +36,24 @@
 \DoxyCodeLine{00090\ }
 \DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_afd2a99439cbadd7a41442871f3a6cc04}{setColorMask}}(\mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ colorMask);}
 \DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ GLboolean\ getDepthMask();}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDepthMask(GLboolean\ flag);}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ getScissorTest();}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScissorTest(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ val);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ GLboolean\ \mbox{\hyperlink{classqiao_1_1_clear_state_aea31c87ac1646a0e08c09948da445d06}{getDepthMask}}();}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ GLbitfield\ \_clearMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 指示清除哪个缓存的掩码。可选的三个掩码值：GL\_COLOR\_BUFFER\_BIT,\ }}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_DEPTH\_BUFFER\_BIT,\ GL\_STENCIL\_BUFFER\_BIT}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_color;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_depth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度缓存的深度值\ \ \ \ \ }}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_stencil;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 模板缓存的模板值}}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ \_colorMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启颜色缓冲各个颜色分量的写操作}}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启深度缓冲的写操作}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ \_scissorTest;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 裁剪测试相关配置}}
-\DoxyCodeLine{00113\ \ \ \ \ \};}
-\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_a36e1ab075c2f13cba9e0b721eb6c11ab}{setDepthMask}}(GLboolean\ flag);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\&\ \mbox{\hyperlink{classqiao_1_1_clear_state_a36710f245c9ba963238b8a607bc66fa8}{getScissorTest}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqiao_1_1_clear_state_a69b409b4b70be64c43a5f63db18b72d3}{setScissorTest}}(\mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ scissorTest);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ GLbitfield\ \_clearMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 指示清除哪个缓存的掩码。可选的三个掩码值：GL\_COLOR\_BUFFER\_BIT,\ }}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_DEPTH\_BUFFER\_BIT,\ GL\_STENCIL\_BUFFER\_BIT}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color}{Color}}\ \_color;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 颜色缓存的颜色}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_depth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 深度缓存的深度值\ \ \ \ \ }}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_stencil;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 模板缓存的模板值}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_color_mask}{ColorMask}}\ \_colorMask;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启颜色缓冲各个颜色分量的写操作}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ GLboolean\ \_depthMask;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 是否开启深度缓冲的写操作}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqiao_1_1_scissor_test}{ScissorTest}}\ \_scissorTest;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 裁剪测试相关配置}}
+\DoxyCodeLine{00134\ \ \ \ \ \};}
+\DoxyCodeLine{00135\ \}}
 
 \end{DoxyCode}

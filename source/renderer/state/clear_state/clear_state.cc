@@ -72,6 +72,6 @@ ScissorTest& ClearState::getScissorTest() {
 	return _scissorTest;
 };
 
-void ClearState::setScissorTest(ScissorTest val) {
-	_scissorTest = val;
+void ClearState::setScissorTest(ScissorTest scissorTest) {
+	_scissorTest = scissorTest;
 };

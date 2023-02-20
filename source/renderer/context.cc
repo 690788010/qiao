@@ -77,7 +77,6 @@ void Context::clear(ClearState& clearState) {
 	}
 };
 
-
 VertexArray* Context::createVertexArray(Mesh& mesh, ShaderVertexAttributeCollection shaderAttributes, GLenum usage) {
 	VertexArray* vertexArray = new VertexArray();
 

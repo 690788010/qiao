@@ -95,11 +95,32 @@ namespace qiao {
 		 */
 		void setColorMask(ColorMask colorMask);
 
+		/**
+		 * @brief 查询是否开启深度缓冲的写操作
+		 * @return 是否开启深度缓冲的写操作
+		 */
 		GLboolean getDepthMask();
+
+		/**
+		 * @brief 设置是否开启深度缓冲的写操作
+		 * @param flag 是否开启深度缓冲的写操作
+		 * @return void
+		 */
 		void setDepthMask(GLboolean flag);
 
+		/**
+		 * @brief 查询裁剪测试相关配置
+		 * 
+		 * @return  ScissorTest对象的引用，包含裁剪测试相关的配置
+		 */
 		ScissorTest& getScissorTest();
-		void setScissorTest(ScissorTest val);
+
+		/**
+		 * @brief 设置裁剪测试相关的配置
+		 * @param scissorTest ScissorTest对象，包含裁剪测试相关的配置
+		 * @return void
+		 */
+		void setScissorTest(ScissorTest scissorTest);
 
 	private:
 		GLbitfield _clearMask;			// 指示清除哪个缓存的掩码。可选的三个掩码值：GL_COLOR_BUFFER_BIT, 

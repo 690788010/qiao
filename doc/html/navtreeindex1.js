@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"draw__auto__uniform__collection_8h_source.html":[1,0,0,1,2,1,0,1],
+"draw__auto__uniform__factory_8h.html":[1,0,0,1,2,1,0,2],
+"draw__auto__uniform__factory_8h_source.html":[1,0,0,1,2,1,0,2],
+"draw__auto__uniform__factory__collection_8h.html":[1,0,0,1,2,1,0,3],
 "draw__auto__uniform__factory__collection_8h_source.html":[1,0,0,1,2,1,0,3],
 "draw__state_8cc.html":[1,0,0,1,3,1,0],
 "draw__state_8h.html":[1,0,0,1,3,1,1],
